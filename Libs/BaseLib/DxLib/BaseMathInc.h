@@ -561,7 +561,7 @@ namespace bsm {
 		return *this;
 	}
 
-	inline Flt3 Flt3::GetNormalized()
+	inline Flt3 Flt3::GetNormalized() const
 	{
 		return (Flt3)XMVector3Normalize(*this);
 	}

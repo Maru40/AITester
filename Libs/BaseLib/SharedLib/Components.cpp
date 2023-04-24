@@ -470,6 +470,13 @@ namespace basecross {
 		return ret;
 	}
 
+	bsm::Vec3 Transform::GetForward() const {
+		bsm::Vec3 ret = GetWorldMatrix().rotZInMatrix();
+
+		ret.normalize();
+		return ret;
+	}
+
 	void Transform::SetForward(const bsm::Vec3& forward)
 	{
 		auto vec = forward;

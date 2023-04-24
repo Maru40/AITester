@@ -85,6 +85,87 @@
     <Filter Include="BaseCrossSample\Sources">
       <UniqueIdentifier>{96692d2a-8790-41a9-bfac-6c5662d4ad61}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maruyama\Utility">
+      <UniqueIdentifier>{a18fdbd5-85a3-4d3a-951c-7849c5be1c50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Enemy">
+      <UniqueIdentifier>{dce4b803-c63d-46a4-bac2-6a6bd0115b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\MaruAction">
+      <UniqueIdentifier>{bba99da0-d728-4e79-87e6-a16e5769a4a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\MaruHitHelper">
+      <UniqueIdentifier>{6d0f921c-969c-46e3-9d74-7e83688ad4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\MaruRandom">
+      <UniqueIdentifier>{10458f80-2c01-4c1f-a179-0a60b82380fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\Mathf">
+      <UniqueIdentifier>{42207c9a-7d89-42ec-bacd-3682cbd76216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\ObserveIsInEyeTarget">
+      <UniqueIdentifier>{c33f8ca8-1fa9-4fc5-aaec-92ff89c56cb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\ReactivePropety">
+      <UniqueIdentifier>{d4be792d-cd21-4d38-8b06-6179383d1e89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\ReactiveBool">
+      <UniqueIdentifier>{2316439a-ca8b-4e54-81be-93c3c1495204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\UtilityObstacle">
+      <UniqueIdentifier>{8da5ee04-81e3-45da-89e2-ad5d4d585460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Utility\UtilityVelocity">
+      <UniqueIdentifier>{e31cb701-02ed-4d31-88bd-210601a30def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\DebugClass">
+      <UniqueIdentifier>{498c73b6-c4d5-4aba-82c2-faa7e04bd8c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\DebugClass\Object">
+      <UniqueIdentifier>{0758646d-1f5c-4ec3-b8db-96d864c2a2b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\DebugClass\Object\ArrowObject">
+      <UniqueIdentifier>{b2d95d28-c511-4bff-8c4e-532e559bd03b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\DebugClass\Object\DebugObject">
+      <UniqueIdentifier>{32b67877-756b-4d5c-8068-78b7116331fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\DebugClass\Component">
+      <UniqueIdentifier>{ea11e607-3f13-439e-b6b9-86e56443fce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\UI">
+      <UniqueIdentifier>{f374eec8-363e-4151-8925-dbe00688fb05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Patch">
+      <UniqueIdentifier>{2a89d7cc-f579-4123-810a-2bf61df432e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Patch\CommonStruct">
+      <UniqueIdentifier>{3dbf5a46-d825-4d6a-ba26-79adcd57a75d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\DebugClass\Component\DebugNumber">
+      <UniqueIdentifier>{a75ae199-11d5-43cd-b208-2a3b2d4d4da2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\DebugClass\Component\RectDraw">
+      <UniqueIdentifier>{8eb46898-c97e-42ad-9e41-f61ed1fde81f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\UI\2D">
+      <UniqueIdentifier>{4f706cbb-3137-4b7e-8018-a31194e43a8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Watanabe">
+      <UniqueIdentifier>{58e40f65-2d7f-4acf-b801-168b52f223cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Watanabe\DebugClass">
+      <UniqueIdentifier>{0ee68ad6-c48d-4c93-bf73-1df7b25922a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Watanabe\Utility">
+      <UniqueIdentifier>{de9ae842-e120-43ba-9bfc-adf98bb2eb26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Enemy\Component">
+      <UniqueIdentifier>{6a9b9c85-be1e-4f92-b905-ebc48d6043b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Enemy\Component\Eye">
+      <UniqueIdentifier>{7edad5bd-c5c1-4aca-9d03-c95cfb51c07f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
@@ -168,6 +249,69 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameSaveManager.h">
       <Filter>Patch\basecross\GameSaveManager</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Delegate.h">
+      <Filter>Maruyama\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Utility.h">
+      <Filter>Maruyama\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.h">
+      <Filter>Maruyama\Utility\MaruAction</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruHitHelper.h">
+      <Filter>Maruyama\Utility\MaruHitHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Random.h">
+      <Filter>Maruyama\Utility\MaruRandom</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Mathf.h">
+      <Filter>Maruyama\Utility\Mathf</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ObserveIsInEyeTarget.h">
+      <Filter>Maruyama\Utility\ObserveIsInEyeTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveProperty.h">
+      <Filter>Maruyama\Utility\ReactivePropety</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveBool.h">
+      <Filter>Maruyama\Utility\ReactiveBool</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityObstacle.h">
+      <Filter>Maruyama\Utility\UtilityObstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.h">
+      <Filter>Maruyama\Utility\UtilityVelocity</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.h">
+      <Filter>Maruyama\DebugClass</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.h">
+      <Filter>Maruyama\DebugClass\Object\ArrowObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.h">
+      <Filter>Maruyama\DebugClass\Object\DebugObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.h">
+      <Filter>Maruyama\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h">
+      <Filter>Maruyama\Patch\CommonStruct</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.h">
+      <Filter>Maruyama\DebugClass\Component\DebugNumber</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.h">
+      <Filter>Maruyama\DebugClass\Component\RectDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\DebugClass\Debug.h">
+      <Filter>Watanabe\DebugClass</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\BaseSingleton.h">
+      <Filter>Watanabe\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.h">
+      <Filter>Maruyama\Enemy\Component\Eye</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
@@ -229,6 +373,63 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameSaveManager.cpp">
       <Filter>Patch\basecross\GameSaveManager</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruUtility.cpp">
+      <Filter>Maruyama\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.cpp">
+      <Filter>Maruyama\Utility\MaruAction</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruHitHelper.cpp">
+      <Filter>Maruyama\Utility\MaruHitHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruRandom.cpp">
+      <Filter>Maruyama\Utility\MaruRandom</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Mathf.cpp">
+      <Filter>Maruyama\Utility\Mathf</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ObserveIsInEyeTarget.cpp">
+      <Filter>Maruyama\Utility\ObserveIsInEyeTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveProperty.cpp">
+      <Filter>Maruyama\Utility\ReactivePropety</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveBool.cpp">
+      <Filter>Maruyama\Utility\ReactiveBool</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityObstacle.cpp">
+      <Filter>Maruyama\Utility\UtilityObstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.cpp">
+      <Filter>Maruyama\Utility\UtilityVelocity</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.cpp">
+      <Filter>Maruyama\DebugClass</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.cpp">
+      <Filter>Maruyama\DebugClass\Object\ArrowObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.cpp">
+      <Filter>Maruyama\DebugClass\Object\DebugObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.cpp">
+      <Filter>Maruyama\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp">
+      <Filter>Maruyama\Patch\CommonStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.cpp">
+      <Filter>Maruyama\DebugClass\Component\DebugNumber</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.cpp">
+      <Filter>Maruyama\DebugClass\Component\RectDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\DebugClass\Debug.cpp">
+      <Filter>Watanabe\DebugClass</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.cpp">
+      <Filter>Maruyama\Enemy\Component\Eye</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

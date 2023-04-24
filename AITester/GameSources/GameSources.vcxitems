@@ -27,6 +27,25 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameSaveManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameStage.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)InputHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Delegate.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruHitHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Mathf.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ObserveIsInEyeTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Random.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveBool.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveProperty.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Utility.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityObstacle.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MathHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageWindow.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Player.h" />
@@ -40,6 +59,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)StructIOFileStream.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Trigger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)UIHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\DebugClass\Debug.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\BaseSingleton.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WindowSetting.h" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +74,24 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)GameSaveManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameStage.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)InputHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruHitHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruRandom.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruUtility.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Mathf.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ObserveIsInEyeTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveBool.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveProperty.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityObstacle.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MathHelper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageWindow.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
@@ -62,6 +101,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SoundHelper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\DebugClass\Debug.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WinMain.cpp" />
   </ItemGroup>
 </Project>
