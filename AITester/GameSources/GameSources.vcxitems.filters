@@ -160,9 +160,6 @@
     <Filter Include="Maruyama\Enemy\Component">
       <UniqueIdentifier>{6a9b9c85-be1e-4f92-b905-ebc48d6043b4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Maruyama\Enemy\Component\Eye">
-      <UniqueIdentifier>{7edad5bd-c5c1-4aca-9d03-c95cfb51c07f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Maruyama\StateMachine">
       <UniqueIdentifier>{831d4be7-61cc-4734-bbc3-6620b29a188c}</UniqueIdentifier>
     </Filter>
@@ -189,6 +186,18 @@
     </Filter>
     <Filter Include="Maruyama\BehaviorTree\SubBehavior">
       <UniqueIdentifier>{a8ec8501-3522-4f54-a035-7e3f8f312988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Enemy\Component\Behavior">
+      <UniqueIdentifier>{01174bd6-3676-4997-93f5-116c8dfc8e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Enemy\Component\Common">
+      <UniqueIdentifier>{b54c28a9-18e3-4271-8048-5c75057dfd93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Enemy\Component\Common\Eye">
+      <UniqueIdentifier>{7edad5bd-c5c1-4aca-9d03-c95cfb51c07f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\StateMachine\StatorBase">
+      <UniqueIdentifier>{3f2a0b03-b6cf-4e32-985c-3d6b3cd83a44}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -334,7 +343,7 @@
       <Filter>Watanabe\Utility</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.h">
-      <Filter>Maruyama\Enemy\Component\Eye</Filter>
+      <Filter>Maruyama\Enemy\Component\Common\Eye</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StateMachine.h">
       <Filter>Maruyama\StateMachine</Filter>
@@ -377,6 +386,12 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.h">
       <Filter>Maruyama\BehaviorTree\SubBehavior</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.h">
+      <Filter>Maruyama\Enemy\Component\Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StatorBase.h">
+      <Filter>Maruyama\StateMachine\StatorBase</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -495,7 +510,7 @@
       <Filter>Watanabe\DebugClass</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.cpp">
-      <Filter>Maruyama\Enemy\Component\Eye</Filter>
+      <Filter>Maruyama\Enemy\Component\Common\Eye</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StateMachine.cpp">
       <Filter>Maruyama\StateMachine</Filter>
@@ -538,6 +553,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.cpp">
       <Filter>Maruyama\BehaviorTree\SubBehavior</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.cpp">
+      <Filter>Maruyama\Enemy\Component\Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StatorBase.cpp">
+      <Filter>Maruyama\StateMachine\StatorBase</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

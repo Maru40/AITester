@@ -40,6 +40,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Selecter.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Task.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.h" />
@@ -48,6 +49,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\NodeBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Node_StateMachine.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StateMachine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StatorBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Delegate.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.h" />
@@ -101,6 +103,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Selecter.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Task.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.cpp" />
@@ -109,6 +112,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\NodeBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Node_StateMachine.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StateMachine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StatorBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruHitHelper.cpp" />
