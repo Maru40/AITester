@@ -32,7 +32,6 @@ namespace basecross {
 					using BehaviorTree = maru::Behavior::BehaviorTree<EnumType>;
 
 				private:
-
 					std::weak_ptr<GameObject> m_owner;	//オーナータイプ
 
 				protected:
