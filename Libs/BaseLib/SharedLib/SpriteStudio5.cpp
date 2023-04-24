@@ -135,22 +135,22 @@ namespace basecross {
 		float r = 0.0f;
 		switch (type)
 		{
-		case SsInterpolationType::_enum::none:
+		case SsInterpolationType::none:
 			r = start;
 			break;
-		case SsInterpolationType::_enum::linear:
+		case SsInterpolationType::linear:
 			r = linear_(start, end, time);
 			break;
-		case SsInterpolationType::_enum::acceleration:
+		case SsInterpolationType::acceleration:
 			r = accelerating_(start, end, time);
 			break;
-		case SsInterpolationType::_enum::deceleration:
+		case SsInterpolationType::deceleration:
 			r = decelerating_(start, end, time);
 			break;
-		case SsInterpolationType::_enum::bezier:
+		case SsInterpolationType::bezier:
 			r = bezier_(start, end, time, curve);
 			break;
-		case SsInterpolationType::_enum::hermite:
+		case SsInterpolationType::hermite:
 			r = hermite_(start, end, time, curve);
 			break;
 		default:
@@ -166,7 +166,7 @@ namespace basecross {
 	//	用途: アニメーションライン（基底構造体）
 	//--------------------------------------------------------------------------------------
 	SS5AnimeLine::SS5AnimeLine() :
-		type(SsAttributeKind::_enum::invalid){}
+		type(SsAttributeKind::invalid){}
 	SS5AnimeLine::~SS5AnimeLine(){}
 
 	//--------------------------------------------------------------------------------------
@@ -285,7 +285,7 @@ namespace basecross {
 		}
 		size_t TgtVecIndex = 0;
 		SsInterpolationType::_enum Type;
-		Type = SsInterpolationType::_enum::none;
+		Type = SsInterpolationType::none;
 
 		float Start = 0;
 		float End = 0;
@@ -311,7 +311,7 @@ namespace basecross {
 			}
 		}
 
-		if (Type == SsInterpolationType::_enum::bezier)
+		if (Type == SsInterpolationType::bezier)
 		{
 			// ベジェのみキーの開始・終了時間が必要
 			curve.startKeyTime = StartTime;
@@ -337,7 +337,7 @@ namespace basecross {
 		}
 		size_t TgtVecIndex = 0;
 		SsInterpolationType::_enum Type;
-		Type = SsInterpolationType::_enum::none;
+		Type = SsInterpolationType::none;
 
 		float Start = 1.0f;
 		float End = 1.0f;
@@ -363,7 +363,7 @@ namespace basecross {
 			}
 		}
 
-		if (Type == SsInterpolationType::_enum::bezier)
+		if (Type == SsInterpolationType::bezier)
 		{
 			// ベジェのみキーの開始・終了時間が必要
 			curve.startKeyTime = StartTime;
@@ -559,7 +559,7 @@ namespace basecross {
 		}
 		size_t TgtVecIndex = 0;
 		SsInterpolationType::_enum Type;
-		Type = SsInterpolationType::_enum::none;
+		Type = SsInterpolationType::none;
 
 		bsm::Col4 Start(0, 0, 0, 0);
 		bsm::Col4 End(0, 0, 0, 0);
@@ -686,7 +686,7 @@ namespace basecross {
 		}
 		size_t TgtVecIndex = 0;
 		SsInterpolationType::_enum Type;
-		Type = SsInterpolationType::_enum::none;
+		Type = SsInterpolationType::none;
 
 
 		float StartTime = 0;
@@ -980,7 +980,7 @@ namespace basecross {
 		bool ret = false;
 		float AnimeFrame = m_pSS5Animation->GetAnimationTimer2Frame();
 		for (auto ptr : m_LineVec){
-			if (ptr->GetType() == SsAttributeKind::_enum::hide){
+			if (ptr->GetType() == SsAttributeKind::hide){
 				auto v = dynamic_pointer_cast<SS5AnimeBoolVal>(ptr);
 				ret = v->GetValue(AnimeFrame);
 			}
@@ -991,7 +991,7 @@ namespace basecross {
 		float AnimeFrame = m_pSS5Animation->GetAnimationTimer2Frame();
 		float prio = 0;
 		for (auto ptr : m_LineVec){
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::prio, ptr, prio, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::prio, ptr, prio, AnimeFrame);
 		}
 		return prio;
 	}
@@ -1000,7 +1000,7 @@ namespace basecross {
 		float AnimeFrame = m_pSS5Animation->GetAnimationTimer2Frame();
 		float Alpha = 1.0f;
 		for (auto ptr : m_LineVec){
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::alpha, ptr, Alpha, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::alpha, ptr, Alpha, AnimeFrame);
 		}
 		return Alpha;
 	}
@@ -1010,7 +1010,7 @@ namespace basecross {
 		float AnimeFrame = m_pSS5Animation->GetAnimationTimer2Frame();
 		AnimeCell cell;
 		for (auto ptr : m_LineVec){
-			if (ptr->GetType() == SsAttributeKind::_enum::cell){
+			if (ptr->GetType() == SsAttributeKind::cell){
 				auto v = dynamic_pointer_cast<SS5AnimeCellVal>(ptr);
 				cell = v->GetValue(AnimeFrame);
 			}
@@ -1022,7 +1022,7 @@ namespace basecross {
 		float AnimeFrame = m_pSS5Animation->GetAnimationTimer2Frame();
 		Vertex2DAnimeData data;
 		for (auto ptr : m_LineVec){
-			if (ptr->GetType() == SsAttributeKind::_enum::vertex){
+			if (ptr->GetType() == SsAttributeKind::vertex){
 				auto v = dynamic_pointer_cast<SS5AnimeVector3Val>(ptr);
 				data = v->GetValue(AnimeFrame);
 			}
@@ -1042,14 +1042,14 @@ namespace basecross {
 		bsm::Vec3 Rot(0, 0, 0);
 		bsm::Vec3 Scale(1.0f, 1.0f, 1.0f);
 		for (auto ptr : m_LineVec){
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::posx, ptr, Pos.x, AnimeFrame);
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::posy, ptr, Pos.y, AnimeFrame);
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::posz, ptr, Pos.z, AnimeFrame);
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::rotx, ptr, Rot.x, AnimeFrame);
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::roty, ptr, Rot.y, AnimeFrame);
-			GetIfFloatVal(ptr->GetType() == SsAttributeKind::_enum::rotz, ptr, Rot.z, AnimeFrame);
-			GetIfFloatScaleVal(ptr->GetType() == SsAttributeKind::_enum::sclx, ptr, Scale.x, AnimeFrame);
-			GetIfFloatScaleVal(ptr->GetType() == SsAttributeKind::_enum::scly, ptr, Scale.y, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::posx, ptr, Pos.x, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::posy, ptr, Pos.y, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::posz, ptr, Pos.z, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::rotx, ptr, Rot.x, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::roty, ptr, Rot.y, AnimeFrame);
+			GetIfFloatVal(ptr->GetType() == SsAttributeKind::rotz, ptr, Rot.z, AnimeFrame);
+			GetIfFloatScaleVal(ptr->GetType() == SsAttributeKind::sclx, ptr, Scale.x, AnimeFrame);
+			GetIfFloatScaleVal(ptr->GetType() == SsAttributeKind::scly, ptr, Scale.y, AnimeFrame);
 		}
 
 		Pos.x /= m_pSS5Animation->get_gridSize();
@@ -1402,19 +1402,19 @@ namespace basecross {
 					wstring Name = XmlDocReader::GetBaseName(pXMLDOMNode);
 					SsAttributeKind::_enum key = SsAttributeKind::ws2e(Name);
 					switch (key){
-					case SsAttributeKind::_enum::fliph:
+					case SsAttributeKind::fliph:
 						ineheritRates.flph = SS5Util::TextToBool(pXMLDOMNode, Name);
 						break;
-					case SsAttributeKind::_enum::flipv:
+					case SsAttributeKind::flipv:
 						ineheritRates.flpv = SS5Util::TextToBool(pXMLDOMNode, Name);
 						break;
-					case SsAttributeKind::_enum::hide:
+					case SsAttributeKind::hide:
 						ineheritRates.hide = SS5Util::TextToBool(pXMLDOMNode, Name);
 						break;
-					case SsAttributeKind::_enum::imgfliph:
+					case SsAttributeKind::imgfliph:
 						ineheritRates.iflh = SS5Util::TextToBool(pXMLDOMNode, Name);
 						break;
-					case SsAttributeKind::_enum::imgflipv:
+					case SsAttributeKind::imgflipv:
 						ineheritRates.iflv = SS5Util::TextToBool(pXMLDOMNode, Name);
 						break;
 					}
@@ -1768,7 +1768,7 @@ namespace basecross {
 	}
 
 	void SSPart::OnDraw(){
-		if (pImpl->type == SsPartType::_enum::normal && pImpl->m_SS5CellPtr){
+		if (pImpl->type == SsPartType::normal && pImpl->m_SS5CellPtr){
 			if (!pImpl->m_Hide && pImpl->show){
 				//描画する
 				if (pImpl->m_SpriteType){

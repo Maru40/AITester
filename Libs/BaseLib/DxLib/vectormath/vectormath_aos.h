@@ -60,17 +60,13 @@ class Vector3
     float mY;
     float mZ;
 #ifndef __GNUC__
-    float d = 0;
+    float d;
 #endif
 
 public:
     // Default constructor; does no initialization
     // 
-    inline Vector3( ):
-        mX(0),
-        mY(0),
-        mZ(0)
-    { };
+    inline Vector3( ) { };
 
     // Copy a 3-D vector
     // 
@@ -374,12 +370,7 @@ class Vector4
 public:
     // Default constructor; does no initialization
     // 
-    inline Vector4( ):
-        mX(0),
-        mY(0),
-        mZ(0),
-        mW(0)
-    { };
+    inline Vector4( ) { };
 
     // Copy a 4-D vector
     // 
@@ -696,15 +687,13 @@ class Point3
     float mY;
     float mZ;
 #ifndef __GNUC__
-    float d = 0;
+    float d;
 #endif
 
 public:
     // Default constructor; does no initialization
     // 
-    inline Point3( ):
-        mX(0), mY(0), mZ(0)
-    { };
+    inline Point3( ) { };
 
     // Copy a 3-D point
     // 
@@ -936,12 +925,7 @@ class Quat
 public:
     // Default constructor; does no initialization
     // 
-    inline Quat( ) :
-        mX(0),
-        mY(0),
-        mZ(0),
-        mW(0)
-    { };
+    inline Quat( ) { };
 
     // Copy a quaternion
     // 

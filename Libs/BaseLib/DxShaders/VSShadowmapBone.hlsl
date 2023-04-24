@@ -34,7 +34,6 @@ VS_OUTPUT main( VS_INPUT_WEIGHTS InputWeights )
     Output.vPosition = mul( InputWeights.vPosition, World );
     Output.vPosition = mul( Output.vPosition, View );
     Output.vPosition = mul( Output.vPosition, Projection );
-    Output.tex = InputWeights.TexCoord;
 
     return Output;
 }

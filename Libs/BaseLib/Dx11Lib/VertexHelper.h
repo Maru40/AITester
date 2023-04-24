@@ -318,13 +318,7 @@ namespace basecross{
 	/// 位置と法線とテクスチャとスキニング情報を持つ頂点の定義
 	//--------------------------------------------------------------------------------------
 	struct  VertexPositionNormalTextureSkinning{
-		VertexPositionNormalTextureSkinning():
-			position(bsm::Vec3(0.0f)),
-			normal(bsm::Vec3(0.0f)),
-			textureCoordinate(bsm::Vec2(0.0f)),
-			indices{ 0, 0, 0, 0 },
-			weights{ 0, 0, 0, 0 }
-		{}
+		VertexPositionNormalTextureSkinning(){}
 	
 		VertexPositionNormalTextureSkinning(bsm::Vec3 const& pos, bsm::Vec3 const& norm, bsm::Vec2 const& tex,
 			uint32_t* index,float* weight)
@@ -481,14 +475,7 @@ namespace basecross{
 	/// 位置と法線とタンジェントとテクスチャとスキニング情報を持つ頂点の定義
 	//--------------------------------------------------------------------------------------
 	struct  VertexPositionNormalTangentTextureSkinning {
-		VertexPositionNormalTangentTextureSkinning():
-			position(bsm::Vec3(0.0f)),
-			normal(bsm::Vec3(0.0f)),
-			tangent(bsm::Vec4(0.0f)),
-			textureCoordinate(bsm::Vec2(0.0f)),
-			indices{0},
-			weights{0}
-		{}
+		VertexPositionNormalTangentTextureSkinning() {}
 
 		VertexPositionNormalTangentTextureSkinning(bsm::Vec3 const& pos, bsm::Vec3 const& norm, bsm::Vec4 const& tan, bsm::Vec2 const& tex,
 			uint32_t* index, float* weight)
@@ -549,12 +536,7 @@ namespace basecross{
 	//--------------------------------------------------------------------------------------
 	struct VertexPositionNormalTangentColorTexture
 	{
-		VertexPositionNormalTangentColorTexture():
-			position(bsm::Vec3(0.0f)),
-			normal(bsm::Vec3(0.0f)),
-			tangent(bsm::Vec4(0.0f)),
-			textureCoordinate(bsm::Vec2(0.0f)),
-			color(0)
+		VertexPositionNormalTangentColorTexture()
 		{ }
 
 
@@ -632,10 +614,7 @@ namespace basecross{
 	//--------------------------------------------------------------------------------------
 	struct VertexPositionNormalTangentColorTextureSkinning : public VertexPositionNormalTangentColorTexture
 	{
-		VertexPositionNormalTangentColorTextureSkinning():
-			VertexPositionNormalTangentColorTexture(),
-			indices(0),
-			weights(0)
+		VertexPositionNormalTangentColorTextureSkinning()
 		{ }
 
 		uint32_t indices;

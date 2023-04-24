@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "stdafx.h"
-#include "Patch/InputHelper.h"
+#include "InputHelper.h"
 
 namespace basecross {
 
@@ -949,14 +949,6 @@ namespace basecross {
 		//--------------------------------------------------------------------------------------
 		float GetElapsedTime() {
 			double d = m_Timer.GetElapsedSeconds();
-			//0œZ‰ñ”ğ‚Ì‚½‚ß1000•ª‚Ì1–¢–‚Í•Ô‚ç‚È‚¢‚æ‚¤‚É‚·‚é
-			if (d < 0.001) {
-				d = 0.001;
-			}
-			return (float)d;
-		}
-		float GetDefaultElapsedTime() {
-			double d = m_Timer.GetDefaultElapsedSeconds();
 			//0œZ‰ñ”ğ‚Ì‚½‚ß1000•ª‚Ì1–¢–‚Í•Ô‚ç‚È‚¢‚æ‚¤‚É‚·‚é
 			if (d < 0.001) {
 				d = 0.001;

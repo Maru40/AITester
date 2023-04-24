@@ -48,22 +48,7 @@ struct PfxUpdateBroadphaseProxiesParam {
 	PfxVector3 worldCenter;
 	PfxVector3 worldExtent;
 	
-	PfxUpdateBroadphaseProxiesParam() : 
-		outOfWorldBehavior(0),
-		workBuff(nullptr),
-		workBytes(0),
-		proxiesX(nullptr),
-		proxiesY(nullptr),
-		proxiesZ(nullptr),
-		proxiesXb(nullptr),
-		proxiesYb(nullptr),
-		proxiesZb(nullptr),
-		offsetRigidStates(nullptr),
-		offsetCollidables(nullptr),
-		numRigidBodies(0),
-		worldCenter(0),
-		worldExtent(0)
-	{}
+	PfxUpdateBroadphaseProxiesParam() : outOfWorldBehavior(0) {}
 };
 
 struct PfxUpdateBroadphaseProxiesResult {

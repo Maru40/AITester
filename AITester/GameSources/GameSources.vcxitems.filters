@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Patch">
+      <UniqueIdentifier>{b0027a3e-defe-4ded-810a-fc9c77670553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Utility">
+      <UniqueIdentifier>{8244de4c-8141-4cd3-9c20-ec7966d2f67c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Input">
+      <UniqueIdentifier>{bcae31b0-2039-4073-b823-f3237a88471c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Input\InputHelper">
+      <UniqueIdentifier>{68733568-27c1-4656-bffa-54c3b7f1d394}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Utility\ex_weak_ptr">
+      <UniqueIdentifier>{50352052-6b69-44c9-9e95-ef7832b825a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Utility\DelegateSystem">
+      <UniqueIdentifier>{2fd3f44a-0ff7-460a-b44f-c2877cd4d35f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Utility\ActionTimer">
+      <UniqueIdentifier>{be2f806d-f1ab-4397-82b1-2987c9b65141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Utility\Trigger">
+      <UniqueIdentifier>{8d3b2210-cfc3-440e-a929-405ed0f38c3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross">
+      <UniqueIdentifier>{d6c53e26-daab-4da8-b96f-52b1ed198b8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\AnimationHelper">
+      <UniqueIdentifier>{7923b4d6-4a8a-4954-bbfc-93b122558c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\BezierTransitioner">
+      <UniqueIdentifier>{fb480703-4dd0-487d-88d5-6ced75c7906d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\CameraHelper">
+      <UniqueIdentifier>{1bd2ee1d-9faa-4d49-837d-76e82eb11878}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\FontHelper">
+      <UniqueIdentifier>{35f39a76-6698-403f-90f8-ce366ee7ed98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\MessageWindow">
+      <UniqueIdentifier>{dae23ebd-4d55-4c91-b615-6dafa90ceba6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\SaveHelper">
+      <UniqueIdentifier>{e82e95a2-a477-4cb6-a80d-d62df252fc0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\SoundHelper">
+      <UniqueIdentifier>{2c7876d4-e955-4288-8a14-28257d102895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\UIHelper">
+      <UniqueIdentifier>{414848dd-3aa1-479a-9db5-e4e34f4b2443}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Mathf">
+      <UniqueIdentifier>{04f3001a-b630-4166-891e-0f560792e945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Mathf\Bezier">
+      <UniqueIdentifier>{457f1f55-3bc5-4a35-b31e-89d6e7843cfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Utility\StructIOFileStream">
+      <UniqueIdentifier>{bc26d34f-2618-4356-8fc1-54e8ae2c1bd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Input\BasecrossInputer">
+      <UniqueIdentifier>{bcbef52e-5d1b-4d25-90da-f51d0c0652ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Mathf\MyMath">
+      <UniqueIdentifier>{57eb493a-7623-4743-b97d-b765b47d1ba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\Mathf\Random">
+      <UniqueIdentifier>{a63df658-67fc-41f2-8f4b-50d9a7fe4f10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patch\basecross\GameSaveManager">
+      <UniqueIdentifier>{d34019a3-a566-44e1-8caa-d95e89ca4d44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseCrossSample">
+      <UniqueIdentifier>{085d03e9-9787-448b-a8ff-17df3b7b81d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama">
+      <UniqueIdentifier>{b6f91ac3-862b-49dd-b0dd-a89566f57a49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseCrossSample\Headers">
+      <UniqueIdentifier>{4b0a624a-610d-4bc6-b311-2b02a781cdf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseCrossSample\Sources">
+      <UniqueIdentifier>{96692d2a-8790-41a9-bfac-6c5662d4ad61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
+      <Filter>BaseCrossSample\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameStage.h">
+      <Filter>BaseCrossSample\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Player.h">
+      <Filter>BaseCrossSample\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
+      <Filter>BaseCrossSample\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProjectShader.h">
+      <Filter>BaseCrossSample\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h">
+      <Filter>BaseCrossSample\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProjectBehavior.h">
+      <Filter>BaseCrossSample\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)InputHelper.h">
+      <Filter>Patch\Input\InputHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ex_weak_ptr.h">
+      <Filter>Patch\Utility\ex_weak_ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)DelegateSystem.h">
+      <Filter>Patch\Utility\DelegateSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ActionTimer.h">
+      <Filter>Patch\Utility\ActionTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimationHelper.h">
+      <Filter>Patch\basecross\AnimationHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BezierTransitioner.h">
+      <Filter>Patch\basecross\BezierTransitioner</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CameraHelper.h">
+      <Filter>Patch\basecross\CameraHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FontHelper.h">
+      <Filter>Patch\basecross\FontHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MessageWindow.h">
+      <Filter>Patch\basecross\MessageWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)UIHelper.h">
+      <Filter>Patch\basecross\UIHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SoundHelper.h">
+      <Filter>Patch\basecross\SoundHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SaveHelper.h">
+      <Filter>Patch\basecross\SaveHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Bezier.h">
+      <Filter>Patch\Mathf\Bezier</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Trigger.h">
+      <Filter>Patch\Utility\Trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BasecrossInputer.h">
+      <Filter>Patch\Input\BasecrossInputer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WindowSetting.h">
+      <Filter>Patch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)StructIOFileStream.h">
+      <Filter>Patch\Utility\StructIOFileStream</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MathHelper.h">
+      <Filter>Patch\Mathf\MyMath</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Random.h">
+      <Filter>Patch\Mathf\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameSaveManager.h">
+      <Filter>Patch\basecross\GameSaveManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
+      <Filter>BaseCrossSample\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameStage.cpp">
+      <Filter>BaseCrossSample\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp">
+      <Filter>BaseCrossSample\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp">
+      <Filter>BaseCrossSample\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp">
+      <Filter>BaseCrossSample\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WinMain.cpp">
+      <Filter>BaseCrossSample\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ProjectBehavior.cpp">
+      <Filter>BaseCrossSample\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)InputHelper.cpp">
+      <Filter>Patch\Input\InputHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ActionTimer.cpp">
+      <Filter>Patch\Utility\ActionTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BezierTransitioner.cpp">
+      <Filter>Patch\basecross\BezierTransitioner</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CameraHelper.cpp">
+      <Filter>Patch\basecross\CameraHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FontHelper.cpp">
+      <Filter>Patch\basecross\FontHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MessageWindow.cpp">
+      <Filter>Patch\basecross\MessageWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIHelper.cpp">
+      <Filter>Patch\basecross\UIHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SoundHelper.cpp">
+      <Filter>Patch\basecross\SoundHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Bezier.cpp">
+      <Filter>Patch\Mathf\Bezier</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BasecrossInputer.cpp">
+      <Filter>Patch\Input\BasecrossInputer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MathHelper.cpp">
+      <Filter>Patch\Mathf\MyMath</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Random.cpp">
+      <Filter>Patch\Mathf\Random</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameSaveManager.cpp">
+      <Filter>Patch\basecross\GameSaveManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

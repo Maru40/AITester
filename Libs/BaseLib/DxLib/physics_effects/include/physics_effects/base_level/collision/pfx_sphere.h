@@ -25,9 +25,7 @@ namespace PhysicsEffects {
 struct PfxSphere {
 	PfxFloat m_radius;
 
-	PfxSphere() :
-		m_radius(0)
-	{}
+	PfxSphere() {}
 	PfxSphere( PfxFloat radius );
 
 	void  set( PfxFloat radius );

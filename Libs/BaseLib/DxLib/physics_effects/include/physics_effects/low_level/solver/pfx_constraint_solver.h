@@ -57,16 +57,7 @@ struct PfxSetupContactConstraintsParam {
 	PfxFloat timeStep;
 	PfxFloat separateBias;
 	
-	PfxSetupContactConstraintsParam():
-		contactPairs(nullptr),
-		numContactPairs(0),
-		offsetContactManifolds(nullptr),
-		offsetRigidStates(nullptr),
-		offsetRigidBodies(nullptr),
-		offsetSolverBodies(nullptr),
-		numRigidBodies(0),
-		timeStep(0),
-		separateBias(0)
+	PfxSetupContactConstraintsParam()
 	{
 		timeStep = 0.016f;
 		separateBias = 0.2f;
@@ -87,15 +78,7 @@ struct PfxSetupJointConstraintsParam {
 	PfxUInt32 numRigidBodies;
 	PfxFloat timeStep;
 
-	PfxSetupJointConstraintsParam():
-		jointPairs(nullptr),
-		numJointPairs(0),
-		offsetJoints(nullptr),
-		offsetRigidStates(nullptr),
-		offsetRigidBodies(nullptr),
-		offsetSolverBodies(nullptr),
-		numRigidBodies(0),
-		timeStep(0.0f)
+	PfxSetupJointConstraintsParam()
 	{
 		timeStep = 0.016f;
 	}
@@ -124,20 +107,7 @@ struct PfxSolveConstraintsParam {
 	PfxBool skipPostProcess;
 	SCE_PFX_PADDING(1,3)
 
-	PfxSolveConstraintsParam():
-		workBuff(nullptr),
-		workBytes(0),
-		contactPairs(nullptr),
-		numContactPairs(0),
-		offsetContactManifolds(nullptr),
-		jointPairs(0),
-		numJointPairs(0),
-		offsetJoints(nullptr),
-		offsetRigidStates(nullptr),
-		offsetSolverBodies(nullptr),
-		numRigidBodies(0),
-		iteration(0),
-		skipPostProcess(false)
+	PfxSolveConstraintsParam()
 	{
 		iteration = 5;
 		skipPostProcess = false;

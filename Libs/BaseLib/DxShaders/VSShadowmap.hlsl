@@ -16,7 +16,6 @@ VS_OUTPUT main( VS_INPUT Input )
     Output.vPosition = mul( Input.vPosition, World );
     Output.vPosition = mul( Output.vPosition, View );
     Output.vPosition = mul( Output.vPosition, Projection );
-    Output.tex = Input.TexCoord;
 
     return Output;
 }

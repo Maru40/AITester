@@ -47,9 +47,7 @@ private:
 public:
     // Default constructor; does no initialization
     //
-    inline boolInVec( ):
-        mData(0)
-    { };
+    inline boolInVec( ) { };
 
     // Construct from a value converted from float
     //

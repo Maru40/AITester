@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{8C1D084C-C178-4A5D-84D5-9D8B94E39AB0}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ActionTimer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimationHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BasecrossInputer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Bezier.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BezierTransitioner.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CameraHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Character.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DelegateSystem.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ex_weak_ptr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FontHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameSaveManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)InputHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MathHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MessageWindow.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Player.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Project.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProjectBehavior.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProjectShader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Random.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SaveHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SoundHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)StructIOFileStream.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Trigger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)UIHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WindowSetting.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ActionTimer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BasecrossInputer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Bezier.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BezierTransitioner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CameraHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FontHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameSaveManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)InputHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MathHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MessageWindow.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ProjectBehavior.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Random.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SoundHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WinMain.cpp" />
+  </ItemGroup>
+</Project>

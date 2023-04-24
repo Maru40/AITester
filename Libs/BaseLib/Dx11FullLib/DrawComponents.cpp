@@ -1,74 +1,77 @@
-ï»¿/*!
+/*!
 @file DrawComponents.cpp
-@brief æç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå®Ÿä½“
+@brief •`‰æƒRƒ“ƒ|[ƒlƒ“ƒgÀ‘Ì
 @copyright Copyright (c) 2017 WiZ Tamura Hiroki,Yamanoi Yasushi.
 */
 #include "stdafx.h"
 #include "DrawComponents.h"
 
 namespace basecross {
+
 	//Shadowmap
 	IMPLEMENT_DX11_CONSTANT_BUFFER(CBShadow)
-		IMPLEMENT_DX11_VERTEX_SHADER(VSShadowmap, App::GetApp()->GetShadersPath() + L"VSShadowmap.cso")
-		IMPLEMENT_DX11_VERTEX_SHADER(VSShadowmapBone, App::GetApp()->GetShadersPath() + L"VSShadowmapBone.cso")
-		IMPLEMENT_DX11_VERTEX_SHADER(VSShadowmapBoneWithTan, App::GetApp()->GetShadersPath() + L"VSShadowmapBoneWithTan.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSShadowmap, App::GetApp()->GetShadersPath() + L"PSShadowmap.cso")
+	IMPLEMENT_DX11_VERTEX_SHADER(VSShadowmap, App::GetApp()->GetShadersPath() + L"VSShadowmap.cso")
+	IMPLEMENT_DX11_VERTEX_SHADER(VSShadowmapBone, App::GetApp()->GetShadersPath() + L"VSShadowmapBone.cso")
+	IMPLEMENT_DX11_VERTEX_SHADER(VSShadowmapBoneWithTan, App::GetApp()->GetShadersPath() + L"VSShadowmapBoneWithTan.cso")
 
-		//ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆç”¨
-		IMPLEMENT_DX11_CONSTANT_BUFFER(CBSprite)
+	//ƒXƒvƒ‰ƒCƒg—p
+	IMPLEMENT_DX11_CONSTANT_BUFFER(CBSprite)
 
-		//PCSprite
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPCSprite, App::GetApp()->GetShadersPath() + L"VSPCSprite.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPCSprite, App::GetApp()->GetShadersPath() + L"PSPCSprite.cso")
+	//PCSprite
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPCSprite, App::GetApp()->GetShadersPath() + L"VSPCSprite.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPCSprite, App::GetApp()->GetShadersPath() + L"PSPCSprite.cso")
 
-		//PTSprite
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPTSprite, App::GetApp()->GetShadersPath() + L"VSPTSprite.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPTSprite, App::GetApp()->GetShadersPath() + L"PSPTSprite.cso")
+	//PTSprite
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPTSprite, App::GetApp()->GetShadersPath() + L"VSPTSprite.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPTSprite, App::GetApp()->GetShadersPath() + L"PSPTSprite.cso")
 
-		//PCTSprite
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPCTSprite, App::GetApp()->GetShadersPath() + L"VSPCTSprite.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPCTSprite, App::GetApp()->GetShadersPath() + L"PSPCTSprite.cso")
+	//PCTSprite
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPCTSprite, App::GetApp()->GetShadersPath() + L"VSPCTSprite.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPCTSprite, App::GetApp()->GetShadersPath() + L"PSPCTSprite.cso")
 
-		//CBSimple
-		IMPLEMENT_DX11_CONSTANT_BUFFER(CBSimple)
-		//PCStatic
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPCStatic, App::GetApp()->GetShadersPath() + L"VSPCStatic.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPCStatic, App::GetApp()->GetShadersPath() + L"PSPCStatic.cso")
-		//PNStatic
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPNStatic, App::GetApp()->GetShadersPath() + L"VSPNStatic.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPNStatic, App::GetApp()->GetShadersPath() + L"PSPNStatic.cso")
-		//PTStatic
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPTStatic, App::GetApp()->GetShadersPath() + L"VSPTStatic.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPTStatic, App::GetApp()->GetShadersPath() + L"PSPTStatic.cso")
-		//PCTStatic
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPCTStatic, App::GetApp()->GetShadersPath() + L"VSPCTStatic.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPCTStatic, App::GetApp()->GetShadersPath() + L"PSPCTStatic.cso")
-		//PNTStatic
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStatic, App::GetApp()->GetShadersPath() + L"VSPNTStatic.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPNTStatic, App::GetApp()->GetShadersPath() + L"PSPNTStatic.cso")
-		//PNTStaticShadow
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStaticShadow, App::GetApp()->GetShadersPath() + L"VSPNTStaticShadow.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPNTStaticShadow, App::GetApp()->GetShadersPath() + L"PSPNTStaticShadow.cso")
-		IMPLEMENT_DX11_PIXEL_SHADER(PSPNTStaticShadow2, App::GetApp()->GetShadersPath() + L"PSPNTStaticShadow2.cso")
-		//PNTBone
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPNTBone, App::GetApp()->GetShadersPath() + L"VSPNTBone.cso")
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPNTBoneShadow, App::GetApp()->GetShadersPath() + L"VSPNTBoneShadow.cso")
 
-		//PCStaticInstance
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPCStaticInstance, App::GetApp()->GetShadersPath() + L"VSPCStaticInstance.cso")
-		//PTStaticInstance
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPTStaticInstance, App::GetApp()->GetShadersPath() + L"VSPTStaticInstance.cso")
-		//PCTStaticInstance
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPCTStaticInstance, App::GetApp()->GetShadersPath() + L"VSPCTStaticInstance.cso")
-		//PNTStaticInstance
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStaticInstance, App::GetApp()->GetShadersPath() + L"VSPNTStaticInstance.cso")
-		IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStaticInstanceShadow, App::GetApp()->GetShadersPath() + L"VSPNTStaticInstanceShadow.cso")
+	//CBSimple
+	IMPLEMENT_DX11_CONSTANT_BUFFER(CBSimple)
+	//PCStatic
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPCStatic, App::GetApp()->GetShadersPath() + L"VSPCStatic.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPCStatic, App::GetApp()->GetShadersPath() + L"PSPCStatic.cso")
+	//PNStatic
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPNStatic, App::GetApp()->GetShadersPath() + L"VSPNStatic.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPNStatic, App::GetApp()->GetShadersPath() + L"PSPNStatic.cso")
+	//PTStatic
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPTStatic, App::GetApp()->GetShadersPath() + L"VSPTStatic.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPTStatic, App::GetApp()->GetShadersPath() + L"PSPTStatic.cso")
+	//PCTStatic
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPCTStatic, App::GetApp()->GetShadersPath() + L"VSPCTStatic.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPCTStatic, App::GetApp()->GetShadersPath() + L"PSPCTStatic.cso")
+	//PNTStatic
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStatic, App::GetApp()->GetShadersPath() + L"VSPNTStatic.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPNTStatic, App::GetApp()->GetShadersPath() + L"PSPNTStatic.cso")
+	//PNTStaticShadow
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStaticShadow, App::GetApp()->GetShadersPath() + L"VSPNTStaticShadow.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPNTStaticShadow, App::GetApp()->GetShadersPath() + L"PSPNTStaticShadow.cso")
+	IMPLEMENT_DX11_PIXEL_SHADER(PSPNTStaticShadow2, App::GetApp()->GetShadersPath() + L"PSPNTStaticShadow2.cso")
+	//PNTBone
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPNTBone, App::GetApp()->GetShadersPath() + L"VSPNTBone.cso")
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPNTBoneShadow, App::GetApp()->GetShadersPath() + L"VSPNTBoneShadow.cso")
 
-		//--------------------------------------------------------------------------------------
-		//	struct DrawComponent::Impl;
-		//	ç”¨é€”: Implã‚¤ãƒ‡ã‚£ã‚ªãƒ 
-		//--------------------------------------------------------------------------------------
-		struct DrawComponent::Impl {
+	//PCStaticInstance
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPCStaticInstance, App::GetApp()->GetShadersPath() + L"VSPCStaticInstance.cso")
+	//PTStaticInstance
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPTStaticInstance, App::GetApp()->GetShadersPath() + L"VSPTStaticInstance.cso")
+	//PCTStaticInstance
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPCTStaticInstance, App::GetApp()->GetShadersPath() + L"VSPCTStaticInstance.cso")
+	//PNTStaticInstance
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStaticInstance, App::GetApp()->GetShadersPath() + L"VSPNTStaticInstance.cso")
+	IMPLEMENT_DX11_VERTEX_SHADER(VSPNTStaticInstanceShadow, App::GetApp()->GetShadersPath() + L"VSPNTStaticInstanceShadow.cso")
+
+
+
+	//--------------------------------------------------------------------------------------
+	//	struct DrawComponent::Impl;
+	//	—p“r: ImplƒCƒfƒBƒIƒ€
+	//--------------------------------------------------------------------------------------
+	struct DrawComponent::Impl {
 		BlendState m_BlendState;
 		DepthStencilState m_DepthStencilState;
 		RasterizerState m_RasterizerState;
@@ -81,13 +84,14 @@ namespace basecross {
 	};
 
 	//--------------------------------------------------------------------------------------
-	///	æç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®è¦ªã‚¯ãƒ©ã‚¹å®Ÿä½“
+	///	•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌeƒNƒ‰ƒXÀ‘Ì
 	//--------------------------------------------------------------------------------------
 	DrawComponent::DrawComponent(const shared_ptr<GameObject>& GameObjectPtr) :
 		Component(GameObjectPtr),
 		pImpl(new Impl())
 	{}
 	DrawComponent::~DrawComponent() {}
+
 
 	BlendState DrawComponent::GetBlendState() const {
 		return pImpl->m_BlendState;
@@ -102,6 +106,7 @@ namespace basecross {
 	SamplerState DrawComponent::GetSamplerState() const {
 		return pImpl->m_SamplerState;
 	}
+
 
 	void DrawComponent::SetBlendState(const BlendState state) {
 		pImpl->m_BlendState = state;
@@ -129,8 +134,10 @@ namespace basecross {
 		}
 	}
 
+
 	void DrawComponent::SetDepthStencilState(const DepthStencilState state) {
 		pImpl->m_DepthStencilState = state;
+
 	}
 
 	void DrawComponent::SetDeviceDepthStencilState() {
@@ -148,6 +155,7 @@ namespace basecross {
 			pID3D11DeviceContext->OMSetDepthStencilState(RenderStatePtr->GetDepthRead(), 0);
 			break;
 		}
+
 	}
 
 	void DrawComponent::SetRasterizerState(const RasterizerState state) {
@@ -170,6 +178,7 @@ namespace basecross {
 		}
 	}
 
+
 	void DrawComponent::SetSamplerState(const SamplerState state) {
 		pImpl->m_SamplerState = state;
 	}
@@ -181,7 +190,7 @@ namespace basecross {
 		ID3D11SamplerState* pSampler = nullptr;
 		switch (GetSamplerState()) {
 		case SamplerState::SamplerNone:
-			//ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚‚ã‚¯ãƒªã‚¢
+			//ƒTƒ“ƒvƒ‰[‚àƒNƒŠƒA
 			pID3D11DeviceContext->PSSetSamplers(0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT, pNullSR);
 			return;
 			break;
@@ -207,9 +216,11 @@ namespace basecross {
 			pSampler = RenderStatePtr->GetComparisonLinear();
 			break;
 		}
-		//ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚’è¨­å®š
+		//ƒTƒ“ƒvƒ‰[‚ğİ’è
 		pID3D11DeviceContext->PSSetSamplers(0, 1, &pSampler);
 	}
+
+
 
 	const bsm::Mat4x4& DrawComponent::GetMeshToTransformMatrix() const {
 		return pImpl->m_MeshToTransformMatrix;
@@ -218,46 +229,46 @@ namespace basecross {
 		pImpl->m_MeshToTransformMatrix = Mat;
 	}
 
+
+
 	//--------------------------------------------------------------------------------------
 	//	struct Shadowmap::Impl;
-	//	ç”¨é€”: Implã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+	//	—p“r: ImplƒCƒfƒBƒIƒ€
 	//--------------------------------------------------------------------------------------
 	struct Shadowmap::Impl {
-		static float m_LightHeight;	//ãƒ©ã‚¤ãƒˆã®é«˜ã•ï¼ˆå‘ãã‚’ã“ã®å€¤ã§æ›ã‘ã‚‹ï¼‰
-		static float m_LightNear;	//ãƒ©ã‚¤ãƒˆã®Near
-		static float m_LightFar;		//ãƒ©ã‚¤ãƒˆã®Far
+		static float m_LightHeight;	//ƒ‰ƒCƒg‚Ì‚‚³iŒü‚«‚ğ‚±‚Ì’l‚ÅŠ|‚¯‚éj
+		static float m_LightNear;	//ƒ‰ƒCƒg‚ÌNear
+		static float m_LightFar;		//ƒ‰ƒCƒg‚ÌFar
 		static float m_ViewWidth;
 		static float m_ViewHeight;
 
 		static float m_PosAdjustment;
 
-		float m_DissolveAnimationRate = 1;
-		weak_ptr<TextureResource> m_NoiseTexRes;
-		// ãƒ‡ã‚£ã‚¾ãƒ–ãƒ«ãŒæœ‰åŠ¹
-		bool m_EnabledDissolve;
-
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX
 		weak_ptr<MeshResource> m_MeshResource;
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX
 		weak_ptr<MultiMeshResource> m_MultiMeshResource;
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ç”¨ã®æç”»ã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…—p‚Ì•`‰æ‚·‚éƒCƒ“ƒfƒbƒNƒX
 		vector<bool> m_MultiMeshDrawVec;
+
 
 		Impl()
 		{}
 		~Impl() {}
 	};
 
-	float Shadowmap::Impl::m_LightHeight(400.0f);
+	float Shadowmap::Impl::m_LightHeight(200.0f);
 	float Shadowmap::Impl::m_LightNear(1.0f);
-	float Shadowmap::Impl::m_LightFar(500.0f);
-	float Shadowmap::Impl::m_ViewWidth(128.0f);
-	float Shadowmap::Impl::m_ViewHeight(128.0f);
+	float Shadowmap::Impl::m_LightFar(220.0f);
+	float Shadowmap::Impl::m_ViewWidth(32.0f);
+	float Shadowmap::Impl::m_ViewHeight(32.0f);
 	float Shadowmap::Impl::m_PosAdjustment(0.1f);
+
+
 
 	//--------------------------------------------------------------------------------------
 	//	class Shadowmap : public Component;
-	//	ç”¨é€”: ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆï¼ˆå‰å‡¦ç†ç”¨ï¼‰
+	//	—p“r: ƒVƒƒƒhƒEƒ}ƒbƒvƒRƒ“ƒ|[ƒlƒ“ƒgi‘Oˆ——pj
 	//--------------------------------------------------------------------------------------
 	Shadowmap::Shadowmap(const shared_ptr<GameObject>& GameObjectPtr) :
 		DrawComponent(GameObjectPtr),
@@ -280,6 +291,8 @@ namespace basecross {
 	void Shadowmap::SetViewSize(float f) { Impl::m_ViewWidth = Impl::m_ViewHeight = f; }
 	void Shadowmap::SetPosAdjustment(float f) { Impl::m_PosAdjustment = f; }
 
+
+
 	shared_ptr<MeshResource> Shadowmap::GetMeshResource(bool ExceptionActive) const {
 		auto shptr = pImpl->m_MeshResource.lock();
 		if (shptr) {
@@ -288,7 +301,7 @@ namespace basecross {
 		else {
 			if (ExceptionActive) {
 				throw BaseException(
-					L"ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“",
+					L"ƒƒbƒVƒ…ƒŠƒ\[ƒX‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ",
 					L"if (pImpl->m_MeshResource.expired())",
 					L"ShadowmapComp::GetMeshResource()"
 				);
@@ -297,11 +310,12 @@ namespace basecross {
 		return nullptr;
 	}
 
+
 	void Shadowmap::SetMeshResource(const wstring& ResKey) {
 		try {
 			if (ResKey == L"") {
 				throw BaseException(
-					L"ãƒ¡ãƒƒã‚·ãƒ¥ã‚­ãƒ¼ãŒç©ºç™½ã§ã™",
+					L"ƒƒbƒVƒ…ƒL[‚ª‹ó”’‚Å‚·",
 					L"if (ResKey == L\"\"",
 					L"ShadowmapComp::SetMeshResource()"
 				);
@@ -324,7 +338,7 @@ namespace basecross {
 		else {
 			if (ExceptionActive) {
 				throw BaseException(
-					L"ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“",
+					L"ƒƒbƒVƒ…ƒŠƒ\[ƒX‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ",
 					L"if (pImpl->m_MultiMeshResource.expired())",
 					L"ShadowmapComp::GetMultiMeshResource()"
 				);
@@ -337,7 +351,7 @@ namespace basecross {
 		pImpl->m_MultiMeshResource = MeshResourcePtr;
 		pImpl->m_MultiMeshDrawVec.clear();
 		for (size_t i = 0; i < MeshResourcePtr->GetMeshVecCount(); i++) {
-			//æœ€åˆã¯ã™ã¹ã¦ã®ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ã‚’æç”»
+			//Å‰‚Í‚·‚×‚Ä‚Ìƒ}ƒ‹ƒ`ƒƒbƒVƒ…‚ğ•`‰æ
 			pImpl->m_MultiMeshDrawVec.push_back(true);
 		}
 	}
@@ -349,7 +363,7 @@ namespace basecross {
 	bool Shadowmap::GetMultiMeshIsDraw(size_t index) const {
 		if (index >= pImpl->m_MultiMeshDrawVec.size()) {
 			throw BaseException(
-				L"ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ã®ãƒ¡ãƒƒã‚·ãƒ¥æ•°ã‚’è¶…ãˆã¦ã¾ã™",
+				L"ƒCƒ“ƒfƒbƒNƒX‚ªƒ}ƒ‹ƒ`ƒƒbƒVƒ…‚ÌƒƒbƒVƒ…”‚ğ’´‚¦‚Ä‚Ü‚·",
 				L"if (index >= pImpl->m_MultiMeshDrawVec.size())",
 				L"Shadowmap::GetMultiMeshIsDraw()"
 			);
@@ -359,7 +373,7 @@ namespace basecross {
 	void Shadowmap::SetMultiMeshIsDraw(size_t index, bool b) {
 		if (index >= pImpl->m_MultiMeshDrawVec.size()) {
 			throw BaseException(
-				L"ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ã®ãƒ¡ãƒƒã‚·ãƒ¥æ•°ã‚’è¶…ãˆã¦ã¾ã™",
+				L"ƒCƒ“ƒfƒbƒNƒX‚ªƒ}ƒ‹ƒ`ƒƒbƒVƒ…‚ÌƒƒbƒVƒ…”‚ğ’´‚¦‚Ä‚Ü‚·",
 				L"if (index >= pImpl->m_MultiMeshDrawVec.size())",
 				L"Shadowmap::SetMultiMeshIsDraw()"
 			);
@@ -367,28 +381,6 @@ namespace basecross {
 		pImpl->m_MultiMeshDrawVec[index] = b;
 	}
 
-	void Shadowmap::SetDissolveAnimationRate(float rate) {
-		pImpl->m_DissolveAnimationRate = rate;
-	}
-	float Shadowmap::GetDissolveAnimationRate() {
-		return pImpl->m_DissolveAnimationRate;
-	}
-
-	void Shadowmap::SetEnabledDissolve(bool flg) {
-		pImpl->m_EnabledDissolve = flg;
-	}
-
-	bool Shadowmap::GetEnabledDissolve() {
-		return pImpl->m_EnabledDissolve;
-	}
-
-	shared_ptr<TextureResource> Shadowmap::GetNoiseTexRes() const {
-		return pImpl->m_NoiseTexRes.lock();
-	}
-
-	void Shadowmap::OnCreate() {
-		pImpl->m_NoiseTexRes = App::GetApp()->GetResource<TextureResource>(L"Noise_TX");
-	}
 
 	void Shadowmap::DrawSigle(const MeshPrimData& data) {
 		auto PtrGameObject = GetGameObject();
@@ -398,30 +390,30 @@ namespace basecross {
 		}
 		auto Dev = App::GetApp()->GetDeviceResources();
 		auto pID3D11DeviceContext = Dev->GetD3DDeviceContext();
-		//ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿
+		//ƒXƒe[ƒ^ƒX‚Ìƒ|ƒCƒ“ƒ^
 		auto RenderStatePtr = Dev->GetRenderState();
 
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		bsm::Mat4x4 World, LightView, LightProj;
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		auto PtrTrans = GetGameObject()->GetComponent<Transform>();
 
-		//ãƒ©ã‚¤ãƒˆã®å–å¾—
+		//ƒ‰ƒCƒg‚Ìæ“¾
 		auto StageLight = PtrGameObject->OnGetDrawLight();
-		//ä½ç½®ã®å–å¾—
+		//ˆÊ’u‚Ìæ“¾
 		auto Pos = PtrTrans->GetWorldMatrix().transInMatrix();
 		bsm::Vec3 PosSpan = StageLight.m_Directional;
 		PosSpan *= pImpl->m_PosAdjustment;
 		Pos += PosSpan;
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã®æ±ºå®š
+		//ƒ[ƒ‹ƒhs—ñ‚ÌŒˆ’è
 		World.affineTransformation(
-			PtrTrans->GetScale(),			//ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
-			PtrTrans->GetPivot(),		//å›è»¢ã®ä¸­å¿ƒï¼ˆé‡å¿ƒï¼‰
-			PtrTrans->GetQuaternion(),				//å›è»¢è§’åº¦
-			Pos				//ä½ç½®
+			PtrTrans->GetScale(),			//ƒXƒP[ƒŠƒ“ƒO
+			PtrTrans->GetPivot(),		//‰ñ“]‚Ì’†SidSj
+			PtrTrans->GetQuaternion(),				//‰ñ“]Šp“x
+			Pos				//ˆÊ’u
 		);
 		bsm::Mat4x4 RealWorldMatrix;
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã®æ±ºå®š
+		//ƒ[ƒ‹ƒhs—ñ‚ÌŒˆ’è
 		if (data.m_UseMeshToTransformMatrix) {
 			RealWorldMatrix = data.m_MeshToTransformMatrix * GetMeshToTransformMatrix();
 			RealWorldMatrix *= World;
@@ -429,12 +421,12 @@ namespace basecross {
 		else {
 			RealWorldMatrix = GetMeshToTransformMatrix() * World;
 		}
-		//ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã®æ±ºå®š
+		//ƒrƒ…[s—ñ‚ÌŒˆ’è
 		auto StageView = PtrStage->GetView();
 		bsm::Vec3 LightDir = -1.0 * StageLight.m_Directional;
 		bsm::Vec3 LightAt = StageView->GetTargetCamera()->GetAt();
 		bsm::Vec3 LightEye = LightAt + (LightDir * GetLightHeight());
-		//ãƒ©ã‚¤ãƒˆã®ãƒ“ãƒ¥ãƒ¼ã¨å°„å½±ã‚’è¨ˆç®—
+		//ƒ‰ƒCƒg‚Ìƒrƒ…[‚ÆË‰e‚ğŒvZ
 		LightView = XMMatrixLookAtLH(LightEye, LightAt, bsm::Vec3(0, 1.0f, 0));
 		LightProj = XMMatrixOrthographicLH(GetViewWidth(), GetViewHeight(), GetLightNear(), GetLightFar());
 
@@ -442,8 +434,6 @@ namespace basecross {
 		Cb.mWorld = bsm::transpose(RealWorldMatrix);
 		Cb.mView = bsm::transpose(LightView);
 		Cb.mProj = bsm::transpose(LightProj);
-		Cb.mDissolveAnimationRate = Vec4(0);
-		Cb.mDissolveAnimationRate.x = GetDissolveAnimationRate();
 
 		bool IsSkin = false;
 		bool IsSkinStride = false;
@@ -455,7 +445,7 @@ namespace basecross {
 			auto DrawCompPtr = GetGameObject()->GetDynamicComponent<DrawComponent>(false);
 			if (auto* pLocalBoneVec = DrawCompPtr->GetVecLocalBonesPtr()) {
 				if (pLocalBoneVec) {
-					//ãƒœãƒ¼ãƒ³ã®è¨­å®š
+					//ƒ{[ƒ“‚Ìİ’è
 					size_t BoneSz = pLocalBoneVec->size();
 					UINT cb_count = 0;
 					for (size_t b = 0; b < BoneSz; b++) {
@@ -475,7 +465,7 @@ namespace basecross {
 			auto DrawCompPtr = GetGameObject()->GetDynamicComponent<DrawComponent>(false);
 			if (auto* pLocalBoneVec = DrawCompPtr->GetVecMultiLocalBonesPtr(data.m_MultiMeshIndex)) {
 				if (pLocalBoneVec) {
-					//ãƒœãƒ¼ãƒ³ã®è¨­å®š
+					//ƒ{[ƒ“‚Ìİ’è
 					size_t BoneSz = pLocalBoneVec->size();
 					UINT cb_count = 0;
 					for (size_t b = 0; b < BoneSz; b++) {
@@ -491,75 +481,62 @@ namespace basecross {
 			}
 			IsSkinStride = true;
 		}
-		//ã“ã‚Œã‚ˆã‚Šæç”»å‡¦ç†
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®æ›´æ–°
+		//‚±‚ê‚æ‚è•`‰æˆ—
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ÌXV
 		pID3D11DeviceContext->UpdateSubresource(CBShadow::GetPtr()->GetBuffer(), 0, nullptr, &Cb, 0, 0);
 
 		if (IsSkin) {
-			//ã‚¹ãƒˆãƒ©ã‚¤ãƒ‰ã¨ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			//ƒXƒgƒ‰ƒCƒh‚ÆƒIƒtƒZƒbƒg
 			UINT stride = data.m_NumStride;
 			UINT offset = 0;
 			if (stride == sizeof(VertexPositionNormalTangentTextureSkinning)) {
-				//é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ã‚»ãƒƒãƒˆ
+				//’¸“_ƒVƒF[ƒ_[‚ÌƒZƒbƒg
 				pID3D11DeviceContext->VSSetShader(VSShadowmapBoneWithTan::GetPtr()->GetShader(), nullptr, 0);
-				//ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚»ãƒƒãƒˆ
+				//ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚ÌƒZƒbƒg
 				pID3D11DeviceContext->IASetInputLayout(VSShadowmapBoneWithTan::GetPtr()->GetInputLayout());
 			}
 			else {
-				//é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ã‚»ãƒƒãƒˆ
+				//’¸“_ƒVƒF[ƒ_[‚ÌƒZƒbƒg
 				pID3D11DeviceContext->VSSetShader(VSShadowmapBone::GetPtr()->GetShader(), nullptr, 0);
-				//ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚»ãƒƒãƒˆ
+				//ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚ÌƒZƒbƒg
 				pID3D11DeviceContext->IASetInputLayout(VSShadowmapBone::GetPtr()->GetInputLayout());
 			}
-			//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+			//’¸“_ƒoƒbƒtƒ@‚ğƒZƒbƒg
 			pID3D11DeviceContext->IASetVertexBuffers(0, 1, data.m_VertexBuffer.GetAddressOf(), &stride, &offset);
 		}
 		else {
-			//ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚»ãƒƒãƒˆ
+			//ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚ÌƒZƒbƒg
 			pID3D11DeviceContext->IASetInputLayout(VSShadowmap::GetPtr()->GetInputLayout());
-			//ã‚¹ãƒˆãƒ©ã‚¤ãƒ‰ã¨ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			//ƒXƒgƒ‰ƒCƒh‚ÆƒIƒtƒZƒbƒg
 			UINT stride = data.m_NumStride;
 			UINT offset = 0;
-			//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+			//’¸“_ƒoƒbƒtƒ@‚ğƒZƒbƒg
 			pID3D11DeviceContext->IASetVertexBuffers(0, 1, data.m_VertexBuffer.GetAddressOf(), &stride, &offset);
-			//é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ã‚»ãƒƒãƒˆ
+			//’¸“_ƒVƒF[ƒ_[‚ÌƒZƒbƒg
 			pID3D11DeviceContext->VSSetShader(VSShadowmap::GetPtr()->GetShader(), nullptr, 0);
 		}
-		//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ã‚»ãƒƒãƒˆ
+		//ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌƒZƒbƒg
 		pID3D11DeviceContext->IASetIndexBuffer(data.m_IndexBuffer.Get(), DXGI_FORMAT_R16_UINT, 0);
-		//æç”»æ–¹æ³•ï¼ˆ3è§’å½¢ï¼‰
+		//•`‰æ•û–@i3ŠpŒ`j
 		pID3D11DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-		if (GetEnabledDissolve()) {
-			// ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€
-			pID3D11DeviceContext->PSSetShader(PSShadowmap::GetPtr()->GetShader(), nullptr, 0);
-		}
-		else {
-			pID3D11DeviceContext->PSSetShader(nullptr, nullptr, 0);
-		}
-
-		//ã‚¸ã‚ªãƒ¡ãƒˆãƒªã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®šï¼ˆä½¿ç”¨ã—ãªã„ï¼‰
+		//ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÍƒZƒbƒg‚µ‚È‚¢I
+		pID3D11DeviceContext->PSSetShader(nullptr, nullptr, 0);
+		//ƒWƒIƒƒgƒŠƒVƒF[ƒ_‚Ìİ’èig—p‚µ‚È‚¢j
 		pID3D11DeviceContext->GSSetShader(nullptr, nullptr, 0);
 
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®è¨­å®š
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìİ’è
 		ID3D11Buffer* pConstantBuffer = CBShadow::GetPtr()->GetBuffer();
 		ID3D11Buffer* pNullConstantBuffer = nullptr;
 		pID3D11DeviceContext->VSSetConstantBuffers(0, 1, &pConstantBuffer);
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã‚’ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã«ã‚»ãƒƒãƒˆ
-		pID3D11DeviceContext->PSSetConstantBuffers(0, 1, &pConstantBuffer);
-
-		if (GetEnabledDissolve()) {
-			// ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã®è¨­å®š
-			RenderStatePtr->SetSamplerState(pID3D11DeviceContext, GetSamplerState(), 0);
-			// ãƒã‚¤ã‚ºãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ã‚»ãƒƒãƒˆ
-			pID3D11DeviceContext->PSSetShaderResources(0, 1, GetNoiseTexRes()->GetShaderResourceView().GetAddressOf());
-		}
-
-		//æç”»
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ğƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÉƒZƒbƒg
+		pID3D11DeviceContext->PSSetConstantBuffers(0, 1, &pNullConstantBuffer);
+		//•`‰æ
 		pID3D11DeviceContext->DrawIndexed(data.m_NumIndicis, 0, 0);
-		//å¾Œå§‹æœ«ã¯å‘¼ã³å‡ºã—å´ã§è¡Œã†
+		//Œãn––‚ÍŒÄ‚Ño‚µ‘¤‚Ås‚¤
 //		Dev->InitializeStates();
 	}
+
 
 	void Shadowmap::OnDraw() {
 		auto PtrGameObject = GetGameObject();
@@ -567,12 +544,12 @@ namespace basecross {
 		if (!PtrStage) {
 			return;
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource(false);
 		if (PtrMeshResource) {
 			DrawSigle(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource(false);
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -583,79 +560,88 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
 	}
 
+
+
 	//--------------------------------------------------------------------------------------
-	//ParticleDrawæº–å‚™ã®ãŸã‚ã®æ§‹é€ ä½“
+	//ParticleDraw€”õ‚Ì‚½‚ß‚Ì\‘¢‘Ì
 	//--------------------------------------------------------------------------------------
 	struct DrawParticleSprite {
-		//ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã®ã‚«ãƒ¡ãƒ©ã¾ã§ã®è·é›¢
+		//ƒp[ƒeƒBƒNƒ‹‚ÌƒJƒƒ‰‚Ü‚Å‚Ì‹——£
 		float m_ToCaneraLength;
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
+		//ƒ[ƒ‹ƒhs—ñ
 		bsm::Mat4x4 m_WorldMatrix;
-		//ãƒ†ã‚¯ã‚¹ãƒãƒ£
+		//ƒeƒNƒXƒ`ƒƒ
 		shared_ptr<TextureResource> m_TextureRes;
-		//Diffuseã‚«ãƒ©ãƒ¼
+		//DiffuseƒJƒ‰[
 		bsm::Col4 m_Diffuse;
 		DrawParticleSprite() :
 			m_ToCaneraLength(0),
-			m_Diffuse(1, 1, 1, 1)
+			m_Diffuse(1,1,1,1)
 
 		{}
 	};
 
+
+
 	//--------------------------------------------------------------------------------------
 	//	struct PCTParticleDraw::Impl;
-	//	ç”¨é€”: Implã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+	//	—p“r: ImplƒCƒfƒBƒIƒ€
 	//--------------------------------------------------------------------------------------
 	struct PCTParticleDraw::Impl {
-		//æç”»ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
-		shared_ptr<MeshResource> m_MeshResource;	//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹
+		//•`‰æƒRƒ“ƒeƒLƒXƒg
+		shared_ptr<MeshResource> m_MeshResource;	//ƒƒbƒVƒ…ƒŠƒ\[ƒX
 		vector<DrawParticleSprite> m_DrawParticleSpriteVec;
-		const size_t m_MaxInstance;				///<ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹æœ€å¤§å€¤
-		ComPtr<ID3D11Buffer> m_MatrixBuffer;	///<è¡Œåˆ—ç”¨ã®é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡
-		//åŠ ç®—å‡¦ç†ã™ã‚‹ã‹ã©ã†ã‹
+		const size_t m_MaxInstance;				///<ƒCƒ“ƒXƒ^ƒ“ƒXÅ‘å’l
+		ComPtr<ID3D11Buffer> m_MatrixBuffer;	///<s—ñ—p‚Ì’¸“_ƒoƒbƒtƒ@
+		//‰ÁZˆ—‚·‚é‚©‚Ç‚¤‚©
 		bool m_Addtype;
-		Impl(size_t MaxInstance, bool AddType) :
+		Impl(size_t MaxInstance,bool AddType) :
 			m_MaxInstance(MaxInstance),
 			m_Addtype(AddType)
 		{}
 		~Impl() {}
-		//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
+		//’¸“_ƒoƒbƒtƒ@‚Ìì¬
 		void CreateParticleBuffers();
 	};
+
 
 	void PCTParticleDraw::Impl::CreateParticleBuffers() {
 		try {
 			float HelfSize = 0.5f;
 			bsm::Vec4 col(1.0f, 1.0f, 1.0f, 1.0f);
-			//é ‚ç‚¹é…åˆ—
+			//’¸“_”z—ñ
 			vector<VertexPositionColorTexture> vertices = {
 				{ VertexPositionColorTexture(bsm::Vec3(-HelfSize, HelfSize, 0),  col,bsm::Vec2(0.0f, 0.0f)) },
 				{ VertexPositionColorTexture(bsm::Vec3(HelfSize, HelfSize, 0), col, bsm::Vec2(1.0f, 0.0f)) },
 				{ VertexPositionColorTexture(bsm::Vec3(-HelfSize, -HelfSize, 0),  col,bsm::Vec2(0.0f, 1.0f)) },
 				{ VertexPositionColorTexture(bsm::Vec3(HelfSize, -HelfSize, 0),  col, bsm::Vec2(1.0f, 1.0f)) },
 			};
-			//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹é…åˆ—
+			//ƒCƒ“ƒfƒbƒNƒX”z—ñ
 			vector<uint16_t> indices = { 0, 1, 2, 1, 3, 2 };
-			//ãƒ¡ãƒƒã‚·ãƒ¥ã®ä½œæˆ
+			//ƒƒbƒVƒ…‚Ìì¬
 			m_MeshResource = MeshResource::CreateMeshResource(vertices, indices, false);
 
-			//ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
-			//Maxå€¤ã§ä½œæˆã™ã‚‹
+			//ƒCƒ“ƒXƒ^ƒ“ƒXs—ñƒoƒbƒtƒ@‚Ìì¬
+			//Max’l‚Åì¬‚·‚é
 			vector<bsm::Mat4x4> matrices(m_MaxInstance, bsm::Mat4x4());
 			MeshResource::CreateDynamicVertexBuffer(m_MatrixBuffer, matrices);
+
 		}
 		catch (...) {
 			throw;
 		}
 	}
 
+
+
+
 	//--------------------------------------------------------------------------------------
-	///	PCTParticleæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ(ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«æç”»)
+	///	PCTParticle•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg(ƒp[ƒeƒBƒNƒ‹•`‰æ)
 	//--------------------------------------------------------------------------------------
 	PCTParticleDraw::PCTParticleDraw(const shared_ptr<GameObject>& GameObjectPtr, size_t MaxInstance, bool AddType) :
 		DrawComponent(GameObjectPtr),
@@ -665,7 +651,7 @@ namespace basecross {
 	PCTParticleDraw::~PCTParticleDraw() {}
 
 	void PCTParticleDraw::AddParticle(float ToCaneraLength, const bsm::Mat4x4& WorldMatrix,
-		const shared_ptr<TextureResource>& TextureRes, const bsm::Col4& Diffuse) {
+		const shared_ptr<TextureResource>& TextureRes,const bsm::Col4& Diffuse) {
 		DrawParticleSprite Item;
 		Item.m_ToCaneraLength = ToCaneraLength;
 		Item.m_WorldMatrix = WorldMatrix;
@@ -685,7 +671,7 @@ namespace basecross {
 		bsm::Col4 m_Diffuse;
 		InstanceDrawStr(UINT s, UINT c, shared_ptr<TextureResource> t,
 			const bsm::Col4& Diffuse) :
-			Start(s), Count(c), Tex(t), m_Diffuse(Diffuse) {}
+			Start(s), Count(c), Tex(t), m_Diffuse(Diffuse){}
 	};
 
 	void PCTParticleDraw::OnDraw() {
@@ -697,16 +683,16 @@ namespace basecross {
 			return;
 		}
 
-		//ã‚«ãƒ¡ãƒ©ä½ç½®ã§ã‚½ãƒ¼ãƒˆ
+		//ƒJƒƒ‰ˆÊ’u‚Åƒ\[ƒg
 		auto func = [](DrawParticleSprite& Left, DrawParticleSprite& Right)->bool {
 			return (Left.m_ToCaneraLength > Right.m_ToCaneraLength);
 		};
 		std::sort(pImpl->m_DrawParticleSpriteVec.begin(), pImpl->m_DrawParticleSpriteVec.end(), func);
-		//ãƒ‡ãƒã‚¤ã‚¹ã¨ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®å–å¾—
+		//ƒfƒoƒCƒX‚ÆƒRƒ“ƒeƒLƒXƒgƒCƒ“ƒ^[ƒtƒFƒCƒX‚Ìæ“¾
 		auto Dev = App::GetApp()->GetDeviceResources();
 		auto pD3D11DeviceContext = Dev->GetD3DDeviceContext();
 		auto RenderState = Dev->GetRenderState();
-		//å…ˆé ­ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’å¾—ã‚‹
+		//æ“ª‚ÌƒeƒNƒXƒ`ƒƒ‚ğ“¾‚é
 		auto  NowTexPtr = pImpl->m_DrawParticleSpriteVec[0].m_TextureRes;
 
 		vector<InstanceDrawStr> m_InstancVec;
@@ -714,9 +700,9 @@ namespace basecross {
 		UINT NowDrawCount = 0;
 
 		shared_ptr<TextureResource> NowTexRes = pImpl->m_DrawParticleSpriteVec[0].m_TextureRes;
-		bsm::Col4 NowDiffuse = bsm::Col4(1, 1, 1, 1);
+		bsm::Col4 NowDiffuse  = bsm::Col4(1,1,1,1);
 		for (size_t i = 0; i < pImpl->m_DrawParticleSpriteVec.size(); i++) {
-			if (pImpl->m_DrawParticleSpriteVec[i].m_TextureRes != NowTexRes ||
+			if (pImpl->m_DrawParticleSpriteVec[i].m_TextureRes != NowTexRes || 
 				pImpl->m_DrawParticleSpriteVec[i].m_Diffuse != NowDiffuse) {
 				m_InstancVec.push_back(InstanceDrawStr(NowStartIndex, NowDrawCount, NowTexRes, NowDiffuse));
 				NowStartIndex = (UINT)i;
@@ -730,105 +716,107 @@ namespace basecross {
 		}
 		m_InstancVec.push_back(InstanceDrawStr(NowStartIndex, NowDrawCount, NowTexRes, NowDiffuse));
 
-		//ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒãƒƒãƒ•ã‚¡ã«ãƒãƒƒãƒ—
+
+		//ƒCƒ“ƒXƒ^ƒ“ƒXƒoƒbƒtƒ@‚Éƒ}ƒbƒv
 		D3D11_MAP mapType = D3D11_MAP_WRITE_DISCARD;
 		D3D11_MAPPED_SUBRESOURCE mappedBuffer;
-		//è¡Œåˆ—ã®ãƒãƒƒãƒ—
+		//s—ñ‚Ìƒ}ƒbƒv
 		if (FAILED(pD3D11DeviceContext->Map(pImpl->m_MatrixBuffer.Get(), 0, mapType, 0, &mappedBuffer))) {
-			// Mapå¤±æ•—
+			// Map¸”s
 			throw BaseException(
-				L"è¡Œåˆ—ã®Mapã«å¤±æ•—ã—ã¾ã—ãŸã€‚",
+				L"s—ñ‚ÌMap‚É¸”s‚µ‚Ü‚µ‚½B",
 				L"if(FAILED(pD3D11DeviceContext->Map()))",
 				L"PCTParticleDraw::OnDraw()"
 			);
 		}
-		//è¡Œåˆ—ã®å¤‰æ›´
+		//s—ñ‚Ì•ÏX
 		auto* matrices = (bsm::Mat4x4*)mappedBuffer.pData;
 		bsm::Mat4x4 World;
 		for (size_t i = 0; i < pImpl->m_DrawParticleSpriteVec.size(); i++) {
 			World = pImpl->m_DrawParticleSpriteVec[i].m_WorldMatrix;
-			//è»¢ç½®ã™ã‚‹
+			//“]’u‚·‚é
 			World.transpose();
 			matrices[i] = World;
 		}
-		//ã‚¢ãƒ³ãƒãƒƒãƒ—
+		//ƒAƒ“ƒ}ƒbƒv
 		pD3D11DeviceContext->Unmap(pImpl->m_MatrixBuffer.Get(), 0);
-		//ã‚¹ãƒˆãƒ©ã‚¤ãƒ‰ã¨ã‚ªãƒ•ã‚»ãƒƒãƒˆ
-		//å½¢çŠ¶ã®é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã¨è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã‚’è¨­å®š
+		//ƒXƒgƒ‰ƒCƒh‚ÆƒIƒtƒZƒbƒg
+		//Œ`ó‚Ì’¸“_ƒoƒbƒtƒ@‚Æs—ñƒoƒbƒtƒ@‚ğİ’è
 		UINT stride[2] = { sizeof(VertexPositionColorTexture), sizeof(bsm::Mat4x4) };
 		UINT offset[2] = { 0, 0 };
 
 		ID3D11Buffer* pBuf[2] = { pImpl->m_MeshResource->GetVertexBuffer().Get(), pImpl->m_MatrixBuffer.Get() };
 		pD3D11DeviceContext->IASetVertexBuffers(0, 2, pBuf, stride, offset);
-		//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ã‚»ãƒƒãƒˆ
+		//ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌƒZƒbƒg
 		pD3D11DeviceContext->IASetIndexBuffer(pImpl->m_MeshResource->GetIndexBuffer().Get(), DXGI_FORMAT_R16_UINT, 0);
 
-		//æç”»æ–¹æ³•ï¼ˆ3è§’å½¢ï¼‰
+		//•`‰æ•û–@i3ŠpŒ`j
 		pD3D11DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-		//ã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®š
+		//ƒVƒF[ƒ_‚Ìİ’è
 		pD3D11DeviceContext->VSSetShader(VSPCTStaticInstance::GetPtr()->GetShader(), nullptr, 0);
 		pD3D11DeviceContext->PSSetShader(PSPCTStatic::GetPtr()->GetShader(), nullptr, 0);
-		//ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®è¨­å®š
+		//ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚Ìİ’è
 		pD3D11DeviceContext->IASetInputLayout(VSPCTStaticInstance::GetPtr()->GetInputLayout());
 
-		//ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆ
+		//ƒuƒŒƒ“ƒhƒXƒe[ƒg
 		if (pImpl->m_Addtype) {
-			//åŠ ç®—å‡¦ç†
+			//‰ÁZˆ—
 			pD3D11DeviceContext->OMSetBlendState(RenderState->GetAdditive(), nullptr, 0xffffffff);
 		}
 		else {
-			//é€æ˜å‡¦ç†
+			//“§–¾ˆ—
 			pD3D11DeviceContext->OMSetBlendState(RenderState->GetAlphaBlendEx(), nullptr, 0xffffffff);
 		}
-		//ãƒ‡ãƒ—ã‚¹ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆ
+		//ƒfƒvƒXƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒg
 		pD3D11DeviceContext->OMSetDepthStencilState(RenderState->GetDepthRead(), 0);
-		//ãƒ†ã‚¯ã‚¹ãƒãƒ£ã¨ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã®è¨­å®š
+		//ƒeƒNƒXƒ`ƒƒ‚ÆƒTƒ“ƒvƒ‰[‚Ìİ’è
 		ID3D11ShaderResourceView* pNull[1] = { 0 };
 		ID3D11SamplerState* pSampler = RenderState->GetLinearClamp();
 		pD3D11DeviceContext->PSSetSamplers(0, 1, &pSampler);
-		//ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã‚¹ãƒ†ãƒ¼ãƒˆï¼ˆè¡¨é¢æç”»ï¼‰
+		//ƒ‰ƒXƒ^ƒ‰ƒCƒUƒXƒe[ƒgi•\–Ê•`‰æj
 		pD3D11DeviceContext->RSSetState(RenderState->GetCullBack());
 
-		//ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã®æ±ºå®š
+		//ƒrƒ…[s—ñ‚ÌŒˆ’è
 		bsm::Mat4x4 View, Proj;
-		//ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã®æ±ºå®š
+		//ƒrƒ…[s—ñ‚ÌŒˆ’è
 		auto StageView = PtrStage->GetView();
 		View = StageView->GetTargetCamera()->GetViewMatrix();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		View.transpose();
-		//å°„å½±è¡Œåˆ—ã®æ±ºå®š
+		//Ë‰es—ñ‚ÌŒˆ’è
 		Proj = StageView->GetTargetCamera()->GetProjMatrix();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		Proj.transpose();
 
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®æº–å‚™
+
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ì€”õ
 		SimpleConstants sb;
-		sb.World = bsm::Mat4x4();	//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã¯ãƒ€ãƒŸãƒ¼
+		sb.World = bsm::Mat4x4();	//ƒ[ƒ‹ƒhs—ñ‚Íƒ_ƒ~[
 		sb.View = View;
 		sb.Projection = Proj;
-		//ã‚¨ãƒŸãƒƒã‚·ãƒ–åŠ ç®—ã¯è¡Œã‚ãªã„ã€‚
+		//ƒGƒ~ƒbƒVƒu‰ÁZ‚Ís‚í‚È‚¢B
 		sb.Emissive = bsm::Col4(0, 0, 0, 0);
 		sb.ActiveFlg.x = 1;
 
 		for (auto& v : m_InstancVec) {
 			sb.Diffuse = v.m_Diffuse;
-			//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®æ›´æ–°
+			//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ÌXV
 			pD3D11DeviceContext->UpdateSubresource(CBSimple::GetPtr()->GetBuffer(), 0, nullptr, &sb, 0, 0);
 
-			//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®è¨­å®š
+			//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìİ’è
 			ID3D11Buffer* pConstantBuffer = CBSimple::GetPtr()->GetBuffer();
 			ID3D11Buffer* pNullConstantBuffer = nullptr;
-			//é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™
+			//’¸“_ƒVƒF[ƒ_‚É“n‚·
 			pD3D11DeviceContext->VSSetConstantBuffers(0, 1, &pConstantBuffer);
-			//ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™
+			//ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚É“n‚·
 			pD3D11DeviceContext->PSSetConstantBuffers(0, 1, &pConstantBuffer);
 
 			pD3D11DeviceContext->PSSetShaderResources(0, 1, v.Tex->GetShaderResourceView().GetAddressOf());
-			//æç”»
+			//•`‰æ
 			pD3D11DeviceContext->DrawIndexedInstanced(pImpl->m_MeshResource->GetNumIndicis(), (UINT)v.Count, 0, 0, (UINT)v.Start);
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		Dev->InitializeStates();
 		pImpl->m_DrawParticleSpriteVec.clear();
 	}
@@ -837,13 +825,13 @@ namespace basecross {
 	//	SpriteBaseDraw::Impl
 	//--------------------------------------------------------------------------------------
 	struct SpriteBaseDraw::Impl {
-		//ãƒ¡ãƒƒã‚·ãƒ¥
+		//ƒƒbƒVƒ…
 		shared_ptr<MeshResource> m_SpriteMesh;
-		///ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹
+		///ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒX
 		weak_ptr<TextureResource> m_TextureResource;
-		//ã‚¨ãƒŸãƒƒã‚·ãƒ–è‰²
+		//ƒGƒ~ƒbƒVƒuF
 		bsm::Col4 m_Emissive;
-		//ãƒ‡ãƒ•ãƒ¥ãƒ¼ã‚ºè‰²
+		//ƒfƒtƒ…[ƒYF
 		bsm::Col4 m_Diffuse;
 		Impl() :
 			m_Emissive(0, 0, 0, 0),
@@ -851,7 +839,7 @@ namespace basecross {
 		{}
 	};
 
-	SpriteBaseDraw::SpriteBaseDraw(const shared_ptr<GameObject>& GameObjectPtr) :
+	SpriteBaseDraw::SpriteBaseDraw(const shared_ptr<GameObject>& GameObjectPtr):
 		DrawComponent(GameObjectPtr),
 		pImpl(new Impl())
 	{}
@@ -859,20 +847,20 @@ namespace basecross {
 	SpriteBaseDraw::~SpriteBaseDraw() {}
 
 	void SpriteBaseDraw::SetConstants(SpriteConstants& SpCb) {
-		//è¡Œåˆ—ã®å–å¾—
+		//s—ñ‚Ìæ“¾
 		auto PtrTrans = GetGameObject()->GetComponent<Transform>();
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		bsm::Mat4x4 World, Proj;
 		World = PtrTrans->Get2DWorldMatrix();
-		//å°„å½±è¡Œåˆ—ã®æ±ºå®š
+		//Ë‰es—ñ‚ÌŒˆ’è
 		GetGameObject()->OnGet2DDrawProjMatrix(Proj);
-		//è¡Œåˆ—ã®åˆæˆ
+		//s—ñ‚Ì‡¬
 		World *= Proj;
-		//ã‚¨ãƒŸãƒƒã‚·ãƒ–
+		//ƒGƒ~ƒbƒVƒu
 		SpCb.Emissive = GetEmissive();
-		//ãƒ‡ãƒ•ã‚£ãƒ¼ã‚ºã¯ã™ã¹ã¦é€šã™
+		//ƒfƒtƒB[ƒY‚Í‚·‚×‚Ä’Ê‚·
 		SpCb.Diffuse = GetDiffuse();
-		//è¡Œåˆ—ã®è¨­å®š
+		//s—ñ‚Ìİ’è
 		SpCb.World = World;
 	}
 
@@ -885,6 +873,7 @@ namespace basecross {
 
 	void SpriteBaseDraw::SetTextureResource(const shared_ptr<TextureResource>& TextureRes) {
 		pImpl->m_TextureResource = TextureRes;
+
 	}
 
 	void SpriteBaseDraw::SetTextureResource(const wstring& TextureKey) {
@@ -892,13 +881,15 @@ namespace basecross {
 	}
 
 	shared_ptr<TextureResource> SpriteBaseDraw::GetTextureResource() const {
-		//ãƒ†ã‚¯ã‚¹ãƒãƒ£ãŒãªã‘ã‚Œã°nullã‚’è¿”ã™
+		//ƒeƒNƒXƒ`ƒƒ‚ª‚È‚¯‚ê‚Înull‚ğ•Ô‚·
 		auto shptr = pImpl->m_TextureResource.lock();
 		if (shptr) {
 			return shptr;
 		}
 		return nullptr;
 	}
+
+
 
 	bsm::Col4 SpriteBaseDraw::GetEmissive() const {
 		return pImpl->m_Emissive;
@@ -915,23 +906,24 @@ namespace basecross {
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PCSpriteæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PCSprite•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
-	PCSpriteDraw::PCSpriteDraw(const shared_ptr<GameObject>& GameObjectPtr) :
+	PCSpriteDraw::PCSpriteDraw(const shared_ptr<GameObject>& GameObjectPtr):
 		SpriteBaseDraw(GameObjectPtr)
 	{
-		//ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®2D
+		//ƒpƒCƒvƒ‰ƒCƒ“ƒXƒe[ƒg‚ğƒfƒtƒHƒ‹ƒg‚Ì2D
 		SetBlendState(BlendState::Opaque);
 		SetDepthStencilState(DepthStencilState::None);
 		SetRasterizerState(RasterizerState::CullBack);
 		SetSamplerState(SamplerState::LinearClamp);
 	}
 
+
 	PCSpriteDraw::PCSpriteDraw(const shared_ptr<GameObject>& GameObjectPtr,
-		vector<VertexPositionColor>& Vertices, vector<uint16_t>& indices) :
+		vector<VertexPositionColor>& Vertices, vector<uint16_t>& indices) : 
 		SpriteBaseDraw(GameObjectPtr)
 	{
-		//ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®2D
+		//ƒpƒCƒvƒ‰ƒCƒ“ƒXƒe[ƒg‚ğƒfƒtƒHƒ‹ƒg‚Ì2D
 		SetBlendState(BlendState::Opaque);
 		SetDepthStencilState(DepthStencilState::None);
 		SetRasterizerState(RasterizerState::CullBack);
@@ -944,21 +936,21 @@ namespace basecross {
 		}
 	}
 
-	PCSpriteDraw::~PCSpriteDraw() {}
+	PCSpriteDraw::~PCSpriteDraw(){}
 
 	void PCSpriteDraw::OnCreate() {
 		auto SpriteMesh = GetMeshResource();
 		if (!SpriteMesh) {
-			//ä½œæˆã•ã‚Œã¦ãªã‹ã£ãŸã‚‰ä½œæˆã™ã‚‹
+			//ì¬‚³‚ê‚Ä‚È‚©‚Á‚½‚çì¬‚·‚é
 			float HelfSize = 0.5f;
-			//é ‚ç‚¹é…åˆ—
+			//’¸“_”z—ñ
 			vector<VertexPositionColor> Vertices = {
 				{ VertexPositionColor(bsm::Vec3(-HelfSize, HelfSize, 0), bsm::Col4(1.0f,1.0f,1.0f,1.0f)) },
 				{ VertexPositionColor(bsm::Vec3(HelfSize, HelfSize, 0), bsm::Col4(1.0f,1.0f,1.0f,1.0f)) },
 				{ VertexPositionColor(bsm::Vec3(-HelfSize, -HelfSize, 0), bsm::Col4(1.0f,1.0f,1.0f,1.0f)) },
 				{ VertexPositionColor(bsm::Vec3(HelfSize, -HelfSize, 0), bsm::Col4(1.0f,1.0f,1.0f,1.0f)) },
 			};
-			//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹é…åˆ—
+			//ƒCƒ“ƒfƒbƒNƒX”z—ñ
 			vector<uint16_t> indices = { 0, 1, 2, 1, 3, 2 };
 			CreateMesh(Vertices, indices);
 		}
@@ -971,35 +963,36 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::CullNone);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
-			//ã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®š
+			//ƒVƒF[ƒ_‚Ìİ’è
 			DrawSprite<VSPCSprite, PSPCSprite>(PtrMeshResource->GetMashData());
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PTSpriteæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PTSprite•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PTSpriteDraw::PTSpriteDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SpriteBaseDraw(GameObjectPtr)
 	{
-		//ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®2D
+		//ƒpƒCƒvƒ‰ƒCƒ“ƒXƒe[ƒg‚ğƒfƒtƒHƒ‹ƒg‚Ì2D
 		SetBlendState(BlendState::Opaque);
 		SetDepthStencilState(DepthStencilState::None);
 		SetRasterizerState(RasterizerState::CullBack);
 		SetSamplerState(SamplerState::LinearClamp);
 	}
 
+
 	PTSpriteDraw::PTSpriteDraw(const shared_ptr<GameObject>& GameObjectPtr,
 		vector<VertexPositionTexture>& Vertices, vector<uint16_t>& indices) :
 		SpriteBaseDraw(GameObjectPtr)
 	{
-		//ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®2D
+		//ƒpƒCƒvƒ‰ƒCƒ“ƒXƒe[ƒg‚ğƒfƒtƒHƒ‹ƒg‚Ì2D
 		SetBlendState(BlendState::Opaque);
 		SetDepthStencilState(DepthStencilState::None);
 		SetRasterizerState(RasterizerState::CullBack);
@@ -1017,16 +1010,16 @@ namespace basecross {
 	void PTSpriteDraw::OnCreate() {
 		auto SpriteMesh = GetMeshResource();
 		if (!SpriteMesh) {
-			//ä½œæˆã•ã‚Œã¦ãªã‹ã£ãŸã‚‰ä½œæˆã™ã‚‹
+			//ì¬‚³‚ê‚Ä‚È‚©‚Á‚½‚çì¬‚·‚é
 			float HelfSize = 0.5f;
-			//é ‚ç‚¹é…åˆ—
+			//’¸“_”z—ñ
 			vector<VertexPositionTexture> Vertices = {
 				{ VertexPositionTexture(bsm::Vec3(-HelfSize, HelfSize, 0), bsm::Vec2(0.0f, 0.0f)) },
 				{ VertexPositionTexture(bsm::Vec3(HelfSize, HelfSize, 0), bsm::Vec2(1.0f, 0.0f)) },
 				{ VertexPositionTexture(bsm::Vec3(-HelfSize, -HelfSize, 0), bsm::Vec2(0.0f, 1.0f)) },
 				{ VertexPositionTexture(bsm::Vec3(HelfSize, -HelfSize, 0), bsm::Vec2(1.0f, 1.0f)) },
 			};
-			//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹é…åˆ—
+			//ƒCƒ“ƒfƒbƒNƒX”z—ñ
 			vector<uint16_t> indices = { 0, 1, 2, 1, 3, 2 };
 			CreateMesh(Vertices, indices);
 		}
@@ -1039,35 +1032,37 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::CullNone);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
-			//ã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®š
+			//ƒVƒF[ƒ_‚Ìİ’è
 			DrawSprite<VSPTSprite, PSPTSprite>(PtrMeshResource->GetMashData());
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
+
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PCTSpriteæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PCTSprite•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PCTSpriteDraw::PCTSpriteDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SpriteBaseDraw(GameObjectPtr)
 	{
-		//ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®2D
+		//ƒpƒCƒvƒ‰ƒCƒ“ƒXƒe[ƒg‚ğƒfƒtƒHƒ‹ƒg‚Ì2D
 		SetBlendState(BlendState::Opaque);
 		SetDepthStencilState(DepthStencilState::None);
 		SetRasterizerState(RasterizerState::CullBack);
 		SetSamplerState(SamplerState::LinearClamp);
 	}
 
+
 	PCTSpriteDraw::PCTSpriteDraw(const shared_ptr<GameObject>& GameObjectPtr,
 		vector<VertexPositionColorTexture>& Vertices, vector<uint16_t>& indices) :
 		SpriteBaseDraw(GameObjectPtr)
 	{
-		//ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®2D
+		//ƒpƒCƒvƒ‰ƒCƒ“ƒXƒe[ƒg‚ğƒfƒtƒHƒ‹ƒg‚Ì2D
 		SetBlendState(BlendState::Opaque);
 		SetDepthStencilState(DepthStencilState::None);
 		SetRasterizerState(RasterizerState::CullBack);
@@ -1085,18 +1080,18 @@ namespace basecross {
 	void PCTSpriteDraw::OnCreate() {
 		auto SpriteMesh = GetMeshResource();
 		if (!SpriteMesh) {
-			//ä½œæˆã•ã‚Œã¦ãªã‹ã£ãŸã‚‰ä½œæˆã™ã‚‹
+			//ì¬‚³‚ê‚Ä‚È‚©‚Á‚½‚çì¬‚·‚é
 			float HelfSize = 0.5f;
-			//é ‚ç‚¹é…åˆ—
+			//’¸“_”z—ñ
 			vector<VertexPositionColorTexture> Vertices = {
 				{ VertexPositionColorTexture(bsm::Vec3(-HelfSize, HelfSize, 0),bsm::Col4(1.0f,1.0f,1.0f,1.0f), bsm::Vec2(0.0f, 0.0f)) },
 				{ VertexPositionColorTexture(bsm::Vec3(HelfSize, HelfSize, 0), bsm::Col4(1.0f,1.0f,1.0f,1.0f), bsm::Vec2(1.0f, 0.0f)) },
 				{ VertexPositionColorTexture(bsm::Vec3(-HelfSize, -HelfSize, 0), bsm::Col4(1.0f,1.0f,1.0f,1.0f), bsm::Vec2(0.0f, 1.0f)) },
 				{ VertexPositionColorTexture(bsm::Vec3(HelfSize, -HelfSize, 0), bsm::Col4(1.0f,1.0f,1.0f,1.0f), bsm::Vec2(1.0f, 1.0f)) },
 			};
-			//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹é…åˆ—
+			//ƒCƒ“ƒfƒbƒNƒX”z—ñ
 			vector<uint16_t> indices = { 0, 1, 2, 1, 3, 2 };
-			//ãƒ¡ãƒƒã‚·ãƒ¥ã®ä½œæˆï¼ˆå¤‰æ›´ã§ãã‚‹ï¼‰
+			//ƒƒbƒVƒ…‚Ìì¬i•ÏX‚Å‚«‚éj
 			CreateMesh(Vertices, indices);
 		}
 	}
@@ -1108,19 +1103,20 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::CullNone);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
-			//ã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®š
+			//ƒVƒF[ƒ_‚Ìİ’è
 			DrawSprite<VSPCTSprite, PSPCTSprite>(PtrMeshResource->GetMashData());
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
 	}
 
+
 	//--------------------------------------------------------------------------------------
-	///	æ±ç”¨æç”»ç”¨
+	///	”Ä—p•`‰æ—p
 	//--------------------------------------------------------------------------------------
 	GenericDraw::GenericDraw() :
 		ObjectInterface() {}
@@ -1132,67 +1128,67 @@ namespace basecross {
 		auto Dev = App::GetApp()->GetDeviceResources();
 		auto pD3D11DeviceContext = Dev->GetD3DDeviceContext();
 		auto RenderState = Dev->GetRenderState();
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		auto PtrTrans = GameObjectPtr->GetComponent<Transform>();
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		bsm::Mat4x4 World, ViewMat, ProjMat;
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã®æ±ºå®š
+		//ƒ[ƒ‹ƒhs—ñ‚ÌŒˆ’è
 		World = MeshToTransformMatrix * PtrTrans->GetWorldMatrix();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		World.transpose();
-		//ã‚«ãƒ¡ãƒ©ã‚’å¾—ã‚‹
+		//ƒJƒƒ‰‚ğ“¾‚é
 		auto CameraPtr = GameObjectPtr->OnGetDrawCamera();
-		//ãƒ“ãƒ¥ãƒ¼ã¨å°„å½±è¡Œåˆ—ã‚’å¾—ã‚‹
+		//ƒrƒ…[‚ÆË‰es—ñ‚ğ“¾‚é
 		ViewMat = CameraPtr->GetViewMatrix();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		ViewMat.transpose();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		ProjMat = CameraPtr->GetProjMatrix();
 		ProjMat.transpose();
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®æº–å‚™
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ì€”õ
 		SimpleConstants sb;
 		sb.World = World;
 		sb.View = ViewMat;
 		sb.Projection = ProjMat;
-		//ã‚¨ãƒŸãƒƒã‚·ãƒ–
+		//ƒGƒ~ƒbƒVƒu
 		sb.Emissive = Emissive;
-		//ãƒ‡ãƒ•ã‚£ãƒ¼ã‚ºã¯ã™ã¹ã¦é€šã™
+		//ƒfƒtƒB[ƒY‚Í‚·‚×‚Ä’Ê‚·
 		sb.Diffuse = Diffuse;
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®æ›´æ–°
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ÌXV
 		pD3D11DeviceContext->UpdateSubresource(CBSimple::GetPtr()->GetBuffer(), 0, nullptr, &sb, 0, 0);
 
-		//ã‚¹ãƒˆãƒ©ã‚¤ãƒ‰ã¨ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+		//ƒXƒgƒ‰ƒCƒh‚ÆƒIƒtƒZƒbƒg
 		UINT stride = sizeof(VertexPositionColor);
 		UINT offset = 0;
-		//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ã‚»ãƒƒãƒˆ
+		//’¸“_ƒoƒbƒtƒ@‚ÌƒZƒbƒg
 		pD3D11DeviceContext->IASetVertexBuffers(0, 1, MeshRes->GetVertexBuffer().GetAddressOf(), &stride, &offset);
-		//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ã‚»ãƒƒãƒˆ
+		//ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌƒZƒbƒg
 		pD3D11DeviceContext->IASetIndexBuffer(MeshRes->GetIndexBuffer().Get(), DXGI_FORMAT_R16_UINT, 0);
 
-		//æç”»æ–¹æ³•ï¼ˆ3è§’å½¢ï¼‰
+		//•`‰æ•û–@i3ŠpŒ`j
 		pD3D11DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®è¨­å®š
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìİ’è
 		ID3D11Buffer* pConstantBuffer = CBSimple::GetPtr()->GetBuffer();
 		ID3D11Buffer* pNullConstantBuffer = nullptr;
-		//é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™
+		//’¸“_ƒVƒF[ƒ_‚É“n‚·
 		pD3D11DeviceContext->VSSetConstantBuffers(0, 1, &pConstantBuffer);
-		//ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™
+		//ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚É“n‚·
 		pD3D11DeviceContext->PSSetConstantBuffers(0, 1, &pConstantBuffer);
-		//ã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®š
+		//ƒVƒF[ƒ_‚Ìİ’è
 		pD3D11DeviceContext->VSSetShader(VSPCStatic::GetPtr()->GetShader(), nullptr, 0);
 		pD3D11DeviceContext->PSSetShader(PSPCStatic::GetPtr()->GetShader(), nullptr, 0);
-		//ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®è¨­å®š
+		//ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚Ìİ’è
 		pD3D11DeviceContext->IASetInputLayout(VSPCStatic::GetPtr()->GetInputLayout());
-		//ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆ
-		//é€æ˜å‡¦ç†ã—ãªã„
+		//ƒuƒŒƒ“ƒhƒXƒe[ƒg
+		//“§–¾ˆ—‚µ‚È‚¢
 		pD3D11DeviceContext->OMSetBlendState(RenderState->GetOpaque(), nullptr, 0xffffffff);
-		//ãƒ‡ãƒ—ã‚¹ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆ
+		//ƒfƒvƒXƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒg
 		pD3D11DeviceContext->OMSetDepthStencilState(RenderState->GetDepthDefault(), 0);
-		//ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã‚¹ãƒ†ãƒ¼ãƒˆ(ãƒ¯ã‚¤ã‚¢ãƒ•ãƒ¬ãƒ¼ãƒ )
+		//ƒ‰ƒXƒ^ƒ‰ƒCƒUƒXƒe[ƒg(ƒƒCƒAƒtƒŒ[ƒ€)
 		pD3D11DeviceContext->RSSetState(RenderState->GetWireframe());
 		pD3D11DeviceContext->DrawIndexed(MeshRes->GetNumIndicis(), 0, 0);
-		//å¾Œå§‹æœ«
+		//Œãn––
 		Dev->InitializeStates();
 	}
 
@@ -1201,72 +1197,76 @@ namespace basecross {
 		auto Dev = App::GetApp()->GetDeviceResources();
 		auto pD3D11DeviceContext = Dev->GetD3DDeviceContext();
 		auto RenderState = Dev->GetRenderState();
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		bsm::Mat4x4 World, ViewMat, ProjMat;
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã®æ±ºå®š
+		//ƒ[ƒ‹ƒhs—ñ‚ÌŒˆ’è
 		World = WorldMatrix;
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		World.transpose();
-		//ã‚«ãƒ¡ãƒ©ã‚’å¾—ã‚‹
+		//ƒJƒƒ‰‚ğ“¾‚é
 		auto CameraPtr = GameObjectPtr->OnGetDrawCamera();
-		//ãƒ“ãƒ¥ãƒ¼ã¨å°„å½±è¡Œåˆ—ã‚’å¾—ã‚‹
+		//ƒrƒ…[‚ÆË‰es—ñ‚ğ“¾‚é
 		ViewMat = CameraPtr->GetViewMatrix();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		ViewMat.transpose();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		ProjMat = CameraPtr->GetProjMatrix();
 		ProjMat.transpose();
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®æº–å‚™
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ì€”õ
 		SimpleConstants sb;
 		sb.World = World;
 		sb.View = ViewMat;
 		sb.Projection = ProjMat;
-		//ã‚¨ãƒŸãƒƒã‚·ãƒ–
+		//ƒGƒ~ƒbƒVƒu
 		sb.Emissive = Emissive;
-		//ãƒ‡ãƒ•ã‚£ãƒ¼ã‚ºã¯ã™ã¹ã¦é€šã™
+		//ƒfƒtƒB[ƒY‚Í‚·‚×‚Ä’Ê‚·
 		sb.Diffuse = Diffuse;
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®æ›´æ–°
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ÌXV
 		pD3D11DeviceContext->UpdateSubresource(CBSimple::GetPtr()->GetBuffer(), 0, nullptr, &sb, 0, 0);
 
-		//ã‚¹ãƒˆãƒ©ã‚¤ãƒ‰ã¨ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+		//ƒXƒgƒ‰ƒCƒh‚ÆƒIƒtƒZƒbƒg
 		UINT stride = sizeof(VertexPositionColor);
 		UINT offset = 0;
-		//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ã‚»ãƒƒãƒˆ
+		//’¸“_ƒoƒbƒtƒ@‚ÌƒZƒbƒg
 		pD3D11DeviceContext->IASetVertexBuffers(0, 1, MeshRes->GetVertexBuffer().GetAddressOf(), &stride, &offset);
-		//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ã‚»ãƒƒãƒˆ
+		//ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌƒZƒbƒg
 		pD3D11DeviceContext->IASetIndexBuffer(MeshRes->GetIndexBuffer().Get(), DXGI_FORMAT_R16_UINT, 0);
 
-		//æç”»æ–¹æ³•ï¼ˆ3è§’å½¢ï¼‰
+		//•`‰æ•û–@i3ŠpŒ`j
 		pD3D11DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-		//ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®è¨­å®š
+		//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìİ’è
 		ID3D11Buffer* pConstantBuffer = CBSimple::GetPtr()->GetBuffer();
 		ID3D11Buffer* pNullConstantBuffer = nullptr;
-		//é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™
+		//’¸“_ƒVƒF[ƒ_‚É“n‚·
 		pD3D11DeviceContext->VSSetConstantBuffers(0, 1, &pConstantBuffer);
-		//ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™
+		//ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚É“n‚·
 		pD3D11DeviceContext->PSSetConstantBuffers(0, 1, &pConstantBuffer);
-		//ã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®š
+		//ƒVƒF[ƒ_‚Ìİ’è
 		pD3D11DeviceContext->VSSetShader(VSPCStatic::GetPtr()->GetShader(), nullptr, 0);
 		pD3D11DeviceContext->PSSetShader(PSPCStatic::GetPtr()->GetShader(), nullptr, 0);
-		//ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®è¨­å®š
+		//ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚Ìİ’è
 		pD3D11DeviceContext->IASetInputLayout(VSPCStatic::GetPtr()->GetInputLayout());
-		//ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆ
-		//é€æ˜å‡¦ç†ã—ãªã„
+		//ƒuƒŒƒ“ƒhƒXƒe[ƒg
+		//“§–¾ˆ—‚µ‚È‚¢
 		pD3D11DeviceContext->OMSetBlendState(RenderState->GetOpaque(), nullptr, 0xffffffff);
-		//ãƒ‡ãƒ—ã‚¹ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆ
+		//ƒfƒvƒXƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒg
 		pD3D11DeviceContext->OMSetDepthStencilState(RenderState->GetDepthDefault(), 0);
-		//ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã‚¹ãƒ†ãƒ¼ãƒˆ(ãƒ¯ã‚¤ã‚¢ãƒ•ãƒ¬ãƒ¼ãƒ )
+		//ƒ‰ƒXƒ^ƒ‰ƒCƒUƒXƒe[ƒg(ƒƒCƒAƒtƒŒ[ƒ€)
 		pD3D11DeviceContext->RSSetState(RenderState->GetWireframe());
 		pD3D11DeviceContext->DrawIndexed(MeshRes->GetNumIndicis(), 0, 0);
-		//å¾Œå§‹æœ«
+		//Œãn––
 		Dev->InitializeStates();
+
 	}
+
+
 
 	void GenericDraw::DrawWireFrame(const shared_ptr<GameObject>& GameObj,
 		const shared_ptr<MeshResource>& Mesh, const bsm::Mat4x4& MeshToTransformMatrix) {
+
 		PCWireFrameDraw(GameObj, Mesh,
-			bsm::Col4(0, 0, 0, 0), bsm::Col4(1, 1, 1, 1), MeshToTransformMatrix);
+			bsm::Col4(0,0,0,0), bsm::Col4(1, 1, 1, 1), MeshToTransformMatrix);
 	}
 
 	void GenericDraw::DrawWireFrameWithWorldMatrix(const shared_ptr<GameObject>& GameObj,
@@ -1275,41 +1275,42 @@ namespace basecross {
 			bsm::Col4(0, 0, 0, 0), bsm::Col4(1, 1, 1, 1), WorldMatrix);
 	}
 
-	//staticå¤‰æ•°ã®å®Ÿä½“
+
+	//static•Ï”‚ÌÀ‘Ì
 	vector<bsm::Vec3> DrawObjectBase::m_TempPositions;
 
 	//--------------------------------------------------------------------------------------
-	///	Simpleæç”»ã«ä½¿ç”¨ã™ã‚‹æ§‹é€ ä½“(å½±å¯¾å¿œ)
+	///	Simple•`‰æ‚Ég—p‚·‚é\‘¢‘Ì(‰e‘Î‰)
 	//--------------------------------------------------------------------------------------
 	struct SmDrawObject :public DrawObjectBase {
-		//é ‚ç‚¹å¤‰æ›´ã™ã‚‹å ´åˆã®ãƒ¡ãƒƒã‚·ãƒ¥ï¼ˆã‚ªãƒªã‚¸ãƒŠãƒ«ï¼‰
+		//’¸“_•ÏX‚·‚éê‡‚ÌƒƒbƒVƒ…iƒIƒŠƒWƒiƒ‹j
 		shared_ptr<MeshResource> m_OriginalMeshResource;
-		//ã‚ªãƒªã‚¸ãƒŠãƒ«ãƒ¡ãƒƒã‚·ãƒ¥ã‚’ä½¿ã†ã‹ã©ã†ã‹
+		//ƒIƒŠƒWƒiƒ‹ƒƒbƒVƒ…‚ğg‚¤‚©‚Ç‚¤‚©
 		bool m_UseOriginalMeshResource;
-		///ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹
+		///ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒX
 		weak_ptr<TextureResource> m_TextureResource;
-		///ã‚¨ãƒŸãƒƒã‚·ãƒ–è‰²
+		///ƒGƒ~ƒbƒVƒuF
 		bsm::Col4 m_Emissive;
-		/// ãƒ‡ãƒ•ãƒ¥ãƒ¼ã‚ºè‰²
+		/// ƒfƒtƒ…[ƒYF
 		bsm::Col4 m_Diffuse;
-		/// ã‚¹ãƒšã‚­ãƒ¥ãƒ©ãƒ¼è‰²
+		/// ƒXƒyƒLƒ…ƒ‰[F
 		bsm::Col4 m_Specular;
-		///å½±ã‚’æŠ•å½±ã™ã‚‹ã‹ã©ã†ã‹
+		///‰e‚ğ“Š‰e‚·‚é‚©‚Ç‚¤‚©
 		bool m_OwnShadowActive;
-		//ãƒ¢ãƒ‡ãƒ«ã«å…¥ã£ã¦ã„ã‚‹Diffuseã‚’ä½¿ã†ã‹ã©ã†ã‹
+		//ƒ‚ƒfƒ‹‚É“ü‚Á‚Ä‚¢‚éDiffuse‚ğg‚¤‚©‚Ç‚¤‚©
 		bool m_ModelDiffusePriority;
-		//ãƒ¢ãƒ‡ãƒ«ã«å…¥ã£ã¦ã„ã‚‹Emissiveã‚’ä½¿ã†ã‹ã©ã†ã‹
+		//ƒ‚ƒfƒ‹‚É“ü‚Á‚Ä‚¢‚éEmissive‚ğg‚¤‚©‚Ç‚¤‚©
 		bool m_ModelEmissivePriority;
-		//ãƒ¢ãƒ‡ãƒ«ã«å…¥ã£ã¦ã„ã‚‹ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ä½¿ã†ã‹ã©ã†ã‹
+		//ƒ‚ƒfƒ‹‚É“ü‚Á‚Ä‚¢‚éƒeƒNƒXƒ`ƒƒ‚ğg‚¤‚©‚Ç‚¤‚©
 		bool m_ModelTextureEnabled;
-		///Instanceæç”»ç”¨
-		///Instanceæœ€å¤§å€¤
+		///Instance•`‰æ—p
+		///InstanceÅ‘å’l
 		size_t m_MaxInstance;
-		/// è¡Œåˆ—ç”¨ã®é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡
+		/// s—ñ—p‚Ì’¸“_ƒoƒbƒtƒ@
 		ComPtr<ID3D11Buffer> m_MatrixBuffer;
-		///è¡Œåˆ—ã®é…åˆ—
+		///s—ñ‚Ì”z—ñ
 		vector<bsm::Mat4x4> m_MatrixVec;
-		//è¡Œåˆ—ã‚’è‡ªå‹•ã‚¯ãƒªã‚¢ã™ã‚‹ã‹ã©ã†ã‹
+		//s—ñ‚ğ©“®ƒNƒŠƒA‚·‚é‚©‚Ç‚¤‚©
 		bool m_AutoClearMatrixVec;
 		SmDrawObject() :
 			m_UseOriginalMeshResource(false),
@@ -1333,13 +1334,13 @@ namespace basecross {
 	};
 
 	//--------------------------------------------------------------------------------------
-	///	Simpleæç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è¦ª
+	///	Simple•`‰æƒIƒuƒWƒFƒNƒg‚Ìe
 	//--------------------------------------------------------------------------------------
 	SmBaseDraw::SmBaseDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		DrawComponent(GameObjectPtr),
 		pImpl(new Impl())
 	{
-		//ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ï¼“D
+		//ƒpƒCƒvƒ‰ƒCƒ“ƒXƒe[ƒg‚ğƒfƒtƒHƒ‹ƒg‚Ì‚RD
 		SetBlendState(BlendState::Opaque);
 		SetDepthStencilState(DepthStencilState::Default);
 		SetRasterizerState(RasterizerState::CullBack);
@@ -1349,11 +1350,11 @@ namespace basecross {
 	SmBaseDraw::~SmBaseDraw() {}
 
 	void SmBaseDraw::SetConstants(SimpleConstants& SmCb, const MeshPrimData& data) {
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		auto PtrTrans = GetGameObject()->GetComponent<Transform>();
-		//è¡Œåˆ—ã®å®šç¾©
+		//s—ñ‚Ì’è‹`
 		bsm::Mat4x4 World, ViewMat, ProjMat;
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã®æ±ºå®š
+		//ƒ[ƒ‹ƒhs—ñ‚ÌŒˆ’è
 		if (data.m_UseMeshToTransformMatrix) {
 			World = data.m_MeshToTransformMatrix * GetMeshToTransformMatrix();
 			World *= PtrTrans->GetWorldMatrix();
@@ -1361,33 +1362,33 @@ namespace basecross {
 		else {
 			World = GetMeshToTransformMatrix() * PtrTrans->GetWorldMatrix();
 		}
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		World.transpose();
-		//ã‚«ãƒ¡ãƒ©ã‚’å¾—ã‚‹
+		//ƒJƒƒ‰‚ğ“¾‚é
 		auto CameraPtr = GetGameObject()->OnGetDrawCamera();
-		//ãƒ“ãƒ¥ãƒ¼ã¨å°„å½±è¡Œåˆ—ã‚’å¾—ã‚‹
+		//ƒrƒ…[‚ÆË‰es—ñ‚ğ“¾‚é
 		ViewMat = CameraPtr->GetViewMatrix();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		ViewMat.transpose();
-		//è»¢ç½®ã™ã‚‹
+		//“]’u‚·‚é
 		ProjMat = CameraPtr->GetProjMatrix();
 		ProjMat.transpose();
 		SmCb.World = World;
 		SmCb.View = ViewMat;
 		SmCb.Projection = ProjMat;
-		//ã‚¨ãƒŸãƒƒã‚·ãƒ–
+		//ƒGƒ~ƒbƒVƒu
 		SmCb.Emissive = GetEmissive();
-		//ãƒ‡ãƒ•ã‚£ãƒ¼ã‚º
+		//ƒfƒtƒB[ƒY
 		SmCb.Diffuse = GetDiffuse();
-		//ã‚¹ãƒšã‚­ãƒ¥ãƒ©ãƒ¼
+		//ƒXƒyƒLƒ…ƒ‰[
 		SmCb.Specular = GetSpecular();
-		//ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°
+		//ƒ‰ƒCƒeƒBƒ“ƒO
 		auto StageLight = GetGameObject()->OnGetDrawLight();
 		SmCb.LightDir = StageLight.m_Directional;
 		SmCb.LightDir.w = 1.0f;
 		SmCb.EyePos = CameraPtr->GetEye();
 		SmCb.EyePos.w = 1.0f;
-		//å½±ç”¨
+		//‰e—p
 		if (GetOwnShadowActive()) {
 			bsm::Vec3 CalcLightDir = -1.0 * StageLight.m_Directional;
 			bsm::Vec3 LightAt = CameraPtr->GetAt();
@@ -1397,14 +1398,14 @@ namespace basecross {
 			SmCb.LightPos = LightEye;
 			SmCb.LightPos.w = 1.0f;
 			bsm::Mat4x4 LightView, LightProj;
-			//ãƒ©ã‚¤ãƒˆã®ãƒ“ãƒ¥ãƒ¼ã¨å°„å½±ã‚’è¨ˆç®—
+			//ƒ‰ƒCƒg‚Ìƒrƒ…[‚ÆË‰e‚ğŒvZ
 			LightView = XMMatrixLookAtLH(LightEye, LightAt, bsm::Vec3(0, 1.0f, 0));
 			LightProj = XMMatrixOrthographicLH(Shadowmap::GetViewWidth(), Shadowmap::GetViewHeight(),
 				Shadowmap::GetLightNear(), Shadowmap::GetLightFar());
 			SmCb.LightView = bsm::transpose(LightView);
 			SmCb.LightProjection = bsm::transpose(LightProj);
 		}
-		//ãƒœãƒ¼ãƒ³ã®è¨­å®š
+		//ƒ{[ƒ“‚Ìİ’è
 		size_t BoneSz = pImpl->m_SmDrawObject.m_LocalBonesMatrix.size();
 		if (BoneSz > 0) {
 			UINT cb_count = 0;
@@ -1418,8 +1419,8 @@ namespace basecross {
 			}
 		}
 		else if (pImpl->m_SmDrawObject.m_MultiLocalBonesMatrix.size() > data.m_MultiMeshIndex) {
-			//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ã®ãƒœãƒ¼ãƒ³ãŒã‚ã£ãŸ
-			//ãƒœãƒ¼ãƒ³ã®è¨­å®š
+			//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…‚Ìƒ{[ƒ“‚ª‚ ‚Á‚½
+			//ƒ{[ƒ“‚Ìİ’è
 			BoneSz = pImpl->m_SmDrawObject.m_MultiLocalBonesMatrix[data.m_MultiMeshIndex].size();
 			if (BoneSz > 0) {
 				UINT cb_count = 0;
@@ -1435,10 +1436,10 @@ namespace basecross {
 		}
 	}
 
-	//è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
+	//s—ñƒoƒbƒtƒ@‚Ìì¬
 	void SmBaseDraw::CreateMatrixBuffer() {
-		//ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
-		//Maxå€¤ã§ä½œæˆã™ã‚‹
+		//ƒCƒ“ƒXƒ^ƒ“ƒXs—ñƒoƒbƒtƒ@‚Ìì¬
+		//Max’l‚Åì¬‚·‚é
 		vector<bsm::Mat4x4> matrices(pImpl->m_SmDrawObject.m_MaxInstance);
 		for (auto& m : matrices) {
 			m = bsm::Mat4x4();
@@ -1446,40 +1447,44 @@ namespace basecross {
 		MeshResource::CreateDynamicVertexBuffer(pImpl->m_SmDrawObject.m_MatrixBuffer, matrices);
 	}
 
-	//è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ãƒãƒƒãƒ—
+	//s—ñƒoƒbƒtƒ@‚Ìƒ}ƒbƒv
 	void SmBaseDraw::MapMatrixBuffer() {
-		//ãƒ‡ãƒã‚¤ã‚¹ã®å–å¾—
+		//ƒfƒoƒCƒX‚Ìæ“¾
 		auto Dev = App::GetApp()->GetDeviceResources();
 		auto pDx11Device = Dev->GetD3DDevice();
 		auto pID3D11DeviceContext = Dev->GetD3DDeviceContext();
-		//ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒãƒƒãƒ•ã‚¡ã«ãƒãƒƒãƒ—
+		//ƒCƒ“ƒXƒ^ƒ“ƒXƒoƒbƒtƒ@‚Éƒ}ƒbƒv
 		D3D11_MAP mapType = D3D11_MAP_WRITE_DISCARD;
 		D3D11_MAPPED_SUBRESOURCE mappedBuffer;
-		//è¡Œåˆ—ã®ãƒãƒƒãƒ—
+		//s—ñ‚Ìƒ}ƒbƒv
 		if (FAILED(pID3D11DeviceContext->Map(pImpl->m_SmDrawObject.m_MatrixBuffer.Get(), 0, mapType, 0, &mappedBuffer))) {
-			// Mapå¤±æ•—
+			// Map¸”s
 			throw BaseException(
-				L"è¡Œåˆ—ã®Mapã«å¤±æ•—ã—ã¾ã—ãŸã€‚",
+				L"s—ñ‚ÌMap‚É¸”s‚µ‚Ü‚µ‚½B",
 				L"if(FAILED(pID3D11DeviceContext->Map()))",
 				L"SmBaseDraw::MapMatrixBuffer()"
 			);
 		}
-		//è¡Œåˆ—ã®å¤‰æ›´
+		//s—ñ‚Ì•ÏX
 		auto* matrices = (bsm::Mat4x4*)mappedBuffer.pData;
 		bsm::Mat4x4 World;
 		for (size_t i = 0; i < pImpl->m_SmDrawObject.m_MatrixVec.size(); i++) {
-			//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
+			//ƒ[ƒ‹ƒhs—ñ
 			World = pImpl->m_SmDrawObject.m_MatrixVec[i];
-			//è»¢ç½®ã™ã‚‹
+			//“]’u‚·‚é
 			World.transpose();
 			matrices[i] = World;
 		}
-		//ã‚¢ãƒ³ãƒãƒƒãƒ—
+		//ƒAƒ“ƒ}ƒbƒv
 		pID3D11DeviceContext->Unmap(pImpl->m_SmDrawObject.m_MatrixBuffer.Get(), 0);
+
 	}
+
+
 
 	bool SmBaseDraw::IsOriginalMeshUse() const {
 		return pImpl->m_SmDrawObject.m_UseOriginalMeshResource;
+
 	}
 
 	void SmBaseDraw::SetOriginalMeshUse(bool b) {
@@ -1488,10 +1493,12 @@ namespace basecross {
 
 	shared_ptr<MeshResource> SmBaseDraw::GetOriginalMeshResource() const {
 		return pImpl->m_SmDrawObject.m_OriginalMeshResource;
+
 	}
 
 	void SmBaseDraw::SetOriginalMeshResource(const shared_ptr<MeshResource>& MeshRes) {
 		pImpl->m_SmDrawObject.m_OriginalMeshResource = MeshRes;
+
 	}
 
 	shared_ptr<MeshResource> SmBaseDraw::GetMeshResource() const {
@@ -1517,6 +1524,7 @@ namespace basecross {
 
 	void SmBaseDraw::SetTextureResource(const shared_ptr<TextureResource>& TextureRes) {
 		pImpl->m_SmDrawObject.m_TextureResource = TextureRes;
+
 	}
 
 	void SmBaseDraw::SetTextureResource(const wstring& TextureKey) {
@@ -1524,40 +1532,44 @@ namespace basecross {
 	}
 
 	shared_ptr<TextureResource> SmBaseDraw::GetTextureResource() const {
-		//ãƒ†ã‚¯ã‚¹ãƒãƒ£ãŒãªã‘ã‚Œã°nullã‚’è¿”ã™
+		//ƒeƒNƒXƒ`ƒƒ‚ª‚È‚¯‚ê‚Înull‚ğ•Ô‚·
 		auto shptr = pImpl->m_SmDrawObject.m_TextureResource.lock();
 		if (shptr) {
 			return shptr;
 		}
 		return nullptr;
+
 	}
 
 	shared_ptr<MultiMeshResource> SmBaseDraw::GetMultiMeshResource() const {
-		//ãªã‘ã‚Œã°nullã‚’è¿”ã™
+		//‚È‚¯‚ê‚Înull‚ğ•Ô‚·
 		auto shptr = pImpl->m_SmDrawObject.m_MultiMeshResource.lock();
 		if (shptr) {
 			return shptr;
 		}
 		return nullptr;
+
 	}
 
 	void SmBaseDraw::SetMultiMeshResource(const shared_ptr<MultiMeshResource>& MeshResourcePtr) {
 		pImpl->m_SmDrawObject.m_MultiMeshResource = MeshResourcePtr;
 		pImpl->m_SmDrawObject.m_MultiMeshDrawVec.clear();
 		for (size_t i = 0; i < MeshResourcePtr->GetMeshVecCount(); i++) {
-			//æœ€åˆã¯ã™ã¹ã¦ã®ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ã‚’æç”»
+			//Å‰‚Í‚·‚×‚Ä‚Ìƒ}ƒ‹ƒ`ƒƒbƒVƒ…‚ğ•`‰æ
 			pImpl->m_SmDrawObject.m_MultiMeshDrawVec.push_back(true);
 		}
+
 	}
 
 	void SmBaseDraw::SetMultiMeshResource(const wstring& ResKey) {
 		this->SetMultiMeshResource(App::GetApp()->GetResource<MultiMeshResource>(ResKey));
+
 	}
 
 	bool SmBaseDraw::GetMultiMeshIsDraw(size_t index) const {
 		if (index >= pImpl->m_SmDrawObject.m_MultiMeshDrawVec.size()) {
 			throw BaseException(
-				L"ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ã®ãƒ¡ãƒƒã‚·ãƒ¥æ•°ã‚’è¶…ãˆã¦ã¾ã™",
+				L"ƒCƒ“ƒfƒbƒNƒX‚ªƒ}ƒ‹ƒ`ƒƒbƒVƒ…‚ÌƒƒbƒVƒ…”‚ğ’´‚¦‚Ä‚Ü‚·",
 				L"if (index >= pImpl->m_BcDrawObject.m_MultiMeshDrawVec.size())",
 				L"SmBaseDraw::GetMultiMeshIsDraw()"
 			);
@@ -1567,7 +1579,7 @@ namespace basecross {
 	void SmBaseDraw::SetMultiMeshIsDraw(size_t index, bool b) {
 		if (index >= pImpl->m_SmDrawObject.m_MultiMeshDrawVec.size()) {
 			throw BaseException(
-				L"ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ã®ãƒ¡ãƒƒã‚·ãƒ¥æ•°ã‚’è¶…ãˆã¦ã¾ã™",
+				L"ƒCƒ“ƒfƒbƒNƒX‚ªƒ}ƒ‹ƒ`ƒƒbƒVƒ…‚ÌƒƒbƒVƒ…”‚ğ’´‚¦‚Ä‚Ü‚·",
 				L"if (index >= pImpl->m_BcDrawObject.m_MultiMeshDrawVec.size())",
 				L"SmBaseDraw::SetMultiMeshIsDraw()"
 			);
@@ -1575,8 +1587,10 @@ namespace basecross {
 		pImpl->m_SmDrawObject.m_MultiMeshDrawVec[index] = b;
 	}
 
+
 	bsm::Col4 SmBaseDraw::GetEmissive() const {
 		return pImpl->m_SmDrawObject.m_Emissive;
+
 	}
 
 	void SmBaseDraw::SetEmissive(const bsm::Col4& col) {
@@ -1585,14 +1599,17 @@ namespace basecross {
 
 	bsm::Col4 SmBaseDraw::GetDiffuse() const {
 		return pImpl->m_SmDrawObject.m_Diffuse;
+
 	}
 
 	void SmBaseDraw::SetDiffuse(const bsm::Col4& col) {
 		pImpl->m_SmDrawObject.m_Diffuse = col;
+
 	}
 
 	bsm::Col4 SmBaseDraw::GetSpecular() const {
 		return pImpl->m_SmDrawObject.m_Specular;
+
 	}
 
 	void SmBaseDraw::SetSpecular(const bsm::Col4& col) {
@@ -1601,10 +1618,12 @@ namespace basecross {
 
 	bool SmBaseDraw::GetOwnShadowActive() const {
 		return pImpl->m_SmDrawObject.m_OwnShadowActive;
+
 	}
 
 	bool SmBaseDraw::IsOwnShadowActive() const {
 		return pImpl->m_SmDrawObject.m_OwnShadowActive;
+
 	}
 
 	void SmBaseDraw::SetOwnShadowActive(bool b) {
@@ -1613,22 +1632,27 @@ namespace basecross {
 
 	bool SmBaseDraw::GetModelDiffusePriority() const {
 		return pImpl->m_SmDrawObject.m_ModelDiffusePriority;
+
 	}
 
 	bool SmBaseDraw::IsModelDiffusePriority() const {
 		return pImpl->m_SmDrawObject.m_ModelDiffusePriority;
+
 	}
 
 	void SmBaseDraw::SetModelDiffusePriority(bool b) {
 		pImpl->m_SmDrawObject.m_ModelDiffusePriority = b;
+
 	}
 
 	bool SmBaseDraw::GetModelEmissivePriority() const {
 		return pImpl->m_SmDrawObject.m_ModelEmissivePriority;
+
 	}
 
 	bool SmBaseDraw::IsModelEmissivePriority() const {
 		return pImpl->m_SmDrawObject.m_ModelEmissivePriority;
+
 	}
 
 	void SmBaseDraw::SetModelEmissivePriority(bool b) {
@@ -1637,35 +1661,43 @@ namespace basecross {
 
 	bool SmBaseDraw::GetModelTextureEnabled() const {
 		return pImpl->m_SmDrawObject.m_ModelTextureEnabled;
+
 	}
 
 	bool SmBaseDraw::IsModelTextureEnabled() const {
 		return pImpl->m_SmDrawObject.m_ModelTextureEnabled;
+
 	}
 
 	void SmBaseDraw::SetModelTextureEnabled(bool b) {
 		pImpl->m_SmDrawObject.m_ModelTextureEnabled = b;
+
 	}
 
 	void SmBaseDraw::BoneInit() {
 		pImpl->m_SmDrawObject.BoneInit();
+
 	}
 
 	void SmBaseDraw::InterpolationMatrix(const bsm::Mat4x4& m1, const bsm::Mat4x4& m2, float t, bsm::Mat4x4& out) {
 		pImpl->m_SmDrawObject.InterpolationMatrix(m1, m2, t, out);
+
 	}
 
 	void SmBaseDraw::AddAnimation(const wstring& Name, int StartSample, int SampleLength, bool Loop,
 		float SamplesParSecond) {
 		pImpl->m_SmDrawObject.AddAnimation(Name, StartSample, SampleLength, Loop, SamplesParSecond);
+
 	}
 
 	void SmBaseDraw::ChangeCurrentAnimation(const wstring& AnemationName, float StartTime) {
 		pImpl->m_SmDrawObject.ChangeCurrentAnimation(AnemationName, StartTime);
+
 	}
 
 	const wstring& SmBaseDraw::GetCurrentAnimation() const {
 		return pImpl->m_SmDrawObject.m_CurrentAnimeName;
+
 	}
 
 	float SmBaseDraw::GetCurrentAnimationTime() const {
@@ -1677,8 +1709,10 @@ namespace basecross {
 		return AnimData.m_IsAnimeEnd;
 	}
 
+
 	bool SmBaseDraw::UpdateAnimation(float ElapsedTime) {
 		return pImpl->m_SmDrawObject.UpdateAnimation(ElapsedTime);
+
 	}
 
 	const vector< bsm::Mat4x4 >* SmBaseDraw::GetVecLocalBonesPtr() const {
@@ -1688,6 +1722,7 @@ namespace basecross {
 	vector< bsm::Mat4x4 >& SmBaseDraw::GetVecLocalBones() {
 		return pImpl->m_SmDrawObject.m_LocalBonesMatrix;
 	}
+
 
 	const vector< bsm::Mat4x4 >* SmBaseDraw::GetVecMultiLocalBonesPtr(size_t index) const {
 		if (pImpl->m_SmDrawObject.m_MultiLocalBonesMatrix.size() > index) {
@@ -1699,13 +1734,15 @@ namespace basecross {
 	vector< bsm::Mat4x4 >& SmBaseDraw::GetVecMultiLocalBones(size_t index) {
 		if (pImpl->m_SmDrawObject.m_MultiLocalBonesMatrix.size() <= index) {
 			throw BaseException(
-				L"ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒä¸Šé™ã‚’è¶…ãˆã¦ã¾ã™",
+				L"ƒCƒ“ƒfƒbƒNƒX‚ªãŒÀ‚ğ’´‚¦‚Ä‚Ü‚·",
 				L"if (pImpl->m_SmDrawObject.m_MultiLocalBonesMatrix.size() <= index)",
 				L"SmBaseDraw::GetVecMultiLocalBones"
 			);
 		}
 		return pImpl->m_SmDrawObject.m_MultiLocalBonesMatrix[index];
 	}
+
+
 
 	size_t SmBaseDraw::GetMaxInstance() const {
 		return pImpl->m_SmDrawObject.m_MaxInstance;
@@ -1719,7 +1756,7 @@ namespace basecross {
 	void SmBaseDraw::AddMatrix(const bsm::Mat4x4& NewMat) {
 		if (pImpl->m_SmDrawObject.m_MatrixVec.size() >= GetMaxInstance()) {
 			throw BaseException(
-				L"ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä¸Šé™ã‚’è¶…ãˆã¦ã¾ã™",
+				L"ƒCƒ“ƒXƒ^ƒ“ƒXãŒÀ‚ğ’´‚¦‚Ä‚Ü‚·",
 				L"if (pImpl->m_MatrixVec.size() >= GetMaxInstance())",
 				L"SmBaseDraw::AddMatrix()"
 			);
@@ -1755,7 +1792,7 @@ namespace basecross {
 		auto ReshRes = GetMeshResource();
 		if (!ReshRes) {
 			throw BaseException(
-				L"ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ãŒã‚ã‚Šã¾ã›ã‚“",
+				L"ƒƒbƒVƒ…ƒŠƒ\[ƒX‚ª‚ ‚è‚Ü‚¹‚ñ",
 				L"if (!ReshRes)",
 				L"SmBaseDraw::GetStaticMeshLocalPositions()"
 			);
@@ -1766,7 +1803,7 @@ namespace basecross {
 
 	void SmBaseDraw::GetStaticMeshWorldPositions(vector<bsm::Vec3>& vertices) {
 		GetStaticMeshLocalPositions(vertices);
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã®åæ˜ 
+		//ƒ[ƒ‹ƒhs—ñ‚Ì”½‰f
 		auto WorldMat = GetGameObject()->GetComponent<Transform>()->GetWorldMatrix();
 		for (auto& v : vertices) {
 			v *= WorldMat;
@@ -1782,7 +1819,7 @@ namespace basecross {
 			tri.m_B = pImpl->m_SmDrawObject.m_TempPositions[i + 1];
 			tri.m_C = pImpl->m_SmDrawObject.m_TempPositions[i + 2];
 			if (!tri.IsValid()) {
-				//ä¸‰è§’å½¢ãŒç„¡åŠ¹ãªã‚‰æ¬¡ã«ã†ã¤ã‚‹
+				//OŠpŒ`‚ª–³Œø‚È‚çŸ‚É‚¤‚Â‚é
 				continue;
 			}
 			bsm::Vec3 ret;
@@ -1810,12 +1847,12 @@ namespace basecross {
 			tri.m_B = pImpl->m_SmDrawObject.m_TempPositions[i + 1];
 			tri.m_C = pImpl->m_SmDrawObject.m_TempPositions[i + 2];
 			if (!tri.IsValid()) {
-				//ä¸‰è§’å½¢ãŒç„¡åŠ¹ãªã‚‰æ¬¡ã«ã†ã¤ã‚‹
+				//OŠpŒ`‚ª–³Œø‚È‚çŸ‚É‚¤‚Â‚é
 				continue;
 			}
 			bsm::Vec3 ret;
 			float t;
-			//çƒä½“ã®ç§»å‹•ã¯StartSpã‹ã‚‰EndSpã«1.0ã¨ã™ã‚‹
+			//‹…‘Ì‚ÌˆÚ“®‚ÍStartSp‚©‚çEndSp‚É1.0‚Æ‚·‚é
 			bsm::Vec3 Valocity = EndSp.m_Center - StartSp.m_Center;
 			if (HitTest::CollisionTestSphereTriangle(StartSp, Valocity, tri, 0.0f, 1.0f, t)) {
 				auto Len = length(EndSp.m_Center - StartSp.m_Center);
@@ -1835,7 +1872,7 @@ namespace basecross {
 	void SmBaseDraw::GetSkinedMeshLocalPositions(vector<bsm::Vec3>& vertices) {
 		if (GetVecLocalBones().size() == 0) {
 			throw BaseException(
-				L"ãƒœãƒ¼ãƒ³è¡Œåˆ—ãŒã‚ã‚Šã¾ã›ã‚“",
+				L"ƒ{[ƒ“s—ñ‚ª‚ ‚è‚Ü‚¹‚ñ",
 				L"if (GetVecLocalBones().size() == 0)",
 				L"SmBaseDraw::GetSkinedMeshLocalPositions()"
 			);
@@ -1843,7 +1880,7 @@ namespace basecross {
 		auto ReshRes = GetMeshResource();
 		if (!ReshRes) {
 			throw BaseException(
-				L"ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ãŒã‚ã‚Šã¾ã›ã‚“",
+				L"ƒƒbƒVƒ…ƒŠƒ\[ƒX‚ª‚ ‚è‚Ü‚¹‚ñ",
 				L"if (!ReshRes)",
 				L"SmBaseDraw::GetSkinedMeshLocalPositions()"
 			);
@@ -1855,7 +1892,7 @@ namespace basecross {
 		for (auto& v : PosVec) {
 			vertices.push_back(v.position);
 		}
-		//ã‚¹ã‚­ãƒ‹ãƒ³ã‚°å‡¦ç†
+		//ƒXƒLƒjƒ“ƒOˆ—
 		for (size_t j = 0; j < vertices.size(); j++) {
 			bsm::Mat4x4 skinning(0);
 			for (size_t i = 0; i < 4; i++)
@@ -1875,7 +1912,7 @@ namespace basecross {
 
 	void SmBaseDraw::GetSkinedMeshWorldPositions(vector<bsm::Vec3>& vertices) {
 		GetSkinedMeshLocalPositions(vertices);
-		//ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã®åæ˜ 
+		//ƒ[ƒ‹ƒhs—ñ‚Ì”½‰f
 		auto WorldMat = GetGameObject()->GetComponent<Transform>()->GetWorldMatrix();
 		for (auto& v : vertices) {
 			v *= WorldMat;
@@ -1891,7 +1928,7 @@ namespace basecross {
 			tri.m_B = pImpl->m_SmDrawObject.m_TempPositions[i + 1];
 			tri.m_C = pImpl->m_SmDrawObject.m_TempPositions[i + 2];
 			if (!tri.IsValid()) {
-				//ä¸‰è§’å½¢ãŒç„¡åŠ¹ãªã‚‰æ¬¡ã«ã†ã¤ã‚‹
+				//OŠpŒ`‚ª–³Œø‚È‚çŸ‚É‚¤‚Â‚é
 				continue;
 			}
 			bsm::Vec3 ret;
@@ -1920,12 +1957,12 @@ namespace basecross {
 			tri.m_B = pImpl->m_SmDrawObject.m_TempPositions[i + 1];
 			tri.m_C = pImpl->m_SmDrawObject.m_TempPositions[i + 2];
 			if (!tri.IsValid()) {
-				//ä¸‰è§’å½¢ãŒç„¡åŠ¹ãªã‚‰æ¬¡ã«ã†ã¤ã‚‹
+				//OŠpŒ`‚ª–³Œø‚È‚çŸ‚É‚¤‚Â‚é
 				continue;
 			}
 			bsm::Vec3 ret;
 			float t;
-			//çƒä½“ã®ç§»å‹•ã¯StartSpã‹ã‚‰EndSpã«1.0ã¨ã™ã‚‹
+			//‹…‘Ì‚ÌˆÚ“®‚ÍStartSp‚©‚çEndSp‚É1.0‚Æ‚·‚é
 			bsm::Vec3 Valocity = EndSp.m_Center - StartSp.m_Center;
 			if (HitTest::CollisionTestSphereTriangle(StartSp, Valocity, tri, 0.0f, 1.0f, t)) {
 				auto Len = length(EndSp.m_Center - StartSp.m_Center);
@@ -1942,16 +1979,17 @@ namespace basecross {
 		return false;
 	}
 
+
 	//--------------------------------------------------------------------------------------
-	///	PCStaticæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PCStatic•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
-	PCStaticDraw::PCStaticDraw(const shared_ptr<GameObject>& GameObjectPtr) :
+	PCStaticDraw::PCStaticDraw(const shared_ptr<GameObject>& GameObjectPtr):
 		SmBaseDraw(GameObjectPtr)
 	{}
 
-	PCStaticDraw::~PCStaticDraw() {}
+	PCStaticDraw::~PCStaticDraw(){}
 
-	void PCStaticDraw::OnCreate() {}
+	void PCStaticDraw::OnCreate(){}
 
 	void PCStaticDraw::OnDraw() {
 		if (GetGameObject()->GetAlphaActive()) {
@@ -1960,12 +1998,12 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			DrawStatic<VSPCStatic, PSPCStatic>(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -1976,13 +2014,14 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
+
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PNStaticæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PNStatic•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PNStaticDraw::PNStaticDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -1999,12 +2038,12 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			DrawStatic<VSPNStatic, PSPNStatic>(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2015,13 +2054,16 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
+
 	}
 
+
+
 	//--------------------------------------------------------------------------------------
-	///	PTStaticæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PTStatic•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PTStaticDraw::PTStaticDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2038,12 +2080,12 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			DrawStatic<VSPTStatic, PSPTStatic>(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2054,13 +2096,14 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
+
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PCTStaticæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PCTStatic•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PCTStaticDraw::PCTStaticDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2077,12 +2120,12 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			DrawStatic<VSPCTStatic, PSPCTStatic>(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2093,13 +2136,14 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
+
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PNTStaticæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PNTStatic•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PNTStaticDraw::PNTStaticDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2108,7 +2152,7 @@ namespace basecross {
 	PNTStaticDraw::~PNTStaticDraw() {}
 
 	void PNTStaticDraw::OnCreate() {
-		//ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°ã®ã¿ã ã¨æ¥µç«¯ã«ãªã‚‹ã®ã§èª¿æ•´
+		//ƒ‰ƒCƒeƒBƒ“ƒO‚Ì‚İ‚¾‚Æ‹É’[‚É‚È‚é‚Ì‚Å’²®
 		SetEmissive(bsm::Col4(0.5f, 0.5f, 0.5f, 0.0f));
 		SetDiffuse(bsm::Col4(0.6f, 0.6f, 0.6f, 1.0f));
 	}
@@ -2120,7 +2164,7 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			if (GetOwnShadowActive()) {
@@ -2130,7 +2174,7 @@ namespace basecross {
 				DrawStatic<VSPNTStatic, PSPNTStatic>(PtrMeshResource->GetMashData());
 			}
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2151,13 +2195,14 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
+
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PNTStaticModelæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PNTStaticModel•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PNTStaticModelDraw::PNTStaticModelDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2166,7 +2211,7 @@ namespace basecross {
 	PNTStaticModelDraw::~PNTStaticModelDraw() {}
 
 	void PNTStaticModelDraw::OnCreate() {
-		//ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°ã®ã¿ã ã¨æ¥µç«¯ã«ãªã‚‹ã®ã§èª¿æ•´
+		//ƒ‰ƒCƒeƒBƒ“ƒO‚Ì‚İ‚¾‚Æ‹É’[‚É‚È‚é‚Ì‚Å’²®
 		SetEmissive(bsm::Col4(0.5f, 0.5f, 0.5f, 0.0f));
 		SetDiffuse(bsm::Col4(0.6f, 0.6f, 0.6f, 1.0f));
 	}
@@ -2178,7 +2223,7 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			if (GetOwnShadowActive()) {
@@ -2193,7 +2238,7 @@ namespace basecross {
 				DrawModel<VSPNTStatic, PSPNTStatic>(PtrMeshResource->GetMashData());
 			}
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2214,13 +2259,14 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
+
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PNTBoneModelæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆï¼ˆãƒœãƒ¼ãƒ³ãƒ¢ãƒ‡ãƒ«æç”»ç”¨ï¼‰
+	///	PNTBoneModel•`‰æƒRƒ“ƒ|[ƒlƒ“ƒgiƒ{[ƒ“ƒ‚ƒfƒ‹•`‰æ—pj
 	//--------------------------------------------------------------------------------------
 	PNTBoneModelDraw::PNTBoneModelDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2239,13 +2285,16 @@ namespace basecross {
 	void PNTBoneModelDraw::SetMultiMeshResource(const shared_ptr<MultiMeshResource>& MeshResourcePtr) {
 		SmBaseDraw::SetMultiMeshResource(MeshResourcePtr);
 		BoneInit();
+
 	}
 	void PNTBoneModelDraw::SetMultiMeshResource(const wstring& ResKey) {
 		PNTBoneModelDraw::SetMultiMeshResource(App::GetApp()->GetResource<MultiMeshResource>(ResKey));
 	}
 
+
+
 	void PNTBoneModelDraw::OnCreate() {
-		//ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°ã®ã¿ã ã¨æ¥µç«¯ã«ãªã‚‹ã®ã§èª¿æ•´
+		//ƒ‰ƒCƒeƒBƒ“ƒO‚Ì‚İ‚¾‚Æ‹É’[‚É‚È‚é‚Ì‚Å’²®
 		SetEmissive(bsm::Col4(0.5f, 0.5f, 0.5f, 0.0f));
 		SetDiffuse(bsm::Col4(0.6f, 0.6f, 0.6f, 1.0f));
 	}
@@ -2257,14 +2306,14 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
-			//ã‚·ã‚§ãƒ¼ãƒ€ã®è¨­å®š
+			//ƒVƒF[ƒ_‚Ìİ’è
 			if (IsOwnShadowActive()) {
-				//å½±ä»˜ã
+				//‰e•t‚«
 				if (GetGameObject()->GetComponent<Shadowmap>(false)) {
-					//ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ãŒã‚ã‚Œã°è‡ªå·±å½±é˜²æ­¢ç”¨ã®ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€
+					//ƒVƒƒƒhƒEƒ}ƒbƒv‚ª‚ ‚ê‚Î©ŒÈ‰e–h~—p‚ÌƒsƒNƒZƒ‹ƒVƒF[ƒ_
 					DrawModel<VSPNTBoneShadow, PSPNTStaticShadow2>(PtrMeshResource->GetMashData());
 				}
 				else {
@@ -2275,7 +2324,7 @@ namespace basecross {
 				DrawModel<VSPNTBone, PSPNTStatic>(PtrMeshResource->GetMashData());
 			}
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2297,13 +2346,13 @@ namespace basecross {
 			}
 		}
 
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PCStaticInstanceæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PCStaticInstance•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PCStaticInstanceDraw::PCStaticInstanceDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2312,7 +2361,7 @@ namespace basecross {
 	PCStaticInstanceDraw::~PCStaticInstanceDraw() {}
 
 	void PCStaticInstanceDraw::OnCreate() {
-		//è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
+		//s—ñƒoƒbƒtƒ@‚Ìì¬
 		CreateMatrixBuffer();
 	}
 
@@ -2324,12 +2373,12 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			DrawStaticInstance<VSPCStaticInstance, PSPCStatic>(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2340,18 +2389,18 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
-		//è‡ªå‹•è¡Œåˆ—ã‚¯ãƒªã‚¢ãªã‚‰
+		//©“®s—ñƒNƒŠƒA‚È‚ç
 		if (IsAutoClearMatrixVec()) {
-			//è¡Œåˆ—é…åˆ—ã®ã‚¯ãƒªã‚¢
+			//s—ñ”z—ñ‚ÌƒNƒŠƒA
 			ClearMatrixVec();
 		}
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PTStaticInstanceæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PTStaticInstance•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PTStaticInstanceDraw::PTStaticInstanceDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2360,7 +2409,7 @@ namespace basecross {
 	PTStaticInstanceDraw::~PTStaticInstanceDraw() {}
 
 	void PTStaticInstanceDraw::OnCreate() {
-		//è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
+		//s—ñƒoƒbƒtƒ@‚Ìì¬
 		CreateMatrixBuffer();
 	}
 
@@ -2372,12 +2421,12 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			DrawStaticInstance<VSPTStaticInstance, PSPTStatic>(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2388,18 +2437,18 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
-		//è‡ªå‹•è¡Œåˆ—ã‚¯ãƒªã‚¢ãªã‚‰
+		//©“®s—ñƒNƒŠƒA‚È‚ç
 		if (IsAutoClearMatrixVec()) {
-			//è¡Œåˆ—é…åˆ—ã®ã‚¯ãƒªã‚¢
+			//s—ñ”z—ñ‚ÌƒNƒŠƒA
 			ClearMatrixVec();
 		}
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PCTStaticInstanceæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PCTStaticInstance•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PCTStaticInstanceDraw::PCTStaticInstanceDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2408,7 +2457,7 @@ namespace basecross {
 	PCTStaticInstanceDraw::~PCTStaticInstanceDraw() {}
 
 	void PCTStaticInstanceDraw::OnCreate() {
-		//è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
+		//s—ñƒoƒbƒtƒ@‚Ìì¬
 		CreateMatrixBuffer();
 	}
 
@@ -2420,12 +2469,12 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			DrawStaticInstance<VSPCTStaticInstance, PSPCTStatic>(PtrMeshResource->GetMashData());
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2436,18 +2485,18 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
-		//è‡ªå‹•è¡Œåˆ—ã‚¯ãƒªã‚¢ãªã‚‰
+		//©“®s—ñƒNƒŠƒA‚È‚ç
 		if (IsAutoClearMatrixVec()) {
-			//è¡Œåˆ—é…åˆ—ã®ã‚¯ãƒªã‚¢
+			//s—ñ”z—ñ‚ÌƒNƒŠƒA
 			ClearMatrixVec();
 		}
 	}
 
 	//--------------------------------------------------------------------------------------
-	///	PNTStaticInstanceæç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	///	PNTStaticInstance•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//--------------------------------------------------------------------------------------
 	PNTStaticInstanceDraw::PNTStaticInstanceDraw(const shared_ptr<GameObject>& GameObjectPtr) :
 		SmBaseDraw(GameObjectPtr)
@@ -2456,10 +2505,10 @@ namespace basecross {
 	PNTStaticInstanceDraw::~PNTStaticInstanceDraw() {}
 
 	void PNTStaticInstanceDraw::OnCreate() {
-		//ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°ã®ã¿ã ã¨æ¥µç«¯ã«ãªã‚‹ã®ã§èª¿æ•´
+		//ƒ‰ƒCƒeƒBƒ“ƒO‚Ì‚İ‚¾‚Æ‹É’[‚É‚È‚é‚Ì‚Å’²®
 		SetEmissive(bsm::Col4(0.5f, 0.5f, 0.5f, 0.0f));
 		SetDiffuse(bsm::Col4(0.6f, 0.6f, 0.6f, 1.0f));
-		//è¡Œåˆ—ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
+		//s—ñƒoƒbƒtƒ@‚Ìì¬
 		CreateMatrixBuffer();
 	}
 
@@ -2471,7 +2520,7 @@ namespace basecross {
 			}
 			SetRasterizerState(RasterizerState::DoubleDraw);
 		}
-		//ãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMeshResource = GetMeshResource();
 		if (PtrMeshResource) {
 			if (GetOwnShadowActive()) {
@@ -2486,7 +2535,7 @@ namespace basecross {
 				DrawStaticInstance<VSPNTStaticInstance, PSPNTStatic>(PtrMeshResource->GetMashData());
 			}
 		}
-		//ãƒãƒ«ãƒãƒ¡ãƒƒã‚·ãƒ¥ãƒªã‚½ãƒ¼ã‚¹ã®å–å¾—
+		//ƒ}ƒ‹ƒ`ƒƒbƒVƒ…ƒŠƒ\[ƒX‚Ìæ“¾
 		auto PtrMultiMeshResource = GetMultiMeshResource();
 		if (PtrMultiMeshResource) {
 			size_t count = PtrMultiMeshResource->GetMeshVecCount();
@@ -2507,14 +2556,18 @@ namespace basecross {
 				}
 			}
 		}
-		//å¾Œå§‹æœ«
+		//Œãn––
 		auto Dev = App::GetApp()->GetDeviceResources();
 		Dev->InitializeStates();
-		//è‡ªå‹•è¡Œåˆ—ã‚¯ãƒªã‚¢ãªã‚‰
+		//©“®s—ñƒNƒŠƒA‚È‚ç
 		if (IsAutoClearMatrixVec()) {
-			//è¡Œåˆ—é…åˆ—ã®ã‚¯ãƒªã‚¢
+			//s—ñ”z—ñ‚ÌƒNƒŠƒA
 			ClearMatrixVec();
 		}
+
 	}
+
+
 }
 //end basecross
+

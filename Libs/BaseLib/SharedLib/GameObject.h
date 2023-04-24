@@ -1,12 +1,12 @@
-ï»¿/*!
+/*!
 @file GameObject.h
-@brief ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€ã‚¹ãƒ†ãƒ¼ã‚¸
+@brief ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgAƒXƒe[ƒW
 @copyright Copyright (c) 2017 WiZ Tamura Hiroki,Yamanoi Yasushi.
 */
 #pragma once
 #include "stdafx.h"
-#include "Itabashi/Utility/ActionTimer.h"
-#include "Patch/ex_weak_ptr.h"
+#include "ActionTimer.h"
+#include "ex_weak_ptr.h"
 
 using namespace itbs::Utility;
 
@@ -14,40 +14,36 @@ namespace basecross {
 	class Stage;
 	struct CollisionPair;
 	class UIObject;
-	class GameStageBase;
-	class SceneBase;
 	//--------------------------------------------------------------------------------------
-	///	ã‚²ãƒ¼ãƒ é…ç½®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆè¦ªã‚¯ãƒ©ã‚¹
+	///	ƒQ[ƒ€”z’uƒIƒuƒWƒFƒNƒgeƒNƒ‰ƒX
 	//--------------------------------------------------------------------------------------
 	class GameObject :public ObjectInterface, public ShapeInterface {
-		bool m_UpdateActive = true;	//updateã™ã‚‹ã‹ã©ã†ã‹
-		bool m_DrawActive = true;	//Drawã™ã‚‹ã‹ã©ã†ã‹
-		bool m_AlphaActive = false;	//é€æ˜ã‹ã©ã†ã‹
-		bool m_SpriteDraw = false;	//ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¨ã—ã¦æç”»ã™ã‚‹ã‹ã©ã†ã‹
+		bool m_UpdateActive = true;	//update‚·‚é‚©‚Ç‚¤‚©
+		bool m_DrawActive = true;		//Draw‚·‚é‚©‚Ç‚¤‚©
+		bool m_AlphaActive = false;		//“§–¾‚©‚Ç‚¤‚©
+		bool m_SpriteDraw = false;	//ƒXƒvƒ‰ƒCƒg‚Æ‚µ‚Ä•`‰æ‚·‚é‚©‚Ç‚¤‚©
 
-		bool m_isUpdateActive = true; // å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®éš›ã®UpdateActiveä¿å­˜ç”¨
-		bool m_isDrawActive = true; // å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®éš›ã®DrawActiveä¿å­˜ç”¨
+		bool m_isUpdateActive = true; // qƒIƒuƒWƒFƒNƒg‚ÌÛ‚ÌUpdateActive•Û‘¶—p
+		bool m_isDrawActive = true; // qƒIƒuƒWƒFƒNƒg‚ÌÛ‚ÌDrawActive•Û‘¶—p
 
-		int m_DrawLayer = 0;	//æç”»ãƒ¬ã‚¤ãƒ¤ãƒ¼
-		set<wstring> m_TagSet;	//ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆ
-		set<int> m_NumTagSet;	//æ•°å­—ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆ
+		int m_DrawLayer = 0;	//•`‰æƒŒƒCƒ„[
+		set<wstring> m_TagSet;	//ƒ^ƒO‚ÌƒZƒbƒg
+		set<int> m_NumTagSet;	//”šƒ^ƒO‚ÌƒZƒbƒg
 
-		weak_ptr<Stage> m_Stage;	//æ‰€å±ã‚¹ãƒ†ãƒ¼ã‚¸
+		weak_ptr<Stage> m_Stage;	//Š‘®ƒXƒe[ƒW
 		map<type_index, shared_ptr<Component> > m_CompMap;
-		list<type_index> m_CompOrder;	//ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå®Ÿè¡Œé †ç•ª
-											//è¡Œå‹•ã®ãƒãƒƒãƒ—
+		list<type_index> m_CompOrder;	//ƒRƒ“ƒ|[ƒlƒ“ƒgÀs‡”Ô
+											//s“®‚Ìƒ}ƒbƒv
 		map<type_index, shared_ptr<Behavior>> m_BehaviorMap;
 
-		ex_weak_ptr<GameObject> m_parent;  // è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
-		std::vector<ex_weak_ptr<GameObject>> m_children; // å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
-
-		std::vector<std::function<void()>> m_removeComponentFunctions; //å‰Šé™¤ã™ã‚‹ã‚³ãƒ³ãƒâ€•ãƒãƒ³ãƒˆ
+		ex_weak_ptr<GameObject> m_parent;  // eƒIƒuƒWƒFƒNƒg
+		std::vector<ex_weak_ptr<GameObject>> m_children; // qƒIƒuƒWƒFƒNƒg
 
 		itbs::Utility::ActionTimer m_actionTimer;
 
 	protected:
 		//------------------------------
-		//è¿½åŠ åˆ†
+		//’Ç‰Á•ª
 		std::shared_ptr<Transform> transform;
 		//------------------------------
 
@@ -85,29 +81,30 @@ namespace basecross {
 				return it->second;
 			}
 			return nullptr;
+
 		}
 		void AddMakedBehavior(type_index TypeIndex, const shared_ptr<Behavior>& Ptr) {
-			//mapã«è¿½åŠ ã‚‚ã—ãã¯æ›´æ–°
+			//map‚É’Ç‰Á‚à‚µ‚­‚ÍXV
 			m_BehaviorMap[TypeIndex] = Ptr;
 		}
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		@param[in]	StagePtr	ƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		explicit GameObject(const shared_ptr<Stage>& StagePtr);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObject();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	XVˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	XVˆ—‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsUpdateActive() const {
@@ -115,8 +112,8 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	XVˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	XVˆ—‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetUpdateActive() const {
@@ -124,16 +121,16 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰ãªã‚‰true
-		@return	ãªã—
+		@brief	XVˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	XVˆ—‚ª—LŒø‚È‚ç‚È‚çtrue
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetUpdateActive(bool b, bool isParent = true);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	æç”»å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	•`‰æˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	•`‰æˆ—‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsDrawActive() const {
@@ -141,8 +138,8 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	æç”»å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	•`‰æˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	•`‰æˆ—‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetDrawActive() const {
@@ -150,12 +147,13 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	æç”»å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰ãªã‚‰true
-		@return	ãªã—
+		@brief	•`‰æˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	•`‰æˆ—‚ª—LŒø‚È‚ç‚È‚çtrue
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
-		void SetDrawActive(bool b, bool isParent = true) {
+		void SetDrawActive(bool b,bool isParent = true) { 
+
 			if (isParent)
 			{
 				m_DrawActive = b;
@@ -173,19 +171,11 @@ namespace basecross {
 					child->SetDrawActive(b, false);
 				}
 			}
-
-			if (b) {
-				OnDrawActive();
-			}
-			else {
-				OnDrawFalse();
-			}
 		}
-
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	é€æ˜å‡¦ç†ï¼ˆåŠé€æ˜å«ã‚€ï¼‰ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	é€æ˜å‡¦ç†ï¼ˆåŠé€æ˜å«ã‚€ï¼‰ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	“§–¾ˆ—i”¼“§–¾ŠÜ‚Şj‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	“§–¾ˆ—i”¼“§–¾ŠÜ‚Şj‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsAlphaActive() const {
@@ -193,8 +183,8 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	é€æ˜å‡¦ç†ï¼ˆåŠé€æ˜å«ã‚€ï¼‰ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	é€æ˜å‡¦ç†ï¼ˆåŠé€æ˜å«ã‚€ï¼‰ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	“§–¾ˆ—i”¼“§–¾ŠÜ‚Şj‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	“§–¾ˆ—i”¼“§–¾ŠÜ‚Şj‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetAlphaActive() const {
@@ -202,36 +192,29 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	é€æ˜å‡¦ç†ï¼ˆåŠé€æ˜å«ã‚€ï¼‰ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	é€æ˜å‡¦ç†ï¼ˆåŠé€æ˜å«ã‚€ï¼‰ãŒæœ‰åŠ¹ãªã‚‰ãªã‚‰true
-		@return	ãªã—
+		@brief	“§–¾ˆ—i”¼“§–¾ŠÜ‚Şj‚ª—LŒø‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	“§–¾ˆ—i”¼“§–¾ŠÜ‚Şj‚ª—LŒø‚È‚ç‚È‚çtrue
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetAlphaActive(bool b) {
 			m_AlphaActive = b;
 		}
 
-		virtual void SetActive(bool b)
+		void SetActive(bool b)
 		{
 			SetUpdateActive(b);
 			SetDrawActive(b);
 		}
 
-		bool IsActive() const {
-			return (GetDrawActive() && GetUpdateActive());
-		}
-
 		/// <summary>
-		/// è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç™»éŒ²ã™ã‚‹
+		/// eƒIƒuƒWƒFƒNƒg‚ğ“o˜^‚·‚é
 		/// </summary>
-		/// <param name="parent">è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
+		/// <param name="parent">eƒIƒuƒWƒFƒNƒg</param>
 		void SetParent(const std::shared_ptr<GameObject>& parent)
 		{
 			if (!parent)
 			{
-				//m_parent->ChildDestroy(GetThis<GameObject>());
-				m_parent = parent;
-				transform->ClearParent();
 				return;
 			}
 
@@ -241,17 +224,17 @@ namespace basecross {
 		}
 
 		/// <summary>
-		/// è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã™é–¢æ•°
+		/// eƒIƒuƒWƒFƒNƒg‚ğ•Ô‚·ŠÖ”
 		/// </summary>
-		/// <returns>è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</returns>
+		/// <returns>eƒIƒuƒWƒFƒNƒg</returns>
 		std::shared_ptr<GameObject> GetParent()
 		{
 			return m_parent.GetShard();
 		}
 		/// <summary>
-		/// å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç™»éŒ²é–¢æ•°
+		/// qƒIƒuƒWƒFƒNƒg“o˜^ŠÖ”
 		/// </summary>
-		/// <param name="child">å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
+		/// <param name="child">qƒIƒuƒWƒFƒNƒg</param>
 		void AddChild(const std::shared_ptr<GameObject>& child)
 		{
 			m_children.push_back(child);
@@ -272,16 +255,13 @@ namespace basecross {
 		void ChildDestroy(const std::shared_ptr<GameObject>& childObject);
 
 		void OnEnable() override;
-		//DrawãŒActiveã«ãªã£ãŸæ™‚ã«å‘¼ã¶é–¢æ•°
-		virtual void OnDrawActive();
-		virtual void OnDrawFalse() {};
 
 		void OnDisable() override;
 
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¨ã—ã¦Drawã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¨ã—ã¦Drawã™ã‚‹ãªã‚‰true
+		@brief	ƒXƒvƒ‰ƒCƒg‚Æ‚µ‚ÄDraw‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	ƒXƒvƒ‰ƒCƒg‚Æ‚µ‚ÄDraw‚·‚é‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsSpriteDraw() const {
@@ -289,8 +269,8 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¨ã—ã¦Drawã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¨ã—ã¦Drawã™ã‚‹ãªã‚‰true
+		@brief	ƒXƒvƒ‰ƒCƒg‚Æ‚µ‚ÄDraw‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	ƒXƒvƒ‰ƒCƒg‚Æ‚µ‚ÄDraw‚·‚é‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetSpriteDraw() const {
@@ -298,9 +278,9 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¨ã—ã¦Drawã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¨ã—ã¦Drawã™ã‚‹ãªã‚‰true
-		@return	ãªã—
+		@brief	ƒXƒvƒ‰ƒCƒg‚Æ‚µ‚ÄDraw‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	ƒXƒvƒ‰ƒCƒg‚Æ‚µ‚ÄDraw‚·‚é‚È‚çtrue
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetSpriteDraw(bool b) {
@@ -308,8 +288,8 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å¾—ã‚‹ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ0ï¼‰
-		@return	æç”»ãƒ¬ã‚¤ãƒ¤ãƒ¼
+		@brief	•`‰æƒŒƒCƒ„[‚ğ“¾‚éiƒfƒtƒHƒ‹ƒg0j
+		@return	•`‰æƒŒƒCƒ„[
 		*/
 		//--------------------------------------------------------------------------------------
 		int GetDrawLayer() const {
@@ -317,9 +297,9 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¨­å®šã™ã‚‹
-		@param[in]	l	æç”»ãƒ¬ã‚¤ãƒ¤ãƒ¼ï¼ˆãƒã‚¤ãƒŠã‚¹è¨­å®šå¯ï¼‰
-		@return	ãªã—
+		@brief	•`‰æƒŒƒCƒ„[‚ğİ’è‚·‚é
+		@param[in]	l	•`‰æƒŒƒCƒ„[iƒ}ƒCƒiƒXİ’è‰Âj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void  SetDrawLayer(int l) {
@@ -327,27 +307,27 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆã‚’å¾—ã‚‹(const)
-		@return	ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆ
+		@brief	ƒ^ƒO‚ÌƒZƒbƒg‚ğ“¾‚é(const)
+		@return	ƒ^ƒO‚ÌƒZƒbƒg
 		*/
 		//--------------------------------------------------------------------------------------
-		const set<wstring>& GetTagSet() const {
+		const set<wstring>& GetTagSet() const{
 			return m_TagSet;
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆã‚’å¾—ã‚‹
-		@return	ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆ
+		@brief	ƒ^ƒO‚ÌƒZƒbƒg‚ğ“¾‚é
+		@return	ƒ^ƒO‚ÌƒZƒbƒg
 		*/
 		//--------------------------------------------------------------------------------------
-		set<wstring>& GetTagSet() {
+		set<wstring>& GetTagSet(){
 			return m_TagSet;
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã™ã‚‹ã‚¿ã‚°ãŒå­˜åœ¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@param[in]	tagstr	æ¤œè¨¼ã™ã‚‹ã‚¿ã‚°
-		@return	å­˜åœ¨ã™ã‚Œã°true
+		@brief	w’è‚·‚éƒ^ƒO‚ª‘¶İ‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@param[in]	tagstr	ŒŸØ‚·‚éƒ^ƒO
+		@return	‘¶İ‚·‚ê‚Îtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool FindTag(const wstring& tagstr) const {
@@ -358,16 +338,16 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã™ã‚‹ã‚¿ã‚°ã‚’è¿½åŠ ã™ã‚‹
-		@param[in]	tagstr	è¿½åŠ ã™ã‚‹ã‚¿ã‚°
-		@return	ãªã—
+		@brief	w’è‚·‚éƒ^ƒO‚ğ’Ç‰Á‚·‚é
+		@param[in]	tagstr	’Ç‰Á‚·‚éƒ^ƒO
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void  AddTag(const wstring& tagstr) {
 			if (tagstr == L"") {
-				//ç©ºç™½ãªã‚‰ä¾‹å¤–
+				//‹ó”’‚È‚ç—áŠO
 				throw BaseException(
-					L"è¨­å®šã™ã‚‹ã‚¿ã‚°ãŒç©ºã§ã™",
+					L"İ’è‚·‚éƒ^ƒO‚ª‹ó‚Å‚·",
 					L"if (tagstr == L"")",
 					L"GameObject::AddTag()"
 				);
@@ -376,9 +356,9 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã™ã‚‹ã‚¿ã‚°ãŒå­˜åœ¨ã—ãŸã‚‰å‰Šé™¤ã™ã‚‹ï¼ˆå­˜åœ¨ã—ãªã„å ´åˆã¯ä½•ã‚‚ã—ãªã„ï¼‰
-		@param[in]	tagstr	å‰Šé™¤ã™ã‚‹ã‚¿ã‚°
-		@return	ãªã—
+		@brief	w’è‚·‚éƒ^ƒO‚ª‘¶İ‚µ‚½‚çíœ‚·‚éi‘¶İ‚µ‚È‚¢ê‡‚Í‰½‚à‚µ‚È‚¢j
+		@param[in]	tagstr	íœ‚·‚éƒ^ƒO
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void  RemoveTag(const wstring& tagstr) {
@@ -386,8 +366,8 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ•°å­—ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆã‚’å¾—ã‚‹(const)
-		@return	æ•°å­—ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆ
+		@brief	”šƒ^ƒO‚ÌƒZƒbƒg‚ğ“¾‚é(const)
+		@return	”šƒ^ƒO‚ÌƒZƒbƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		const set<int>& GetNumTagSet() const {
@@ -395,8 +375,8 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ•°å­—ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆã‚’å¾—ã‚‹
-		@return	æ•°å­—ã‚¿ã‚°ã®ã‚»ãƒƒãƒˆ
+		@brief	”šƒ^ƒO‚ÌƒZƒbƒg‚ğ“¾‚é
+		@return	”šƒ^ƒO‚ÌƒZƒbƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		set<int>& GetNumTagSet() {
@@ -404,9 +384,9 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã™ã‚‹æ•°å­—ã‚¿ã‚°ãŒå­˜åœ¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@param[in]	numtag	æ¤œè¨¼ã™ã‚‹æ•°å­—ã‚¿ã‚°
-		@return	å­˜åœ¨ã™ã‚Œã°true
+		@brief	w’è‚·‚é”šƒ^ƒO‚ª‘¶İ‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@param[in]	numtag	ŒŸØ‚·‚é”šƒ^ƒO
+		@return	‘¶İ‚·‚ê‚Îtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool FindNumTag(int numtag) const {
@@ -417,9 +397,9 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã™ã‚‹æ•°å­—ã‚¿ã‚°ã‚’è¿½åŠ ã™ã‚‹
-		@param[in]	numtag	è¿½åŠ ã™ã‚‹æ•°å­—ã‚¿ã‚°
-		@return	ãªã—
+		@brief	w’è‚·‚é”šƒ^ƒO‚ğ’Ç‰Á‚·‚é
+		@param[in]	numtag	’Ç‰Á‚·‚é”šƒ^ƒO
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void  AddNumTag(int numtag) {
@@ -427,9 +407,9 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã™ã‚‹æ•°å­—ã‚¿ã‚°ãŒå­˜åœ¨ã—ãŸã‚‰å‰Šé™¤ã™ã‚‹ï¼ˆå­˜åœ¨ã—ãªã„å ´åˆã¯ä½•ã‚‚ã—ãªã„ï¼‰
-		@param[in]	numtag	å‰Šé™¤ã™ã‚‹æ•°å­—ã‚¿ã‚°
-		@return	ãªã—
+		@brief	w’è‚·‚é”šƒ^ƒO‚ª‘¶İ‚µ‚½‚çíœ‚·‚éi‘¶İ‚µ‚È‚¢ê‡‚Í‰½‚à‚µ‚È‚¢j
+		@param[in]	numtag	íœ‚·‚é”šƒ^ƒO
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void  RemoveNumTag(int numtag) {
@@ -437,25 +417,25 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¾—ã‚‹(const)
-		@param[in]	ExceptionActive	å¯¾è±¡ãŒnullã ã£ãŸå ´åˆã«ä¾‹å¤–å‡¦ç†ã™ã‚‹ã‹ã©ã†ã‹
-		@return	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	Š‘®‚·‚éƒXƒe[ƒW‚ğ“¾‚é(const)
+		@param[in]	ExceptionActive	‘ÎÛ‚ªnull‚¾‚Á‚½ê‡‚É—áŠOˆ—‚·‚é‚©‚Ç‚¤‚©
+		@return	Š‘®‚·‚éƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<Stage> GetStage(bool ExceptionActive = true) const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¾—ã‚‹(const)
-		@param[in]	ExceptionActive	å¯¾è±¡ãŒnullã ã£ãŸå ´åˆã«ä¾‹å¤–å‡¦ç†ã™ã‚‹ã‹ã©ã†ã‹
-		@return	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	Š‘®‚·‚éƒXƒe[ƒW‚ğ“¾‚é(const)
+		@param[in]	ExceptionActive	‘ÎÛ‚ªnull‚¾‚Á‚½ê‡‚É—áŠOˆ—‚·‚é‚©‚Ç‚¤‚©
+		@return	Š‘®‚·‚éƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<Stage> GetStage(bool ExceptionActive = true);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¾—ã‚‹(å‹ãƒã‚§ãƒƒã‚¯ã‚ã‚Š)
-		@param[in]	ExceptionActive	å¯¾è±¡ãŒnullã ã£ãŸå ´åˆã«ä¾‹å¤–å‡¦ç†ã™ã‚‹ã‹ã©ã†ã‹
-		@return	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	Š‘®‚·‚éƒXƒe[ƒW‚ğ“¾‚é(Œ^ƒ`ƒFƒbƒN‚ ‚è)
+		@param[in]	ExceptionActive	‘ÎÛ‚ªnull‚¾‚Á‚½ê‡‚É—áŠOˆ—‚·‚é‚©‚Ç‚¤‚©
+		@return	Š‘®‚·‚éƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -468,7 +448,7 @@ namespace basecross {
 			if (!TargetPtr) {
 				if (ExceptionActive) {
 					throw BaseException(
-						L"ã‚¹ãƒ†ãƒ¼ã‚¸ãŒã‚ã‚Šã¾ã—ãŸãŒã€å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“",
+						L"ƒXƒe[ƒW‚ª‚ ‚è‚Ü‚µ‚½‚ªAŒ^ƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñ",
 						Util::GetWSTypeName<T>(),
 						L"GameObject::GetTypeStage<T>()"
 					);
@@ -482,9 +462,9 @@ namespace basecross {
 
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’è¨­å®šã™ã‚‹
-		@param[in]	stage	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
-		@return	ãªã—
+		@brief	Š‘®‚·‚éƒXƒe[ƒW‚ğİ’è‚·‚é
+		@param[in]	stage	Š‘®‚·‚éƒXƒe[ƒW
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetStage(const shared_ptr<Stage>& stage) {
@@ -492,23 +472,23 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—ï¼ˆæ´¾ç”Ÿã‚¯ãƒ©ã‚¹ã§ã‚‚å¯ï¼‰
-		@tparam	T	å–å¾—ã™ã‚‹å‹
-		@param[in]	ExceptionActive	å¯¾è±¡ãŒnullã ã£ãŸå ´åˆã«ä¾‹å¤–å‡¦ç†ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+		@brief	ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾i”h¶ƒNƒ‰ƒX‚Å‚à‰Âj
+		@tparam	T	æ“¾‚·‚éŒ^
+		@param[in]	ExceptionActive	‘ÎÛ‚ªnull‚¾‚Á‚½ê‡‚É—áŠOˆ—‚·‚é‚©‚Ç‚¤‚©
+		@return	ƒRƒ“ƒ|[ƒlƒ“ƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template <typename T>
 		shared_ptr<T> GetComponent(bool ExceptionActive = true)const {
 			auto Ptr = SearchDynamicComponent<T>();
 			if (Ptr) {
-				//æŒ‡å®šã®å‹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã£ãŸ
+				//w’è‚ÌŒ^‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚Á‚½
 				return Ptr;
 			}
 			else {
 				if (ExceptionActive) {
 					throw BaseException(
-						L"ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“",
+						L"ƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ",
 						Util::GetWSTypeName<T>(),
 						L"GameObject::GetComponent<T>()"
 					);
@@ -517,47 +497,25 @@ namespace basecross {
 			return nullptr;
 		}
 
-		/// <summary>
-		/// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆè¡Œåˆ—ã®å–å¾—
-		/// </summary>
-		/// <returns>ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆè¡Œåˆ—</returns>
-		template <class T>
-		std::vector<std::shared_ptr<T>> GetComponents() const
-		{
-			std::vector<std::shared_ptr<T>> components;
-
-			for (const auto& componentPair : m_CompMap)
-			{
-				auto component = std::dynamic_pointer_cast<T>(componentPair.second);
-
-				if (component)
-				{
-					components.push_back(component);
-				}
-			}
-
-			return components;
-		}
-
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ­£ç¢ºãªã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—
-		@tparam	T	å–å¾—ã™ã‚‹å‹
-		@param[in]	ExceptionActive	å¯¾è±¡ãŒnullã ã£ãŸå ´åˆã«ä¾‹å¤–å‡¦ç†ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+		@brief	³Šm‚ÈƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾
+		@tparam	T	æ“¾‚·‚éŒ^
+		@param[in]	ExceptionActive	‘ÎÛ‚ªnull‚¾‚Á‚½ê‡‚É—áŠOˆ—‚·‚é‚©‚Ç‚¤‚©
+		@return	ƒRƒ“ƒ|[ƒlƒ“ƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template <typename T>
 		shared_ptr<T> GetStrictComponent(bool ExceptionActive = true)const {
 			auto CompPtr = SearchStrictComponent(type_index(typeid(T)));
 			if (CompPtr) {
-				//æŒ‡å®šã®å‹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã£ãŸ
+				//w’è‚ÌŒ^‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚Á‚½
 				return dynamic_pointer_cast<T>(CompPtr);
 			}
 			else {
 				if (ExceptionActive) {
 					throw BaseException(
-						L"ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“",
+						L"ƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ",
 						Util::GetWSTypeName<T>(),
 						L"GameObject::GetComponent<T>()"
 					);
@@ -567,10 +525,10 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	DynamicCastã‚’åˆ©ç”¨ã—ãŸã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—ã€‚ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®æ´¾ç”Ÿã‚¯ãƒ©ã‚¹ä½¿ç”¨æ™‚ã«ä½¿ã†
-		@tparam	T	å–å¾—ã™ã‚‹å‹ï¼ˆTã«å‹å¤‰æ›ã§ãã‚‹ã‚‚ã®ï¼‰
-		@param[in]	ExceptionActive	å¯¾è±¡ãŒnullã ã£ãŸå ´åˆã«ä¾‹å¤–å‡¦ç†ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+		@brief	DynamicCast‚ğ—˜—p‚µ‚½ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾BƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì”h¶ƒNƒ‰ƒXg—p‚Ég‚¤
+		@tparam	T	æ“¾‚·‚éŒ^iT‚ÉŒ^•ÏŠ·‚Å‚«‚é‚à‚Ìj
+		@param[in]	ExceptionActive	‘ÎÛ‚ªnull‚¾‚Á‚½ê‡‚É—áŠOˆ—‚·‚é‚©‚Ç‚¤‚©
+		@return	ƒRƒ“ƒ|[ƒlƒ“ƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template <typename T>
@@ -582,7 +540,7 @@ namespace basecross {
 			else {
 				if (ExceptionActive) {
 					throw BaseException(
-						L"å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“",
+						L"Œ^ƒLƒƒƒXƒg‚Å‚«‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ",
 						Util::GetWSTypeName<T>(),
 						L"GameObject::GetDynamicComponent<T>()"
 					);
@@ -593,10 +551,10 @@ namespace basecross {
 
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®è¿½åŠ ã€‚æ–°è¦ã«ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚¯ãƒ©ã‚¹ã‚’ä½œã‚‹å ´åˆã€ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®ç¬¬1å¼•æ•°ã¯GameObjectã¨ã—ã¦ä½œæˆã™ã‚‹ã€‚
-		@tparam	T	è¿½åŠ ã™ã‚‹å‹
-		@param[in]	params	ã“ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹ã®ã«ä½¿ç”¨ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã€‚ï¼ˆç¬¬2ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä»¥é™ï¼‰
-		@return	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+		@brief	ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì’Ç‰ÁBV‹K‚ÉƒRƒ“ƒ|[ƒlƒ“ƒgƒNƒ‰ƒX‚ğì‚éê‡AƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ì‘æ1ˆø”‚ÍGameObject‚Æ‚µ‚Äì¬‚·‚éB
+		@tparam	T	’Ç‰Á‚·‚éŒ^
+		@param[in]	params	‚±‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ\’z‚·‚é‚Ì‚Ég—p‚·‚éƒpƒ‰ƒ[ƒ^Bi‘æ2ƒpƒ‰ƒ[ƒ^ˆÈ~j
+		@return	ƒRƒ“ƒ|[ƒlƒ“ƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T, typename... Ts,
@@ -604,7 +562,7 @@ namespace basecross {
 		shared_ptr<T> AddComponent(Ts&&... params) {
 			type_index t_index = type_index(typeid(T));
 			auto Ptr = SearchDynamicComponent<T>();
-			//æŒ‡å®šã®å‹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã£ãŸ
+			//w’è‚ÌŒ^‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚Á‚½
 			if (Ptr) {
 				auto RetPtr = dynamic_pointer_cast<T>(Ptr);
 				if (RetPtr) {
@@ -612,18 +570,18 @@ namespace basecross {
 				}
 				else {
 					throw BaseException(
-						L"ã™ã§ã«ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒã‚ã‚Šã¾ã—ãŸãŒã€å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“",
+						L"‚·‚Å‚ÉƒRƒ“ƒ|[ƒlƒ“ƒg‚ª‚ ‚è‚Ü‚µ‚½‚ªAŒ^ƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñ",
 						Util::GetWSTypeName<T>(),
 						L"GameObject::AddComponent<T>()"
 					);
 				}
 			}
 			else {
-				//è¦‹ã¤ã‹ã‚‰ãªã„ã€‚æ–°ãŸã«ä½œæˆã™ã‚‹
+				//Œ©‚Â‚©‚ç‚È‚¢BV‚½‚Éì¬‚·‚é
 				shared_ptr<T> newPtr = ObjectFactory::Create<T>(GetThis<GameObject>(), params...);
-				//ãã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒã¾ã ãªã‘ã‚Œã°æ–°è¦ç™»éŒ²
+				//‚»‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ª‚Ü‚¾‚È‚¯‚ê‚ÎV‹K“o˜^
 				m_CompOrder.push_back(t_index);
-				//mapã«è¿½åŠ ã‚‚ã—ãã¯æ›´æ–°
+				//map‚É’Ç‰Á‚à‚µ‚­‚ÍXV
 				m_CompMap[t_index] = newPtr;
 				newPtr->AttachGameObject(GetThis<GameObject>());
 				return newPtr;
@@ -631,22 +589,22 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å‰Šé™¤
-		@tparam	T	å‰Šé™¤ã™ã‚‹å‹
-		@return	ãªã—
+		@brief	ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìíœ
+		@tparam	T	íœ‚·‚éŒ^
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		template <typename T>
 		void RemoveComponent() {
 			auto TypeIndex = type_index(typeid(T));
-			//é †ç•ªãƒªã‚¹ãƒˆã‚’æ¤œè¨¼ã—ã¦å‰Šé™¤
+			//‡”ÔƒŠƒXƒg‚ğŒŸØ‚µ‚Äíœ
 			auto it = m_CompOrder.begin();
 			while (it != m_CompOrder.end()) {
 				if (*it == TypeIndex) {
 					auto it2 = m_CompMap.find(*it);
 					if (it2 != m_CompMap.end()) {
-						//æŒ‡å®šã®å‹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã£ãŸ
-						//mapãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤
+						//w’è‚ÌŒ^‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚Á‚½
+						//mapƒf[ƒ^‚ğíœ
 						m_CompMap.erase(it2);
 					}
 					m_CompOrder.erase(it);
@@ -655,65 +613,32 @@ namespace basecross {
 				it++;
 			}
 		}
-
-		//å‰Šé™¤ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®è¿½åŠ 
-		template<class T>
-		void AddRemoveComponent()
-		{
-			auto TypeIndex = type_index(typeid(T));
-			//é †ç•ªãƒªã‚¹ãƒˆã‚’æ¤œè¨¼ã—ã¦å‰Šé™¤
-			auto it = m_CompOrder.begin();
-			while (it != m_CompOrder.end()) {
-				if (*it == TypeIndex) {
-					auto it2 = m_CompMap.find(*it);
-					if (it2 != m_CompMap.end()) {
-						//æŒ‡å®šã®å‹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã£ãŸ
-						//mapãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤
-						m_removeComponentFunctions.push_back([&, this, it2]() { m_CompMap.erase(it2); });
-					}
-					m_removeComponentFunctions.push_back([&, this, it]() { m_CompOrder.erase(it); });
-					//m_CompOrder.erase(it);
-					return;
-				}
-				it++;
-			}
-		}
-
-		//ç™»éŒ²ã•ã‚ŒãŸã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ã¾ã¨ã‚ã¦å‰Šé™¤
-		void RemoveComponents() {
-			for (auto& function : m_removeComponentFunctions) {
-				function();
-			}
-
-			m_removeComponentFunctions.clear();
-		}
-
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡Œå‹•ã®å–å¾—ã€‚å­˜åœ¨ã—ãªã‘ã‚Œã°ä½œæˆã™ã‚‹
-		@tparam	T	å–å¾—ã™ã‚‹å‹
-		@return	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+		@brief	s“®‚Ìæ“¾B‘¶İ‚µ‚È‚¯‚ê‚Îì¬‚·‚é
+		@tparam	T	æ“¾‚·‚éŒ^
+		@return	ƒRƒ“ƒ|[ƒlƒ“ƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template <typename T>
 		shared_ptr<T> GetBehavior() {
 			auto Ptr = SearchBehavior(type_index(typeid(T)));
 			if (Ptr) {
-				//æŒ‡å®šã®å‹ã®è¡Œå‹•ãŒè¦‹ã¤ã‹ã£ãŸ
+				//w’è‚ÌŒ^‚Ìs“®‚ªŒ©‚Â‚©‚Á‚½
 				auto RetPtr = dynamic_pointer_cast<T>(Ptr);
 				if (RetPtr) {
 					return RetPtr;
 				}
 				else {
 					throw BaseException(
-						L"è¡Œå‹•ãŒã‚ã‚Šã¾ã—ãŸãŒã€å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“",
+						L"s“®‚ª‚ ‚è‚Ü‚µ‚½‚ªAŒ^ƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñ",
 						Util::GetWSTypeName<T>(),
 						L"GameObject::GetBehavior<T>()"
 					);
 				}
 			}
 			else {
-				//ç„¡ã‘ã‚Œã°æ–°ãŸã«åˆ¶ä½œã™ã‚‹
+				//–³‚¯‚ê‚ÎV‚½‚É§ì‚·‚é
 				shared_ptr<T> newPtr = ObjectFactory::Create<T>(GetThis<GameObject>());
 				AddMakedBehavior(type_index(typeid(T)), newPtr);
 				return newPtr;
@@ -722,16 +647,16 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡Œå‹•ã®æ¤œç´¢ã€‚
-		@tparam	T	å–å¾—ã™ã‚‹å‹
-		@return	å­˜åœ¨ã™ã‚Œã°true
+		@brief	s“®‚ÌŒŸõB
+		@tparam	T	æ“¾‚·‚éŒ^
+		@return	‘¶İ‚·‚ê‚Îtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		template <typename T>
 		bool FindBehavior() {
 			auto Ptr = SearchBehavior(type_index(typeid(T)));
 			if (Ptr) {
-				//æŒ‡å®šã®å‹ã®è¡Œå‹•ãŒè¦‹ã¤ã‹ã£ãŸ
+				//w’è‚ÌŒ^‚Ìs“®‚ªŒ©‚Â‚©‚Á‚½
 				auto RetPtr = dynamic_pointer_cast<T>(Ptr);
 				if (RetPtr) {
 					return true;
@@ -744,150 +669,149 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Transformã®åˆæœŸåŒ–å‡¦ç†ã‚’è¡Œã†(å†…éƒ¨ã§SetToBeforãŒå‘¼ã°ã‚Œã‚‹)
-		@return	ãªã—
+		@brief	Transform‚Ì‰Šú‰»ˆ—‚ğs‚¤(“à•”‚ÅSetToBefor‚ªŒÄ‚Î‚ê‚é)
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void TransformInit();
 
 		void ComponentStart();
-		void ComponentLateStart();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®æ›´æ–°å‡¦ç†
-		@return	ãªã—
+		@brief	ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌXVˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void ComponentUpdate();
-
+		
 		void ComponentUpdate2();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã®æç”»å‡¦ç†
-		@return	ãªã—
+		@brief	ƒVƒƒƒhƒEƒ}ƒbƒv‚Ì•`‰æˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void DrawShadowmap();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®æç”»å‡¦ç†ï¼ˆä¸»ã«Drawã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå‘ã‘ï¼‰
-		@return	ãªã—
+		@brief	ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì•`‰æˆ—iå‚ÉDrawƒRƒ“ƒ|[ƒlƒ“ƒgŒü‚¯j
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void ComponentDraw();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å‰åˆæœŸåŒ–
-		@return	ãªã—
+		@brief	‘O‰Šú‰»
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnPreCreate()override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	åˆæœŸåŒ–ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰
-		@return	ãªã—
+		@brief	‰Šú‰»iƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢j
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCreate() override {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰
-		@return	ãªã—
+		@brief	XViƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢j
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnUpdate()override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªç™ºç”Ÿæ™‚æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰ã€‚è¤‡æ•°ã‚ã£ãŸå ´åˆã¯è¤‡æ•°å›å‘¼ã°ã‚Œã‚‹
-		@param[in]	Other	æ–°ã—ãè¡çªã—ãŸç›¸æ‰‹
-		@return	ãªã—
+		@brief	Õ“Ë”­¶‚ÌƒCƒxƒ“ƒgiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢jB•¡”‚ ‚Á‚½ê‡‚Í•¡”‰ñŒÄ‚Î‚ê‚é
+		@param[in]	Other	V‚µ‚­Õ“Ë‚µ‚½‘Šè
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCollisionEnter(shared_ptr<GameObject>& Other) final;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªç™ºç”Ÿæ™‚æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰ã€‚è¤‡æ•°ã‚ã£ãŸå ´åˆã¯è¤‡æ•°å›å‘¼ã°ã‚Œã‚‹
-		@param[in]	Pair ãƒšã‚¢
-		@return	ãªã—
+		@brief	Õ“Ë”­¶‚ÌƒCƒxƒ“ƒgiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢jB•¡”‚ ‚Á‚½ê‡‚Í•¡”‰ñŒÄ‚Î‚ê‚é
+		@param[in]	Pair ƒyƒA
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
-		virtual void OnCollisionEnter(const CollisionPair& Pair) final;
+		virtual void OnCollisionEnter(const CollisionPair& Pair) {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªã—ç¶šã‘ã‚‹ç›¸æ‰‹ãŒã‚ã£ãŸå ´åˆã®ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰ã€‚è¤‡æ•°ã‚ã£ãŸå ´åˆã¯è¤‡æ•°å›å‘¼ã°ã‚Œã‚‹
-		@param[in]	OtherVec	è¡çªã—ç¶šã‘ãŸç›¸æ‰‹
-		@return	ãªã—
+		@brief	Õ“Ë‚µ‘±‚¯‚é‘Šè‚ª‚ ‚Á‚½ê‡‚ÌƒCƒxƒ“ƒgiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢jB•¡”‚ ‚Á‚½ê‡‚Í•¡”‰ñŒÄ‚Î‚ê‚é
+		@param[in]	OtherVec	Õ“Ë‚µ‘±‚¯‚½‘Šè
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCollisionExcute(shared_ptr<GameObject>& Other) final;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªã—ç¶šã‘ã‚‹ç›¸æ‰‹ãŒã‚ã£ãŸå ´åˆã®ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰ã€‚è¤‡æ•°ã‚ã£ãŸå ´åˆã¯è¤‡æ•°å›å‘¼ã°ã‚Œã‚‹
-		@param[in]	Pair ãƒšã‚¢
-		@return	ãªã—
+		@brief	Õ“Ë‚µ‘±‚¯‚é‘Šè‚ª‚ ‚Á‚½ê‡‚ÌƒCƒxƒ“ƒgiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢jB•¡”‚ ‚Á‚½ê‡‚Í•¡”‰ñŒÄ‚Î‚ê‚é
+		@param[in]	Pair ƒyƒA
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
-		virtual void OnCollisionExcute(const CollisionPair& Pair) final;
+		virtual void OnCollisionExcute(const CollisionPair& Pair) {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªã‚’æŠœã‘ãŸç›¸æ‰‹ãŒã‚ã£ãŸå ´åˆã®ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰ã€‚è¤‡æ•°ã‚ã£ãŸå ´åˆã¯è¤‡æ•°å›å‘¼ã°ã‚Œã‚‹
-		@param[in]	OtherVec	è¡çªã‚’æŠœã‘ãŸç›¸æ‰‹ã®é…åˆ—
-		@return	ãªã—
+		@brief	Õ“Ë‚ğ”²‚¯‚½‘Šè‚ª‚ ‚Á‚½ê‡‚ÌƒCƒxƒ“ƒgiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢jB•¡”‚ ‚Á‚½ê‡‚Í•¡”‰ñŒÄ‚Î‚ê‚é
+		@param[in]	OtherVec	Õ“Ë‚ğ”²‚¯‚½‘Šè‚Ì”z—ñ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCollisionExit(shared_ptr<GameObject>& Other) final;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªã‚’æŠœã‘ãŸç›¸æ‰‹ãŒã‚ã£ãŸå ´åˆã®ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰ã€‚è¤‡æ•°ã‚ã£ãŸå ´åˆã¯è¤‡æ•°å›å‘¼ã°ã‚Œã‚‹
-		@param[in]	Pair ãƒšã‚¢
-		@return	ãªã—
+		@brief	Õ“Ë‚ğ”²‚¯‚½‘Šè‚ª‚ ‚Á‚½ê‡‚ÌƒCƒxƒ“ƒgiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢jB•¡”‚ ‚Á‚½ê‡‚Í•¡”‰ñŒÄ‚Î‚ê‚é
+		@param[in]	Pair ƒyƒA
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
-		virtual void OnCollisionExit(const CollisionPair& Pair) final;
+		virtual void OnCollisionExit(const CollisionPair& Pair) {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»å‰æº–å‚™ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰
-		@return	ãªã—
+		@brief	•`‰æ‘O€”õiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢j
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnPreDraw() {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æç”»ã™ã‚‹ãŸã‚ã®ã‚«ãƒ¡ãƒ©ã‚’å¾—ã‚‹ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ã‚¹ãƒ†ãƒ¼ã‚¸ã®ãƒ“ãƒ¥ãƒ¼ã‹ã‚‰å–å¾—ï¼‰
-		@return	ã‚«ãƒ¡ãƒ©ã®shared_ptr
+		@brief	‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ•`‰æ‚·‚é‚½‚ß‚ÌƒJƒƒ‰‚ğ“¾‚éiƒfƒtƒHƒ‹ƒg‚ÍƒXƒe[ƒW‚Ìƒrƒ…[‚©‚çæ“¾j
+		@return	ƒJƒƒ‰‚Ìshared_ptr
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual const shared_ptr<Camera>& OnGetDrawCamera()const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æç”»ã™ã‚‹ãŸã‚ãƒ©ã‚¤ãƒˆã‚’å¾—ã‚‹ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ã‚¹ãƒ†ãƒ¼ã‚¸ã®ãƒ©ã‚¤ãƒˆãƒ™ãƒ¼ã‚¹ã‹ã‚‰å–å¾—ï¼‰
-		@return	ãƒ©ã‚¤ãƒˆã®å®Ÿä½“
+		@brief	‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ•`‰æ‚·‚é‚½‚ßƒ‰ƒCƒg‚ğ“¾‚éiƒfƒtƒHƒ‹ƒg‚ÍƒXƒe[ƒW‚Ìƒ‰ƒCƒgƒx[ƒX‚©‚çæ“¾j
+		@return	ƒ‰ƒCƒg‚ÌÀ‘Ì
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual  const Light& OnGetDrawLight() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’2Dæç”»ã™ã‚‹ãŸã‚ã®å°„å½±è¡Œåˆ—ã‚’å¾—ã‚‹ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ã‚¹ãƒ†ãƒ¼ã‚¸ã®ãƒ“ãƒ¥ãƒ¼ã‹ã‚‰å–å¾—ï¼‰
-		@param[out]	ProjMatrix	å°„å½±è¡Œåˆ—
-		@return	ãªã—
+		@brief	‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ2D•`‰æ‚·‚é‚½‚ß‚ÌË‰es—ñ‚ğ“¾‚éiƒfƒtƒHƒ‹ƒg‚ÍƒXƒe[ƒW‚Ìƒrƒ…[‚©‚çæ“¾j
+		@param[out]	ProjMatrix	Ë‰es—ñ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnGet2DDrawProjMatrix(bsm::Mat4x4& ProjMatrix) const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»
-		@return	ãªã—
+		@brief	•`‰æ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override;
 
 		/// <summary>
-		/// ä¸€å®šæ™‚é–“å¾Œã«å‘¼ã³å‡ºã™é–¢æ•°ã‚’ç™»éŒ²
+		/// ˆê’èŠÔŒã‚ÉŒÄ‚Ño‚·ŠÖ”‚ğ“o˜^
 		/// </summary>
-		/// <param name="object">é–¢æ•°ã‚’å‘¼ã³å‡ºã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
-		/// <param name="action">å‘¼ã³å‡ºã™é–¢æ•°</param>
+		/// <param name="object">ŠÖ”‚ğŒÄ‚Ño‚·ƒIƒuƒWƒFƒNƒg</param>
+		/// <param name="action">ŒÄ‚Ño‚·ŠÖ”</param>
 		template<class T>
-		void AddAction(const std::shared_ptr<T>& object, void(T::* action)(), const float invokeTime)
+		void AddAction(const std::shared_ptr<T>& object, void(T::* action)(),const float invokeTime)
 		{
 			itbs::Utility::ActionData actionData;
 			actionData.action.AddFunc(object, action);
@@ -898,99 +822,93 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå†…ã®å‰Šé™¤ï¼ˆã‚¹ãƒ†ãƒ¼ã‚¸ã‹ã‚‰ã‚ˆã°ã‚Œã‚‹ï¼‰
-		@return	ãªã—
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg“à‚ÌíœiƒXƒe[ƒW‚©‚ç‚æ‚Î‚ê‚éj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void DestroyGameObject();
-
-		/// <summary>
-		/// GameStageBaseã‚’è¿”ã™
-		/// </summary>
-		/// <returns></returns>
-		std::shared_ptr<GameStageBase> GetGameStage();
 	};
 
 	//--------------------------------------------------------------------------------------
-	///	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®weak_ptrã‚’ã‚°ãƒ«ãƒ¼ãƒ—åŒ–ã—ãŸã‚‚ã®
+	///	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìweak_ptr‚ğƒOƒ‹[ƒv‰»‚µ‚½‚à‚Ì
 	//--------------------------------------------------------------------------------------
 	class GameObjectGroup : public ObjectInterface {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		GameObjectGroup();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObjectGroup();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚°ãƒ«ãƒ¼ãƒ—å†…ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®weak_ptrã®é…åˆ—ã‚’å¾—ã‚‹
-		@return	ã‚°ãƒ«ãƒ¼ãƒ—å†…ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®weak_ptrã®é…åˆ—
+		@brief	ƒOƒ‹[ƒv“à‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìweak_ptr‚Ì”z—ñ‚ğ“¾‚é
+		@return	ƒOƒ‹[ƒv“à‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìweak_ptr‚Ì”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		const vector< weak_ptr<GameObject> >& GetGroupVector() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚°ãƒ«ãƒ¼ãƒ—å†…ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å¾—ã‚‹
-		@param[in]	index	ã‚°ãƒ«ãƒ¼ãƒ—å†…ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
-		@return	ã‚°ãƒ«ãƒ¼ãƒ—å†…ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	ƒOƒ‹[ƒv“à‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ“¾‚é
+		@param[in]	index	ƒOƒ‹[ƒv“àƒIƒuƒWƒFƒNƒg‚ÌƒCƒ“ƒfƒbƒNƒX
+		@return	ƒOƒ‹[ƒv“à‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObject> at(size_t index);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚°ãƒ«ãƒ¼ãƒ—å†…ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ•°ã‚’å¾—ã‚‹
-		@return	ã‚°ãƒ«ãƒ¼ãƒ—å†…ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ•°
+		@brief	ƒOƒ‹[ƒv“à‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”‚ğ“¾‚é
+		@return	ƒOƒ‹[ƒv“à‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”
 		*/
 		//--------------------------------------------------------------------------------------
 		size_t size() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚°ãƒ«ãƒ¼ãƒ—ã«ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿½åŠ ã™ã‚‹
-		@param[in]	Obj	è¿½åŠ ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
-		@return	ãªã—
+		@brief	ƒOƒ‹[ƒv‚ÉƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ’Ç‰Á‚·‚é
+		@param[in]	Obj	’Ç‰Á‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void IntoGroup(const shared_ptr<GameObject>& Obj);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚°ãƒ«ãƒ¼ãƒ—ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
-		@return	ãªã—
+		@brief	ƒOƒ‹[ƒv‚ğƒNƒŠƒA‚·‚é
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void AllClear();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	åˆæœŸåŒ–
-		@return	ãªã—
+		@brief	‰Šú‰»
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCreate()override {}
 
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
 	//--------------------------------------------------------------------------------------
-	///	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«å†…ã®ã€1ã¤ã®ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã‚’ã‚ã‚‰ã‚ã™æ§‹é€ ä½“
+	///	ƒp[ƒeƒBƒNƒ‹“à‚ÌA1‚Â‚ÌƒXƒvƒ‰ƒCƒg‚ğ‚ ‚ç‚í‚·\‘¢‘Ì
 	//--------------------------------------------------------------------------------------
 	struct ParticleSprite {
-		bool m_Active;				//ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‹ã©ã†ã‹
-		bsm::Col4 m_Color;				//è‰²ï¼ˆé€ã‘ã•ã›ã‚‹å ´åˆã¯aã‚’0ã«ã™ã‚‹ï¼‰
-		bsm::Vec2 m_LocalScale;		//ãƒ­ãƒ¼ã‚«ãƒ«ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ï¼ˆZã¯1.0å›ºå®šï¼‰
-		bsm::Quat m_LocalQt;		//ãƒ­ãƒ¼ã‚«ãƒ«å›è»¢ã€‚æ‰‹å‹•ã®ã¨ãã®ã¿ä½¿ç”¨
-		bsm::Vec3 m_LocalPos;			//ãƒ­ãƒ¼ã‚«ãƒ«ä½ç½®
-		bsm::Vec2 m_UVLeftTop;		//UVã®å·¦ä¸Š
-		bsm::Vec2 m_UVRightBottom;	//UVã®å³ä¸‹
-		bsm::Vec3 m_Velocity;			//é€Ÿåº¦(å¿…è¦ã«å¿œã˜ã¦ä½¿ç”¨)
+		bool m_Active;				//ƒAƒNƒeƒBƒu‚©‚Ç‚¤‚©
+		bsm::Col4 m_Color;				//Fi“§‚¯‚³‚¹‚éê‡‚Ía‚ğ0‚É‚·‚éj
+		bsm::Vec2 m_LocalScale;		//ƒ[ƒJƒ‹ƒXƒP[ƒŠƒ“ƒOiZ‚Í1.0ŒÅ’èj		
+		bsm::Quat m_LocalQt;		//ƒ[ƒJƒ‹‰ñ“]Bè“®‚Ì‚Æ‚«‚Ì‚İg—p
+		bsm::Vec3 m_LocalPos;			//ƒ[ƒJƒ‹ˆÊ’u
+		bsm::Vec2 m_UVLeftTop;		//UV‚Ì¶ã
+		bsm::Vec2 m_UVRightBottom;	//UV‚Ì‰E‰º
+		bsm::Vec3 m_Velocity;			//‘¬“x(•K—v‚É‰‚¶‚Äg—p)
 		ParticleSprite() :
 			m_Active(true),
 			m_Color(1.0f, 1.0f, 1.0f, 1.0f),
@@ -1014,524 +932,522 @@ namespace basecross {
 	};
 	class ParticleManager;
 	//--------------------------------------------------------------------------------------
-	///	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«
-	///	*1ã¤ã®ã‚¨ãƒŸãƒƒã‚¿ãƒ¼ã‚’æŒã¡ã€è¤‡æ•°ã®ParticleSpriteã‚’ä¿æŒã™ã‚‹
+	///	ƒp[ƒeƒBƒNƒ‹
+	///	*1‚Â‚ÌƒGƒ~ƒbƒ^[‚ğ‚¿A•¡”‚ÌParticleSprite‚ğ•Û‚·‚é
 	//--------------------------------------------------------------------------------------
 	class Particle : public ObjectInterface {
 	public:
 		enum DrawOption {
-			Billboard,	//ãƒ“ãƒ«ãƒœãƒ¼ãƒ‰
-			Faceing,	//ãƒ•ã‚§ã‚¤ã‚·ãƒ³ã‚°
-			FaceingY,	//ãƒ•ã‚§ã‚¤ã‚·ãƒ³ã‚°(Yè»¸ã®ã¿)
-			Normal		//é€šå¸¸(æ‰‹å‹•)
+			Billboard,	//ƒrƒ‹ƒ{[ƒh
+			Faceing,	//ƒtƒFƒCƒVƒ“ƒO
+			FaceingY,	//ƒtƒFƒCƒVƒ“ƒO(Y²‚Ì‚İ)
+			Normal		//’Êí(è“®)
 		};
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-		@param[in]	Count	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã®æ•°
-		@param[in]	Option	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		@param[in]	Count	ƒp[ƒeƒBƒNƒ‹‚Ì”
+		@param[in]	Option	•`‰æƒIƒvƒVƒ‡ƒ“
 		*/
 		//--------------------------------------------------------------------------------------
 		explicit Particle(size_t Count, DrawOption Option = DrawOption::Billboard);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~Particle();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’å¾—ã‚‹
-		@return	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³
+		@brief	•`‰æƒIƒvƒVƒ‡ƒ“‚ğ“¾‚é
+		@return	•`‰æƒIƒvƒVƒ‡ƒ“
 		*/
 		//--------------------------------------------------------------------------------------
 		DrawOption GetDrawOption()const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã™ã‚‹
-		@param[in]	Option	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³
-		@return	ãªã—
+		@brief	•`‰æƒIƒvƒVƒ‡ƒ“‚ğİ’è‚·‚é
+		@param[in]	Option	•`‰æƒIƒvƒVƒ‡ƒ“
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetDrawOption(DrawOption Option);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	1ã¤ã§ã‚‚ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãŒã‚ã‚Œã°true
+		@brief	ƒAƒNƒeƒBƒu‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	1‚Â‚Å‚àƒAƒNƒeƒBƒu‚ª‚ ‚ê‚Îtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã™ã¹ã¦ãŒã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	ã™ã¹ã¦ãŒã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãŒã‚ã‚Œã°true
+		@brief	‚·‚×‚Ä‚ªƒAƒNƒeƒBƒu‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	‚·‚×‚Ä‚ªƒAƒNƒeƒBƒu‚ª‚ ‚ê‚Îtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsAllActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã™ã¹ã¦ã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«è¨­å®šã™ã‚‹
-		@return	ãªã—
+		@brief	‚·‚×‚Ä‚ğƒAƒNƒeƒBƒu‚Éİ’è‚·‚é
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetAllActive();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã™ã¹ã¦ã‚’éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«è¨­å®šã™ã‚‹
-		@return	ãªã—
+		@brief	‚·‚×‚Ä‚ğ”ñƒAƒNƒeƒBƒu‚Éİ’è‚·‚é
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetAllNoActive();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã‚’ä½œæˆã—ãªãŠã™
-		@param[in]	Count	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã®æ•°
-		@param[in]	Option	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³
-		@return	ãªã—
+		@brief	ƒp[ƒeƒBƒNƒ‹‚ğì¬‚µ‚È‚¨‚·
+		@param[in]	Count	ƒp[ƒeƒBƒNƒ‹‚Ì”
+		@param[in]	Option	•`‰æƒIƒvƒVƒ‡ƒ“
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void Reflesh(size_t Count, Particle::DrawOption Option = Particle::DrawOption::Billboard);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã®é…åˆ—ã‚’å¾—ã‚‹
-		@return	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã®é…åˆ—
+		@brief	ƒp[ƒeƒBƒNƒ‹ƒXƒvƒ‰ƒCƒg‚Ì”z—ñ‚ğ“¾‚é
+		@return	ƒp[ƒeƒBƒNƒ‹ƒXƒvƒ‰ƒCƒg‚Ì”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		vector<ParticleSprite>& GetParticleSpriteVec() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¨ãƒŸãƒƒã‚¿ãƒ¼ä½ç½®ã‚’å¾—ã‚‹
-		@return	ã‚¨ãƒŸãƒƒã‚¿ãƒ¼ä½ç½®
+		@brief	ƒGƒ~ƒbƒ^[ˆÊ’u‚ğ“¾‚é
+		@return	ƒGƒ~ƒbƒ^[ˆÊ’u
 		*/
 		//--------------------------------------------------------------------------------------
 		const bsm::Vec3& GetEmitterPos() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¨ãƒŸãƒƒã‚¿ãƒ¼ä½ç½®ã‚’è¨­å®šã™ã‚‹
-		@param[in]	Pos	ã‚¨ãƒŸãƒƒã‚¿ãƒ¼ä½ç½®
-		@return	ãªã—
+		@brief	ƒGƒ~ƒbƒ^[ˆÊ’u‚ğİ’è‚·‚é
+		@param[in]	Pos	ƒGƒ~ƒbƒ^[ˆÊ’u
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetEmitterPos(const bsm::Vec3& Pos);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒˆãƒ¼ã‚¿ãƒ«ã®æ™‚é–“ã‚’å¾—ã‚‹
-		@return	ãƒˆãƒ¼ã‚¿ãƒ«ã®æ™‚é–“
+		@brief	ƒg[ƒ^ƒ‹‚ÌŠÔ‚ğ“¾‚é
+		@return	ƒg[ƒ^ƒ‹‚ÌŠÔ
 		*/
 		//--------------------------------------------------------------------------------------
 		float GetTotalTime() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒˆãƒ¼ã‚¿ãƒ«ã®æ™‚é–“ã‚’è¨­å®šã™ã‚‹
-		@param[in]	f	ãƒˆãƒ¼ã‚¿ãƒ«ã®æ™‚é–“
-		@return	ãªã—
+		@brief	ƒg[ƒ^ƒ‹‚ÌŠÔ‚ğİ’è‚·‚é
+		@param[in]	f	ƒg[ƒ^ƒ‹‚ÌŠÔ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetTotalTime(float f);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒˆãƒ¼ã‚¿ãƒ«ã®æ™‚é–“ã‚’è¿½åŠ ã™ã‚‹
-		@param[in]	f	ãƒˆãƒ¼ã‚¿ãƒ«ã®æ™‚é–“ã«åŠ ç®—ã™ã‚‹æ™‚é–“
-		@return	ãªã—
+		@brief	ƒg[ƒ^ƒ‹‚ÌŠÔ‚ğ’Ç‰Á‚·‚é
+		@param[in]	f	ƒg[ƒ^ƒ‹‚ÌŠÔ‚É‰ÁZ‚·‚éŠÔ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void AddTotalTime(float f);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒãƒƒã‚¯ã‚¹ã®æ™‚é–“ã‚’å¾—ã‚‹
-		@return	ãƒãƒƒã‚¯ã‚¹ã®æ™‚é–“
+		@brief	ƒ}ƒbƒNƒX‚ÌŠÔ‚ğ“¾‚é
+		@return	ƒ}ƒbƒNƒX‚ÌŠÔ
 		*/
 		//--------------------------------------------------------------------------------------
 		float GetMaxTime() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒãƒƒã‚¯ã‚¹ã®æ™‚é–“ã‚’è¨­å®šã™ã‚‹
-		@param[in]	f	ãƒãƒƒã‚¯ã‚¹ã®æ™‚é–“
-		@return	ãªã—
+		@brief	ƒ}ƒbƒNƒX‚ÌŠÔ‚ğİ’è‚·‚é
+		@param[in]	f	ƒ}ƒbƒNƒX‚ÌŠÔ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetMaxTime(float f);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹ã‚’å¾—ã‚‹
-		@param[in]	ExceptionActive	ç„¡åŠ¹ã ã£ãŸæ™‚ä¾‹å¤–ã‚’å‡ºã™ã‹ã©ã†ã‹
-		@return	ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹
+		@brief	ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒX‚ğ“¾‚é
+		@param[in]	ExceptionActive	–³Œø‚¾‚Á‚½—áŠO‚ğo‚·‚©‚Ç‚¤‚©
+		@return	ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒX
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<TextureResource> GetTextureResource(bool ExceptionActive = true) const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	ResKey	ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹ã‚­ãƒ¼
-		@return	ãªã—
+		@brief	ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒX‚ğİ’è‚·‚é
+		@param[in]	ResKey	ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒXƒL[
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetTextureResource(const wstring& ResKey);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	TextureResourcePtr	ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚½ãƒ¼ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿
-		@return	ãªã—
+		@brief	ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒX‚ğİ’è‚·‚é
+		@param[in]	TextureResourcePtr	ƒeƒNƒXƒ`ƒƒƒŠƒ\[ƒX‚Ìƒ|ƒCƒ“ƒ^
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetTextureResource(const shared_ptr<TextureResource>& TextureResourcePtr);
-		//æ“ä½œ
+		//‘€ì
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief åˆæœŸåŒ–
-		@return	ãªã—
+		@brief ‰Šú‰»
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
-		virtual void OnCreate() override {}
+		virtual void OnCreate() override{}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief æç”»
-		@return	ãªã—
+		@brief •`‰æ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void Draw(const shared_ptr<ParticleManager>& Manager);
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
+
 	//--------------------------------------------------------------------------------------
-	///	ãƒãƒ«ãƒã‚¨ãƒ•ã‚§ã‚¯ãƒˆ ï¼ˆãƒãƒ«ãƒãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ï¼‰
+	///	ƒ}ƒ‹ƒ`ƒGƒtƒFƒNƒg iƒ}ƒ‹ƒ`ƒp[ƒeƒBƒNƒ‹j
 	//--------------------------------------------------------------------------------------
 	class MultiParticle : public GameObject {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		@param[in]	StagePtr	ƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		explicit MultiParticle(const shared_ptr<Stage>& StagePtr);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~MultiParticle();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã®é…åˆ—ã‚’å¾—ã‚‹
-		@return	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã®é…åˆ—
+		@brief	ƒp[ƒeƒBƒNƒ‹‚Ì”z—ñ‚ğ“¾‚é
+		@return	ƒp[ƒeƒBƒNƒ‹‚Ì”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		vector< shared_ptr<Particle> >& GetParticleVec() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	åŠ ç®—æç”»ã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	åŠ ç®—æç”»ã™ã‚‹ãªã‚‰true
+		@brief	‰ÁZ•`‰æ‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	‰ÁZ•`‰æ‚·‚é‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetAddType() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	åŠ ç®—æç”»ã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	åŠ ç®—æç”»ã™ã‚‹ãªã‚‰true
+		@brief	‰ÁZ•`‰æ‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	‰ÁZ•`‰æ‚·‚é‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsAddType() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	åŠ ç®—æç”»ã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	åŠ ç®—æç”»ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	‰ÁZ•`‰æ‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	‰ÁZ•`‰æ‚·‚é‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetAddType(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief åˆæœŸåŒ–å‰å‡¦ç†
-		@return	ãªã—
+		@brief ‰Šú‰»‘Oˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnPreCreate() override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã®è¿½åŠ 
-		@param[in]	Count	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã®æ•°
-		@param[in]	Option	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³
-		@return	è¿½åŠ ã•ã‚ŒãŸãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«
+		@brief ƒp[ƒeƒBƒNƒ‹‚Ì’Ç‰Á
+		@param[in]	Count	ƒp[ƒeƒBƒNƒ‹‚Ì”
+		@param[in]	Option	•`‰æƒIƒvƒVƒ‡ƒ“
+		@return	’Ç‰Á‚³‚ê‚½ƒp[ƒeƒBƒNƒ‹
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<Particle> InsertParticle(size_t Count, Particle::DrawOption Option = Particle::DrawOption::Billboard);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief æ›´æ–°å‡¦ç†
-		@return	ãªã—
+		@brief XVˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnUpdate()override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief æç”»å‡¦ç†
-		@return	ãªã—
+		@brief •`‰æˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override;
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
 	//--------------------------------------------------------------------------------------
-	///	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£
+	///	ƒp[ƒeƒBƒNƒ‹ƒ}ƒl[ƒWƒƒ
 	//--------------------------------------------------------------------------------------
 	class ParticleManager : public GameObject {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	AddType	åŠ ç®—æç”»ã™ã‚‹ã‹ã©ã†ã‹
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		@param[in]	StagePtr	ƒXƒe[ƒW
+		@param[in]	AddType	‰ÁZ•`‰æ‚·‚é‚©‚Ç‚¤‚©
 		*/
 		//--------------------------------------------------------------------------------------
-		explicit ParticleManager(const shared_ptr<Stage>& StagePtr, bool AddType);
+		explicit ParticleManager(const shared_ptr<Stage>& StagePtr,bool AddType);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~ParticleManager();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief åˆæœŸåŒ–å‡¦ç†
-		@return	ãªã—
+		@brief ‰Šú‰»ˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCreate() override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Zãƒãƒƒãƒ•ã‚¡ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	Zãƒãƒƒãƒ•ã‚¡ã‚’ä½¿ç”¨ã™ã‚‹ãªã‚‰true
+		@brief	Zƒoƒbƒtƒ@‚ğg—p‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	Zƒoƒbƒtƒ@‚ğg—p‚·‚é‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetZBufferUse() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Zãƒãƒƒãƒ•ã‚¡ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	Zãƒãƒƒãƒ•ã‚¡ã‚’ä½¿ç”¨ã™ã‚‹ãªã‚‰true
+		@brief	Zƒoƒbƒtƒ@‚ğg—p‚·‚é‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	Zƒoƒbƒtƒ@‚ğg—p‚·‚é‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsZBufferUse() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Zãƒãƒƒãƒ•ã‚¡ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	Zãƒãƒƒãƒ•ã‚¡ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	Zƒoƒbƒtƒ@‚ğg—p‚·‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	Zƒoƒbƒtƒ@‚ğg—p‚·‚é‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetZBufferUse(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@returnãƒ©ãƒƒãƒ”ãƒ³ã‚°ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ãªã‚‰true
+		@brief	ƒ‰ƒbƒsƒ“ƒOƒTƒ“ƒvƒ‰[‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@returnƒ‰ƒbƒsƒ“ƒOƒTƒ“ƒvƒ‰[‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetSamplerWrap() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ãªã‚‰true
+		@brief	ƒ‰ƒbƒsƒ“ƒOƒTƒ“ƒvƒ‰[‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	ƒ‰ƒbƒsƒ“ƒOƒTƒ“ƒvƒ‰[‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsSamplerWrap() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	ãƒ©ãƒƒãƒ”ãƒ³ã‚°ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã«ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	ƒ‰ƒbƒsƒ“ƒOƒTƒ“ƒvƒ‰[‚ğİ’è‚·‚é
+		@param[in]	b	ƒ‰ƒbƒsƒ“ƒOƒTƒ“ƒvƒ‰[‚É‚·‚é‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetSamplerWrap(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»ã®ãŸã‚ã®ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã‚’è¿½åŠ ã™ã‚‹
-		@param[in]	rParticleSprite	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆ
-		@param[in]	Option	æç”»ã‚ªãƒ—ã‚·ãƒ§ãƒ³
-		@return	ãªã—
+		@brief	•`‰æ‚Ì‚½‚ß‚Ìƒp[ƒeƒBƒNƒ‹ƒXƒvƒ‰ƒCƒg‚ğ’Ç‰Á‚·‚é
+		@param[in]	rParticleSprite	ƒp[ƒeƒBƒNƒ‹ƒXƒvƒ‰ƒCƒg
+		@param[in]	Option	•`‰æƒIƒvƒVƒ‡ƒ“
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void AddParticle(const ParticleSprite& rParticleSprite, Particle::DrawOption Option,
 			const bsm::Vec3& EmitterPos, const shared_ptr<TextureResource>& TextureRes);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief æ›´æ–°å‡¦ç†
-		@return	ãªã—
+		@brief XVˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnUpdate() override {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief æç”»å‡¦ç†
-		@return	ãªã—
+		@brief •`‰æˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override;
 	private:
-		//Implã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		//ImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
+
+
 	struct CellIndex;
 	//--------------------------------------------------------------------------------------
-	//	ã‚¹ãƒ†ãƒ¼ã‚¸ã®ã‚»ãƒ«ãƒãƒƒãƒ—ã§ä½¿ç”¨ã™ã‚‹ã‚»ãƒ«æ§‹é€ ä½“
+	//	ƒXƒe[ƒW‚ÌƒZƒ‹ƒ}ƒbƒv‚Åg—p‚·‚éƒZƒ‹\‘¢‘Ì
 	//--------------------------------------------------------------------------------------
-	struct CellPiece {
+	struct CellPiece{
 		CellIndex m_Index;
 		CellIndex m_ParentIndex;
-		int m_Cost = 0;
+		int m_Cost;
 		AABB m_PieceRange;
-		CellPiece() :
-			m_Index(CellIndex()),
-			m_ParentIndex(CellIndex()),
-			m_Cost(0),
-			m_PieceRange(AABB())
-		{}
+		CellPiece(){}
 	};
 
 	//--------------------------------------------------------------------------------------
-	//	ã‚¹ãƒ†ãƒ¼ã‚¸ã®ã‚»ãƒ«ãƒãƒƒãƒ—ï¼ˆæ´¾ç”Ÿã‚¯ãƒ©ã‚¹ã‚’ä½œã‚‹ã‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆã™ã‚‹ï¼‰
+	//	ƒXƒe[ƒW‚ÌƒZƒ‹ƒ}ƒbƒvi”h¶ƒNƒ‰ƒX‚ğì‚é‚©ƒCƒ“ƒXƒ^ƒ“ƒX‚ğì¬‚·‚éj
 	//--------------------------------------------------------------------------------------
 	class StageCellMap : public GameObject {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	MiniPos	æœ€å°åœ°ç‚¹ï¼ˆèµ·ç‚¹ï¼‰
-		@param[in]	PieceSize	ãƒ”ãƒ¼ã‚¹ã®ã‚µã‚¤ã‚º
-		@param[in]	PieceCountX	Xæ–¹å‘ãƒ”ãƒ¼ã‚¹æ•°
-		@param[in]	PieceCountZ	Zæ–¹å‘ãƒ”ãƒ¼ã‚¹æ•°
-		@param[in]	DefaultCost	ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚³ã‚¹ãƒˆ
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		@param[in]	StagePtr	ƒXƒe[ƒW
+		@param[in]	MiniPos	Å¬’n“_i‹N“_j
+		@param[in]	PieceSize	ƒs[ƒX‚ÌƒTƒCƒY
+		@param[in]	PieceCountX	X•ûŒüƒs[ƒX”
+		@param[in]	PieceCountZ	Z•ûŒüƒs[ƒX”
+		@param[in]	DefaultCost	ƒfƒtƒHƒ‹ƒg‚ÌƒRƒXƒg
 		*/
 		//--------------------------------------------------------------------------------------
-		StageCellMap(const shared_ptr<Stage>& StagePtr, const bsm::Vec3& MiniPos,
-			float PieceSize, UINT PieceCountX, UINT PieceCountZ, int DefaultCost = 1);
+		StageCellMap(const shared_ptr<Stage>& StagePtr,const bsm::Vec3& MiniPos,
+			float PieceSize, UINT PieceCountX, UINT PieceCountZ,int DefaultCost = 1);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~StageCellMap();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚»ãƒ«æƒ…å ±ã‚’å‡ºåŠ›ã™ã‚‹ã‹
-		@return	ã‚»ãƒ«æƒ…å ±ã‚’å‡ºåŠ›ã™ã‚‹ãªã‚‰true
+		@brief	ƒZƒ‹î•ñ‚ğo—Í‚·‚é‚©
+		@return	ƒZƒ‹î•ñ‚ğo—Í‚·‚é‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsCellStringActive();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚»ãƒ«æƒ…å ±ã‚’å‡ºåŠ›ã™ã‚‹ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	ã‚»ãƒ«æƒ…å ±ã‚’å‡ºåŠ›ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	ƒZƒ‹î•ñ‚ğo—Í‚·‚é‚©‚ğİ’è‚·‚é
+		@param[in]	b	ƒZƒ‹î•ñ‚ğo—Í‚·‚é‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetCellStringActive(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ä½ç½®æƒ…å ±ã‹ã‚‰ã‚»ãƒ«ã‚’æ¤œç´¢ã™ã‚‹
-		@param[in]	Pos	ä½ç½®æƒ…å ±
-		@param[out]	ret	è¿”ã•ã‚Œã‚‹ã‚»ãƒ«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
-		@return	ã‚»ãƒ«ãŒæ¤œç´¢å‡ºæ¥ãŸã‚‰true
+		@brief	ˆÊ’uî•ñ‚©‚çƒZƒ‹‚ğŒŸõ‚·‚é
+		@param[in]	Pos	ˆÊ’uî•ñ
+		@param[out]	ret	•Ô‚³‚ê‚éƒZƒ‹ƒCƒ“ƒfƒbƒNƒX
+		@return	ƒZƒ‹‚ªŒŸõo—ˆ‚½‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
-		bool FindCell(const bsm::Vec3& Pos, CellIndex& ret);
+		bool FindCell(const bsm::Vec3& Pos,CellIndex& ret);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ä½ç½®æƒ…å ±ã‹ã‚‰ä¸€ç•ªè¿‘ã„ã‚»ãƒ«ã‚’æ¤œç´¢ã™ã‚‹
-		@param[in]	Pos	ä½ç½®æƒ…å ±
-		@param[out]	ret	è¿”ã•ã‚Œã‚‹ã‚»ãƒ«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
-		@return	ãªã—
+		@brief	ˆÊ’uî•ñ‚©‚çˆê”Ô‹ß‚¢ƒZƒ‹‚ğŒŸõ‚·‚é
+		@param[in]	Pos	ˆÊ’uî•ñ
+		@param[out]	ret	•Ô‚³‚ê‚éƒZƒ‹ƒCƒ“ƒfƒbƒNƒX
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void FindNearCell(const bsm::Vec3& Pos, CellIndex& ret);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚»ãƒ«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‹ã‚‰AABBã‚’æ¤œç´¢ã™ã‚‹
-		@param[in]	Index	ã‚»ãƒ«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
-		@param[out]	ret	è¿”ã•ã‚Œã‚‹AABB
-		@return	AABBãŒæ¤œç´¢å‡ºæ¥ãŸã‚‰true
+		@brief	ƒZƒ‹ƒCƒ“ƒfƒbƒNƒX‚©‚çAABB‚ğŒŸõ‚·‚é
+		@param[in]	Index	ƒZƒ‹ƒCƒ“ƒfƒbƒNƒX
+		@param[out]	ret	•Ô‚³‚ê‚éAABB
+		@return	AABB‚ªŒŸõo—ˆ‚½‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
-		bool FindAABB(const CellIndex& Index, AABB& ret);
+		bool FindAABB(const CellIndex& Index,AABB& ret);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚»ãƒ«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‹ã‚‰ä¸€ç•ªè¿‘ã„AABBã‚’æ¤œç´¢ã™ã‚‹
-		@param[in]	Index	ã‚»ãƒ«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
-		@param[out]	ret	è¿”ã•ã‚Œã‚‹AABB
-		@return	ãªã—
+		@brief	ƒZƒ‹ƒCƒ“ƒfƒbƒNƒX‚©‚çˆê”Ô‹ß‚¢AABB‚ğŒŸõ‚·‚é
+		@param[in]	Index	ƒZƒ‹ƒCƒ“ƒfƒbƒNƒX
+		@param[out]	ret	•Ô‚³‚ê‚éAABB
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void FindNearAABB(const bsm::Vec3& Pos, AABB& ret);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒãƒƒãƒ—ã®AABBã‚’æ¤œç´¢ã™ã‚‹
-		@param[out]	ret	è¿”ã•ã‚Œã‚‹AABB
-		@return	ãªã—
+		@brief	ƒ}ƒbƒv‚ÌAABB‚ğŒŸõ‚·‚é
+		@param[out]	ret	•Ô‚³‚ê‚éAABB
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void GetMapAABB(AABB& ret) const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚»ãƒ«ã®2æ¬¡å…ƒé…åˆ—ã‚’å¾—ã‚‹
-		@return	ã‚»ãƒ«ã®2æ¬¡å…ƒé…åˆ—
+		@brief	ƒZƒ‹‚Ì2ŸŒ³”z—ñ‚ğ“¾‚é
+		@return	ƒZƒ‹‚Ì2ŸŒ³”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		vector<vector<CellPiece>>& GetCellVec() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚»ãƒ«ãƒãƒƒãƒ—ã‚’ä½œæˆã—ãªãŠã™
-		@param[in]	MiniPos	æœ€å°åœ°ç‚¹ï¼ˆèµ·ç‚¹ï¼‰
-		@param[in]	PieceSize	ãƒ”ãƒ¼ã‚¹ã®ã‚µã‚¤ã‚º
-		@param[in]	PieceCountX	Xæ–¹å‘ãƒ”ãƒ¼ã‚¹æ•°
-		@param[in]	PieceCountZ	Zæ–¹å‘ãƒ”ãƒ¼ã‚¹æ•°
-		@param[in]	DefaultCost	ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚³ã‚¹ãƒˆ
-		@return	ãªã—
+		@brief	ƒZƒ‹ƒ}ƒbƒv‚ğì¬‚µ‚È‚¨‚·
+		@param[in]	MiniPos	Å¬’n“_i‹N“_j
+		@param[in]	PieceSize	ƒs[ƒX‚ÌƒTƒCƒY
+		@param[in]	PieceCountX	X•ûŒüƒs[ƒX”
+		@param[in]	PieceCountZ	Z•ûŒüƒs[ƒX”
+		@param[in]	DefaultCost	ƒfƒtƒHƒ‹ƒg‚ÌƒRƒXƒg
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void RefleshCellMap(const bsm::Vec3& MiniPos,
 			float PieceSize, UINT PieceCountX, UINT PieceCountZ, int DefaultCost = 1);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief åˆæœŸåŒ–
-		@return	ãªã—
+		@brief ‰Šú‰»
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCreate() override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief æ›´æ–°å‡¦ç†
-		@return	ãªã—
+		@brief XVˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnUpdate() override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief æç”»å‡¦ç†
-		@return	ãªã—
+		@brief •`‰æˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw() override;
 	private:
-		//Implã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		//ImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
 	class CollisionManager;
 	//--------------------------------------------------------------------------------------
-	//	ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¯ãƒ©ã‚¹
+	//	ƒXƒe[ƒWƒNƒ‰ƒX
 	//--------------------------------------------------------------------------------------
 	class Stage :public ObjectInterface, public ShapeInterface {
-		//ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆã‚µãƒ–é–¢æ•°
+		//ƒvƒ‰ƒCƒx[ƒgƒTƒuŠÖ”
 		void PushBackGameObject(const shared_ptr<GameObject>& Ptr);
 		void RemoveBackGameObject(const shared_ptr<GameObject>& Ptr);
 		shared_ptr<GameObject> GetSharedGameObjectEx(const wstring& Key, bool ExceptionActive) const;
@@ -1543,126 +1459,126 @@ namespace basecross {
 	protected:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		Stage();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~Stage();
 	public:
-		//ã‚¢ã‚¯ã‚»ã‚µ
+		//ƒAƒNƒZƒT
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	XVˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	XVˆ—‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsUpdateActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰true
+		@brief	XVˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	XVˆ—‚ª—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool GetUpdateActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	æ›´æ–°å‡¦ç†ãŒæœ‰åŠ¹ãªã‚‰ãªã‚‰true
-		@return	ãªã—
+		@brief	XVˆ—‚ª—LŒø‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	XVˆ—‚ª—LŒø‚È‚ç‚È‚çtrue
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetUpdateActive(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£ã‚’å¾—ã‚‹<br />
-		ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£ã¯ã€åŠ ç®—å‡¦ç†ã™ã‚‹ã€ã—ãªã„ã®2ç¨®é¡å®Ÿè£…ã•ã‚Œã‚‹
-		@param[in]	AddType	åŠ ç®—å‡¦ç†ã™ã‚‹ã‚¿ã‚¤ãƒ—ã‹ã©ã†ã‹
-		@return	ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£
+		@brief	ƒp[ƒeƒBƒNƒ‹ƒ}ƒl[ƒWƒƒ‚ğ“¾‚é<br />
+		ƒp[ƒeƒBƒNƒ‹ƒ}ƒl[ƒWƒƒ‚ÍA‰ÁZˆ—‚·‚éA‚µ‚È‚¢‚Ì2í—ŞÀ‘•‚³‚ê‚é
+		@param[in]	AddType	‰ÁZˆ—‚·‚éƒ^ƒCƒv‚©‚Ç‚¤‚©
+		@return	ƒp[ƒeƒBƒNƒ‹ƒ}ƒl[ƒWƒƒ
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<ParticleManager> GetParticleManager(bool AddType) const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç‰©ç†è¨ˆç®—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å¾—ã‚‹
-		@return	ç‰©ç†è¨ˆç®—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	•¨—ŒvZƒIƒuƒWƒFƒNƒg‚ğ“¾‚é
+		@return	•¨—ŒvZƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		BasePhysics& GetBasePhysics() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç‰©ç†è¨ˆç®—ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	ç‰©ç†è¨ˆç®—ãŒæœ‰åŠ¹ã‹ã©ã†ã‹
+		@brief	•¨—ŒvZ‚ª—LŒø‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	•¨—ŒvZ‚ª—LŒø‚©‚Ç‚¤‚©
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsPhysicsActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç‰©ç†è¨ˆç®—ãŒæœ‰åŠ¹ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	ç‰©ç†è¨ˆç®—ãŒæœ‰åŠ¹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	•¨—ŒvZ‚ª—LŒø‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	•¨—ŒvZ‚ª—LŒø‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetPhysicsActive(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç‰©ç†ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç©ºã„ã¦ã„ã‚‹IDã‚’å–å¾—ã™ã‚‹
-		@return	 ç©ºã„ã¦ã„ã‚‹ID(ç©ºã„ã¦ãªã‘ã‚Œã°UINT16_MAXã‚’è¿”ã™ï¼‰
+		@brief	•¨—ƒIƒuƒWƒFƒNƒg‚Ì‹ó‚¢‚Ä‚¢‚éID‚ğæ“¾‚·‚é
+		@return	 ‹ó‚¢‚Ä‚¢‚éID(‹ó‚¢‚Ä‚È‚¯‚ê‚ÎUINT16_MAX‚ğ•Ô‚·j
 		*/
 		//--------------------------------------------------------------------------------------
 		uint16_t GetVacantPhysicsIndex();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç„¡åŠ¹ã«ãªã£ãŸç‰©ç†ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆIDã‚’è¿½åŠ ã™ã‚‹
-		@param[in]	index	ç„¡åŠ¹ã«ã™ã‚‹ID
-		@return	 ãªã—
+		@brief	–³Œø‚É‚È‚Á‚½•¨—ƒIƒuƒWƒFƒNƒgID‚ğ’Ç‰Á‚·‚é
+		@param[in]	index	–³Œø‚É‚·‚éID
+		@return	 ‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetVacantPhysicsIndex(uint16_t index);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªåˆ¤å®šãƒãƒãƒ¼ã‚¸ãƒ£ã‚’å¾—ã‚‹(const)
-		@return	è¡çªåˆ¤å®šãƒãƒãƒ¼ã‚¸ãƒ£
+		@brief	Õ“Ë”»’èƒ}ƒl[ƒWƒƒ‚ğ“¾‚é(const)
+		@return	Õ“Ë”»’èƒ}ƒl[ƒWƒƒ
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<CollisionManager> GetCollisionManager() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—ã‚’å¾—ã‚‹
-		@return	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”z—ñ‚ğ“¾‚é
+		@return	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		vector< shared_ptr<GameObject> >& GetGameObjectVec();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—ã‚’å¾—ã‚‹(const)
-		@return	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”z—ñ‚ğ“¾‚é(const)
+		@return	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		vector< shared_ptr<GameObject> >& GetGameObjectVec() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å­ã‚¹ãƒ†ãƒ¼ã‚¸ã®é…åˆ—ã‚’å¾—ã‚‹
-		@return	å­ã‚¹ãƒ†ãƒ¼ã‚¸ã®é…åˆ—
+		@brief	qƒXƒe[ƒW‚Ì”z—ñ‚ğ“¾‚é
+		@return	qƒXƒe[ƒW‚Ì”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		vector< shared_ptr<Stage> >& GetChileStageVec();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å­ã‚¹ãƒ†ãƒ¼ã‚¸ã®é…åˆ—ã‚’å¾—ã‚‹(const)
-		@return	å­ã‚¹ãƒ†ãƒ¼ã‚¸ã®é…åˆ—
+		@brief	qƒXƒe[ƒW‚Ì”z—ñ‚ğ“¾‚é(const)
+		@return	qƒXƒe[ƒW‚Ì”z—ñ
 		*/
 		//--------------------------------------------------------------------------------------
 		vector< shared_ptr<Stage> >& GetChileStageVec() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å­ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ä½œæˆã™ã‚‹
-		@tparam	T	ä½œæˆã™ã‚‹å‹
-		@return	ä½œæˆã•ã‚ŒãŸå­ã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	qƒXƒe[ƒW‚ğì¬‚·‚é
+		@tparam	T	ì¬‚·‚éŒ^
+		@return	ì¬‚³‚ê‚½qƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -1671,7 +1587,7 @@ namespace basecross {
 			auto StagePtr = dynamic_pointer_cast<Stage>(Ptr);
 			if (!StagePtr) {
 				throw BaseException(
-					L"ä»¥ä¸‹ã¯Stageã«å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“ã€‚",
+					L"ˆÈ‰º‚ÍStage‚ÉŒ^ƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñB",
 					Util::GetWSTypeName<T>(),
 					L"Stage::AddChileStage<T>()"
 				);
@@ -1681,28 +1597,26 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¦ªã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¾—ã‚‹
-		@return	è¦ªã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	eƒXƒe[ƒW‚ğ“¾‚é
+		@return	eƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<Stage> GetParentStage() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿½åŠ ã™ã‚‹
-		@tparam	T	ä½œæˆã™ã‚‹å‹
-		@tparam	Ts	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹
-		@param[in]	params	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
-		@return	ä½œæˆã•ã‚ŒãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ’Ç‰Á‚·‚é
+		@tparam	T	ì¬‚·‚éŒ^
+		@tparam	Ts	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^‚ÌŒ^
+		@param[in]	params	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^
+		@return	ì¬‚³‚ê‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T, typename... Ts,
 			std::enable_if_t<std::is_constructible_v<T, std::shared_ptr<Stage>&, Ts...>, std::nullptr_t> = nullptr>
-			shared_ptr<T> AddGameObject(Ts&&... params) {
+		shared_ptr<T> AddGameObject(Ts&&... params) {
 			try {
 				auto Ptr = ObjectFactory::Create<T>(GetThis<Stage>(), params...);
 				PushBackGameObject(Ptr);
-				Ptr->ComponentStart();
-
 				return Ptr;
 			}
 			catch (...) {
@@ -1710,8 +1624,8 @@ namespace basecross {
 			}
 		}
 
-		template<class T, class... Ts,
-			std::enable_if_t<std::is_constructible_v<T, std::shared_ptr<Stage>&, Ts...>, std::nullptr_t> = nullptr>
+		template<class T,class... Ts,
+			std::enable_if_t<std::is_constructible_v<T,std::shared_ptr<Stage>&,Ts...>,std::nullptr_t> = nullptr>
 			shared_ptr<T> AddUIObject(Ts&&... params)
 		{
 			try {
@@ -1736,14 +1650,14 @@ namespace basecross {
 		}
 
 		template<class T,
-			std::enable_if_t<std::is_base_of_v<UIObject, T>&& std::is_constructible_v<T, std::shared_ptr<Stage>&>,
+			std::enable_if_t<std::is_base_of_v<UIObject,T> && std::is_constructible_v<T,std::shared_ptr<Stage>&>,
 			std::nullptr_t> = nullptr>
-			std::shared_ptr<T>  Instantiate()
+		std::shared_ptr<T>  Instantiate()
 		{
 			try {
 				auto Ptr = ObjectFactory::InstantiateCreate<T>(GetThis<Stage>(), Vec3(), Quat::Identity(), m_canvas);
-				PushBackGameObject(Ptr);
 				Ptr->ComponentStart();
+				PushBackGameObject(Ptr);
 				return Ptr;
 			}
 			catch (...) {
@@ -1752,15 +1666,15 @@ namespace basecross {
 		}
 
 		template<class T,
-			std::enable_if_t<std::is_base_of_v<GameObject, T> && !std::is_base_of_v<UIObject, T>
-			&& std::is_constructible_v<T, std::shared_ptr<Stage>&>,
+			std::enable_if_t<std::is_base_of_v<GameObject,T> && !std::is_base_of_v<UIObject, T>
+			&& std::is_constructible_v<T,std::shared_ptr<Stage>&>,
 			std::nullptr_t> = nullptr>
-			std::shared_ptr<T>  Instantiate()
+		std::shared_ptr<T>  Instantiate()
 		{
 			try {
 				auto Ptr = ObjectFactory::Create<T>(GetThis<Stage>());
-				PushBackGameObject(Ptr);
 				Ptr->ComponentStart();
+				PushBackGameObject(Ptr);
 				return Ptr;
 			}
 			catch (...) {
@@ -1769,14 +1683,14 @@ namespace basecross {
 		}
 
 		template<class T,
-			std::enable_if_t<std::is_base_of_v<UIObject, T>&& std::is_constructible_v<T, std::shared_ptr<Stage>&>,
+			std::enable_if_t<std::is_base_of_v<UIObject,T> && std::is_constructible_v<T,std::shared_ptr<Stage>&>,
 			std::nullptr_t> = nullptr>
-			std::shared_ptr<T>  Instantiate(const bsm::Vec3& position, const bsm::Quat& rotation, const std::shared_ptr<UIObject>& parent = nullptr)
+		std::shared_ptr<T>  Instantiate(const bsm::Vec3& position,const bsm::Quat& rotation,const std::shared_ptr<UIObject>& parent = nullptr)
 		{
 			try {
 				auto Ptr = ObjectFactory::InstantiateCreate<T>(GetThis<Stage>(), position, rotation, parent);
-				PushBackGameObject(Ptr);
 				Ptr->ComponentStart();
+				PushBackGameObject(Ptr);
 				return Ptr;
 			}
 			catch (...) {
@@ -1785,15 +1699,15 @@ namespace basecross {
 		}
 
 		template<class T,
-			std::enable_if_t<std::is_base_of_v<GameObject, T> && !std::is_base_of_v<UIObject, T>
-			&& std::is_constructible_v<T, std::shared_ptr<Stage>&>,
+			std::enable_if_t<std::is_base_of_v<GameObject,T> && !std::is_base_of_v<UIObject, T>
+			&& std::is_constructible_v<T,std::shared_ptr<Stage>&>,
 			std::nullptr_t> = nullptr>
-			std::shared_ptr<T>  Instantiate(const bsm::Vec3& position, const bsm::Quat& rotation, const std::shared_ptr<GameObject>& parent = nullptr)
+		std::shared_ptr<T>  Instantiate(const bsm::Vec3& position,const bsm::Quat& rotation,const std::shared_ptr<GameObject>& parent = nullptr)
 		{
 			try {
 				auto Ptr = ObjectFactory::InstantiateCreate<T>(GetThis<Stage>(), position, rotation, parent);
-				PushBackGameObject(Ptr);
 				Ptr->ComponentStart();
+				PushBackGameObject(Ptr);
 				return Ptr;
 			}
 			catch (...) {
@@ -1802,11 +1716,11 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’OnCreateWithParamã«æ¸¡ã™ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿½åŠ ã™ã‚‹
-		@tparam	T	ä½œæˆã™ã‚‹å‹
-		@tparam	Ts	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹
-		@param[in]	params	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
-		@return	ä½œæˆã•ã‚ŒãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	ƒpƒ‰ƒ[ƒ^‚ğOnCreateWithParam‚É“n‚·ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ’Ç‰Á‚·‚é
+		@tparam	T	ì¬‚·‚éŒ^
+		@tparam	Ts	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^‚ÌŒ^
+		@param[in]	params	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^
+		@return	ì¬‚³‚ê‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T, typename... Ts>
@@ -1822,10 +1736,10 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‹ã‚‰ãã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒæŒ‡å®šã—ãŸå‹ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@tparam	T	èª¿ã¹ã‚‹å‹
-		@param[in]	Obj	ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
-		@return	æŒ‡å®šã—ãŸå‹ã§å­˜åœ¨ã™ã‚Œã°true
+		@brief	ƒCƒ“ƒXƒ^ƒ“ƒX‚©‚ç‚»‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ªw’è‚µ‚½Œ^‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@tparam	T	’²‚×‚éŒ^
+		@param[in]	Obj	ƒCƒ“ƒXƒ^ƒ“ƒX
+		@return	w’è‚µ‚½Œ^‚Å‘¶İ‚·‚ê‚Îtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -1842,10 +1756,10 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‰Šé™¤ã™ã‚‹
-		@tparam	T	å‰Šé™¤ã™ã‚‹å‹
-		@param[in]	Obj	ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
-		@return	ãªã—
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğíœ‚·‚é
+		@tparam	T	íœ‚·‚éŒ^
+		@param[in]	Obj	ƒCƒ“ƒXƒ^ƒ“ƒX
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -1856,18 +1770,18 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¿½åŠ å¾…ã¡ã«ãªã£ã¦ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿½åŠ ã™ã‚‹
-		@return	ãªã—
+		@brief	’Ç‰Á‘Ò‚¿‚É‚È‚Á‚Ä‚éƒIƒuƒWƒFƒNƒg‚ğ’Ç‰Á‚·‚é
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetWaitToObjectVec();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å…±æœ‰ã•ã‚Œã¦ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹
-		@tparam	T	å–å¾—ã™ã‚‹å‹
-		@param[in]	Key	ã‚­ãƒ¼
-		@param[in]	ExceptionActive	è¦‹ã¤ã‹ã‚‰ãªã„ã¨ãã«ä¾‹å¤–ã‚’ç™ºè¡Œã™ã‚‹ã‹ã©ã†ã‹
-		@return	å…±æœ‰ã•ã‚Œã¦ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	‹¤—L‚³‚ê‚Ä‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚é
+		@tparam	T	æ“¾‚·‚éŒ^
+		@param[in]	Key	ƒL[
+		@param[in]	ExceptionActive	Œ©‚Â‚©‚ç‚È‚¢‚Æ‚«‚É—áŠO‚ğ”­s‚·‚é‚©‚Ç‚¤‚©
+		@return	‹¤—L‚³‚ê‚Ä‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -1877,13 +1791,13 @@ namespace basecross {
 				return Ptr;
 			}
 			else {
-				//ã‚­ãƒ£ã‚¹ãƒˆã§ããªã„
+				//ƒLƒƒƒXƒg‚Å‚«‚È‚¢
 				if (ExceptionActive) {
-					//ä¾‹å¤–ç™ºç”Ÿ
+					//—áŠO”­¶
 					wstring keyerr = Key;
-					wstring str = L"ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’";
+					wstring str = L"ƒIƒuƒWƒFƒNƒg‚ğ";
 					str += Util::GetWSTypeName<T>();
-					str += L"å‹ã«ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“";
+					str += L"Œ^‚ÉƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñ";
 					throw BaseException(
 						str,
 						keyerr,
@@ -1895,46 +1809,46 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å…±æœ‰ã•ã‚Œã¦ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹ï¼ˆGameObjectå‹ï¼‰
-		@param[in]	Key	ã‚­ãƒ¼
-		@param[in]	ExceptionActive	è¦‹ã¤ã‹ã‚‰ãªã„ã¨ãã«ä¾‹å¤–ã‚’ç™ºè¡Œã™ã‚‹ã‹ã©ã†ã‹
-		@return	å…±æœ‰ã•ã‚Œã¦ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	‹¤—L‚³‚ê‚Ä‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚éiGameObjectŒ^j
+		@param[in]	Key	ƒL[
+		@param[in]	ExceptionActive	Œ©‚Â‚©‚ç‚È‚¢‚Æ‚«‚É—áŠO‚ğ”­s‚·‚é‚©‚Ç‚¤‚©
+		@return	‹¤—L‚³‚ê‚Ä‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObject> GetSharedObject(const wstring& Key, bool ExceptionActive = true)const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å…±æœ‰ã™ã‚‹
-		@param[in]	Key	ã‚­ãƒ¼
-		@param[in]	Ptr	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿
-		@return	ãªã—
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ‹¤—L‚·‚é
+		@param[in]	Key	ƒL[
+		@param[in]	Ptr	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetSharedGameObject(const wstring& Key, const shared_ptr<GameObject>& Ptr);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—ã‚’ä½œæˆã™ã‚‹
-		@param[in]	Key	ã‚­ãƒ¼
-		@return	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—
+		@brief	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv‚ğì¬‚·‚é
+		@param[in]	Key	ƒL[
+		@return	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObjectGroup> CreateSharedObjectGroup(const wstring& Key);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—ã‚’å¾—ã‚‹
-		@param[in]	Key	ã‚­ãƒ¼
-		@param[in]	ExceptionActive	è¦‹ã¤ã‹ã‚‰ãªã„ã¨ãã«ä¾‹å¤–ã‚’ç™ºè¡Œã™ã‚‹ã‹ã©ã†ã‹
-		@return	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—
+		@brief	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv‚ğ“¾‚é
+		@param[in]	Key	ƒL[
+		@param[in]	ExceptionActive	Œ©‚Â‚©‚ç‚È‚¢‚Æ‚«‚É—áŠO‚ğ”­s‚·‚é‚©‚Ç‚¤‚©
+		@return	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObjectGroup> GetSharedObjectGroup(const wstring& Key, bool ExceptionActive = true)const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—ã‚’å¾—ã‚‹ï¼ˆã‚°ãƒ«ãƒ¼ãƒ—æ´¾ç”Ÿã‚¯ãƒ©ã‚¹ã‚’ä½œã£ãŸå ´åˆç”¨ï¼‰
-		@tparam	T	å–å¾—ã™ã‚‹å‹
-		@param[in]	Key	ã‚­ãƒ¼
-		@param[in]	ExceptionActive	è¦‹ã¤ã‹ã‚‰ãªã„ã¨ãã«ä¾‹å¤–ã‚’ç™ºè¡Œã™ã‚‹ã‹ã©ã†ã‹
-		@return	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—
+		@brief	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv‚ğ“¾‚éiƒOƒ‹[ƒv”h¶ƒNƒ‰ƒX‚ğì‚Á‚½ê‡—pj
+		@tparam	T	æ“¾‚·‚éŒ^
+		@param[in]	Key	ƒL[
+		@param[in]	ExceptionActive	Œ©‚Â‚©‚ç‚È‚¢‚Æ‚«‚É—áŠO‚ğ”­s‚·‚é‚©‚Ç‚¤‚©
+		@return	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -1945,10 +1859,10 @@ namespace basecross {
 			}
 			else {
 				if (ExceptionActive) {
-					//ä¾‹å¤–ç™ºç”Ÿ
+					//—áŠO”­¶
 					wstring keyerr = Key;
 					throw BaseException(
-						L"æŒ‡å®šã®ã‚­ãƒ¼ã®ã‚°ãƒ«ãƒ¼ãƒ—ã¯Tå‹ã«å¤‰æ›ã§ãã¾ã›ã‚“",
+						L"w’è‚ÌƒL[‚ÌƒOƒ‹[ƒv‚ÍTŒ^‚É•ÏŠ·‚Å‚«‚Ü‚¹‚ñ",
 						keyerr,
 						L"Stage::GetSharedObjectGroup<T>()"
 					);
@@ -1958,22 +1872,22 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—ã‚’ã‚»ãƒƒãƒˆã™ã‚‹ï¼ˆã‚°ãƒ«ãƒ¼ãƒ—æ´¾ç”Ÿã‚¯ãƒ©ã‚¹ã‚’ä½œã£ãŸå ´åˆç”¨ï¼‰
-		@param[in]	Key	ã‚­ãƒ¼
-		@param[in]	NewPtr	å…±æœ‰ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚°ãƒ«ãƒ¼ãƒ—
-		@return	ãªã—
+		@brief	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv‚ğƒZƒbƒg‚·‚éiƒOƒ‹[ƒv”h¶ƒNƒ‰ƒX‚ğì‚Á‚½ê‡—pj
+		@param[in]	Key	ƒL[
+		@param[in]	NewPtr	‹¤—L‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒOƒ‹[ƒv
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetSharedObjectGroup(const wstring& Key, const shared_ptr<GameObjectGroup>& NewPtr);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã®ã‚¿ã‚°ã‚’ã‚‚ã¤ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—ã‚’å–å¾—ã™ã‚‹
-		@param[in]	Tag	æ¤œç´¢ã™ã‚‹ã‚¿ã‚°
-		@param[out]	å–å¾—ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—
-		@return	ãªã—
+		@brief	w’è‚Ìƒ^ƒO‚ğ‚à‚ÂƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”z—ñ‚ğæ“¾‚·‚é
+		@param[in]	Tag	ŒŸõ‚·‚éƒ^ƒO
+		@param[out]	æ“¾‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”z—ñ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
-		void GetUsedTagObjectVec(const wstring& Tag, vector<shared_ptr<GameObject>>& ObjVec) const {
+		void GetUsedTagObjectVec(const wstring& Tag,vector<shared_ptr<GameObject>>& ObjVec) const {
 			for (auto& v : GetGameObjectVec()) {
 				if (v->FindTag(Tag)) {
 					ObjVec.push_back(v);
@@ -1982,14 +1896,14 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§æŒ‡å®šã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®è¦ªã‹å­ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’æŒã¤å ´åˆãã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®é…åˆ—ã‚’å–å¾—ã™ã‚‹
-		@tparam	T	æ¤œç´¢ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå‹
-		@param[out]	å–å¾—ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®é…åˆ—
-		@return	ãªã—
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Åw’è‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìe‚©q‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ‚Âê‡‚»‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì”z—ñ‚ğæ“¾‚·‚é
+		@tparam	T	ŒŸõ‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒgŒ^
+		@param[out]	æ“¾‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì”z—ñ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
-		void GetUsedDynamicCompoentVec(vector<shared_ptr<T>>& CompVec) const {
+		void GetUsedDynamicCompoentVec(vector<shared_ptr<T>>& CompVec) const{
 			for (auto& v : GetGameObjectVec()) {
 				auto ptr = v->GetDynamicComponent<T>(false);
 				if (ptr) {
@@ -1999,10 +1913,10 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®è¦ªã‹å­ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’æŒã¤ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—ã‚’è¨­å®šã™ã‚‹
-		@tparam	T	æ¤œç´¢ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå‹
-		@param[out]	å–å¾—ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é…åˆ—
-		@return	ãªã—
+		@brief	w’è‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìe‚©q‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ‚ÂƒIƒuƒWƒFƒNƒg‚Ì”z—ñ‚ğİ’è‚·‚é
+		@tparam	T	ŒŸõ‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒgŒ^
+		@param[out]	æ“¾‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”z—ñ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -2016,293 +1930,294 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ“ãƒ¥ãƒ¼ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
-		@param[in]	v	ãƒ“ãƒ¥ãƒ¼
-		@return	ãªã—
+		@brief	ƒrƒ…[‚ğƒZƒbƒg‚·‚é
+		@param[in]	v	ƒrƒ…[
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetView(const shared_ptr<ViewBase>& v);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ“ãƒ¥ãƒ¼ã‚’å¾—ã‚‹
-		@param[in]	ExceptionActive	ç„¡ã‹ã£ãŸæ™‚ä¾‹å¤–ã‚’å‡ºã™ã‹ã©ã†ã‹
-		@return	ãƒ“ãƒ¥ãƒ¼
+		@brief	ƒrƒ…[‚ğ“¾‚é
+		@param[in]	ExceptionActive	–³‚©‚Á‚½—áŠO‚ğo‚·‚©‚Ç‚¤‚©
+		@return	ƒrƒ…[
 		*/
 		//--------------------------------------------------------------------------------------
 		const shared_ptr<ViewBase>& GetView(bool ExceptionActive = true)const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ©ã‚¤ãƒˆã‚’ã‚»ãƒƒãƒˆã™ã‚‹
-		@param[in]	L	ãƒ©ã‚¤ãƒˆ
-		@return	ãªã—
+		@brief	ƒ‰ƒCƒg‚ğƒZƒbƒg‚·‚é
+		@param[in]	L	ƒ‰ƒCƒg
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetLight(const shared_ptr<LightBase>& L);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ©ã‚¤ãƒˆã‚’å¾—ã‚‹
-		@return	ãƒ©ã‚¤ãƒˆ
+		@brief	ƒ‰ƒCƒg‚ğ“¾‚é
+		@return	ƒ‰ƒCƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		const shared_ptr<LightBase>& GetLight()const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ“ãƒ¥ãƒ¼ã‚’ä½œæˆã™ã‚‹
-		@tparam	T	ä½œæˆã™ã‚‹å‹
-		@tparam	Ts	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹
-		@param[in]	params	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
-		@return	ãƒ“ãƒ¥ãƒ¼
+		@brief	ƒrƒ…[‚ğì¬‚·‚é
+		@tparam	T	ì¬‚·‚éŒ^
+		@tparam	Ts	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^‚ÌŒ^
+		@param[in]	params	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^
+		@return	ƒrƒ…[
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T, typename... Ts>
 		shared_ptr<T> CreateView(Ts&&... params) {
-			//æ–°ãŸã«ä½œæˆã™ã‚‹
+			//V‚½‚Éì¬‚·‚é
 			shared_ptr<T> newPtr = ObjectFactory::Create<T>(GetThis<Stage>(), params...);
 			SetView(newPtr);
 			return newPtr;
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ©ã‚¤ãƒˆã‚’ä½œæˆã™ã‚‹
-		@tparam	T	ä½œæˆã™ã‚‹å‹
-		@tparam	Ts	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹
-		@param[in]	params	å¯å¤‰é•·ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
-		@return	ãƒ©ã‚¤ãƒˆ
+		@brief	ƒ‰ƒCƒg‚ğì¬‚·‚é
+		@tparam	T	ì¬‚·‚éŒ^
+		@tparam	Ts	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^‚ÌŒ^
+		@param[in]	params	‰Â•Ï’·ƒpƒ‰ƒ[ƒ^
+		@return	ƒ‰ƒCƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T, typename... Ts>
 		shared_ptr<T> CreateLight(Ts&&... params) {
-			//æ–°ãŸã«ä½œæˆã™ã‚‹
+			//V‚½‚Éì¬‚·‚é
 			shared_ptr<T> newPtr = ObjectFactory::Create<T>(GetThis<Stage>(), params...);
 			SetLight(newPtr);
 			return newPtr;
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®æ›´æ–°ï¼ˆã‚·ãƒ¼ãƒ³ã‹ã‚‰ã‚ˆã°ã‚Œã‚‹ï¼‰
-		@return	ãªã—
+		@brief	ƒXƒe[ƒW“à‚ÌXViƒV[ƒ“‚©‚ç‚æ‚Î‚ê‚éj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void UpdateStage();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªåˆ¤å®šã®æ›´æ–°ï¼ˆã‚¹ãƒ†ãƒ¼ã‚¸ã‹ã‚‰å‘¼ã¶ï¼‰
-		@return	ãªã—
+		@brief	Õ“Ë”»’è‚ÌXViƒXƒe[ƒW‚©‚çŒÄ‚Ôj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void UpdateCollision();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã‚’ä½¿ã†ã‹ã©ã†ã‹ã‚’å¾—ã‚‹
-		@return	ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã‚’ä½¿ã†ã‹ã©ã†ã‹
+		@brief	ƒVƒƒƒhƒEƒ}ƒbƒv‚ğg‚¤‚©‚Ç‚¤‚©‚ğ“¾‚é
+		@return	ƒVƒƒƒhƒEƒ}ƒbƒv‚ğg‚¤‚©‚Ç‚¤‚©
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsShadowmapDraw() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã‚’ä½¿ã†ã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã‚’ä½¿ã†ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	ƒVƒƒƒhƒEƒ}ƒbƒv‚ğg‚¤‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	ƒVƒƒƒhƒEƒ}ƒbƒv‚ğg‚¤‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetShadowmapDraw(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªåˆ¤å®šã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ç„¡åŠ¹ã«ã™ã‚‹
-		@param[in]	b	è¡çªåˆ¤å®šã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ã«ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	Õ“Ë”»’è‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø–³Œø‚É‚·‚é
+		@param[in]	b	Õ“Ë”»’è‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø‚É‚·‚é‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetCollisionPerformanceActive(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªåˆ¤å®šã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ç„¡åŠ¹ã‚’å¾—ã‚‹
-		@return	è¡çªåˆ¤å®šã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ãªã‚‰true
+		@brief	Õ“Ë”»’è‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø–³Œø‚ğ“¾‚é
+		@return	Õ“Ë”»’è‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsCollisionPerformanceActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	è¡çªåˆ¤å®šã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’å¾—ã‚‹
-		@return	è¡çªåˆ¤å®šã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ï¼ˆãƒŸãƒªç§’ï¼‰
+		@brief	Õ“Ë”»’è‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ“¾‚é
+		@return	Õ“Ë”»’è‚ÌƒpƒtƒH[ƒ}ƒ“ƒXiƒ~ƒŠ•bj
 		*/
 		//--------------------------------------------------------------------------------------
 		float GetCollisionPerformanceTime() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Updateå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ç„¡åŠ¹ã«ã™ã‚‹
-		@param[in]	b	Updateå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ã«ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	Updateˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø–³Œø‚É‚·‚é
+		@param[in]	b	Updateˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø‚É‚·‚é‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetUpdatePerformanceActive(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Updateå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ç„¡åŠ¹ã‚’å¾—ã‚‹
-		@return	Updateå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ãªã‚‰true
+		@brief	Updateˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø–³Œø‚ğ“¾‚é
+		@return	Updateˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsUpdatePerformanceActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Updateå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’å¾—ã‚‹
-		@return	Updateå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ï¼ˆãƒŸãƒªç§’ï¼‰
+		@brief	Updateˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ“¾‚é
+		@return	Updateˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒXiƒ~ƒŠ•bj
 		*/
 		//--------------------------------------------------------------------------------------
 		float GetUpdatePerformanceTime() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Drawå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ç„¡åŠ¹ã«ã™ã‚‹
-		@param[in]	b	Drawå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ã«ã™ã‚‹ã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief	Drawˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø–³Œø‚É‚·‚é
+		@param[in]	b	Drawˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø‚É‚·‚é‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetDrawPerformanceActive(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Drawå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ç„¡åŠ¹ã‚’å¾—ã‚‹
-		@return	Drawå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’æœ‰åŠ¹ãªã‚‰true
+		@brief	Drawˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø–³Œø‚ğ“¾‚é
+		@return	Drawˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsDrawPerformanceActive() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	Drawå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ã‚’å¾—ã‚‹
-		@return	Drawå‡¦ç†ã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒãƒ³ã‚¹ï¼ˆãƒŸãƒªç§’ï¼‰
+		@brief	Drawˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ğ“¾‚é
+		@return	Drawˆ—‚ÌƒpƒtƒH[ƒ}ƒ“ƒXiƒ~ƒŠ•bj
 		*/
 		//--------------------------------------------------------------------------------------
 		float GetDrawPerformanceTime() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—æç”»ï¼ˆã‚¹ãƒ†ãƒ¼ã‚¸ã‹ã‚‰ã‚ˆã°ã‚Œã‚‹ï¼‰
-		@return	ãªã—
+		@brief	ƒXƒe[ƒW“à‚ÌƒVƒƒƒhƒEƒ}ƒbƒv•`‰æiƒXƒe[ƒW‚©‚ç‚æ‚Î‚ê‚éj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void DrawShadowmapStage();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®æç”»ï¼ˆã‚¹ãƒ†ãƒ¼ã‚¸ã‹ã‚‰ã‚ˆã°ã‚Œã‚‹ï¼‰
-		@return	ãªã—
+		@brief	ƒXƒe[ƒW“à‚Ì•`‰æiƒXƒe[ƒW‚©‚ç‚æ‚Î‚ê‚éj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void DrawStage();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®ã™ã¹ã¦ã®æç”»ï¼ˆã‚·ãƒ¼ãƒ³ã‹ã‚‰ã‚ˆã°ã‚Œã‚‹ï¼‰
-		@return	ãªã—
+		@brief	ƒXƒe[ƒW“à‚Ì‚·‚×‚Ä‚Ì•`‰æiƒV[ƒ“‚©‚ç‚æ‚Î‚ê‚éj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void RenderStage();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å‰åˆæœŸåŒ–
-		@return	ãªã—
+		@brief	‘O‰Šú‰»
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnPreCreate()override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æ›´æ–°ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰
-		@return	ãªã—
+		@brief	XViƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢j
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnUpdate()override {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æç”»ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ä½•ã‚‚ã—ãªã„ï¼‰
-		@return	ãªã—
+		@brief	•`‰æiƒfƒtƒHƒ‹ƒg‚Í‰½‚à‚µ‚È‚¢j
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®å‰Šé™¤ï¼ˆã‚·ãƒ¼ãƒ³ã‹ã‚‰ã‚ˆã°ã‚Œã‚‹ï¼‰
-		@return	ãªã—
+		@brief	ƒXƒe[ƒW“à‚ÌíœiƒV[ƒ“‚©‚ç‚æ‚Î‚ê‚éj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void DestroyStage();
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
 	//--------------------------------------------------------------------------------------
-	//	ãƒ ãƒ¼ãƒ“ãƒ¼ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¯ãƒ©ã‚¹
+	//	ƒ€[ƒr[ƒXƒe[ƒWƒNƒ‰ƒX
 	//--------------------------------------------------------------------------------------
 	class MovieStage : public Stage {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		MovieStage();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-		@param[in]	MivieFileName	ãƒ•ã‚¡ã‚¤ãƒ«å
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		@param[in]	MivieFileName	ƒtƒ@ƒCƒ‹–¼
 		*/
 		//--------------------------------------------------------------------------------------
 		MovieStage(const wstring& MivieFileName);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~MovieStage();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	åˆæœŸåŒ–
-		@return	ãªã—
+		@brief	‰Šú‰»
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnCreate()override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ•ã‚¡ã‚¤ãƒ«åã®è¨­å®š
-		@param[in]	MivieFileName	ãƒ•ã‚¡ã‚¤ãƒ«å
-		@return	ãªã—
+		@brief	ƒtƒ@ƒCƒ‹–¼‚Ìİ’è
+		@param[in]	MivieFileName	ƒtƒ@ƒCƒ‹–¼
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetMovieFileName(const wstring& MivieFileName);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å†ç”Ÿ
-		@return	ãªã—
+		@brief	Ä¶
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void Play();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief ãƒ ãƒ¼ãƒ“ãƒ¼ãŒè‡ªå‹•ãƒªãƒ”ãƒ¼ãƒˆã‹ã©ã†ã‹
-		@return	æœ‰åŠ¹ãªã‚‰true
+		@brief ƒ€[ƒr[‚ª©“®ƒŠƒs[ƒg‚©‚Ç‚¤‚©
+		@return	—LŒø‚È‚çtrue
 		*/
 		//--------------------------------------------------------------------------------------
 		bool IsAutoRepeat() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief ãƒ ãƒ¼ãƒ“ãƒ¼ãŒè‡ªå‹•ãƒªãƒ”ãƒ¼ãƒˆã‹ã©ã†ã‹ã‚’è¨­å®šã™ã‚‹
-		@param[in]	b	ãƒ ãƒ¼ãƒ“ãƒ¼ãŒè‡ªå‹•ãƒªãƒ”ãƒ¼ãƒˆã‹ã©ã†ã‹
-		@return	ãªã—
+		@brief ƒ€[ƒr[‚ª©“®ƒŠƒs[ƒg‚©‚Ç‚¤‚©‚ğİ’è‚·‚é
+		@param[in]	b	ƒ€[ƒr[‚ª©“®ƒŠƒs[ƒg‚©‚Ç‚¤‚©
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetAutoRepeat(bool b);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	çµ‚äº†å‡¦ç†
-		@return	ãªã—
+		@brief	I—¹ˆ—
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDestroy()override;
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
+
 	//--------------------------------------------------------------------------------------
-	///	ã‚·ãƒ¼ãƒ³è¦ªã‚¯ãƒ©ã‚¹
+	///	ƒV[ƒ“eƒNƒ‰ƒX
 	//--------------------------------------------------------------------------------------
 	class SceneBase :public SceneInterface {
 		void SetActiveStage(const shared_ptr<Stage>& stage);
@@ -2319,32 +2234,32 @@ namespace basecross {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¾—ã‚‹
-		@param[in]	ExceptionActive	å¤±æ•—äº‹ä¾‹å¤–ã«ã™ã‚‹ã‹ã©ã†ã‹ã€‚
-		@return	ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸
+		@brief	Œ»İ‚ÌƒXƒe[ƒW‚ğ“¾‚é
+		@param[in]	ExceptionActive	¸”s–—áŠO‚É‚·‚é‚©‚Ç‚¤‚©B
+		@return	Œ»İ‚ÌƒXƒe[ƒW
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<Stage> GetActiveStage(bool ExceptionActive = true) const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç”»é¢ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹è‰²ã‚’å¾—ã‚‹
-		@return	ç”»é¢ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹è‰²
+		@brief	‰æ–Ê‚ğƒNƒŠƒA‚·‚éF‚ğ“¾‚é
+		@return	‰æ–Ê‚ğƒNƒŠƒA‚·‚éF
 		*/
 		//--------------------------------------------------------------------------------------
 		bsm::Col4 GetClearColor() const;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ç”»é¢ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹è‰²ã‚’è¨­å®šã™ã‚‹
-		@param[in]	params	ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’æ§‹ç¯‰ã™ã‚‹ã®ã«ä½¿ç”¨ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã€‚
-		@return	ãªã—
+		@brief	‰æ–Ê‚ğƒNƒŠƒA‚·‚éF‚ğİ’è‚·‚é
+		@param[in]	params	‚±‚ÌƒXƒe[ƒW‚ğ\’z‚·‚é‚Ì‚Ég—p‚·‚éƒpƒ‰ƒ[ƒ^B
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetClearColor(const bsm::Col4& col);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	æŒ‡å®šã®å‹ã®ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å¾—ã‚‹
-		@tparam	T	å–å¾—ã™ã‚‹å‹
-		@return	æŒ‡å®šã®å‹ã®ã‚¹ãƒ†ãƒ¼ã‚¸ï¼ˆå¤±æ•—äº‹ä¾‹å¤–ï¼‰
+		@brief	w’è‚ÌŒ^‚ÌŒ»İ‚ÌƒXƒe[ƒW‚ğ“¾‚é
+		@tparam	T	æ“¾‚·‚éŒ^
+		@return	w’è‚ÌŒ^‚ÌƒXƒe[ƒWi¸”s–—áŠOj
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -2352,7 +2267,7 @@ namespace basecross {
 			auto TypeStagePtr = dynamic_pointer_cast<T>(GetActiveStage());
 			if (!TypeStagePtr) {
 				throw BaseException(
-					L"ä»¥ä¸‹ã«å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“ã€‚",
+					L"ˆÈ‰º‚ÉŒ^ƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñB",
 					Util::GetWSTypeName<T>(),
 					L"SceneBase::GetActiveTypeStage<T>()"
 				);
@@ -2361,156 +2276,140 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚¹ãƒ†ãƒ¼ã‚¸ã‚’è¨­å®šã—ã¦åˆæœŸåŒ–ã™ã‚‹
-		@tparam	T	å–å¾—ã™ã‚‹å‹ï¼ˆStageã«å‹å¤‰æ›ã§ãã‚‹ã‚‚ã®ï¼‰
-		@tparam	Ts	å¯å¤‰é•·å¤‰æ•°ã®å‹
-		@param[in]	params	ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’æ§‹ç¯‰ã™ã‚‹ã®ã«ä½¿ç”¨ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã€‚
-		@return	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+		@brief	ƒAƒNƒeƒBƒu‚ÈƒXƒe[ƒW‚ğİ’è‚µ‚Ä‰Šú‰»‚·‚é
+		@tparam	T	æ“¾‚·‚éŒ^iStage‚ÉŒ^•ÏŠ·‚Å‚«‚é‚à‚Ìj
+		@tparam	Ts	‰Â•Ï’·•Ï”‚ÌŒ^
+		@param[in]	params	‚±‚ÌƒXƒe[ƒW‚ğ\’z‚·‚é‚Ì‚Ég—p‚·‚éƒpƒ‰ƒ[ƒ^B
+		@return	ƒRƒ“ƒ|[ƒlƒ“ƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T, typename... Ts,
-			std::enable_if_t<std::is_constructible_v<T, Ts...>, std::nullptr_t> = nullptr>
-			shared_ptr<T> ResetActiveStage(Ts&&... params) {
+		    std::enable_if_t<std::is_constructible_v<T,Ts...>,std::nullptr_t> = nullptr>
+		shared_ptr<T> ResetActiveStage(Ts&&... params) {
 			auto ActStagePtr = GetActiveStage(false);
 			if (ActStagePtr) {
-				//ç ´æ£„ã‚’ä¼ãˆã‚‹
+				//”jŠü‚ğ“`‚¦‚é
 				ActStagePtr->DestroyStage();
 			}
 			auto Ptr = ObjectFactory::Create<T>(params...);
 			auto StagePtr = dynamic_pointer_cast<Stage>(Ptr);
 			if (!StagePtr) {
 				throw BaseException(
-					L"ä»¥ä¸‹ã¯Stageã«å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“ã€‚",
+					L"ˆÈ‰º‚ÍStage‚ÉŒ^ƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñB",
 					Util::GetWSTypeName<T>(),
 					L"SceneBase::ResetActiveStage<T>()"
 				);
 			}
 			SetActiveStage(StagePtr);
-
-			//ã‚¹ãƒ†ãƒ¼ã‚¸ãŒè¿½åŠ ã•ã‚ŒãŸå¾Œã«å‘¼ã¶å‡¦ç†
-			auto objects = StagePtr->GetGameObjectVec();
-			for (auto& object : objects) {
-				object->ComponentLateStart();
-				object->RemoveComponents();
-			}
-
 			return Ptr;
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚¹ãƒ†ãƒ¼ã‚¸ã‚’è¨­å®šã—ã¦åˆæœŸåŒ–ã™ã‚‹
-		@tparam	T	å–å¾—ã™ã‚‹å‹ï¼ˆStageã«å‹å¤‰æ›ã§ãã‚‹ã‚‚ã®ï¼‰
-		@tparam	Ts	å¯å¤‰é•·å¤‰æ•°ã®å‹
-		@param[in]	params	ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’æ§‹ç¯‰ã™ã‚‹ã®ã«ä½¿ç”¨ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã€‚
-		@return	ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+		@brief	ƒAƒNƒeƒBƒu‚ÈƒXƒe[ƒW‚ğİ’è‚µ‚Ä‰Šú‰»‚·‚é
+		@tparam	T	æ“¾‚·‚éŒ^iStage‚ÉŒ^•ÏŠ·‚Å‚«‚é‚à‚Ìj
+		@tparam	Ts	‰Â•Ï’·•Ï”‚ÌŒ^
+		@param[in]	params	‚±‚ÌƒXƒe[ƒW‚ğ\’z‚·‚é‚Ì‚Ég—p‚·‚éƒpƒ‰ƒ[ƒ^B
+		@return	ƒRƒ“ƒ|[ƒlƒ“ƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T, typename... Ts>
 		shared_ptr<T> ResetActiveStageWithParam(Ts&&... params) {
 			auto ActStagePtr = GetActiveStage(false);
 			if (ActStagePtr) {
-				//ç ´æ£„ã‚’ä¼ãˆã‚‹
+				//”jŠü‚ğ“`‚¦‚é
 				ActStagePtr->DestroyStage();
 			}
 			auto Ptr = ObjectFactory::CreateWithParam<T>(params...);
 			auto StagePtr = dynamic_pointer_cast<Stage>(Ptr);
 			if (!StagePtr) {
 				throw BaseException(
-					L"ä»¥ä¸‹ã¯Stageã«å‹ã‚­ãƒ£ã‚¹ãƒˆã§ãã¾ã›ã‚“ã€‚",
+					L"ˆÈ‰º‚ÍStage‚ÉŒ^ƒLƒƒƒXƒg‚Å‚«‚Ü‚¹‚ñB",
 					Util::GetWSTypeName<T>(),
 					L"SceneBase::ResetActiveStageWithParam<T>()"
 				);
 			}
 			SetActiveStage(StagePtr);
-
-			//ã‚¹ãƒ†ãƒ¼ã‚¸ãŒè¿½åŠ ã•ã‚ŒãŸå¾Œã«å‘¼ã¶å‡¦ç†
-			auto objects = StagePtr->GetGameObjectVec();
-			for (auto& object : objects) {
-				object->ComponentLateStart();
-				object->RemoveComponents();
-			}
-
 			return Ptr;
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚·ãƒ¼ãƒ³ã‚’å¤‰åŒ–ã•ã›ã‚‹
-		@return	ãªã—
+		@brief	ƒV[ƒ“‚ğ•Ï‰»‚³‚¹‚é
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnUpdate()override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚·ãƒ¼ãƒ³ã‚’æç”»ã™ã‚‹
-		@return	ãªã—
+		@brief	ƒV[ƒ“‚ğ•`‰æ‚·‚é
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override;
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚·ãƒ¼ãƒ³å‰Šé™¤
-		@return	ãªã—
+		@brief	ƒV[ƒ“íœ
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDestroy()override;
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
 	//--------------------------------------------------------------------------------------
-	//	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¯ãƒªã‚¨ãƒ¼ã‚¿ãƒ¼CSV(è¦ª)
+	//	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒNƒŠƒG[ƒ^[CSV(e)
 	//--------------------------------------------------------------------------------------
 	class GameObjectCreatorBaseCSV {
 	protected:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		explicit GameObjectCreatorBaseCSV() {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObjectCreatorBaseCSV() {}
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã™ã‚‹ï¼ˆç´”ç²‹ä»®æƒ³é–¢æ•°ï¼‰
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	Line	1è¡Œåˆ†ã®CSVæ–‡å­—åˆ—
-		@return	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğì¬‚·‚éiƒˆ‰¼‘zŠÖ”j
+		@param[in]	StagePtr	ƒXƒe[ƒW
+		@param[in]	Line	1s•ª‚ÌCSV•¶š—ñ
+		@return	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual shared_ptr<GameObject> Create(const shared_ptr<Stage>& StagePtr, const wstring& Line) = 0;
 	};
 	//--------------------------------------------------------------------------------------
-	//	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¯ãƒªã‚¨ãƒ¼ã‚¿ãƒ¼CSV
+	//	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒNƒŠƒG[ƒ^[CSV
 	//--------------------------------------------------------------------------------------
 	template<typename T>
 	class GameObjectCreatorCSV : public GameObjectCreatorBaseCSV {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		explicit GameObjectCreatorCSV() {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObjectCreatorCSV() {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã™ã‚‹ï¼ˆä»®æƒ³é–¢æ•°ï¼‰
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	Line	1è¡Œåˆ†ã®CSVæ–‡å­—åˆ—
-		@return	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğì¬‚·‚éi‰¼‘zŠÖ”j
+		@param[in]	StagePtr	ƒXƒe[ƒW
+		@param[in]	Line	1s•ª‚ÌCSV•¶š—ñ
+		@return	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObject> Create(const shared_ptr<Stage>& StagePtr, const wstring& Line)override {
@@ -2519,29 +2418,29 @@ namespace basecross {
 	};
 
 	//--------------------------------------------------------------------------------------
-	//	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ“ãƒ«ãƒ€ãƒ¼CSV
+	//	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒrƒ‹ƒ_[CSV
 	//--------------------------------------------------------------------------------------
 	class GameObjecttCSVBuilder {
 		map<wstring, shared_ptr<GameObjectCreatorBaseCSV>>& GetCreatorMap() const;
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		GameObjecttCSVBuilder();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObjecttCSVBuilder();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¯ãƒªã‚¨ãƒ¼ã‚¿ãƒ¼ã‚’ç™»éŒ²ã™ã‚‹
-		@tparam	T	ç™»éŒ²ã™ã‚‹å‹ï¼ˆã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ´¾ç”Ÿï¼‰
-		@param[in]	ClsName	å‹ã®è­˜åˆ¥åï¼ˆé€šå¸¸ã¯å‹åã‚’æ–‡å­—åˆ—ã«ã—ãŸã‚‚ã®ï¼‰
-		@return	ãªã—
+		@brief	ƒNƒŠƒG[ƒ^[‚ğ“o˜^‚·‚é
+		@tparam	T	“o˜^‚·‚éŒ^iƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”h¶j
+		@param[in]	ClsName	Œ^‚Ì¯•Ê–¼i’Êí‚ÍŒ^–¼‚ğ•¶š—ñ‚É‚µ‚½‚à‚Ìj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -2550,81 +2449,82 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å‹ã®è­˜åˆ¥åã‚’ä½¿ã£ã¦ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
-		@param[in]	ClsName	å‹ã®è­˜åˆ¥åï¼ˆé€šå¸¸ã¯å‹åã‚’æ–‡å­—åˆ—ã«ã—ãŸã‚‚ã®ï¼‰
-		@param[in]	StagePtr	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	Line	1è¡Œåˆ†ã®CSVæ–‡å­—åˆ—
-		@return	ä½œæˆã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	Œ^‚Ì¯•Ê–¼‚ğg‚Á‚ÄƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚é
+		@param[in]	ClsName	Œ^‚Ì¯•Ê–¼i’Êí‚ÍŒ^–¼‚ğ•¶š—ñ‚É‚µ‚½‚à‚Ìj
+		@param[in]	StagePtr	Š‘®‚·‚éƒXƒe[ƒW
+		@param[in]	Line	1s•ª‚ÌCSV•¶š—ñ
+		@return	ì¬‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObject> CreateFromCSV(const wstring& ClsName, const shared_ptr<Stage>& StagePtr, const wstring& Line);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	CSVã‹ã‚‰ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
-		@param[in]	StagePtr	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	CSVFileName	CSVãƒ•ã‚¡ã‚¤ãƒ«å
-		@return	ãªã—
+		@brief	CSV‚©‚çƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚é
+		@param[in]	StagePtr	Š‘®‚·‚éƒXƒe[ƒW
+		@param[in]	CSVFileName	CSVƒtƒ@ƒCƒ‹–¼
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void Build(const shared_ptr<Stage>& StagePtr, const wstring& CSVFileName);
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
 
+
 	//--------------------------------------------------------------------------------------
-	//	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¯ãƒªã‚¨ãƒ¼ã‚¿ãƒ¼XML(è¦ª)
+	//	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒNƒŠƒG[ƒ^[XML(e)
 	//--------------------------------------------------------------------------------------
 	class GameObjectCreatorBaseXML {
 	protected:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		explicit GameObjectCreatorBaseXML() {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObjectCreatorBaseXML() {}
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã™ã‚‹ï¼ˆç´”ç²‹ä»®æƒ³é–¢æ•°ï¼‰
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	pNode	XMLãƒãƒ¼ãƒ‰
-		@return	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğì¬‚·‚éiƒˆ‰¼‘zŠÖ”j
+		@param[in]	StagePtr	ƒXƒe[ƒW
+		@param[in]	pNode	XMLƒm[ƒh
+		@return	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual shared_ptr<GameObject> Create(const shared_ptr<Stage>& StagePtr, IXMLDOMNodePtr pNode) = 0;
 	};
 	//--------------------------------------------------------------------------------------
-	//	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¯ãƒªã‚¨ãƒ¼ã‚¿ãƒ¼XML
+	//	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒNƒŠƒG[ƒ^[XML
 	//--------------------------------------------------------------------------------------
 	template<typename T>
 	class GameObjectCreatorXML : public GameObjectCreatorBaseXML {
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		explicit GameObjectCreatorXML() {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObjectCreatorXML() {}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã™ã‚‹ï¼ˆä»®æƒ³é–¢æ•°ï¼‰
-		@param[in]	StagePtr	ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	pNode	XMLãƒãƒ¼ãƒ‰
-		@return	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿
+		@brief	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğì¬‚·‚éi‰¼‘zŠÖ”j
+		@param[in]	StagePtr	ƒXƒe[ƒW
+		@param[in]	pNode	XMLƒm[ƒh
+		@return	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObject> Create(const shared_ptr<Stage>& StagePtr, IXMLDOMNodePtr pNode)override {
@@ -2633,29 +2533,29 @@ namespace basecross {
 	};
 
 	//--------------------------------------------------------------------------------------
-	//	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ“ãƒ«ãƒ€ãƒ¼XML
+	//	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgƒrƒ‹ƒ_[XML
 	//--------------------------------------------------------------------------------------
 	class GameObjecttXMLBuilder {
 		map<wstring, shared_ptr<GameObjectCreatorBaseXML>>& GetCreatorMap() const;
 	public:
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		GameObjecttXMLBuilder();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		@brief	ƒfƒXƒgƒ‰ƒNƒ^
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual ~GameObjecttXMLBuilder();
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	ã‚¯ãƒªã‚¨ãƒ¼ã‚¿ãƒ¼ã‚’ç™»éŒ²ã™ã‚‹
-		@tparam	T	ç™»éŒ²ã™ã‚‹å‹ï¼ˆã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ´¾ç”Ÿï¼‰
-		@param[in]	ClsName	å‹ã®è­˜åˆ¥åï¼ˆé€šå¸¸ã¯å‹åã‚’æ–‡å­—åˆ—ã«ã—ãŸã‚‚ã®ï¼‰
-		@return	ãªã—
+		@brief	ƒNƒŠƒG[ƒ^[‚ğ“o˜^‚·‚é
+		@tparam	T	“o˜^‚·‚éŒ^iƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì”h¶j
+		@param[in]	ClsName	Œ^‚Ì¯•Ê–¼i’Êí‚ÍŒ^–¼‚ğ•¶š—ñ‚É‚µ‚½‚à‚Ìj
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		template<typename T>
@@ -2664,28 +2564,35 @@ namespace basecross {
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	å‹ã®è­˜åˆ¥åã‚’ä½¿ã£ã¦ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
-		@param[in]	ClsName	å‹ã®è­˜åˆ¥åï¼ˆé€šå¸¸ã¯å‹åã‚’æ–‡å­—åˆ—ã«ã—ãŸã‚‚ã®ï¼‰
-		@param[in]	StagePtr	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	pNode	XMLãƒãƒ¼ãƒ‰
-		@return	ä½œæˆã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		@brief	Œ^‚Ì¯•Ê–¼‚ğg‚Á‚ÄƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚é
+		@param[in]	ClsName	Œ^‚Ì¯•Ê–¼i’Êí‚ÍŒ^–¼‚ğ•¶š—ñ‚É‚µ‚½‚à‚Ìj
+		@param[in]	StagePtr	Š‘®‚·‚éƒXƒe[ƒW
+		@param[in]	pNode	XMLƒm[ƒh
+		@return	ì¬‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
 		*/
 		//--------------------------------------------------------------------------------------
 		shared_ptr<GameObject> CreateFromXML(const wstring& ClsName, const shared_ptr<Stage>& StagePtr, IXMLDOMNodePtr pNode);
 		//--------------------------------------------------------------------------------------
 		/*!
-		@brief	XMLã‹ã‚‰ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã™ã‚‹
-		@param[in]	StagePtr	æ‰€å±ã™ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸
-		@param[in]	XMLFileName	XMLãƒ•ã‚¡ã‚¤ãƒ«å
-		@param[in]	GameObjectsPath	ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ(è¤‡æ•°)ã®ãƒãƒ¼ãƒ‰ã¸ã®ãƒ‘ã‚¹
-		@return	ãªã—
+		@brief	XML‚©‚çƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ\’z‚·‚é
+		@param[in]	StagePtr	Š‘®‚·‚éƒXƒe[ƒW
+		@param[in]	XMLFileName	XMLƒtƒ@ƒCƒ‹–¼
+		@param[in]	GameObjectsPath	ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg(•¡”)‚Ìƒm[ƒh‚Ö‚ÌƒpƒX
+		@return	‚È‚µ
 		*/
 		//--------------------------------------------------------------------------------------
 		void Build(const shared_ptr<Stage>& StagePtr, const wstring& XMLFileName, const wstring& GameObjectsPath);
 	private:
-		// pImplã‚¤ãƒ‡ã‚£ã‚ªãƒ 
+		// pImplƒCƒfƒBƒIƒ€
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
+
+
+
+
+
+
+
 }
 //end basecross

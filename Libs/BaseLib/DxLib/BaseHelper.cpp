@@ -5,7 +5,6 @@
 */
 #include "stdafx.h"
 
-#include "Maruyama/Utility/Timer/GameTimer.h"
 
 namespace basecross{
 

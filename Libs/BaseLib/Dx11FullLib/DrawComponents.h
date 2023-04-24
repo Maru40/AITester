@@ -7,6 +7,7 @@
 #include "stdafx.h"
 
 namespace basecross {
+
 	//--------------------------------------------------------------------------------------
 	/*!
 	@brief	ビューポートとシサー矩形設定
@@ -45,9 +46,8 @@ namespace basecross {
 		bsm::Mat4x4 mView;
 		/// 射影行列
 		bsm::Mat4x4 mProj;
-		bsm::Vec4 mDissolveAnimationRate;
 		/// Bone用
-		bsm::Vec4 Bones[3 * 100];
+		bsm::Vec4 Bones[3 * 72];
 		ShadowConstants() {
 			memset(this, 0, sizeof(ShadowConstants));
 		};
@@ -57,7 +57,7 @@ namespace basecross {
 	DECLARE_DX11_VERTEX_SHADER(VSShadowmap, VertexPositionNormalTexture)
 	DECLARE_DX11_VERTEX_SHADER(VSShadowmapBone, VertexPositionNormalTextureSkinning)
 	DECLARE_DX11_VERTEX_SHADER(VSShadowmapBoneWithTan, VertexPositionNormalTangentTextureSkinning)
-	DECLARE_DX11_PIXEL_SHADER(PSShadowmap);
+
 
 	//--------------------------------------------------------------------------------------
 	///	スプライト用コンスタントバッファ構造体
@@ -86,6 +86,8 @@ namespace basecross {
 	//PCTSprite
 	DECLARE_DX11_VERTEX_SHADER(VSPCTSprite, VertexPositionColorTexture)
 	DECLARE_DX11_PIXEL_SHADER(PSPCTSprite)
+
+
 
 	//--------------------------------------------------------------------------------------
 	///	SimpleConstantsコンスタントバッファ構造体
@@ -117,7 +119,7 @@ namespace basecross {
 		/// ライト射影行列
 		bsm::Mat4x4 LightProjection;
 		/// Bone配列
-		bsm::Vec4 Bones[3 * 100];
+		bsm::Vec4 Bones[3 * 72];
 		SimpleConstants() {
 			memset(this, 0, sizeof(SimpleConstants));
 			Diffuse = bsm::Col4(1.0f, 1.0f, 1.0f, 1.0f);
@@ -156,6 +158,7 @@ namespace basecross {
 	///PNTStaticInstance
 	DECLARE_DX11_VERTEX_SHADER(VSPNTStaticInstance, VertexPositionNormalTextureMatrix)
 	DECLARE_DX11_VERTEX_SHADER(VSPNTStaticInstanceShadow, VertexPositionNormalTextureMatrix)
+
 
 	class GameObject;
 
@@ -508,18 +511,13 @@ namespace basecross {
 		*/
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override;
-
-		void OnCreate()override;
-		void SetDissolveAnimationRate(float rate);
-		void SetEnabledDissolve(bool flg);
-		bool GetEnabledDissolve();
-		float GetDissolveAnimationRate();
-		shared_ptr<TextureResource> GetNoiseTexRes() const;
 	private:
 		// pImplイディオム
 		struct Impl;
 		unique_ptr<Impl> pImpl;
 	};
+
+
 
 	//--------------------------------------------------------------------------------------
 	///	PCTParticle描画コンポーネント(パーティクル描画)
@@ -534,7 +532,7 @@ namespace basecross {
 		@param[in]	AddType	加算処理するかどうか
 		*/
 		//--------------------------------------------------------------------------------------
-		explicit PCTParticleDraw(const shared_ptr<GameObject>& GameObjectPtr, size_t MaxInstance, bool AddType = false);
+		explicit PCTParticleDraw(const shared_ptr<GameObject>& GameObjectPtr, size_t MaxInstance,bool AddType = false);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	デストラクタ
@@ -553,8 +551,8 @@ namespace basecross {
 		@return	なし
 		*/
 		//--------------------------------------------------------------------------------------
-		void AddParticle(float ToCaneraLength, const bsm::Mat4x4& WorldMatrix,
-			const shared_ptr<TextureResource>& TextureRes, const bsm::Col4& Diffuse = bsm::Col4(1, 1, 1, 1));
+		void AddParticle(float ToCaneraLength, const bsm::Mat4x4& WorldMatrix, 
+			const shared_ptr<TextureResource>& TextureRes,const bsm::Col4& Diffuse = bsm::Col4(1,1,1,1));
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	OnCreate処理
@@ -643,6 +641,7 @@ namespace basecross {
 					L"if (!GetMeshResource())",
 					L"SpriteBaseDraw::UpdateVertices()"
 				);
+
 			}
 			if (Vertices.size() > SpriteMesh->GetNumVertices()) {
 				throw BaseException(
@@ -925,6 +924,7 @@ namespace basecross {
 		virtual void OnDraw()override;
 	};
 
+
 	//--------------------------------------------------------------------------------------
 	///	PCTSprite描画コンポーネント
 	//--------------------------------------------------------------------------------------
@@ -975,6 +975,7 @@ namespace basecross {
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override;
 	};
+
 
 	//--------------------------------------------------------------------------------------
 	///	アニメーションデータ構造体.
@@ -1058,7 +1059,7 @@ namespace basecross {
 		*/
 		//--------------------------------------------------------------------------------------
 		void DrawWireFrame(const shared_ptr<GameObject>& GameObj,
-			const shared_ptr<MeshResource>& Mesh, const bsm::Mat4x4& MeshToTransformMatrix = bsm::Mat4x4());
+			const shared_ptr<MeshResource>& Mesh,const bsm::Mat4x4& MeshToTransformMatrix = bsm::Mat4x4());
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	ワイアフレーム描画処理
@@ -1070,6 +1071,7 @@ namespace basecross {
 		//--------------------------------------------------------------------------------------
 		void DrawWireFrameWithWorldMatrix(const shared_ptr<GameObject>& GameObj,
 			const shared_ptr<MeshResource>& Mesh, const bsm::Mat4x4& WorldMatrix);
+
 	};
 
 	//--------------------------------------------------------------------------------------
@@ -1132,6 +1134,7 @@ namespace basecross {
 					}
 				}
 			}
+
 		}
 		//--------------------------------------------------------------------------------------
 		/*!
@@ -1247,8 +1250,8 @@ namespace basecross {
 			bsm::Vec3 ScaleOut, PosOut;
 			bsm::Quat QtOut;
 
-			ScaleOut = Lerp::CalculateLerp(Scale1, Scale2, 0.0f, 1.0f, t, Lerp::rate::Linear);
-			PosOut = Lerp::CalculateLerp(Pos1, Pos2, 0.0f, 1.0f, t, Lerp::rate::Linear);
+			ScaleOut = Lerp::CalculateLerp(Scale1, Scale2, 0.0f, 1.0f, t, Lerp::Linear);
+			PosOut = Lerp::CalculateLerp(Pos1, Pos2, 0.0f, 1.0f, t, Lerp::Linear);
 			QtOut = XMQuaternionSlerp(Qt1, Qt2, t);
 			out.affineTransformation(ScaleOut, bsm::Vec3(0, 0, 0), QtOut, PosOut);
 		}
@@ -1324,7 +1327,7 @@ namespace basecross {
 						UINT UITgtSample = TgtAnimeData.m_StartSample;
 						//最後のサンプルを表示
 						for (UINT i = 0; i < m_LocalBonesMatrix.size(); i++) {
-							m_LocalBonesMatrix[i] = SampleMatrixVec[((UINT64)BoneCount * (UINT64)UITgtSample + (UINT64)i)];
+							m_LocalBonesMatrix[i] = SampleMatrixVec[BoneCount * UITgtSample + i];
 						}
 						m_CurrentAnimeTime = 0;
 						if (TgtAnimeData.m_IsLoop) {
@@ -1354,7 +1357,7 @@ namespace basecross {
 						UITgtSample = UILastSample - 1;
 						//最後のサンプルを表示
 						for (UINT i = 0; i < m_LocalBonesMatrix.size(); i++) {
-							m_LocalBonesMatrix[i] = SampleMatrixVec[(UINT64)BoneCount * (UINT64)UITgtSample + (UINT64)i];
+							m_LocalBonesMatrix[i] = SampleMatrixVec[BoneCount * UITgtSample + i];
 						}
 						if (TgtAnimeData.m_IsLoop) {
 							TgtAnimeData.m_IsAnimeEnd = false;
@@ -1374,8 +1377,8 @@ namespace basecross {
 						UINT UINextSample = UITgtSample + 1;
 						for (UINT i = 0; i < m_LocalBonesMatrix.size(); i++) {
 							InterpolationMatrix(
-								SampleMatrixVec[(UINT64)BoneCount * (UINT64)UITgtSample + (UINT64)i],
-								SampleMatrixVec[(UINT64)BoneCount * (UINT64)UINextSample + (UINT64)i],
+								SampleMatrixVec[BoneCount * UITgtSample + i],
+								SampleMatrixVec[BoneCount * UINextSample + i],
 								FLOATTgtSample, m_LocalBonesMatrix[i]);
 						}
 						//アニメは終わってない
@@ -1397,7 +1400,7 @@ namespace basecross {
 							auto& SampleMatrixVec = MultiMeshRes->GetSampleMatrixVec(mc);
 							UINT BoneCount = MultiMeshRes->GetBoneCount(mc);
 							for (UINT i = 0; i < m_MultiLocalBonesMatrix[mc].size(); i++) {
-								m_MultiLocalBonesMatrix[mc][i] = SampleMatrixVec[(UINT64)BoneCount * (UINT64)UITgtSample + (UINT64)i];
+								m_MultiLocalBonesMatrix[mc][i] = SampleMatrixVec[BoneCount * UITgtSample + i];
 							}
 						}
 						m_CurrentAnimeTime = 0;
@@ -1431,7 +1434,7 @@ namespace basecross {
 							auto& SampleMatrixVec = MultiMeshRes->GetSampleMatrixVec(mc);
 							UINT BoneCount = MultiMeshRes->GetBoneCount(mc);
 							for (UINT i = 0; i < m_MultiLocalBonesMatrix[mc].size(); i++) {
-								m_MultiLocalBonesMatrix[mc][i] = SampleMatrixVec[(UINT64)BoneCount * (UINT64)UITgtSample + (UINT64)i];
+								m_MultiLocalBonesMatrix[mc][i] = SampleMatrixVec[BoneCount * UITgtSample + i];
 							}
 						}
 						if (TgtAnimeData.m_IsLoop) {
@@ -1456,8 +1459,8 @@ namespace basecross {
 
 							for (UINT i = 0; i < m_MultiLocalBonesMatrix[mc].size(); i++) {
 								InterpolationMatrix(
-									SampleMatrixVec[(UINT64)BoneCount * (UINT64)UITgtSample + (UINT64)i],
-									SampleMatrixVec[(UINT64)BoneCount * (UINT64)UINextSample + (UINT64)i],
+									SampleMatrixVec[BoneCount * UITgtSample + i],
+									SampleMatrixVec[BoneCount * UINextSample + i],
 									FLOATTgtSample, m_MultiLocalBonesMatrix[mc][i]);
 							}
 						}
@@ -1470,6 +1473,7 @@ namespace basecross {
 			return true;
 		}
 	};
+
 
 	//--------------------------------------------------------------------------------------
 	///	これより新システム
@@ -1577,8 +1581,6 @@ namespace basecross {
 			UINT offset = 0;
 			//描画方法のセット
 			pD3D11DeviceContext->IASetPrimitiveTopology(data.m_PrimitiveTopology);
-			//pD3D11DeviceContext->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_LINESTRIP);
-			//pD3D11DeviceContext->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_POINTLIST);
 			//頂点バッファのセット
 			pD3D11DeviceContext->IASetVertexBuffers(0, 1, data.m_VertexBuffer.GetAddressOf(), &stride, &offset);
 			//インデックスバッファのセット
@@ -1931,6 +1933,7 @@ namespace basecross {
 					L"if (!GetOriginalMeshResource())",
 					L"StaticBaseDraw::UpdateVertices()"
 				);
+
 			}
 			MeshRes->UpdateVirtexBuffer(Vertices);
 		}
@@ -2488,6 +2491,7 @@ namespace basecross {
 		virtual void OnDraw()override;
 	};
 
+
 	//--------------------------------------------------------------------------------------
 	///	PTStatic描画コンポーネント
 	//--------------------------------------------------------------------------------------
@@ -2726,6 +2730,7 @@ namespace basecross {
 		virtual void OnDraw()override;
 	};
 
+
 	//--------------------------------------------------------------------------------------
 	///	PCStaticInstance描画コンポーネント
 	//--------------------------------------------------------------------------------------
@@ -2889,5 +2894,7 @@ namespace basecross {
 		//--------------------------------------------------------------------------------------
 		virtual void OnDraw()override;
 	};
+
+
 }
 //end basecross
