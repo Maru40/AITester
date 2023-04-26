@@ -11,7 +11,7 @@
 #include "Maruyama/Enemy/Astar/AstarNode.h"
 #include "Maruyama/Enemy/Astar/AstarEdge_Ex.h"
 
-#include "Maruyama/Enemy/Astar/NavGraphNode.h"
+//#include "Maruyama/Enemy/Astar/NavGraphNode.h"
 #include "Maruyama/StateMachine/NodeBase.h"
 #include "Maruyama/StateMachine/EdgeBase.h"
 #include "Maruyama/Patch/Graphs/SparseGraph_Ex.h"
@@ -19,7 +19,7 @@
 #include "Maruyama/Enemy/ImpactMap/ImpactMap.h"
 #include "Factory_WayPointMap_FloodFill.h"
 
-#include "Maruyama/Thread/ThreadPool.h"
+//#include "Maruyama/Thread/ThreadPool.h"
 
 #include "Maruyama/Utility/UtilityObstacle.h"
 

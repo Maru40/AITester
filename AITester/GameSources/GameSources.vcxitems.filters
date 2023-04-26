@@ -199,6 +199,36 @@
     <Filter Include="Maruyama\StateMachine\StatorBase">
       <UniqueIdentifier>{3f2a0b03-b6cf-4e32-985c-3d6b3cd83a44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maruyama\InfluenceMap">
+      <UniqueIdentifier>{dbb8104f-fe56-4667-b423-2ac2849ee380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\DebugClass">
+      <UniqueIdentifier>{3357c265-c4c8-4493-8d68-e9cffccd597d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\Cell">
+      <UniqueIdentifier>{922ddcc4-b411-46f0-a1fe-8c54c799a5c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\Cell\CellMap">
+      <UniqueIdentifier>{68384701-4fc9-495d-aaac-572821eb5d1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\Cell\Factory">
+      <UniqueIdentifier>{e5a3924a-8a98-45bd-a649-aa6397eaeca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\Cell\FieldCellMap">
+      <UniqueIdentifier>{4c315eaf-8444-4944-b771-5c443c4f5a83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\WayPointMap">
+      <UniqueIdentifier>{7fddd944-2a74-4817-a8f8-9e9e07d9344b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\Astar">
+      <UniqueIdentifier>{732a2a5d-5db0-4ad5-b87f-15e5f9e7daf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\Astar\AstarNode">
+      <UniqueIdentifier>{d002d692-38ce-4ecc-8dfb-80dbb81f1da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\InfluenceMap\Astar\AstarEdge">
+      <UniqueIdentifier>{8a15f278-260a-4a20-8901-a36316216bfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
@@ -393,6 +423,30 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StatorBase.h">
       <Filter>Maruyama\StateMachine\StatorBase</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\DebugClass\DebugCell.h">
+      <Filter>Maruyama\InfluenceMap\DebugClass</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Cell.h">
+      <Filter>Maruyama\InfluenceMap\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMap.h">
+      <Filter>Maruyama\InfluenceMap\Cell\CellMap</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_CellMap.h">
+      <Filter>Maruyama\InfluenceMap\Cell\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.h">
+      <Filter>Maruyama\InfluenceMap\WayPointMap</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.h">
+      <Filter>Maruyama\InfluenceMap\Cell\FieldCellMap</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNode.h">
+      <Filter>Maruyama\InfluenceMap\Astar\AstarNode</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.h">
+      <Filter>Maruyama\InfluenceMap\Astar\AstarEdge</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
@@ -559,6 +613,30 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StatorBase.cpp">
       <Filter>Maruyama\StateMachine\StatorBase</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\DebugClass\DebugCell.cpp">
+      <Filter>Maruyama\InfluenceMap\DebugClass</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Cell.cpp">
+      <Filter>Maruyama\InfluenceMap\Cell</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMap.cpp">
+      <Filter>Maruyama\InfluenceMap\Cell\CellMap</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_CellMap.cpp">
+      <Filter>Maruyama\InfluenceMap\Cell\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.cpp">
+      <Filter>Maruyama\InfluenceMap\WayPointMap</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.cpp">
+      <Filter>Maruyama\InfluenceMap\Cell\FieldCellMap</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNode.cpp">
+      <Filter>Maruyama\InfluenceMap\Astar\AstarNode</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.cpp">
+      <Filter>Maruyama\InfluenceMap\Astar\AstarEdge</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
