@@ -8,8 +8,6 @@
 #pragma once
 #include "stdafx.h"
 
-#include "Maruyama/Interface/I_Damaged.h"
-
 #include "Watanabe/DebugClass/Debug.h"
 
 namespace basecross {
@@ -177,20 +175,20 @@ namespace basecross {
 			//--------------------------------------------------------------------------------------
 			/// ダメージを受けたことを伝えるタプル
 			//--------------------------------------------------------------------------------------
-			class Damaged : public TupleRequestBase {
-				DamageData m_damageData;
+			//class Damaged : public TupleRequestBase {
+			//	DamageData m_damageData;
 
-			public:
-				Damaged(
-					const std::shared_ptr<I_Tupler>& requester,
-					const DamageData& data,
-					const float value
-				);
+			//public:
+			//	Damaged(
+			//		const std::shared_ptr<I_Tupler>& requester,
+			//		const DamageData& data,
+			//		const float value
+			//	);
 
-				bool operator ==(const Damaged& other);
+			//	bool operator ==(const Damaged& other);
 
-				_NODISCARD const DamageData& GetDamageData() const noexcept { return m_damageData; };
-			};
+			//	_NODISCARD const DamageData& GetDamageData() const noexcept { return m_damageData; };
+			//};
 
 			//--------------------------------------------------------------------------------------
 			///	Helpタプル

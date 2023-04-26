@@ -154,25 +154,25 @@ namespace basecross {
 			/// ダメージを受けたことを伝えるタプル
 			//--------------------------------------------------------------------------------------
 
-			Damaged::Damaged(
-				const std::shared_ptr<I_Tupler>& requester,
-				const DamageData& data,
-				const float value
-			):
-				TupleRequestBase(requester, value),
-				m_damageData(data)
-			{}
+			//Damaged::Damaged(
+			//	const std::shared_ptr<I_Tupler>& requester,
+			//	const DamageData& data,
+			//	const float value
+			//):
+			//	TupleRequestBase(requester, value),
+			//	m_damageData(data)
+			//{}
 
-			bool Damaged::operator ==(const Damaged& other) {
-				if (GetRequester() == other.GetRequester() &&
-					GetDamageData().attacker == other.GetDamageData().attacker &&
-					GetValue() == other.GetValue())
-				{
-					return true;
-				}
+			//bool Damaged::operator ==(const Damaged& other) {
+			//	if (GetRequester() == other.GetRequester() &&
+			//		GetDamageData().attacker == other.GetDamageData().attacker &&
+			//		GetValue() == other.GetValue())
+			//	{
+			//		return true;
+			//	}
 
-				return false;
-			}
+			//	return false;
+			//}
 
 			//--------------------------------------------------------------------------------------
 			///	Helpタプル

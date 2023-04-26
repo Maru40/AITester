@@ -27,11 +27,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameSaveManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameStage.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)InputHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\TupleSpace.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\BehaviorTree.h" />
@@ -51,6 +53,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Edge_StateMachine.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\GraphBase_Ex.h" />
@@ -98,11 +101,13 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)GameSaveManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameStage.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)InputHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\TupleSpace.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNode.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\BehaviorTree.cpp" />
@@ -122,6 +127,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Edge_StateMachine.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\GraphBase_Ex.cpp" />

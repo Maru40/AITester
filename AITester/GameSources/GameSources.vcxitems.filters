@@ -229,6 +229,18 @@
     <Filter Include="Maruyama\InfluenceMap\Astar\AstarEdge">
       <UniqueIdentifier>{8a15f278-260a-4a20-8901-a36316216bfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maruyama\Patch\Graph">
+      <UniqueIdentifier>{5583b857-f6bb-47bd-8ee4-8a2338149cc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Enemy\TupleSpace">
+      <UniqueIdentifier>{0cf9a032-7f63-4833-96d3-a384021cdf1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Camera">
+      <UniqueIdentifier>{e6ccadb6-4abc-41df-91a6-8e18c6d7e443}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Camera\SeekTPS">
+      <UniqueIdentifier>{785993d4-efa3-4221-bb20-1695fa934b86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
@@ -447,6 +459,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.h">
       <Filter>Maruyama\InfluenceMap\Astar\AstarEdge</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.h">
+      <Filter>Maruyama\Patch\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\TupleSpace.h">
+      <Filter>Maruyama\Enemy\TupleSpace</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.h">
+      <Filter>Maruyama\Camera\SeekTPS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
@@ -637,6 +658,15 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.cpp">
       <Filter>Maruyama\InfluenceMap\Astar\AstarEdge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.cpp">
+      <Filter>Maruyama\Patch\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\TupleSpace.cpp">
+      <Filter>Maruyama\Enemy\TupleSpace</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.cpp">
+      <Filter>Maruyama\Camera\SeekTPS</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
