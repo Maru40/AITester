@@ -46,7 +46,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStateMachine.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\EnemyBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Cell.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMap.h" />
@@ -122,7 +122,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStateMachine.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\EnemyBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Cell.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMap.cpp" />

@@ -241,7 +241,7 @@
     <Filter Include="Maruyama\Camera\SeekTPS">
       <UniqueIdentifier>{785993d4-efa3-4221-bb20-1695fa934b86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Maruyama\Enemy\Component\Stator">
+    <Filter Include="Maruyama\Enemy\Component\StateMachine">
       <UniqueIdentifier>{691af2e9-904b-4b51-a16f-3cdf5be23d6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -471,8 +471,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.h">
       <Filter>Maruyama\Camera\SeekTPS</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStator.h">
-      <Filter>Maruyama\Enemy\Component\Stator</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStateMachine.h">
+      <Filter>Maruyama\Enemy\Component\StateMachine</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\EnemyBase.h">
       <Filter>Maruyama\Enemy</Filter>
@@ -677,8 +677,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.cpp">
       <Filter>Maruyama\Camera\SeekTPS</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStator.cpp">
-      <Filter>Maruyama\Enemy\Component\Stator</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIStateMachine.cpp">
+      <Filter>Maruyama\Enemy\Component\StateMachine</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\EnemyBase.cpp">
       <Filter>Maruyama\Enemy</Filter>
