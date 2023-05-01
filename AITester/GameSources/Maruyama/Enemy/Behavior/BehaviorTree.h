@@ -16,10 +16,10 @@
 #include "Interface/I_Decorator.h"
 #include "Interface/I_PriorityController.h"
 
-enum class TestEnumTask : std::uint8_t
-{
-	Task
-};
+//enum class TestEnumTask : std::uint8_t
+//{
+//	Task
+//};
 
 namespace basecross {
 	namespace maru {
