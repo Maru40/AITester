@@ -10,3 +10,15 @@ AIStateMachine::AIStateMachine(const std::shared_ptr<basecross::GameObject>& own
 	mTransitionMember(TransitionMember()),
 	StatorBase(owner, mTransitionMember)
 {}
+
+void
+AIStateMachine::CreateNode()
+{
+
+}
+
+void 
+AIStateMachine::CreateEdge()
+{
+
+}
