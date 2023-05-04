@@ -6,6 +6,8 @@
 
 #include "Maruyama/Enemy/EnemyBase.h"
 
+#include "Maruyama/Enemy/StateNodes/StateNode_Normal.h"
+
 AIStateMachine::AIStateMachine(const std::shared_ptr<basecross::GameObject>& owner):
 	mTransitionMember(TransitionMember()),
 	StatorBase(owner, mTransitionMember)
@@ -14,7 +16,14 @@ AIStateMachine::AIStateMachine(const std::shared_ptr<basecross::GameObject>& own
 void
 AIStateMachine::CreateNode()
 {
+	auto enemy = GetGameObject()->GetComponent<Enemy::EnemyBase>();
+	auto& stateMachine = m_stateMachine;
 
+	//’Êíó‘Ô
+	stateMachine->AddNode<Enemy::StateNode::Normal>(State::Normal, enemy);
+
+	//UŒ‚ó‘Ô
+	//stateMachine->AddNode();
 }
 
 void 

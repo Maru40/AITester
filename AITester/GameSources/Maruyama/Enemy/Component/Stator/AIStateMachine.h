@@ -2,9 +2,12 @@
 
 #include "Maruyama/StateMachine/StatorBase.h"
 
-class EnemyBase;
+namespace Enemy
+{
+	class EnemyBase;
+}
 
-enum class AIState
+enum class eAIState
 {
 	Normal,
 	Attack,
@@ -17,10 +20,10 @@ struct AIStateMachine_TransitionMemmber
 
 };
 
-class AIStateMachine : public basecross::Enemy::StatorBase<EnemyBase, AIState, AIStateMachine_TransitionMemmber>
+class AIStateMachine : public basecross::Enemy::StatorBase<Enemy::EnemyBase, eAIState, AIStateMachine_TransitionMemmber>
 {
 public:
-	using State = AIState;
+	using State = eAIState;
 	using TransitionMember = AIStateMachine_TransitionMemmber;
 
 public:
