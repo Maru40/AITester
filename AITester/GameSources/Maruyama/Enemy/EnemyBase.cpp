@@ -3,6 +3,11 @@
 
 #include "EnemyBase.h"
 
-EnemyBase::EnemyBase(const std::shared_ptr<basecross::GameObject>& owner):
-	Component(owner)
-{}
+namespace Enemy
+{
+
+	EnemyBase::EnemyBase(const std::shared_ptr<basecross::GameObject>& owner) :
+		Component(owner)
+	{}
+
+}

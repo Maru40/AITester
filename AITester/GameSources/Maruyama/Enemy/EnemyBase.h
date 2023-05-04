@@ -3,12 +3,15 @@
 #include "stdafx.h"
 #include "Project.h"
 
-class EnemyBase : public basecross::Component
+namespace Enemy
 {
-public:
-	//using namespace basecross;
+	class EnemyBase : public basecross::Component
+	{
+	public:
+		//using namespace basecross;
 
-public:
-	EnemyBase(const std::shared_ptr<basecross::GameObject>& owner);
-	virtual ~EnemyBase() = default;
-};
+	public:
+		EnemyBase(const std::shared_ptr<basecross::GameObject>& owner);
+		virtual ~EnemyBase() = default;
+	};
+}
