@@ -21,7 +21,9 @@ namespace Enemy
 		public:
 			Attack(const std::shared_ptr<EnemyBase>& owner);
 
-
+			void OnStart() override;
+			bool OnUpdate() override;
+			void OnExit() override;
 		};
 
 	}
