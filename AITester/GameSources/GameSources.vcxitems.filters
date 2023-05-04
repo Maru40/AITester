@@ -247,6 +247,9 @@
     <Filter Include="Maruyama\Enemy\Component\StateMachine\Normal">
       <UniqueIdentifier>{8c96f15a-d6de-4d83-a6b1-785c260e0fa4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maruyama\Enemy\Component\StateMachine\Attack">
+      <UniqueIdentifier>{de1db84c-5722-48d2-ac5b-60e76090c992}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
@@ -483,6 +486,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Normal.h">
       <Filter>Maruyama\Enemy\Component\StateMachine\Normal</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.h">
+      <Filter>Maruyama\Enemy\Component\StateMachine\Attack</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
@@ -691,6 +697,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Normal.cpp">
       <Filter>Maruyama\Enemy\Component\StateMachine\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.cpp">
+      <Filter>Maruyama\Enemy\Component\StateMachine\Attack</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

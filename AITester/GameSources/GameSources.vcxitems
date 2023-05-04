@@ -54,6 +54,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_CellMap.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Normal.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_CellMap.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Normal.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.cpp" />
