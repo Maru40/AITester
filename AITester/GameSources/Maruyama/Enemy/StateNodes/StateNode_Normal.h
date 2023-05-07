@@ -9,7 +9,7 @@ namespace Enemy
 
 	namespace StateNode
 	{
-		class Normal : public basecross::maru::NodeBase_StateMachine<EnemyBase>
+		class Normal : public basecross::maru::NodeBase_StateMachine_Ex<EnemyBase>
 		{
 		public:
 

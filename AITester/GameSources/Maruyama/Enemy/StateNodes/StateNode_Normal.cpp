@@ -7,7 +7,7 @@ namespace Enemy
 	namespace StateNode
 	{
 		Normal::Normal(const std::shared_ptr<Enemy::EnemyBase>& owner) :
-			NodeBase_StateMachine(owner)
+			NodeBase_StateMachine_Ex(owner)
 		{}
 
 		void Normal::OnStart()
