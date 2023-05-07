@@ -16,6 +16,7 @@ namespace Enemy
 		public:
 			Normal(const std::shared_ptr<Enemy::EnemyBase>& owner);
 
+			void OnAwake() override;
 			void OnStart() override;
 			bool OnUpdate() override;
 			void OnExit() override;

@@ -13,7 +13,7 @@ namespace Enemy
 
 		};
 
-		class Attack : public basecross::maru::NodeBase_StateMachine<EnemyBase>
+		class Attack : public basecross::maru::NodeBase_StateMachine_Ex<EnemyBase>
 		{
 		public:
 			using Parametor = Attack_Parametor;
@@ -21,6 +21,7 @@ namespace Enemy
 		public:
 			Attack(const std::shared_ptr<EnemyBase>& owner);
 
+			void OnAwake() override;
 			void OnStart() override;
 			bool OnUpdate() override;
 			void OnExit() override;

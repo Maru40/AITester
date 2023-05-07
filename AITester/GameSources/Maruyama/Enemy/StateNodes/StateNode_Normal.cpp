@@ -10,6 +10,11 @@ namespace Enemy
 			NodeBase_StateMachine_Ex(owner)
 		{}
 
+		void Normal::OnAwake()
+		{
+			
+		}
+
 		void Normal::OnStart()
 		{
 
