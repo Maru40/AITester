@@ -250,15 +250,15 @@
     <Filter Include="Maruyama\Enemy\Component\StateMachine\Attack">
       <UniqueIdentifier>{de1db84c-5722-48d2-ac5b-60e76090c992}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maruyama\Player">
+      <UniqueIdentifier>{0cfbe7f8-5493-40de-9f1f-845a7b026913}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
       <Filter>BaseCrossSample\Headers</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)GameStage.h">
-      <Filter>BaseCrossSample\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Player.h">
       <Filter>BaseCrossSample\Headers</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
@@ -489,15 +489,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.h">
       <Filter>Maruyama\Enemy\Component\StateMachine\Attack</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Player.h">
+      <Filter>Maruyama\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
       <Filter>BaseCrossSample\Sources</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameStage.cpp">
-      <Filter>BaseCrossSample\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Player.cpp">
       <Filter>BaseCrossSample\Sources</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp">
@@ -700,6 +700,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.cpp">
       <Filter>Maruyama\Enemy\Component\StateMachine\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Player.cpp">
+      <Filter>Maruyama\Player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
