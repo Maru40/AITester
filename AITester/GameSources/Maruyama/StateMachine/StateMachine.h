@@ -109,6 +109,7 @@ namespace basecross {
 					}
 				}
 
+				node->OnAwake();
 				m_graph->AddNode(type, node);
 			}
 
