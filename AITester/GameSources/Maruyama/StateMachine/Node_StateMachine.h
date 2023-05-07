@@ -39,6 +39,7 @@ namespace basecross {
 		class I_StateNode
 		{
 		public:
+			virtual void OnAwake() = 0;
 			virtual void OnStart() = 0;
 			virtual bool OnUpdate() = 0;
 			virtual void OnExit() = 0;
@@ -65,6 +66,8 @@ namespace basecross {
 			{}
 
 			virtual ~NodeBase_StateMachine() = default;
+
+			virtual void OnAwake() override {}
 
 		public:
 
