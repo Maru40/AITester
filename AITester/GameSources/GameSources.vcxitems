@@ -28,6 +28,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameStage.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)InputHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.h" />
@@ -56,9 +58,11 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Normal.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Inputer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Player.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\PlayerObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Edge_StateMachine.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\GraphBase_Ex.h" />
@@ -106,6 +110,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)GameStage.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)InputHelper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.cpp" />
@@ -134,9 +140,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Attack.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateNodes\StateNode_Normal.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Inputer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Player.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\PlayerObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Edge_StateMachine.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\GraphBase_Ex.cpp" />

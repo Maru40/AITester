@@ -253,6 +253,21 @@
     <Filter Include="Maruyama\Player">
       <UniqueIdentifier>{0cfbe7f8-5493-40de-9f1f-845a7b026913}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maruyama\Player\PlayerObject">
+      <UniqueIdentifier>{369d5fa7-cbc2-4028-a38e-70732576a258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Component">
+      <UniqueIdentifier>{300f09c8-7098-45cc-a231-f2310f4c3645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Interface">
+      <UniqueIdentifier>{e27ca00e-45c0-4e76-b62a-d76e1adc979b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Component\Mover">
+      <UniqueIdentifier>{c25400d5-958e-425c-a494-ed741b91b799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maruyama\Component\PlayerInputer">
+      <UniqueIdentifier>{a367de9a-1d47-4443-893e-f5d7a11724f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
@@ -492,6 +507,18 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Player.h">
       <Filter>Maruyama\Player</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\PlayerObject.h">
+      <Filter>Maruyama\Player\PlayerObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Inputer.h">
+      <Filter>Maruyama\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.h">
+      <Filter>Maruyama\Component\Mover</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.h">
+      <Filter>Maruyama\Component\PlayerInputer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
@@ -703,6 +730,18 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Player.cpp">
       <Filter>Maruyama\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\PlayerObject.cpp">
+      <Filter>Maruyama\Player\PlayerObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Inputer.cpp">
+      <Filter>Maruyama\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.cpp">
+      <Filter>Maruyama\Component\Mover</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.cpp">
+      <Filter>Maruyama\Component\PlayerInputer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
