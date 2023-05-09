@@ -29,7 +29,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)InputHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.h" />
@@ -84,6 +83,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MathHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageWindow.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerInputer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ProjectBehavior.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ProjectShader.h" />
@@ -111,7 +111,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)InputHelper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\SeekTPS.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.cpp" />
@@ -165,6 +164,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MathHelper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageWindow.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerInputer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectBehavior.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Random.cpp" />

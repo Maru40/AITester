@@ -1,5 +1,6 @@
 #pragma once
 
+
 class Mover : public basecross::Component
 {
 public:
@@ -7,4 +8,8 @@ public:
 
 	void OnCreate() override;
 	void OnUpdate() override;
+
+private:
+	float mSpeed;
+	
 };

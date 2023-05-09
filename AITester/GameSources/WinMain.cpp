@@ -2,6 +2,8 @@
 #include "stdafx.h"
 #include "Project.h"
 
+#include "PlayerInputer.h"
+
 using namespace basecross;
 
 
@@ -136,6 +138,8 @@ int MainLoop(HINSTANCE hInstance, HWND hWnd, bool isFullScreen, int iClientWidth
 		}
 		////アプリケーションクラスの構築
 		App::CreateApp(hInstance, hWnd, isFullScreen, iClientWidth, iClientHeight);
+
+		App::GetApp()->GetMyInputDevice()->AddInputer(new PlayerInputer());
 		//シーンの作成
 		//戻り値のScenePtrは汎用的に使える
 		auto ScenePtr = App::GetApp()->CreateScene<Scene>();

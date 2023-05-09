@@ -20,6 +20,15 @@ namespace basecross {
 		virtual ~GameStage() {}
 		//‰Šú‰»
 		virtual void OnCreate()override;
+
+		std::shared_ptr<Camera> ChangeMainCamera();
+
+	private:
+		std::shared_ptr<SingleView> m_mainView;
+		std::shared_ptr<Camera> m_mainCamera;
+		std::shared_ptr<GameObject> m_mainCamObj;
+
+		void CreateMainCamera();
 	};
 
 

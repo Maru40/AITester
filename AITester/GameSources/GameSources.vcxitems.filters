@@ -516,8 +516,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.h">
       <Filter>Maruyama\Component\Mover</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.h">
-      <Filter>Maruyama\Component\PlayerInputer</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlayerInputer.h">
+      <Filter>BaseCrossSample</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -740,8 +740,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\Mover.cpp">
       <Filter>Maruyama\Component\Mover</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Component\PlayerInputer.cpp">
-      <Filter>Maruyama\Component\PlayerInputer</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlayerInputer.cpp">
+      <Filter>BaseCrossSample</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
