@@ -27,7 +27,7 @@ struct PfxCapsule
 	PfxFloat m_halfLen;
 	PfxFloat m_radius;
 
-	PfxCapsule() {}
+	PfxCapsule(): PfxCapsule(0.0f, 0.0f) {}
 	PfxCapsule(PfxFloat halfLength, PfxFloat radius);
 
 	void set(PfxFloat halfLength, PfxFloat radius);

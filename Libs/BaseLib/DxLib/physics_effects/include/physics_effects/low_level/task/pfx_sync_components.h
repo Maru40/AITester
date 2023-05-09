@@ -36,7 +36,9 @@ public:
 
 class PfxCriticalSection {
 public:
-	PfxCriticalSection() {}
+	PfxCriticalSection():
+		m_commonBuff{0}
+	{}
 	virtual ~PfxCriticalSection() {}
 
 PfxUInt32 m_commonBuff[32];

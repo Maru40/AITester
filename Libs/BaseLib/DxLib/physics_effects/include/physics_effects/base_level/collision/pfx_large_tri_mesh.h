@@ -106,6 +106,7 @@ struct SCE_PFX_ALIGNED(16) PfxLargeTriMesh
 	, m_edgeBuffBytes(0)
 	, m_vertexBuffBytes(0)
 	, m_bvhNodeBuffBytes(0)
+	, m_length(0)
 	{
 	}
 	

@@ -18,5 +18,6 @@ float4 main(PSInputTx pin) : SV_Target0
     AddSpecular(color, pin.Specular.rgb);
     ApplyFog(color, pin.Specular.w);
 
+    color.w = 1.0f;
     return color;
 }

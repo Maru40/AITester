@@ -5,6 +5,11 @@
 */
 #include "stdafx.h"
 
+#include "GameStageBase.h"
+
+#include "Maruyama/Utility/Utility.h"
+#include "Maruyama/Utility/Mathf.h"
+
 namespace basecross {
 
 	//--------------------------------------------------------------------------------------
@@ -85,7 +90,16 @@ namespace basecross {
 		return pImpl->m_DrawActive;
 	}
 	void Component::SetDrawActive(bool b) {
+		//DrawActive‚ªØ‚è‘Ö‚í‚Á‚½Žž
+		if (pImpl->m_DrawActive != b) {
+			b ? OnDrawActive() : OnDrawFalse();
+		}
+
 		pImpl->m_DrawActive = b;
+	}
+
+	std::shared_ptr<GameStageBase> Component::GetGameStage() const {
+		return GetGameObject()->GetGameStage();
 	}
 
 	//--------------------------------------------------------------------------------------
@@ -363,7 +377,7 @@ namespace basecross {
 			);
 			if (ParPtr) {
 				auto ParWorld = ParPtr->GetComponent<Transform>()->GetWorldMatrix();
-				ParWorld.scaleIdentity();
+				//ParWorld.scaleIdentity();
 				pImpl->m_WorldMatrix *= ParWorld;
 			}
 			else {
@@ -412,6 +426,7 @@ namespace basecross {
 			ClearParent();
 			pImpl->m_Parent = Obj;
 			auto ParWorld = Obj->GetComponent<Transform>()->GetWorldMatrix();
+			auto parScale = ParWorld.scaleInMatrix();
 			ParWorld.scaleIdentity();
 			auto PosSpan = GetPosition() - ParWorld.transInMatrix();
 			auto QtSpan = ParWorld.quatInMatrix();
@@ -423,6 +438,9 @@ namespace basecross {
 			bsm::Vec3 Scale, Pos;
 			bsm::Quat Qt;
 			Mat.decompose(Scale, Qt, Pos);
+			Scale = XMVectorDivide(Scale, parScale);  //Scale‚Í’²®‚·‚é
+			Scale = XMVectorDivide(Scale, parScale);  //Scale‚Í’²®‚·‚é
+			//PosSpan = XMVectorDivide(PosSpan, parScale);
 			SetScale(Scale);
 			SetQuaternion(Qt);
 			SetPosition(PosSpan);
@@ -445,6 +463,11 @@ namespace basecross {
 		pImpl->m_Parent.reset();
 		pImpl->m_DirtyFlg = true;
 	}
+
+	int Transform::GetNumParent(const int& count) const {
+		return GetParent() ? GetParent()->GetComponent<Transform>()->GetNumParent(count + 1) : count;
+	}
+
 	bsm::Vec3 Transform::GetVelocity() const {
 		//‘O‰ñ‚Ìƒ^[ƒ“‚©‚ç‚ÌŽžŠÔ
 		float ElapsedTime = App::GetApp()->GetElapsedTime();
@@ -464,40 +487,62 @@ namespace basecross {
 		pImpl->m_BeforePosition = pImpl->m_Position;
 	}
 
-	bsm::Vec3 Transform::GetForword() const {
+	bsm::Vec3 Transform::GetForward() const {
 		bsm::Vec3 ret = GetWorldMatrix().rotZInMatrix();
+		
 		ret.normalize();
 		return ret;
 	}
 
-	bsm::Vec3 Transform::GetForward() const {
-		bsm::Vec3 ret = GetWorldMatrix().rotZInMatrix();
+	bsm::Vec3 Transform::GetLocalForward() const {
+		if (pImpl->m_DirtyFlg) {
+			auto ParPtr = GetParent();
+			//Mat4x4 WorldMat;
+			pImpl->m_WorldMatrix.affineTransformation(
+				pImpl->m_Scale,
+				pImpl->m_Pivot,
+				pImpl->m_Quaternion,
+				pImpl->m_Position
+			);
+		}
 
-		ret.normalize();
-		return ret;
+		return pImpl->m_WorldMatrix.rotZInMatrix();
 	}
 
 	void Transform::SetForward(const bsm::Vec3& forward)
 	{
-		auto vec = forward;
-		vec.normalize();
-		Vec3 rotVector;
-		
-		if (vec.z == 0)
-		{
-			rotVector.x = std::atan2f(-vec.y, std::fabsf(vec.x));
-		}
-		else
-		{
-			rotVector.x = std::atan2f(-vec.y, std::fabsf(vec.z));
-		}
-		
-		rotVector.y = std::atan2f(vec.x, vec.z);
+		Vec3 mz = forward.GetNormalized();
+		Vec3 mx = cross(Vec3::Up(), mz).GetNormalized();
+		Vec3 my = cross(mz, mx).GetNormalized();
 
-		Quat quat;
-		quat.rotationRollPitchYawFromVector(rotVector);
+		Vec3 mp = this->GetWorldPosition() + forward;
+		//Vec3 mp = this->GetWorldPosition();
 
-		SetWorldQuaternion(quat);
+		auto mat = Mat4x4(
+			{ mx.x, mx.y, mx.z, 0.0f },
+			{ my.x, my.y, my.z, 0.0f },
+			{ mz.x, mz.y, mz.z, 0.0f },
+			{ mp.x, mp.y, mp.z, 1.0f }
+		);
+
+		this->SetWorldQuaternion(mat.quatInMatrix());
+	}
+
+	void Transform::SetLocalForward(const bsm::Vec3& forward) {
+		Vec3 mz = forward.GetNormalized();
+		Vec3 mx = cross(Vec3::Up(), mz).GetNormalized();
+		Vec3 my = cross(mz, mx).GetNormalized();
+
+		Vec3 mp = this->GetWorldPosition() + forward;
+
+		auto mat = Mat4x4(
+			{ mx.x, mx.y, mx.z, 0.0f },
+			{ my.x, my.y, my.z, 0.0f },
+			{ mz.x, mz.y, mz.z, 0.0f },
+			{ mp.x, mp.y, mp.z, 1.0f }
+		);
+
+		this->SetQuaternion(mat.quatInMatrix());
 	}
 
 	bsm::Vec3 Transform::GetUp() const {
@@ -880,8 +925,8 @@ namespace basecross {
 		pImpl->m_GravityVelocity += pImpl->m_Gravity * ElapsedTime;
 		auto Pos = PtrTransform->GetPosition();
 //		auto Pos = PtrTransform->GetWorldPosition();
-		Pos += pImpl->m_GravityVelocity * ElapsedTime;
-		PtrTransform->SetPosition(Pos);
+		//Pos += pImpl->m_GravityVelocity * ElapsedTime;
+		//PtrTransform->SetPosition(Pos);
 	}
 
 

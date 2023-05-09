@@ -1294,7 +1294,8 @@ namespace basecross {
 
 	void CollisionObb::OnDraw() {
 		GenericDraw Draw;
-		Draw.DrawWireFrame(GetGameObject(), App::GetApp()->GetResource<MeshResource>(L"DEFAULT_PC_CUBE"));
+		//auto mat = GetGameObject()->GetComponent<Transform>(false)->GetWorldMatrix();
+		Draw.DrawWireFrame(GetGameObject(), App::GetApp()->GetResource<MeshResource>(L"DEFAULT_PC_CUBE"), Mat4x4() * pImpl->m_Size);
 	}
 
 

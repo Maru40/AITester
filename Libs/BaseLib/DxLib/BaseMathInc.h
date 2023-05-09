@@ -246,6 +246,10 @@ namespace bsm {
 		*this = (Flt2)XMVector2Normalize(*this);
 		return *this;
 	}
+	inline Flt2 Flt2::GetNormalize() const {
+		return (Flt2)XMVector2Normalize(*this);
+	}
+
 	inline Flt2& Flt2::floor(int len) {
 		x = bsm::floor(x, len);
 		y = bsm::floor(y, len);
@@ -494,6 +498,10 @@ namespace bsm {
 		return (Flt3)XMVector3Transform(*this, mat);
 	}
 
+	inline const Flt3 Flt3::operator *(const Flt3& vec) const{
+		return (Flt3)XMVectorMultiply(*this, vec);
+	}
+
 	inline Flt3 & Flt3::operator +=(const Flt3 & vec)
 	{
 		*this = *this + vec;
@@ -563,6 +571,7 @@ namespace bsm {
 
 	inline Flt3 Flt3::GetNormalized() const
 	{
+		//return Flt3(x / length, y / length, z / length);
 		return (Flt3)XMVector3Normalize(*this);
 	}
 
@@ -1269,6 +1278,10 @@ namespace bsm {
 	inline Quat& Quat::inverse() {
 		*this = (Quat)XMQuaternionInverse(*this);
 		return *this;
+	}
+
+	inline Quat Quat::GetInverse() const {
+		return (Quat)XMQuaternionInverse(*this);
 	}
 
 	inline Quat& Quat::facing(const Flt3& norm) {

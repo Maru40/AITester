@@ -153,7 +153,12 @@ struct SCE_PFX_ALIGNED(16) PfxConvexMesh
 	SCE_PFX_PADDING(2,4)
 	PfxVector3 m_half;
 
-	PfxConvexMesh()
+	PfxConvexMesh():
+		m_numVerts(0),
+		m_numIndices(0),
+		m_indices(nullptr),
+		m_verts(nullptr),
+		m_half(0)
 	{
 		m_numVerts = m_numIndices = 0;
 	}

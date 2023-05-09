@@ -5,13 +5,15 @@
 */
 #pragma once
 #include "stdafx.h"
-#include "ex_weak_ptr.h"
+#include "Patch/ex_weak_ptr.h"
 
 namespace basecross {
 
 	class GameObject;
 	class Stage;
 	class Transform;
+	class GameStageBase;
+	struct CollisionPair;
 
 	//--------------------------------------------------------------------------------------
 	///	コンポーネント親クラス
@@ -103,6 +105,10 @@ namespace basecross {
 		*/
 		//--------------------------------------------------------------------------------------
 		void SetDrawActive(bool b);
+		//DrawActiveがtrueになった時の処理
+		virtual void OnDrawActive() {};
+		//DrawActiveがfalseになったときに呼ぶ処理
+		virtual void OnDrawFalse() {};
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief 初期化を行う（仮想関数<br />
@@ -116,8 +122,12 @@ namespace basecross {
 		virtual void OnUpdate() {}
 
 		virtual void OnStart() {}
+		//全てのステージオブジェクトが生成された後に呼ばれる関数。(ステージもActive済)
+		virtual void OnLateStart() {}
 
 		virtual void OnDraw() override {}
+
+		std::shared_ptr<GameStageBase> GetGameStage() const;
 
 	protected:
 		/// <summary>
@@ -132,7 +142,12 @@ namespace basecross {
 			GetGameObject()->AddAction(object, action, invokeTime);
 		}
 
-		public:
+		template<class T>
+		void RemoveComponent() {
+			GetGameObject()->AddRemoveComponent<T>();
+		}
+
+	public:
 		
 		/// <summary>
 		/// 衝突発生時に呼ばれるイベント
@@ -151,6 +166,12 @@ namespace basecross {
 		/// </summary>
 		/// <param name="other">衝突していた相手</param>
 		virtual void OnCollisionExit(std::shared_ptr<GameObject>& other) {}
+
+		virtual void OnCollisionEnter(const CollisionPair& pair) {}
+
+		virtual void OnCollisionExcute(const CollisionPair& pair) {}
+
+		virtual void OnCollisionExit(const CollisionPair& pair) {}
 	private:
 		// pImplイディオム
 		struct Impl;
@@ -453,6 +474,8 @@ namespace basecross {
 		*/
 		//--------------------------------------------------------------------------------------
 		void ClearParent();
+
+		int GetNumParent(const int& count = 0) const;
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	Transfoem上で計算した速度を得る
@@ -482,11 +505,11 @@ namespace basecross {
 		@return	ローカルZ軸が変化している方向を得る
 		*/
 		//--------------------------------------------------------------------------------------
-		bsm::Vec3 GetForword() const;
-
 		bsm::Vec3 GetForward() const;
+		bsm::Vec3 GetLocalForward() const;
 
 		void SetForward(const bsm::Vec3& forward);
+		void SetLocalForward(const bsm::Vec3& forward);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	ローカル上方向（Y軸の方向）を得る

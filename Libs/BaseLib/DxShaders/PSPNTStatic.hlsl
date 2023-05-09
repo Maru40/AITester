@@ -11,6 +11,10 @@ SamplerState g_sampler : register(s0);
 
 float4 main(PSPNTInput input) : SV_TARGET
 {
+    //return float4(input.norm, 1.0f);
+	
+    //return float4(1.0f, 0.0f, 0.0f, 1.0f);
+	
 	//法線ライティング
 	float3 lightdir = normalize(LightDir.xyz);
 	float3 N1 = normalize(input.norm);

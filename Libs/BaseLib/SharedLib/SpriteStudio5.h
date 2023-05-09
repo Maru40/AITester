@@ -12,7 +12,7 @@ namespace basecross {
 	/// ソートモード
 	struct SsPartsSortMode
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,
 			prio,			///< 描画順は優先度で制御する。優先度を表示し、Ｚ座標を隠す。
@@ -20,10 +20,10 @@ namespace basecross {
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"prio") return prio;
-			if (s == L"z") return z;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"prio") return _enum::prio;
+			if (s == L"z") return _enum::z;
+			return _enum::invalid;
 		}
 	};
 
@@ -31,7 +31,7 @@ namespace basecross {
 	/// Animation Part Type
 	struct SsPartType
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,
 			null,			///< null。領域を持たずSRT情報のみ。ただし円形の当たり判定は設定可能。
@@ -41,12 +41,12 @@ namespace basecross {
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"null") return null;
-			if (s == L"normal") return normal;
-			if (s == L"text") return text;
-			if (s == L"instance") return instance;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"null") return _enum::null;
+			if (s == L"normal") return _enum::normal;
+			if (s == L"text") return _enum::text;
+			if (s == L"instance") return _enum::instance;
+			return _enum::invalid;
 		}
 	};
 
@@ -55,7 +55,7 @@ namespace basecross {
 	/// 当たり判定形状
 	struct SsBoundsType
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,
 			none,			///< 当たり判定として使わない。
@@ -67,14 +67,14 @@ namespace basecross {
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"none") return none;
-			if (s == L"quad") return quad;
-			if (s == L"aabb") return aabb;
-			if (s == L"circle") return circle;
-			if (s == L"circle_smin") return circle_smin;
-			if (s == L"circle_smax") return circle_smax;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"none") return _enum::none;
+			if (s == L"quad") return _enum::quad;
+			if (s == L"aabb") return _enum::aabb;
+			if (s == L"circle") return _enum::circle;
+			if (s == L"circle_smin") return _enum::circle_smin;
+			if (s == L"circle_smax") return _enum::circle_smax;
+			return _enum::invalid;
 		}
 	};
 
@@ -83,7 +83,7 @@ namespace basecross {
 	/// 継承タイプ
 	struct SsInheritType
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,
 			parent,			///< 親の継承方法をそのまま引き継ぐ
@@ -91,10 +91,10 @@ namespace basecross {
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"parent") return parent;
-			if (s == L"self") return self;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"parent") return _enum::parent;
+			if (s == L"self") return _enum::self;
+			return _enum::invalid;
 		}
 	};
 
@@ -102,7 +102,7 @@ namespace basecross {
 	/// ブレンドタイプ
 	struct SsBlendType
 	{
-		enum _enum{
+		enum class _enum{
 			invalid = -1,
 			mix,			///< 0 ブレンド（ミックス）
 			mul,			///< 1 乗算
@@ -111,12 +111,12 @@ namespace basecross {
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"mix") return mix;
-			if (s == L"mul") return mul;
-			if (s == L"add") return add;
-			if (s == L"sub") return sub;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"mix") return _enum::mix;
+			if (s == L"mul") return _enum::mul;
+			if (s == L"add") return _enum::add;
+			if (s == L"sub") return _enum::sub;
+			return _enum::invalid;
 		}
 	};
 
@@ -124,24 +124,24 @@ namespace basecross {
 	///カラーブレンドキーが使用されている際のカラー適用範囲の定義
 	struct SsColorBlendTarget
 	{
-		enum _enum{
+		enum class _enum{
 			invalid = -1,
 			whole,	///< 単色。全体にかける。
 			vertex,	///< 頂点単位
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"whole") return whole;
-			if (s == L"vertex") return vertex;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"whole") return _enum::whole;
+			if (s == L"vertex") return _enum::vertex;
+			return _enum::invalid;
 		}
 	};
 
 	///補間モードの定義
 	struct SsInterpolationType
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,
 			none,			///< なし
@@ -153,14 +153,14 @@ namespace basecross {
 			num,
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"none") return none;
-			if (s == L"linear") return linear;
-			if (s == L"hermite") return hermite;
-			if (s == L"bezier") return bezier;
-			if (s == L"acceleration") return acceleration;
-			if (s == L"deceleration") return deceleration;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"none") return _enum::none;
+			if (s == L"linear") return _enum::linear;
+			if (s == L"hermite") return _enum::hermite;
+			if (s == L"bezier") return _enum::bezier;
+			if (s == L"acceleration") return _enum::acceleration;
+			if (s == L"deceleration") return _enum::deceleration;
+			return _enum::invalid;
 		}
 	};
 
@@ -168,7 +168,7 @@ namespace basecross {
 	/// テクスチャラップモード
 	struct SsTexWrapMode
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,	/// なし
 			clamp,			/// クランプする
@@ -177,18 +177,18 @@ namespace basecross {
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"clamp") return clamp;
-			if (s == L"repeat") return repeat;
-			if (s == L"mirror") return mirror;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"clamp") return _enum::clamp;
+			if (s == L"repeat") return _enum::repeat;
+			if (s == L"mirror") return _enum::mirror;
+			return _enum::invalid;
 		}
 	};
 
 	/// テクスチャフィルターモード 画素補間方法
 	struct SsTexFilterMode
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,
 			nearest,	///< ニアレストネイバー
@@ -196,17 +196,17 @@ namespace basecross {
 			num
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"nearest") return nearest;
-			if (s == L"linear") return linear;
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"nearest") return _enum::nearest;
+			if (s == L"linear") return _enum::linear;
+			return _enum::invalid;
 		}
 	};
 
 	/// アトリビュートの種類
 	struct SsAttributeKind
 	{
-		enum _enum
+		enum class _enum
 		{
 			invalid = -1,	///< 無効値。旧データからの変換時など
 			cell = 0,		///< [CELL]参照セル
@@ -244,40 +244,40 @@ namespace basecross {
 			num,
 		};
 		static _enum ws2e(const wstring& s){
-			if (s == L"invalid") return invalid;
-			if (s == L"CELL") return cell;
-			if (s == L"POSX") return posx;
-			if (s == L"POSY") return posy;
-			if (s == L"POSZ") return posz;
-			if (s == L"ROTX") return rotx;
-			if (s == L"ROTY") return roty;
-			if (s == L"ROTZ") return rotz;
-			if (s == L"SCLX") return sclx;
-			if (s == L"SCLY") return scly;
-			if (s == L"ALPH") return alpha;
-			if (s == L"PRIO") return prio;
-			if (s == L"FLPH") return fliph;
-			if (s == L"FLPV") return flipv;
-			if (s == L"HIDE") return hide;
-			if (s == L"VCOL") return color;
-			if (s == L"VERT") return vertex;
-			if (s == L"PVTX") return pivotx;
-			if (s == L"PVTY") return pivoty;
-			if (s == L"ANCX") return anchorx;
-			if (s == L"ANCY") return anchory;
-			if (s == L"SIZX") return sizex;
-			if (s == L"SIZY") return sizey;
-			if (s == L"IFLH") return imgfliph;
-			if (s == L"IFLV") return imgflipv;
-			if (s == L"UVTX") return uvtx;
-			if (s == L"UVTY") return uvty;
-			if (s == L"UVRZ") return uvrz;
-			if (s == L"UVSX") return uvsx;
-			if (s == L"UVSY") return uvsy;
-			if (s == L"BNDR") return boundr;
-			if (s == L"USER") return user;
-			if (s == L"IPRM") return instance;	//SDKに無し。実装漏れか？
-			return invalid;
+			if (s == L"invalid") return _enum::invalid;
+			if (s == L"CELL") return _enum::cell;
+			if (s == L"POSX") return _enum::posx;
+			if (s == L"POSY") return _enum::posy;
+			if (s == L"POSZ") return _enum::posz;
+			if (s == L"ROTX") return _enum::rotx;
+			if (s == L"ROTY") return _enum::roty;
+			if (s == L"ROTZ") return _enum::rotz;
+			if (s == L"SCLX") return _enum::sclx;
+			if (s == L"SCLY") return _enum::scly;
+			if (s == L"ALPH") return _enum::alpha;
+			if (s == L"PRIO") return _enum::prio;
+			if (s == L"FLPH") return _enum::fliph;
+			if (s == L"FLPV") return _enum::flipv;
+			if (s == L"HIDE") return _enum::hide;
+			if (s == L"VCOL") return _enum::color;
+			if (s == L"VERT") return _enum::vertex;
+			if (s == L"PVTX") return _enum::pivotx;
+			if (s == L"PVTY") return _enum::pivoty;
+			if (s == L"ANCX") return _enum::anchorx;
+			if (s == L"ANCY") return _enum::anchory;
+			if (s == L"SIZX") return _enum::sizex;
+			if (s == L"SIZY") return _enum::sizey;
+			if (s == L"IFLH") return _enum::imgfliph;
+			if (s == L"IFLV") return _enum::imgflipv;
+			if (s == L"UVTX") return _enum::uvtx;
+			if (s == L"UVTY") return _enum::uvty;
+			if (s == L"UVRZ") return _enum::uvrz;
+			if (s == L"UVSX") return _enum::uvsx;
+			if (s == L"UVSY") return _enum::uvsy;
+			if (s == L"BNDR") return _enum::boundr;
+			if (s == L"USER") return _enum::user;
+			if (s == L"IPRM") return _enum::instance;	//SDKに無し。実装漏れか？
+			return _enum::invalid;
 		}
 	};
 
@@ -533,8 +533,8 @@ namespace basecross {
 		{
 			switch (type)
 			{
-			case SsInterpolationType::bezier:
-			case SsInterpolationType::hermite:
+			case SsInterpolationType::_enum::bezier:
+			case SsInterpolationType::_enum::hermite:
 				return true;
 			}
 			return false;

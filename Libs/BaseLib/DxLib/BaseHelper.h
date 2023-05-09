@@ -598,7 +598,7 @@ namespace basecross{
 		//--------------------------------------------------------------------------------------
 		static void ConvertWstringtoUtf8(const wstring& src, string& dest){
 			INT bufsize = ::WideCharToMultiByte(CP_UTF8, 0, src.c_str(), -1, NULL, 0, NULL, NULL);
-			char* Temp = new char[bufsize + 1];
+			char* Temp = new char[(INT64)bufsize + 1];
 			::WideCharToMultiByte(CP_UTF8, 0, src.c_str(), -1, Temp, bufsize, NULL, NULL);
 			dest = Temp;
 			delete[] Temp;
@@ -698,7 +698,7 @@ namespace basecross{
 		//--------------------------------------------------------------------------------------
 		/// float型を文字列に変換する場合の形式
 		//--------------------------------------------------------------------------------------
-		enum FloatModify{
+		enum class FloatModify{
 			Default = 0,	///< デフォルト（浮動小数点）
 			Fixed,	///< 数字を出力
 			Scientific,	///< e+09などの形式
@@ -778,7 +778,7 @@ namespace basecross{
 		//--------------------------------------------------------------------------------------
 		/// 整数型を文字列に変換する場合の形式
 		//--------------------------------------------------------------------------------------
-		enum NumModify{
+		enum class NumModify{
 			Dec = 0,	///< 10進数
 			Hex,	///< 16進数
 			Oct,	///< 8進数
@@ -1149,6 +1149,7 @@ namespace basecross{
 	typedef unsigned long long uint64;
 	typedef unsigned int uint32;
 
+	class GameTimer;
 
 	//--------------------------------------------------------------------------------------
 	///	ステップタイマー
@@ -1206,7 +1207,8 @@ namespace basecross{
 		@return	経過時間
 		*/
 		//--------------------------------------------------------------------------------------
-		double GetElapsedSeconds() const					{ return TicksToSeconds(m_elapsedTicks); }
+		double GetElapsedSeconds() const					{ return TicksToSeconds((uint64)((double)(m_elapsedTicks) * (double)m_deltaSpeed)); }
+		double GetDefaultElapsedSeconds() const             { return TicksToSeconds(m_elapsedTicks); }
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	プログラム開始から経過した合計カウンタを取得.
@@ -1395,6 +1397,13 @@ namespace basecross{
 			}
 		}
 
+		void SetElapsedTimeSpeed(const float& speed) {
+			m_deltaSpeed = speed;
+		}
+		float GetElapsedTimeSpeed() const {
+			return m_deltaSpeed;
+		}
+
 	private:
 		// ソース タイミング データでは QPC 単位を使用します。
 		LARGE_INTEGER m_qpcFrequency;
@@ -1415,6 +1424,13 @@ namespace basecross{
 		// 固定タイムステップ モードの構成用メンバー。
 		bool m_isFixedTimeStep;
 		uint64 m_targetElapsedTicks;
+
+		//タイム固定の用のメンバー
+		int m_stopFrame = 0;
+		int m_stopFrameElapsed = 0;
+
+		//スピードの変更
+		float m_deltaSpeed = 1.0f;
 
 		//コピー禁止
 		StepTimer(const StepTimer&) = delete;

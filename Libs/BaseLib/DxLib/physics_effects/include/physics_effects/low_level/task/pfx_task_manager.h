@@ -43,17 +43,25 @@ typedef void (*PfxTaskEntry)(PfxTaskArg *arg);
 class PfxTaskManager
 {
 protected:
-	PfxUInt32 m_numTasks;
-	PfxUInt32 m_maxTasks;
+	PfxUInt32 m_numTasks = 0;
+	PfxUInt32 m_maxTasks = 0;
 	SCE_PFX_PADDING(1,4)
 	PfxUInt8 SCE_PFX_ALIGNED(16) m_ioBuff[SCE_PFX_IO_BUFF_BYTES];
 	PfxHeapManager m_pool;
 	PfxHeapManager m_ioPool;
-	PfxTaskEntry m_taskEntry;
-	PfxTaskArg *m_taskArg;
+	PfxTaskEntry m_taskEntry = 0;
+	PfxTaskArg *m_taskArg = nullptr;
 	SCE_PFX_PADDING(2,8)
 
-	PfxTaskManager() : m_pool(NULL,0),m_ioPool(NULL,0) {}
+	PfxTaskManager() :
+		m_numTasks(0),
+		m_maxTasks(0),
+		m_pool(NULL,0),
+		m_ioPool(NULL,0),
+		m_ioBuff{0},
+		m_taskEntry(0),
+		m_taskArg(nullptr)
+	{}
 
 public:
 	void *allocate(size_t bytes) {return m_ioPool.allocate(bytes);}

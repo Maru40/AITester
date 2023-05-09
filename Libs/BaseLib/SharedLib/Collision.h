@@ -34,8 +34,8 @@ namespace basecross {
 
 	struct RayHitData
 	{
-		float length;
-		bsm::Vec3 point;
+		float length = 0.0f;
+		bsm::Vec3 point = bsm::Vec3(0.0f);
 	};
 
 	//--------------------------------------------------------------------------------------

@@ -27,7 +27,10 @@ struct PfxCylinder
 	PfxFloat m_halfLen;
 	PfxFloat m_radius;
 
-	PfxCylinder() {}
+	PfxCylinder() :
+		m_halfLen(0.0f),
+		m_radius(0.0f)
+	{}
 	PfxCylinder(PfxFloat halfLength, PfxFloat radius);
 
 	void set(PfxFloat halfLength, PfxFloat radius);

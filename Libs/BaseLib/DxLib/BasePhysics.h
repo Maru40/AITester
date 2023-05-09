@@ -42,7 +42,8 @@ namespace basecross {
 		bsm::Quat m_OffsetOrientation;
 		bsm::Vec3 m_OffsetPosition;
 		PsParam() :
-			m_Quat(),
+			m_MotionType(PsMotionType(0)),
+			m_Quat(0),
 			m_Pos(0),
 			m_LinearVelocity(0),
 			m_AngularVelocity(0),

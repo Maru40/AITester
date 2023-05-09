@@ -432,7 +432,7 @@ namespace basecross{
 	///	Lerp 補間処理計算構造体
 	//--------------------------------------------------------------------------------------
 	struct Lerp{
-		enum rate{
+		enum class rate{
 			Linear,	//1次関数（線形）
 			Easein,	//2次関数ゆっくり上昇
 			EaseOut,//2次関数最後がゆっくり
@@ -454,7 +454,7 @@ namespace basecross{
 		//--------------------------------------------------------------------------------------
 		template<typename T>
 		static T CalculateLerp(const T &Start, const T &End,
-		float StartTime, float EndTime, float NowTime, rate r){
+		float StartTime, float EndTime, float NowTime, Lerp::rate r){
 			float t = (NowTime - StartTime) / (EndTime - StartTime);
 			if (t < 0.0f){
 				t = 0;
@@ -464,19 +464,19 @@ namespace basecross{
 			}
 			float cal_rate = t;   // 1次関数補間値に変換(デフォルト)
 			switch (r){
-			case Linear:
+			case Lerp::rate::Linear:
 				cal_rate = t;
 				break;
-			case Easein:
+			case Lerp::rate::Easein:
 				cal_rate = t * t;
 				break;
-			case EaseOut:
+			case Lerp::rate::EaseOut:
 				cal_rate = t * (2.0f - t);
 				break;
-			case Cube:
+			case Lerp::rate::Cube:
 				cal_rate = t * t * (3.0f - 2.0f * t);
 				break;
-			case Cos:
+			case Lerp::rate::Cos:
 				cal_rate = (1.0f - cos(t * XM_PI)) / 2.0f;
 				break;
 			default:
@@ -845,7 +845,10 @@ namespace basecross{
 		@brief	コンストラクタ
 		*/
 		//--------------------------------------------------------------------------------------
-		SPHERE() {}
+		SPHERE():
+			m_Center(bsm::Vec3(0.0f)),
+			m_Radius(0.0f)
+		{}
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	コンストラクタ
@@ -1259,7 +1262,10 @@ namespace basecross{
 		@brief	コンストラクタ
 		*/
 		//--------------------------------------------------------------------------------------
-		PLANE(){}
+		PLANE():
+			m_Normal(0.0f),
+			m_DotValue(0.0f)
+		{}
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	コンストラクタ（3つの点から平面を作成）

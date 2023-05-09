@@ -1,0 +1,1050 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{8C1D084C-C178-4A5D-84D5-9D8B94E39AB0}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameStageBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\AIActiveChanger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\DisconnectToTitleUIObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\GamePlayerManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\Item.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MainStageCoreObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MainStageDisconnectUIController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MainStageUIObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageCoreObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MainStageTransitioner.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MatchingSelectUIObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageReconnectUIObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageTransitioner.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageUIObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\ObjectHider.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineAliveChecker.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineExtension.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineGameItemManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineGameTimer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineLeaveAIChanger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlinePlayerSynchronizer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineStatus.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OtherPlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\PasswordTextUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\PCTStaticModelDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\PlayerControlManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\RayHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\SelectAppearanceChanger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\SelfPlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\UICancelEventer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\Utility\ActionTimer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\Utility\InputTextManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\Utility\UniqueIdCreater.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\BulletBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\ChargeBullet.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Object\BulletObjectBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Object\ChargeBulletObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\CameraForwardController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\CameraRayAlphaManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\CameraShake.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\LookAtCameraManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\SeekTPS.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\MainCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\MainCameraObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\StartCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Camera\UtilityStartCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\AuraBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\EffectBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\EffectManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\ParticleManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Object\AuraObjectBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\AIDirector_Ex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\AIRequester.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\Calculater\CombatCalculater.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\Calculater\HidePlacePatrolCalculater.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\CombatCoordinator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\CoordinatorBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\EnemyAIDirector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\FactionCoordinator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\PatrolCoordinator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\PatrolCoordinator\HidePlacePatrol.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\TupleSpace.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarDebug\AstarEdgeDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarDebug\AstarNodeDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarDebug\ImpactDataDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarGraph.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNavGraphNode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarRouteRequester.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarThreadController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\GraphAstar.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\GraphBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\GraphEdgeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\GraphNodeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\Heuristic.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\NavGraphNode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\OpenDataCalculater.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\OpenDataHandler.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\SparseGraph.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\Ticket\Ticket_AstarRoute.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\Ticket\Ticket_SearchSelfAstarNode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\UtilityAstar.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\BehaviorTree.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\CanCurrentTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\HasBallTransition.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\HasBall_OtherMember.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\HasBall_OtherTeam.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsActiveSpecificTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsInEyeTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsInEyeTargets.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsSpecificTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\NoneHidePlace.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\ObserveTargets.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\OutSpecificTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\OutTargetTimer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\RegisterCanTransitionDecorator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingStartTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingStartTarget_Ball.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingStartTarget_Goal.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingTarget_HasBallOtherMember.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingTarget_RandomTeamMember.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\TimerWaitPosition.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Decorator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Edge.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Node.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_PriorityController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Selecter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Task.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SelecterTask\Priority.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\ButtleTree.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\HidePlacePatrolTree.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\BehaviorTask_Shot.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\NearAstarMove.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\NearSeekMove.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\RelifMember.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\Task_SearchBall.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\ToBallRunTask.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\ToGoalRunTask.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\ToHasBallOtherTeam.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Tester\Object\BehaviorTesterObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Tester\Tester_Behavior.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\AIVirtualController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\AnimationMainStateMachine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\AnimatorBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\MaruAnimationHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\SubAnimatorBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\AIPlayerBehaviorTree.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EnemyBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EnemyStatusBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Hero.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\SelfAstarNodeController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\SelfAstarNodeController_Ex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Skill\ActiveSkillBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Skill\PassiveSkillBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Skill\SkillBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIPlayerStator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\EnemyStatorBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\ChaseState_AstarSeek.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\ChaseState_TargetSeek.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\EnemyStateNode_Chase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\EnemyStateNode_Plowling.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Buttle.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Dead.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Dyning.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Goal.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_HidePlacePatrol.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\Stator_Hero.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\Stator_Villain.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\Utility_EnemyStator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Villain.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\WallAvoid.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\EnemyGeneratorObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\GeneratorBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\LoadPositionGenerator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\RandomPositionGenerator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\AIImpacter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Cell.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMapImpactManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\DebugClass\DebugCell.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_CellMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldImpactMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\ImpactManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\ImpactMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\OccupancyManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\SelfImpactNodeManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\SoleImpactMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\AIPlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\EnemyObjectBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\HeroObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\VillainEnemyObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateMachine\EnemyMainStateMachine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateMachine\EnemyStateNodeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateMachine\StateEdgeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\StateMachine\StateNodeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Stator\State\EnemyStateNode_SearchBall.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Tester\Astar\Tester_AstarRequester.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_BrackBoard.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Damaged.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_FactionMember.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Impact.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_KnockBack.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_TaskLister.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_TeamMember.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Item\HideItem.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Item\HideItemObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Item\ItemBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadCSV.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Load\StageMapCSV.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HidePlaceOpener.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\AnimationCtrl.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\AttackBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\BuffController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\ChargeGun.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\GoalAnimationController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HeightDestroy.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\ItemAcquisitionManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\ItemBag.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\OwnArea.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\OwnHideItemManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerAnimationCtrl.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerDeader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerSpawnPoint.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Respawner.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\TackleAttack.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Task_GoalAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Teleport.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\UseOwnArea.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineMatching.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineMatchStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\UseWeapon.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\WeponBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\HeroPlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\PlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\TestPlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\VillainPlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\PNTToonDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\ToonPNTStaticModelDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\FixedBox.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\Goal.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\GoalObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\HidePlace.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\OriginalMeshStageObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\OriginalMeshToonObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\StageObjectBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\WallObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Stage\LoadStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Stage\MapShotStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Stage\MaruTestStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Stage\MaruTestStage_DebugLog.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Edge_StateMachine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\GraphBase_Ex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\NodeBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Node_StateMachine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StateMachine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Stator\StatorBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\CrabWalk.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\MoveAstar.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\MoveAstar_Ex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\OpenBox.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\TargetSeek.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_AroundEyeCheck.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_AstarEvade.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_CameraAtMove.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_Flee.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_MovePositions.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_PlowlingMove.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_ToTargetMove.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_Wait.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\MulchTaskList.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\TaskList.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Thread\FutureData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Thread\ThreadController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Thread\ThreadPool.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\FieldMap.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\MapCursor.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\Reticle.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\SelecterSprite.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\SelectSprite.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\TeleportCursorUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\TeleportUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Object\SpriteObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\UILayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Component\NumbersCtrl.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Component\OpenBoard.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Object\BoardObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Object\NumberObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Object\NumbersObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\AutoReflection.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\BillBoard.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\BillBoard_Ex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\CollisionAction.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\FadeSprite.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\FoundManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\RangeDestroyManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\RotationController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ScaleFade.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ScaleParent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ScalePop.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\SeekTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\SinScaling.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\TactileCtrl.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\Targeted.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\TargetManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\TimerDestroy.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ToTargetMove.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\WallEvasion.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Delegate.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruHitHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Mathf.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Object\CollisionObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Object\GameManagerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Object\TactileObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ObserveIsInEyeTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Random.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveBool.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveProperty.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\GameManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\HitStopManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\ScreenFadeManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\ShareClassesManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\SingletonComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\SlowTimerManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\SoundManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Timer\GameTimer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Timer\TimeHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Timer\WaitTimer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Utility.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityObstacle.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\ObjectMover.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineTestRoom.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\InputPlayerController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineTestStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\OnlineTransformSynchronization.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\AnimationHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\BasecrossInputer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\Bezier.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\BezierTransitioner.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\CameraHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\CameraRotater.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\ChasingTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\DelegateSystem.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\ex_weak_ptr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\FontHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\GameSaveManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\InputHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\MathHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\MessageWindow.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\PlayerCameraMover.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\PlayerInputer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\PlayerMover.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\Random.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\SaveHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\SoundHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\SpringArmComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\StructIOFileStream.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\Trigger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\UIHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Patch\WindowSetting.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MainStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Project.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProjectBehavior.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProjectShader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)VelocityManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\GoalBP.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\HPGaugeBP.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\PlayerLabelBP.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\RelocationCountBP.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Camera\TestCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Camera\TitleCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\Animator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\BallAnimationState.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\BallAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\BallObjectEventExecuter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\BoxAnimationState.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\BoxAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\DissolveAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\FadeComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\HasBallEventExecuter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\BallEffectEmitter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\LifeSpan.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\MatchingSyncPlayerObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\MatchingUIController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\PlayerAnimationState.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\PlayerAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\PlayerStatus.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\SyncObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\TestComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Component\Zooming.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\DebugClass\Debug.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Effekseer\EfkComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Effekseer\EfkEffect.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Effekseer\EfkEffectResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Effekseer\EfkInterface.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Interface\I_Performable.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Manager\PointManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Manager\ScoreManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Manager\SpriteDataManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Manager\TimeManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\AdvBaseDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\BarrierShader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\BoneModelDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\IPostEffect.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\MySpriteBaseDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\Outline.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PCTGaugeDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PCTGaugeSprite.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PostEffect\OutlinePostEffect.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PostProcess.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\RenderTexture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Shader\StaticModelDraw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\Block.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\CameraTarget.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\Container.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\FireworksObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\OwnAreaObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\PlayerSpawnPointObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\RackObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\SkyBox.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\StageObjects.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Stage\AdvStageBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Stage\ResultStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Stage\TitleStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\MatchingUILayoutStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\TestEffectStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\TestShaderStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\WatanabeStage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\AdvQueue.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\CameraClip.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\CameraKeyFrame.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\ClipBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\GameObjectClip.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\GameObjectKeyFrame.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\IncTimeLine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\KeyFrameBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\TimeLine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\TimeLineEventDataList.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\UIObjectClip.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\UIObjectKeyFrame.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\ButtonUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\CountDownUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\DirectionWithHasBallUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\GameFinishUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\GameStartUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\GoalMessageUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\HasBallUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\HoldButtonUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\HPGaugeUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\InProcessUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\MessageUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\Numbers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\PasscodeUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\PointUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\ReconnectingInGameUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\ScoreUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\SimpleSprite.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\SplashMessageUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\TimerUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\TransitionSpriteUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\UIObjectBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\UIObjectCSVBuilder.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\UIObjects.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\UI\WinOrLoseUI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\AdvMeshUtil.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\AdvRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\BaseSingleton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\CSVLoad.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\DataExtracter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\DeviceResUtil.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\GameController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\TimeCounter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\TransformData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Watanabe\Utility\Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameStageBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\AIActiveChanger.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\DisconnectToTitleUIObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\GamePlayerManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\Item.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MainStageCoreObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MainStageDisconnectUIController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MainStageUIObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageCoreObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MainStageTransitioner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MatchingSelectUIObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageReconnectUIObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageTransitioner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\MatchStageUIObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\ObjectHider.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\ObjectMover.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineAliveChecker.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineGameItemManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineGameTimer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineLeaveAIChanger.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineMatching.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineMatchStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlinePlayerSynchronizer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineStatus.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineTestRoom.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OtherPlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\PasswordTextUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\PCTStaticModelDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\PlayerControlManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\InputPlayerController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineTestStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\OnlineTransformSynchronization.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\RayHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\SelectAppearanceChanger.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\SelfPlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\UICancelEventer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\Utility\ActionTimer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\Utility\InputTextManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\BulletBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\ChargeBullet.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Object\ChargeBulletObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\CameraForwardController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\CameraRayAlphaManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\CameraShake.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\LookAtCameraManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\Component\SeekTPS.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\MainCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\MainCameraObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\StartCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Camera\UtilityStartCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\DebugNumber.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Component\RectDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Debug_DrawController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\ArrowObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\DebugClass\Object\DebugObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\AuraBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\EffectBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\EffectManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Component\ParticleManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Effect\Object\AuraObjectBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\AIDirector_Ex.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\AIRequester.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\Calculater\CombatCalculater.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\Calculater\HidePlacePatrolCalculater.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\CombatCoordinator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\CoordinatorBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\EnemyAIDirector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\FactionCoordinator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\PatrolCoordinator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\PatrolCoordinator\HidePlacePatrol.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\AIDirector\TupleSpace.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarDebug\AstarEdgeDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarDebug\AstarNodeDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarDebug\ImpactDataDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarEdge_Ex.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarGraph.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNavGraphNode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarNode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarRouteRequester.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\AstarThreadController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\GraphAstar.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\GraphBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\GraphNodeBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\Heuristic.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\NavGraphNode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\OpenDataCalculater.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\OpenDataHandler.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\SparseGraph.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\Ticket\Ticket_AstarRoute.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\UtilityAstar.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\BehaviorTree.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\CanCurrentTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\HasBallTransition.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\HasBall_OtherMember.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\HasBall_OtherTeam.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsActiveSpecificTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsInEyeTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsInEyeTargets.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\IsSpecificTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\ObserveTargets.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\OutSpecificTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\OutTargetTimer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\RegisterCanTransitionDecorator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingStartTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingStartTarget_Ball.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingStartTarget_Goal.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingTarget_HasBallOtherMember.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\SettingTarget_RandomTeamMember.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Decorator\TimerWaitPosition.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Decorator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Edge.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Node.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_PriorityController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Selecter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Interface\I_Task.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SelecterTask\Priority.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\ButtleTree.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\HidePlacePatrolTree.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\SubBehaviorTree\SubBehaviorTreeBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\BehaviorTask_Shot.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\NearAstarMove.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\NearSeekMove.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\RelifMember.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\Task_SearchBall.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\ToBallRunTask.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\ToGoalRunTask.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Task\ToHasBallOtherTeam.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Tester\Object\BehaviorTesterObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Behavior\Tester\Tester_Behavior.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\AIVirtualController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\AnimationMainStateMachine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\AnimatorBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\MaruAnimationHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Animation\SubAnimatorBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\BehaviorTreeComponentBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\BehaviorTree\AIPlayerBehaviorTree.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EnemyBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EnemyStatusBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\EyeSearchRange.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Hero.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\SelfAstarNodeController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\SelfAstarNodeController_Ex.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Skill\ActiveSkillBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Skill\PassiveSkillBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Skill\SkilBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\AIPlayerStator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\EnemyStatorBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\ChaseState_AstarSeek.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\ChaseState_TargetSeek.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\EnemyStateNode_Chase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\EnemyStateNode_Plowling.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Buttle.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Dead.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Dyning.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_Goal.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\StateNode\StateNode_HidePlacePatrol.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\Stator_Hero.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\Stator_Villain.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Stator\Utility_EnemyStator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\Villain.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\WallAvoid.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\EnemyGeneratorObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\GeneratorBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\LoadPositionGenerator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Generator\RandomPosiitonGenerator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\AIImpacter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Cell.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMapImpactManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\DebugClass\DebugCell.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_CellMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\Factory_WayPointMap_FloodFill.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldCellMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\FieldImpactMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\CellMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\ImpactManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\ImpactMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\OccupancyManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\SelfImpactNodeManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\ImpactMap\SoleImpactMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\AIPlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\EnemyObjectBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\HeroObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Object\VillainEnemyObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Stator\State\EnemyStateNode_SearchBall.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Tester\Astar\Tester_AstarRequester.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Damaged.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_FactionMember.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_Impact.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_KnockBack.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_TaskLister.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Interface\I_TeamMember.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Item\HideItem.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Item\HideItemObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Item\ItemBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadCSV.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadData.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Load\StageMapCSV.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HidePlaceOpener.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\BuffController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\ChargeGun.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\GoalAnimationController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HeightDestory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\ItemAcquisitionManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\ItemBag.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\OwnArea.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\OwnHideItemManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerAnimationCtrl.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerDeader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\PlayerSpawnPoint.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Respawner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\TackleAttack.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Task_GoalAnimation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\Teleport.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\UseOwnArea.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\UseWeapon.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\WeponBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\HeroPlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\PlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\TestPlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Object\VillainPlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\PNTToonDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\ToonPNTStaticModelDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\FixedBox.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\Goal.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\GoalObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\HidePlace.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\OriginalMeshStageObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\OriginalMeshToonObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\StageObjectBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StageObject\WallObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Stage\LoadStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Stage\MapShotStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Stage\MaruTestStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Stage\MaruTestStage_DebugLog.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\EdgeBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Edge_StateMachine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\GraphBase_Ex.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\NodeBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\Node_StateMachine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\StateMachine\StateMachine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Stator\StatorBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\CrabWalk.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\MoveAstar.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\MoveAstar_Ex.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\OpenBox.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\TargetSeek.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_AroundEyeCheck.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_AstarEvade.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_CameraAtMove.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_Flee.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_MovePositions.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_PlowlingMove.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_ToTargetMove.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\TaskList\CommonTasks\Task_Wait.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Thread\FutureData.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Thread\ThreadController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Thread\ThreadPool.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\FieldMap.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\MapCursor.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\Reticle.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\SelecterSprite.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\SelectSprite.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\TeleportCursorUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Component\TeleportUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\2D\Object\SpriteObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Component\NumbersCtrl.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Component\OpenBoard.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Object\BoardObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Object\NumberObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\3D\Object\NumbersObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\UI\BuilderVertexPCT.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\AutoReflection.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\BillBoard.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\BillBoard_Ex.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\CollisionAction.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\FadeSprite.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\FoundManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\RangeDestoryManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\RotationController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ScaleFade.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ScaleParent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ScalePop.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\SeekTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\SinScaling.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\TactileCtrl.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\Targeted.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\TargetManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\TimerDestory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\ToTargetMove.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Component\WallEvasion.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruAction.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruHitHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruRandom.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\MaruUtility.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Mathf.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Object\CollisionObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Object\GameManagerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Object\TactileObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ObserveIsInEyeTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveBool.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\ReactiveProperty.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\GameManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\HitStopManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\ScreenFadeManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\ShareClassesManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\SingletonComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\SlowTimerManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\SingletonComponent\SoundManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Timer\GameTimer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Timer\TimeHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\Timer\WaitTimer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityObstacle.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Utility\UtilityVelocity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\BasecrossInputer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\Bezier.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\BezierTransitioner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\CameraHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\CameraRotater.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\FontHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\GameSaveManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\InputHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\MathHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\MessageWindow.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\PlayerCameraMover.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\PlayerInputer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\PlayerMover.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\Random.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\SoundHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\SpringArmComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Patch\UIHelper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MainStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ProjectBehavior.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)VelocityManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\GoalBP.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\HPGaugeBP.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\PlayerLabelBP.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\BoardPoly\RelocationCountBP.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Camera\TestCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Camera\TitleCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\Animator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\BallAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\BallObjectEventExecuter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\BoxAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\DissolveAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\FadeComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\HasBallEventExecuter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\BallEffectEmitter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\LifeSpan.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\MatchingSyncPlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\MatchingUIController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\PlayerAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\PlayerStatus.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\SyncObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\TestComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Component\Zooming.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\DebugClass\Debug.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Effekseer\EfkComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Effekseer\EfkEffectResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Effekseer\EfkInterface.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Manager\PointManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Manager\ScoreManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Manager\SpriteDataManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Manager\TimeManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\AdvBaseDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\BarrierShader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\BoneModelDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\MySpriteBaseDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\Outline.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PCTGaugeDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PCTGaugeSprite.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PostEffect\OutlinePostEffect.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PostProcess.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\RenderTexture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\StaticModelDraw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\Block.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\CameraTarget.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\Container.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\FireworksObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\OwnAreaObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\PlayerSpawnPointObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\RackObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\StageObject\SkyBox.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Stage\AdvStageBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Stage\ResultStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Stage\TitleStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\MatchingUILayoutStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\TestEffectStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\TestShaderStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TestStage\WatanabeStage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\CameraClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\ClipBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\GameObjectClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\TimeLine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\TimeLineEventDataList.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\TimeLine\UIObjectClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\ButtonUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\CountDownUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\DirectionWithHasBallUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\GameFinishUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\GameStartUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\GoalMessageUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\HasBallUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\HoldButtonUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\HPGaugeUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\InProcessUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\MessageUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\Numbers.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\PasscodeUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\PointUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\ReconnectingInGameUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\ScoreUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\SimpleSprite.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\SplashMessageUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\TimerUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\TransitionSpriteUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\UIObjectBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\UIObjectCSVBuilder.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\UI\WinOrLoseUI.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Utility\AdvMeshUtil.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Utility\AdvRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Utility\CSVLoad.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Utility\DeviceResUtil.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Utility\GameController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Utility\TimeCounter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Watanabe\Utility\Utility.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="$(MSBuildThisFileDirectory)..\..\Libs\BaseLib\DxShaders\SlimePS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)..\..\Libs\BaseLib\DxShaders\SlimeVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Itabashi\PSPCTStaticModel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\ToonPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\ToonVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PSBarrierDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PSModelDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PSModelDrawShadow.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PSModelDrawShadow2.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PSOutlineDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PSPCTGaugeDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PSPCTGaugeSprite.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\PS_Main.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSBoneModelDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSBoneModelDrawShadow.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSBoneOutlineDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSModelDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSModelDrawShadow.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSOutlineDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSPCTGaugeDraw.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VSPCTGaugeSprite.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\VS_Main.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Watanabe\Shader\PostEffect\HLSL\CS_Outline.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compute</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compute</ShaderType>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\Libs\BaseLib\DxShaders\SlimeFunctions.hlsli" />
+    <None Include="$(MSBuildThisFileDirectory)..\..\Libs\BaseLib\DxShaders\SlimeParametors.hlsli" />
+    <None Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\ToonFunctions.hlsli" />
+    <None Include="$(MSBuildThisFileDirectory)Maruyama\Shader\Toon\ToonParametors.hlsli" />
+    <None Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\AdvStageBase.hlsli" />
+    <None Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\IncDraw.hlsli" />
+    <None Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\INCPCTGaugeDraw.hlsli" />
+    <None Include="$(MSBuildThisFileDirectory)Watanabe\Shader\HLSL\INCPCTGaugeSprite.hlsli" />
+  </ItemGroup>
+</Project>

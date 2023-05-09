@@ -154,7 +154,7 @@ namespace basecross {
 		Impl() :
 			m_StartScale(1.0f, 1.0f, 1.0f),
 			m_TargetScale(1.0f, 1.0f, 1.0f),
-			m_Rate(Lerp::Linear)
+			m_Rate(Lerp::rate::Linear)
 		{}
 		~Impl() {}
 	};
@@ -542,9 +542,9 @@ namespace basecross {
 		Impl() :
 			m_StartPosition(0, 0, 0),
 			m_TargetPosition(0, 0, 0),
-			m_RateX(Lerp::Linear),
-			m_RateY(Lerp::Linear),
-			m_RateZ(Lerp::Linear),
+			m_RateX(Lerp::rate::Linear),
+			m_RateY(Lerp::rate::Linear),
+			m_RateZ(Lerp::rate::Linear),
 			m_Velocity(0, 0, 0)
 		{}
 		~Impl() {}

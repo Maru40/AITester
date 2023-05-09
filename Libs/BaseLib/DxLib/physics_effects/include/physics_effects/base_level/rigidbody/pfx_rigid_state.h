@@ -94,14 +94,14 @@ public:
 	void		setContactFilterTarget(PfxUInt32 filter) {m_contactFilterTarget = filter;}
 
 	ePfxMotionType	getMotionType() const {return (ePfxMotionType)m_motionType;}
-	void		setMotionType(ePfxMotionType t) {SCE_PFX_ALWAYS_ASSERT(t<kPfxMotionTypeCount);m_motionType = (PfxUInt8)t;wakeup();}
+	void		setMotionType(ePfxMotionType t) {SCE_PFX_ALWAYS_ASSERT((int)t < (int)ePfxMotionType::kPfxMotionTypeCount); m_motionType = (PfxUInt8)t; wakeup();}
 
 	PfxUInt8	getMotionMask() const {return m_motionType|(m_sleeping<<7);}
 
 	PfxBool		isAsleep() const {return m_sleeping==1;}
 	PfxBool		isAwake() const {return m_sleeping==0;}
 
-	void wakeup() {m_sleeping=0;m_sleepCount=0;}
+	void wakeup() { m_sleeping=0; m_sleepCount=0;}
 	inline void	sleep();
 
 	PfxUInt8	getUseSleep() const {return m_useSleep;}

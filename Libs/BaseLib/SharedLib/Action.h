@@ -332,7 +332,7 @@ namespace basecross {
 		@return	なし
 		*/
 		//--------------------------------------------------------------------------------------
-		void SetParams(float TotalTime, const bsm::Vec3& TargetScale, Lerp::rate Rate = Lerp::Linear);
+		void SetParams(float TotalTime, const bsm::Vec3& TargetScale, Lerp::rate Rate = Lerp::rate::Linear);
 	};
 
 	//--------------------------------------------------------------------------------------
@@ -389,7 +389,7 @@ namespace basecross {
 		@return	なし
 		*/
 		//--------------------------------------------------------------------------------------
-		void SetParams(float TotalTime, const bsm::Vec3& LocalScale, Lerp::rate Rate = Lerp::Linear);
+		void SetParams(float TotalTime, const bsm::Vec3& LocalScale, Lerp::rate Rate = Lerp::rate::Linear);
 		//操作
 		//--------------------------------------------------------------------------------------
 		/*!
@@ -890,7 +890,7 @@ namespace basecross {
 		@return	なし
 		*/
 		//--------------------------------------------------------------------------------------
-		void SetParams(float TotalTime, const bsm::Vec3& TargetPosition, Lerp::rate Rate = Lerp::Linear);
+		void SetParams(float TotalTime, const bsm::Vec3& TargetPosition, Lerp::rate Rate = Lerp::rate::Linear);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	パラメータを設定する
@@ -959,7 +959,7 @@ namespace basecross {
 		@return	なし
 		*/
 		//--------------------------------------------------------------------------------------
-		void SetParams(float TotalTime, const bsm::Vec3& LocalVector, Lerp::rate Rate = Lerp::Linear);
+		void SetParams(float TotalTime, const bsm::Vec3& LocalVector, Lerp::rate Rate = Lerp::rate::Linear);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	パラメータを設定する
@@ -1091,7 +1091,7 @@ namespace basecross {
 		@return	追加したアクションのポインタ
 		*/
 		//--------------------------------------------------------------------------------------
-		shared_ptr<ScaleTo> AddScaleTo(float TotalTime, const bsm::Vec3& TargetScale, Lerp::rate Rate = Lerp::Linear);
+		shared_ptr<ScaleTo> AddScaleTo(float TotalTime, const bsm::Vec3& TargetScale, Lerp::rate Rate = Lerp::rate::Linear);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	ScaleByアクションを追加する
@@ -1101,7 +1101,7 @@ namespace basecross {
 		@return	追加したアクションのポインタ
 		*/
 		//--------------------------------------------------------------------------------------
-		shared_ptr<ScaleBy> AddScaleBy(float TotalTime, const bsm::Vec3& LocalScale, Lerp::rate Rate = Lerp::Linear);
+		shared_ptr<ScaleBy> AddScaleBy(float TotalTime, const bsm::Vec3& LocalScale, Lerp::rate Rate = Lerp::rate::Linear);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief ScaleIntervalアクションを追加する
@@ -1239,7 +1239,7 @@ namespace basecross {
 		@return	追加したアクションのポインタ
 		*/
 		//--------------------------------------------------------------------------------------
-		shared_ptr<MoveTo> AddMoveTo(float TotalTime, const bsm::Vec3& TargetPosition, Lerp::rate Rate = Lerp::Linear);
+		shared_ptr<MoveTo> AddMoveTo(float TotalTime, const bsm::Vec3& TargetPosition, Lerp::rate Rate = Lerp::rate::Linear);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	MoveToアクションを追加する
@@ -1261,7 +1261,7 @@ namespace basecross {
 		@return	追加したアクションのポインタ
 		*/
 		//--------------------------------------------------------------------------------------
-		shared_ptr<MoveBy> AddMoveBy(float TotalTime, const bsm::Vec3& LocalVector, Lerp::rate Rate = Lerp::Linear);
+		shared_ptr<MoveBy> AddMoveBy(float TotalTime, const bsm::Vec3& LocalVector, Lerp::rate Rate = Lerp::rate::Linear);
 		//--------------------------------------------------------------------------------------
 		/*!
 		@brief	MoveByアクションを追加する
