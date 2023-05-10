@@ -18,6 +18,8 @@
 #include "Maruyama/Stage/MaruTestStage.h"
 #include "Maruyama/Stage/MaruTestStage_DebugLog.h"
 
+#include "Maruyama/Stage/NewMainStage.h"
+
 class LoadStage;
 
 namespace basecross {
@@ -69,11 +71,12 @@ namespace basecross {
 			//ResetActiveStage<GameStage>();
 		}
 		else if (event->m_MsgStr == L"ToLoadStage") {
-			ResetActiveStage<LoadStage>(L"ToTitleStage");
+			//ResetActiveStage<LoadStage>(L"ToTitleStage");
+			ResetActiveStage<LoadStage>(L"MaruTestStage_DebugLog");
 		}
 		else if (event->m_MsgStr == L"ToMainStage") {
 			auto seedPtr = static_pointer_cast<std::uint64_t>(event->m_Info);
-			ResetActiveStage<MainStage>(*seedPtr);
+			ResetActiveStage<basecross::MainStage>(*seedPtr);
 		}
 		else if (event->m_MsgStr == L"ToWatanabeStage") {
 			ResetActiveStage<TestShaderStage>();
@@ -99,6 +102,9 @@ namespace basecross {
 		}
 		else if (event->m_MsgStr == L"MaruTestStage_DebugLog") {
 			ResetActiveStage<MaruTestStage_DebugLog>();
+		}
+		else if (event->m_MsgStr == L"ToNewMainStage") {
+			ResetActiveStage<MainStage>();
 		}
 	}
 }
