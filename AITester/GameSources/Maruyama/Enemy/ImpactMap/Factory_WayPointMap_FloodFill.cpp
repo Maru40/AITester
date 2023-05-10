@@ -250,12 +250,12 @@ namespace basecross {
 
 		void Factory_WayPointMap_FloodFill::AddWayPointMap(
 			const std::shared_ptr<GraphType>& graph,
-			const Parametor& parametor
+			const Parametor& parameter
 		) {
-			m_plusIndexMapByDirection = SettingIndexByDirection(parametor);	//方向別の加算するインデックス数をセッティング
+			m_plusIndexMapByDirection = SettingIndexByDirection(parameter);	//方向別の加算するインデックス数をセッティング
 
-			auto baseStartPosition = parametor.rect.CalculateStartPosition();
-			baseStartPosition.y = parametor.createHeight;	//高さの設定
+			auto baseStartPosition = parameter.rect.CalculateStartPosition();
+			baseStartPosition.y = parameter.createHeight;	//高さの設定
 
 			maru::Utility::QueueClear(m_openDataQueue);
 			auto newNode = std::make_shared<AstarNode>(0, baseStartPosition);
@@ -266,7 +266,7 @@ namespace basecross {
 			while (!m_openDataQueue.empty()) {	//キューが空になるまで
 				auto parentData = m_openDataQueue.front();
 				m_openDataQueue.pop();
-				CreateWayPoints(parentData, graph, parametor);
+				CreateWayPoints(parentData, graph, parameter);
 			}
 
 		}
