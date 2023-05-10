@@ -48,6 +48,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\Utility\InputTextManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Itabashi\Utility\UniqueIdCreater.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerObject_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\Base\AIControllerBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\BulletBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\ChargeBullet.h" />
@@ -534,6 +535,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\Utility\ActionTimer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Itabashi\Utility\InputTextManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerObject_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\Base\AIControllerBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\BulletBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Bullet\Component\ChargeBullet.cpp" />

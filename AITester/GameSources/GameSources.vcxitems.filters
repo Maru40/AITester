@@ -1630,6 +1630,9 @@
     <Filter Include="Maru2023\AI\Base">
       <UniqueIdentifier>{4fdfc8a2-70a3-4026-8590-c0434385b736}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maru2023\AI\AIPlayer\Object">
+      <UniqueIdentifier>{de127260-a468-4405-aed3-4523de9ef71c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
@@ -3084,6 +3087,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\Base\AIControllerBase.h">
       <Filter>Maru2023\AI\Base</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerObject_Ex.h">
+      <Filter>Maru2023\AI\AIPlayer\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp">
@@ -4411,6 +4417,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerController.cpp">
       <Filter>Maru2023\AI\AIPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerObject_Ex.cpp">
+      <Filter>Maru2023\AI\AIPlayer\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
