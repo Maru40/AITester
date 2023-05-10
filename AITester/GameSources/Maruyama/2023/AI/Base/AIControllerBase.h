@@ -2,7 +2,7 @@
 
 namespace AI
 {
-	class AIControllerBase : basecross::Component
+	class AIControllerBase : public basecross::Component
 	{
 	public:
 		AIControllerBase(const std::shared_ptr<basecross::GameObject>& owner);
