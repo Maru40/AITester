@@ -1615,6 +1615,21 @@
     <Filter Include="Maruyama\Enemy\Component\SelfAstarNodeController\SelfAstarNodeContorller_Ex">
       <UniqueIdentifier>{9dfc1034-5a10-41f2-b21e-24303511b386}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maru2023">
+      <UniqueIdentifier>{fd30ea0d-daa3-47d0-b950-cd904e4a83c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\Stage">
+      <UniqueIdentifier>{95880d0b-778a-4b32-832b-88fb0cf2283e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\AI">
+      <UniqueIdentifier>{419b8a02-4538-4079-b547-7ea12fc81950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\AI\AIPlayer">
+      <UniqueIdentifier>{ae90f7aa-983e-40d6-80b4-7a3909f5a869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\AI\Base">
+      <UniqueIdentifier>{4fdfc8a2-70a3-4026-8590-c0434385b736}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
@@ -3060,6 +3075,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Astar\Ticket\Ticket_SearchSelfAstarNode.h">
       <Filter>Maruyama\Enemy\Component\ImpactMap\Astar\Ticket</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Stage\NewMainStage.h">
+      <Filter>Maru2023\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerController.h">
+      <Filter>Maru2023\AI\AIPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\Base\AIControllerBase.h">
+      <Filter>Maru2023\AI\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp">
@@ -4378,6 +4402,15 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Enemy\Component\SelfAstarNodeController_Ex.cpp">
       <Filter>Maruyama\Enemy\Component\SelfAstarNodeController\SelfAstarNodeContorller_Ex</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Stage\NewMainStage.cpp">
+      <Filter>Maru2023\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\Base\AIControllerBase.cpp">
+      <Filter>Maru2023\AI\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerController.cpp">
+      <Filter>Maru2023\AI\AIPlayer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
