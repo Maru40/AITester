@@ -69,26 +69,8 @@ namespace basecross {
 		//セルデバッグ表示
 		//AddGameObject<GameObject>()->AddComponent<maru::FieldCellMap>();
 
-		//Vec3 positions[] = {
-		//	Vec3(-2.5f, 0.0f, 0.0f),
-		//};
-
-		//for (auto& position : positions) {
-		//	auto object = Instantiate<GameObject>(position, Quat::Identity());
-		//	object->AddComponent<PNTStaticDraw>()->SetMeshResource(L"DEFAULT_CUBE");
-		//	object->AddComponent<CollisionObb>();
-		//	object->GetComponent<Transform>()->SetScale(Vec3(1.0f, 5.0f, 15.0f));
-		//	object->AddTag(maru::UtilityObstacle::DEFAULT_OBSTACLE_TAGS[0]);
-		//}
-
 		//テストAIDirectorの生成
 		AddGameObject<GameObject>()->AddComponent<Enemy::AIDirector_Ex>();
-
-		//ポインタのアドレス確認
-		//GameObject* objPtr = new GameObject(GetThis<Stage>());
-		//Debug::GetInstance()->Log((int)(uintptr_t)objPtr);
-		//delete(objPtr);
-		//Debug::GetInstance()->Log((int)(uintptr_t)objPtr);
 
 		//テストマップの生成
 		//CreateTestMap();	
@@ -128,10 +110,38 @@ namespace basecross {
 		rect.width = Width - factoryParam.intervalRange;
 		rect.depth = Depth - factoryParam.intervalRange;
 		floodFill->AddWayPointMap(graph, factoryParam);
+
+		//デバッグ生成
 		Debug::GetInstance()->Log((int)graph->GetNodes().size());
 		Debug::GetInstance()->Log((int)graph->GetNumAllEdges());
 
 		m_debugGraph = graph;
+	}
+
+	//デバッグ系---------------------------------------------------------------------------------------------
+
+	void MaruTestStage_DebugLog::CreateDebugObstacle()
+	{
+		Vec3 positions[] = {
+			Vec3(-2.5f, 0.0f, 0.0f),
+		};
+
+		for (auto& position : positions) {
+			auto object = Instantiate<GameObject>(position, Quat::Identity());
+			object->AddComponent<PNTStaticDraw>()->SetMeshResource(L"DEFAULT_CUBE");
+			object->AddComponent<CollisionObb>();
+			object->GetComponent<Transform>()->SetScale(Vec3(1.0f, 5.0f, 15.0f));
+			object->AddTag(maru::UtilityObstacle::DEFAULT_OBSTACLE_TAGS[0]);
+		}
+	}
+
+	void MaruTestStage_DebugLog::DebugPointer()
+	{
+		//ポインタのアドレス確認
+		GameObject* objPtr = new GameObject(GetThis<Stage>());
+		Debug::GetInstance()->Log((int)(uintptr_t)objPtr);
+		delete(objPtr);
+		Debug::GetInstance()->Log((int)(uintptr_t)objPtr);
 	}
 
 }

@@ -15,6 +15,15 @@ namespace basecross
 		void OnUpdate() override;
 
 		void CreateTestMap();
+
+	private:
+
+
+		//デバッグ系---------------------------------------------------------------------------
+
+		void CreateDebugObstacle();
+
+		void DebugPointer();
 	};
 
 }
