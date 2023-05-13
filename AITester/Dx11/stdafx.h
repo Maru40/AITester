@@ -131,6 +131,9 @@ using namespace Microsoft::WRL::Details;
 #include "../../Libs/BaseLib/Dx11FullLib/FullCommon.h"
 using namespace basecross::bsm;
 
+using Vector = Vec3;
+using f32 = float;
+
 #include "resource.h"
 
 #include "Patch/UIHelper.h"

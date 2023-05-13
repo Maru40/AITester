@@ -59,6 +59,7 @@ HWND InitInstance(HINSTANCE hInstance, int nCmdShow, bool isFullScreen, int iCli
 {
 
 	HWND hWnd = 0;
+	isFullScreen = false;
 	// ウィンドウの作成
 	if (isFullScreen) { // フルスクリーン
 						// 画面全体の幅と高さを取得

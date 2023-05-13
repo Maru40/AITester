@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Base/AIControllerBase.h"
+#include "../../Base/AIControllerBase.h"
 
 namespace AI
 {

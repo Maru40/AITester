@@ -59,6 +59,11 @@ namespace basecross {
 		drawer->ChangeCurrentAnimation(key);
 	}
 
+	AnimationClip Animator::GetAnimationClip(const wstring& key) const
+	{
+		return m_animationClipMap.at(key);
+	}
+
 	void Animator::OnUpdate() {
 		auto drawer = GetGameObject()->GetComponent<ModelDrawComp>();
 		drawer->UpdateAnimation(App::GetApp()->GetElapsedTime() * GetPlaySpeed());

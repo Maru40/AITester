@@ -28,6 +28,8 @@
 
 #include "Maruyama/Enemy/AIDirector/AIDirector_Ex.h"
 
+#include "Maruyama/2023/AI/AIPlayer/AIPlayerObject_Ex.h"
+
 namespace basecross {
 
 	//デバッグ変数
@@ -36,8 +38,9 @@ namespace basecross {
 	
 	void MaruTestStage_DebugLog::CreateViewLight() {
 		//const Vec3 eye(0.0f, 30.0f, -0.000001f);
-		const Vec3 eye(0.0f, 252.4f, -0.000001f);
-		const Vec3 at(0, 0.0f, 0);
+		//const Vec3 eye(0.0f, 252.4f, -0.000001f);
+		const Vec3 eye(0.0f, 0.0f, -20.0f);
+		const Vec3 at(0, 0.0f, 0.0f);
 		auto PtrView = CreateView<SingleView>();
 		//ビューのカメラの設定
 		auto PtrCamera = ObjectFactory::Create<Camera>();
@@ -64,7 +67,7 @@ namespace basecross {
 		Debug::GetInstance()->Log(L"MaruTestStage_DebugLog");
 
 		//スレッドプールのデバッグ
-		AddGameObject<Tester::TesterThreadObject>();
+		//AddGameObject<Tester::TesterThreadObject>();
 
 		//セルデバッグ表示
 		//AddGameObject<GameObject>()->AddComponent<maru::FieldCellMap>();
@@ -73,7 +76,9 @@ namespace basecross {
 		AddGameObject<GameObject>()->AddComponent<Enemy::AIDirector_Ex>();
 
 		//テストマップの生成
-		//CreateTestMap();	
+		//CreateTestMap();
+
+		auto player = AddGameObject<AI::AIPlayer::Object>();
 	}
 
 	void MaruTestStage_DebugLog::OnUpdate() {

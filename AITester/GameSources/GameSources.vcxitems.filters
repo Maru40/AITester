@@ -1633,6 +1633,21 @@
     <Filter Include="Maru2023\AI\AIPlayer\Object">
       <UniqueIdentifier>{de127260-a468-4405-aed3-4523de9ef71c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maru2023\Component">
+      <UniqueIdentifier>{9dd3ef6d-1012-416b-87dc-aa064fc97643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\AI\AIPlayer\Component">
+      <UniqueIdentifier>{f8640416-63e5-4a7d-affc-a597ccc96479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\Interface">
+      <UniqueIdentifier>{169db835-486f-4f4a-bbc8-f60f97b92173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\AI\AIPlayer\Component\Animator">
+      <UniqueIdentifier>{e2192361-478e-40bd-a8cc-bc75c1daa066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\Object">
+      <UniqueIdentifier>{1ac115d1-81db-4b07-bec3-c27387ae678d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
@@ -3081,14 +3096,29 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Stage\NewMainStage.h">
       <Filter>Maru2023\Stage</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerController.h">
-      <Filter>Maru2023\AI\AIPlayer</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\Base\AIControllerBase.h">
       <Filter>Maru2023\AI\Base</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerObject_Ex.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\Component\InputMover.h">
+      <Filter>Maru2023\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerObject_Ex.h">
       <Filter>Maru2023\AI\AIPlayer\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerController.h">
+      <Filter>Maru2023\AI\AIPlayer\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\Component\InputerComponent.h">
+      <Filter>Maru2023\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\Interface\I_Inputer.h">
+      <Filter>Maru2023\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\Object\PlayerObjectBase.h">
+      <Filter>Maru2023\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\SinglePlayerAnimator.h">
+      <Filter>Maru2023\AI\AIPlayer\Component\Animator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -4415,11 +4445,26 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\Base\AIControllerBase.cpp">
       <Filter>Maru2023\AI\Base</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerController.cpp">
-      <Filter>Maru2023\AI\AIPlayer</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\Component\InputMover.cpp">
+      <Filter>Maru2023\Component</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerObject_Ex.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\AIPlayerObject_Ex.cpp">
       <Filter>Maru2023\AI\AIPlayer\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\AIPlayerController.cpp">
+      <Filter>Maru2023\AI\AIPlayer\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\Component\InputerComponent.cpp">
+      <Filter>Maru2023\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\Interface\I_Inputer.cpp">
+      <Filter>Maru2023\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\Object\PlayerObjectBase.cpp">
+      <Filter>Maru2023\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\2023\AI\AIPlayer\Component\SinglePlayerAnimator.cpp">
+      <Filter>Maru2023\AI\AIPlayer\Component\Animator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

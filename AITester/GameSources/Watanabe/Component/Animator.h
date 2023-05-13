@@ -79,6 +79,11 @@ namespace basecross {
 		/// <param name="key">変更したいアニメーションキー</param>
 		void ChangeAnimation(wstring key);
 
+		/// <summary>
+		/// アニメーションクリップの取得
+		/// </summary>
+		AnimationClip GetAnimationClip(const wstring& key) const;
+
 	public:
 		Animator(const shared_ptr<GameObject>& owner);
 
