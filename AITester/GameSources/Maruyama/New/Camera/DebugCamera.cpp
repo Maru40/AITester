@@ -25,16 +25,16 @@ void DebugCamera::OnUpdate()
 	auto delta = App::GetApp()->GetElapsedTime();
 	auto camera = GetStage()->GetView()->GetTargetCamera();
 
-	//auto atPosition = camera->GetAt();
+	//EyePosition‚ð§Œä
 	auto position = camera->GetEye();
 	position += GetComponent<InputerComponent>()->GetMoveInput() * mSpeed * delta;
-	//atPosition += GetComponent<InputerComponent>()->GetMoveInput() * mSpeed * delta;
+	position += PlayerInputer::GetDebugUpDownVector() * mSpeed * delta;
+
+	//AtPositon‚ð§Œä
 	auto atPosition = position;
 	atPosition.y = 0.0f;
 	atPosition.z += 0.01f;
 	mAtObject->GetComponent<Transform>()->SetPosition(atPosition);
-
-	position += PlayerInputer::GetDebugUpDownVector() * mSpeed * delta;
 
 	camera->SetEye(position);
 	camera->SetAt(mAtObject->GetComponent<Transform>()->GetPosition());
