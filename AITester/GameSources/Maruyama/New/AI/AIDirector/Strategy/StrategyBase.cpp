@@ -21,7 +21,7 @@ StrategyParameter::StrategyParameter(Targeted* const targeted, const u32 index, 
 
 StrategyBase::StrategyBase()
 {
-
+	
 }
 
 void StrategyBase::AssignMember(StrategyMember* const member) { mParam.members.push_back(member); }

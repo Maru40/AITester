@@ -56,12 +56,18 @@ namespace basecross {
 		//--------------------------------------------------------------------------------------
 
 		void AstarNode::OnDebugDraw() {
+			//デバッグコンポーネントが存在するかどうかの確認
 			if (m_debugDrawController == nullptr) {
 				constexpr float Width = 0.8f;
 				constexpr float Depth = 0.8f;
 				auto data = Debug_DrawData(maru::Rect(Vec3(0.0f), Width, Depth));
 				m_debugDrawController = std::make_shared<Debug_DrawController>(data);
 			}
+
+			//カラー設定
+			auto dengerValue = GetDengerValue();
+			auto color = Col4(1.0f, dengerValue, dengerValue, 1.0f);
+			m_debugDrawController->SetColor(color);
 
 			m_debugDrawController->OnDraw(GetPosition());
 		}

@@ -10,6 +10,8 @@
 
 #include "Maruyama/StateMachine/NodeBase.h"
 
+#include "Maruyama/New/AI/AIDirector/InfluenceMap/InfluenceData.h"
+
 namespace basecross {
 
 	namespace maru {
@@ -25,11 +27,6 @@ namespace basecross {
 		//--------------------------------------------------------------------------------------
 		class AstarNode : public NodeBase
 		{
-		private:
-			Vec3 m_position;					//位置情報
-
-			std::weak_ptr<AstarNode> m_parent;	//親ノード
-
 		public:
 			AstarNode();
 
@@ -54,6 +51,23 @@ namespace basecross {
 			std::shared_ptr<AstarNode> GetParent() const noexcept;
 
 			bool HasParent() const noexcept;
+
+			void SetInfluenceData(const AI::InfluenceData& data) { mInfluenceData = data; }
+
+			AI::InfluenceData GetInfluenceData() const { return mInfluenceData; }
+
+			void SetDengerValue(const f32 dengerValue) { mInfluenceData.dengerValue = dengerValue; }
+
+			f32 GetDengerValue() const { return mInfluenceData.dengerValue; }
+
+		private:
+			Vec3 m_position;					//位置情報
+
+			std::weak_ptr<AstarNode> m_parent;	//親ノード
+
+			AI::InfluenceData mInfluenceData;	//影響データ
+
+		public:
 
 			//--------------------------------------------------------------------------------------
 			///	デバッグ系
