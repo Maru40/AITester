@@ -17,6 +17,8 @@
 
 #include "Maruyama/New/Component/InputMover.h"
 
+#include "Maruyama/Utility/Component/RotationController.h"
+
 using namespace basecross;
 using namespace basecross::bsm;
 

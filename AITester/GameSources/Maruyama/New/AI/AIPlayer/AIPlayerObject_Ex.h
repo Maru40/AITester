@@ -7,6 +7,11 @@
 
 #include "Maruyama/New/Object/PlayerObjectBase.h"
 
+namespace basecross
+{
+	class RotationController;
+}
+
 namespace AI
 {
 	namespace AIPlayer
@@ -26,6 +31,7 @@ namespace AI
 			void OnUpdate() override;
 
 		private:
+
 		};
 
 	}

@@ -30,6 +30,12 @@ PlayerObjectBase::OnCreate()
 }
 
 void 
+PlayerObjectBase::OnUpdate()
+{
+	
+}
+
+void 
 PlayerObjectBase::CreateModel()
 {
 	Mat4x4 spanMat;

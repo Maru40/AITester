@@ -1,5 +1,6 @@
 #include "InputMover.h"
 #include "Maruyama/New/Component/InputerComponent.h"
+#include "Maruyama/Utility/Component/RotationController.h"
 
 using namespace basecross;
 
@@ -16,9 +17,16 @@ InputMover::OnCreate()
 }
 
 void 
+InputMover::OnLateStart()
+{
+	mRotationController = GetGameObject()->GetComponent<RotationController>().get();
+}
+
+void 
 InputMover::OnUpdate()
 {
 	MoveUpdate(mInput->GetMoveInput());
+	mRotationController->SetDirection(mInput->GetMoveInput());
 }
 
 void 

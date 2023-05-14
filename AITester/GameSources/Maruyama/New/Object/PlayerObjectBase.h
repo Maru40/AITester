@@ -14,6 +14,7 @@ public:
 	virtual ~PlayerObjectBase() = default;
 
 	void OnCreate() override;
+	void OnUpdate() override;
 
 protected:
 	virtual void CreateModel();

@@ -4,6 +4,11 @@
 
 class InputerComponent;
 
+namespace basecross
+{
+	class RotationController;
+}
+
 class InputMover : public basecross::Component
 {
 public:
@@ -12,6 +17,7 @@ public:
 	~InputMover() = default;
 
 	void OnCreate() override;
+	void OnLateStart() override;
 	void OnUpdate() override;
 
 	void MoveUpdate(const Vector& input);
@@ -23,6 +29,7 @@ public:
 private:
 	InputerComponent* mInput = nullptr;
 	basecross::Transform* mTransform = nullptr;
+	basecross::RotationController* mRotationController = nullptr;
 
 	f32 mSpeed;
 };
