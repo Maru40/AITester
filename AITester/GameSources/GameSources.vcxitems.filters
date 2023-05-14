@@ -1660,6 +1660,12 @@
     <Filter Include="Maru2023\AI\AIDirector\Strategy">
       <UniqueIdentifier>{6dca3bdd-15d6-4574-a6b0-b342bc7c56d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maru2023\AI\AIDirector\DetachmentSystem">
+      <UniqueIdentifier>{c1bb60e8-c9f8-4a54-b464-a1f795f84a1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\Camera">
+      <UniqueIdentifier>{3e57e182-77fb-4caf-a4a7-111ad75457e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
@@ -3153,6 +3159,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.h">
       <Filter>Maru2023\AI\AIDirector\Strategy</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.h">
+      <Filter>Maru2023\AI\AIDirector\DetachmentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Camera\DebugCamera.h">
+      <Filter>Maru2023\Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp">
@@ -4519,6 +4531,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.cpp">
       <Filter>Maru2023\AI\AIDirector\Strategy</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.cpp">
+      <Filter>Maru2023\AI\AIDirector\DetachmentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Camera\DebugCamera.cpp">
+      <Filter>Maru2023\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

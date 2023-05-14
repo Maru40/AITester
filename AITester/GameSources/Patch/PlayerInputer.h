@@ -109,6 +109,8 @@ namespace basecross
 
 		//static bool IsDebugAstarDraw();
 
+		static Vector GetDebugUpDownVector();
+		
 		//------------------------------------------------------------------------
 
 		static std::shared_ptr<PlayerInputer> GetInstance();

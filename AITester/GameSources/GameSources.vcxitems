@@ -217,6 +217,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Load\StageMapCSV.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.h" />
@@ -225,6 +226,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\SinglePlayerAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\StateNodes\Patrol.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\Base\AIControllerBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Camera\DebugCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputerComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputMover.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\Targeted_Ex.h" />
@@ -707,6 +709,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Load\StageMapCSV.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.cpp" />
@@ -715,6 +718,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\SinglePlayerAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\StateNodes\Patrol.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\Base\AIControllerBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Camera\DebugCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputerComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputMover.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\Targeted_Ex.cpp" />

@@ -30,6 +30,8 @@
 
 #include "Maruyama/New/AI/AIPlayer/AIPlayerObject_Ex.h"
 
+#include "Maruyama/New/Camera/DebugCamera.h"
+
 namespace basecross {
 
 	//デバッグ変数
@@ -38,8 +40,8 @@ namespace basecross {
 	
 	void MaruTestStage_DebugLog::CreateViewLight() {
 		//const Vec3 eye(0.0f, 30.0f, -0.000001f);
-		//const Vec3 eye(0.0f, 252.4f, -0.000001f);
-		const Vec3 eye(0.0f, 0.0f, -20.0f);
+		const Vec3 eye(0.0f, 252.4f, -0.000001f);
+		//const Vec3 eye(0.0f, 0.0f, -20.0f);
 		const Vec3 at(0, 0.0f, 0.0f);
 		auto PtrView = CreateView<SingleView>();
 		//ビューのカメラの設定
@@ -76,9 +78,12 @@ namespace basecross {
 		AddGameObject<GameObject>()->AddComponent<Enemy::AIDirector_Ex>();
 
 		//テストマップの生成
-		//CreateTestMap();
+		CreateTestMap();
 
 		auto player = AddGameObject<AI::AIPlayer::Object>();
+
+		//デバッグカメラを生成
+		auto debubCamera = AddGameObject<DebugCamera>();
 	}
 
 	void MaruTestStage_DebugLog::OnUpdate() {
@@ -87,7 +92,7 @@ namespace basecross {
 		}
 
 		if (m_debugGraph) {
-			return;
+			//return;
 			for (auto& node : m_debugGraph->GetNodes()) {
 				node.second->OnDebugDraw();
 			}

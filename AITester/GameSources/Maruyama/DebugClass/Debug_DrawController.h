@@ -50,6 +50,9 @@ namespace basecross {
 			void OnDraw(const Vec3& position);
 			void OnDraw(const Vec3& position, const Vec3& forward, const Vec3& scale);
 
+			void SetColor(const Col4& color) { m_data.color = color; };
+			Col4 GetColor() const { return m_data.color; }
+
 		private:
 			void CreateDebugDrawObject(const Vec3& position);
 

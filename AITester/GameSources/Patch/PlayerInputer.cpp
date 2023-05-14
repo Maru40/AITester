@@ -329,6 +329,21 @@ namespace basecross
 		return m_playerInputer;
 	}
 
+	Vector PlayerInputer::GetDebugUpDownVector()
+	{
+		Vector result(0.0f);
+
+		if (App::GetApp()->GetMyInputDevice()->GetKeyBoard().IsInputPush(KeyCode::I)) {
+			result.y += -1;
+		}
+
+		if (App::GetApp()->GetMyInputDevice()->GetKeyBoard().IsInputPush(KeyCode::K)) {
+			result.y += +1;
+		}
+
+		return result;
+	}
+
 	bool PlayerInputer::IsDesitionDown() const
 	{
 		return m_inputDevice->GetKeyBoard().IsInputDown(KeyCode::Enter) ||

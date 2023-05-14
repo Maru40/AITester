@@ -85,18 +85,7 @@ namespace basecross {
 
 		Factory_WayPointMap_FloodFill::Factory_WayPointMap_FloodFill(const std::shared_ptr<Stage>& stage) :
 			m_stage(stage)
-		{
-			/*
-			auto startPosition = Vec3(0.0f);
-
-			for (const auto& direction : DIRECTIONS) {
-				auto targetPosition = startPosition + (direction * 2.0f);
-
-				auto object = stage->Instantiate<GameObject>(targetPosition, Quat::Identity());
-				object->AddComponent<PNTStaticDraw>()->SetMeshResource(L"DEFAULT_CUBE");
-			}
-			*/
-		}
+		{ }
 
 		std::unordered_map<DirectionType, int> Factory_WayPointMap_FloodFill::SettingIndexByDirection(const Parametor& parametor) {
 			std::unordered_map<DirectionType, int> result;

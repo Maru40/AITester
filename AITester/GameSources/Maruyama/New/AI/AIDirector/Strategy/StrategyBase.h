@@ -6,21 +6,30 @@
 class Targeted;
 class StrategyMember;
 
+struct StrategyParameter
+{
+	Targeted* targeted = nullptr;			//戦術のターゲット
+	u32 index = 0;							//戦術番号インデックス
+	u32 numAssigne = 0;						//アサインする数
+	std::vector<StrategyMember*> members;	//アサインしているメンバー
+
+	StrategyParameter();
+	StrategyParameter(Targeted* const targeted, const u32 index, const u32 numAssigne);
+};
+
 class StrategyBase
 {
 public:
+	using Parameter = StrategyParameter;
 
 public:
 	StrategyBase();
 
 	virtual ~StrategyBase() = default;
 
-	void Assign(StrategyMember* const member);
-	void UnAssign(StrategyMember* const member);
+	void AssignMember(StrategyMember* const member);
+	void UnAssignMember(StrategyMember* const member);
 
 private:
-	Targeted* mTarget = nullptr;			//戦術のターゲット
-	u32 mIndex = 0;							//戦術番号インデックス
-	u32 mNumAssigne = 0;					//アサインする数
-	std::vector<StrategyMember*> mMembers;	//アサインしているメンバー
+	Parameter mParam;
 };
