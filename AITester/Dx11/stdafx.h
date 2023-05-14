@@ -133,6 +133,8 @@ using namespace basecross::bsm;
 
 using Vector = Vec3;
 using f32 = float;
+using u32 = std::uint32_t;
+using s32 = std::int32_t;
 
 #include "resource.h"
 

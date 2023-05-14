@@ -1,7 +1,7 @@
 #include "PlayerObjectBase.h"
 
-#include "Maruyama/2023/Component/InputerComponent.h"
-#include "Maruyama/2023/Component/InputMover.h"
+#include "Maruyama/New/Component/InputerComponent.h"
+#include "Maruyama/New/Component/InputMover.h"
 #include "Maruyama/Utility/Component/RotationController.h"
 
 #include "Maruyama/Utility/Component/CollisionAction.h"

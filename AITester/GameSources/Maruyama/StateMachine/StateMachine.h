@@ -102,6 +102,8 @@ namespace basecross {
 			/// <param name="type">ノードのEnumType</param>
 			/// <param name="node">追加するノード</param>
 			void AddNode(const EnumType type, const std::shared_ptr<NodeType>& node) {
+				node->OnAwake();
+
 				if (IsEmpty()) {
 					m_currentNodeType = type;
 					if (node) {

@@ -13,7 +13,6 @@ namespace AI
 
 		Controller::~Controller() {}
 
-
 	}
 }
 

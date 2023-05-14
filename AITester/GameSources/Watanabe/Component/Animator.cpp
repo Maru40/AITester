@@ -9,6 +9,32 @@
 #include "../Utility/DataExtracter.h"
 
 namespace basecross {
+
+	TimeEventData::TimeEventData():
+		TimeEventData(0, nullptr)
+	{}
+
+	TimeEventData::TimeEventData(const f32 time, const std::function<void()>& timeEvent):
+		time(time),
+		timeEvent(timeEvent),
+		isActive(true)
+	{}
+
+
+	void AnimationClip::ResetTimeEvent()
+	{
+		for (auto& data : timeEventDatas)
+		{
+			//アクティブ状態なら、タイムイベントを呼ぶ。
+			if (data.isActive) {
+				data.timeEvent();
+			}
+
+			data.isActive = true;
+		}
+	}
+
+
 	Animator::Animator(const shared_ptr<GameObject>& owner)
 		:Component(owner)
 	{}
@@ -55,6 +81,8 @@ namespace basecross {
 	}
 
 	void Animator::ChangeAnimation(wstring key) {
+		GetCurrentAnimationClip().ResetTimeEvent();
+
 		auto drawer = GetGameObject()->GetComponent<ModelDrawComp>();
 		drawer->ChangeCurrentAnimation(key);
 	}
@@ -64,9 +92,19 @@ namespace basecross {
 		return m_animationClipMap.at(key);
 	}
 
+	AnimationClip Animator::GetCurrentAnimationClip() const
+	{
+		auto draw = GetGameObject()->GetComponent<ModelDrawComp>();
+		auto currentAnimation = draw->GetCurrentAnimation();
+		return m_animationClipMap.at(currentAnimation);
+	}
+
 	void Animator::OnUpdate() {
 		auto drawer = GetGameObject()->GetComponent<ModelDrawComp>();
 		drawer->UpdateAnimation(App::GetApp()->GetElapsedTime() * GetPlaySpeed());
+
+		CallTimeEvent();		//タイムイベントの実装
+		CallLoopEndEvent();		//終了イベントの実装
 	}
 
 	bool Animator::IsTargetAnimationEnd() {
@@ -80,4 +118,41 @@ namespace basecross {
 
 		return m_animationClipMap[keyName].playSpeed;
 	}
+
+	void Animator::CallTimeEvent()
+	{
+		auto draw = GetGameObject()->GetComponent<ModelDrawComp>();
+		f32 currentTime = draw->GetCurrentAnimationTime();
+
+		auto currentClip = GetCurrentAnimationClip();
+		auto datas = currentClip.timeEventDatas;
+
+		for (auto& data : datas) {
+			if (!data.isActive) {	//アクティブでないなら処理をとばす
+				continue;
+			}
+
+			if (data.time < currentTime) {	//時間を超えていたら。
+				if (data.timeEvent) {
+					data.timeEvent();
+					data.isActive = false;
+				}
+			}
+		}
+	}
+
+	void Animator::CallLoopEndEvent()
+	{
+		auto draw = GetGameObject()->GetComponent<ModelDrawComp>();
+		f32 currentTime = draw->GetCurrentAnimationTime();
+		auto currentClip = GetCurrentAnimationClip();
+
+		if (currentTime < mBeforeTime) {
+			currentClip.CallLoopEndEvent();
+			currentClip.ResetTimeEvent();
+		}
+
+		mBeforeTime = currentTime;	//前のフレームの時間を設定
+	}
+
 }

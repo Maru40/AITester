@@ -28,7 +28,7 @@
 
 #include "Maruyama/Enemy/AIDirector/AIDirector_Ex.h"
 
-#include "Maruyama/2023/AI/AIPlayer/AIPlayerObject_Ex.h"
+#include "Maruyama/New/AI/AIPlayer/AIPlayerObject_Ex.h"
 
 namespace basecross {
 

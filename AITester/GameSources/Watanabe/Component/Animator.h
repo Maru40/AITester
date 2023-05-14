@@ -8,6 +8,17 @@
 #include "../Shader/BoneModelDraw.h"
 
 namespace basecross {
+
+	struct TimeEventData
+	{
+		f32 time;
+		std::function<void()> timeEvent = nullptr;
+		bool isActive;
+
+		TimeEventData();
+		TimeEventData(const f32 time, const std::function<void()>& timeEvent);
+	};
+
 	/// <summary>
 	/// アニメーション用の情報
 	/// </summary>
@@ -33,6 +44,16 @@ namespace basecross {
 		/// </summary>
 		float playSpeed;
 
+		/// <summary>
+		/// タイムイベントデータ群
+		/// </summary>
+		std::vector<TimeEventData> timeEventDatas;
+
+		/// <summary>
+		/// ループ終了時に呼び出したいイベント
+		/// </summary>
+		std::function<void()> loopEndEvent = nullptr;
+
 		AnimationClip() :
 			AnimationClip(L"", 0, 0, false)
 		{}
@@ -51,6 +72,18 @@ namespace basecross {
 			name(_name), start(_start), end(_end),
 			isLoop(_isLoop), playSpeed(_playSpeed)
 		{}
+
+		/// <summary>
+		/// ループ終了時のイベント
+		/// </summary>
+		void CallLoopEndEvent()
+		{
+			if (loopEndEvent) {
+				loopEndEvent();
+			}
+		}
+
+		void ResetTimeEvent();
 	};
 
 	class Animator :public Component
@@ -84,6 +117,8 @@ namespace basecross {
 		/// </summary>
 		AnimationClip GetAnimationClip(const wstring& key) const;
 
+		AnimationClip GetCurrentAnimationClip() const;
+
 	public:
 		Animator(const shared_ptr<GameObject>& owner);
 
@@ -98,5 +133,19 @@ namespace basecross {
 		virtual bool IsTargetAnimationEnd();
 
 		float GetPlaySpeed();
+
+	private:
+		/// <summary>
+		/// タイムイベントの呼び出し
+		/// </summary>
+		void CallTimeEvent();
+
+		/// <summary>
+		/// ループ終了イベントの呼び出し
+		/// </summary>
+		void CallLoopEndEvent();
+
+	private:
+		f32 mBeforeTime = 0;
 	};
 }

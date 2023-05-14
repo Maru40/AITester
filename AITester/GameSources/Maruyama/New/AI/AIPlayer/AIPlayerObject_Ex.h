@@ -5,12 +5,13 @@
 #include "Watanabe/Shader/BoneModelDraw.h"
 #include "Watanabe/UI/DirectionWithHasBallUI.h"
 
-#include "Maruyama/2023/Object/PlayerObjectBase.h"
+#include "Maruyama/New/Object/PlayerObjectBase.h"
 
 namespace AI
 {
 	namespace AIPlayer
 	{
+
 		class Object : public PlayerObjectBase
 		{
 		public:
@@ -26,5 +27,6 @@ namespace AI
 
 		private:
 		};
+
 	}
 }
