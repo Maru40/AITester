@@ -1,6 +1,6 @@
 #include "TargetingSystem.h"
 
-#include "Targeted.h"
+#include "Targeted_Ex.h"
 
 using namespace basecross;
 
