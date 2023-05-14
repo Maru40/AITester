@@ -329,15 +329,59 @@ namespace basecross
 		return m_playerInputer;
 	}
 
+	Vector PlayerInputer::GetDebugCameraMoveVector()
+	{
+		static const auto& inputDevice = App::GetApp()->GetMyInputDevice();
+		static const auto& keyBoard = inputDevice->GetKeyBoard();
+		static const auto& xinput = inputDevice->GetXInputGamePad();
+
+		Vector direction;
+
+		if (keyBoard.IsInputPush(KeyCode::L))
+		{
+			direction.x += 1;
+		}
+
+		if (keyBoard.IsInputPush(KeyCode::J))
+		{
+			direction.x -= 1;
+		}
+
+		if (keyBoard.IsInputPush(KeyCode::I))
+		{
+			direction.z += 1;
+		}
+
+		if (keyBoard.IsInputPush(KeyCode::K))
+		{
+			direction.z -= 1;
+		}
+
+
+		//direction.x += xinput.GetLeftThumb().x;
+		//direction.z += xinput.GetLeftThumb().y;
+
+		direction.x = MyMath::Clamp(direction.x, -1.0f, 1.0f);
+
+		direction.z = MyMath::Clamp(direction.z, -1.0f, 1.0f);
+
+		if (direction.length() > 1.0f)
+		{
+			direction.normalize();
+		}
+
+		return direction;
+	}
+
 	Vector PlayerInputer::GetDebugUpDownVector()
 	{
 		Vector result(0.0f);
 
-		if (App::GetApp()->GetMyInputDevice()->GetKeyBoard().IsInputPush(KeyCode::I)) {
+		if (App::GetApp()->GetMyInputDevice()->GetKeyBoard().IsInputPush(KeyCode::T)) {
 			result.y += -1;
 		}
 
-		if (App::GetApp()->GetMyInputDevice()->GetKeyBoard().IsInputPush(KeyCode::K)) {
+		if (App::GetApp()->GetMyInputDevice()->GetKeyBoard().IsInputPush(KeyCode::G)) {
 			result.y += +1;
 		}
 

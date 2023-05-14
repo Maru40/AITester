@@ -1,4 +1,5 @@
 #include "InputMover.h"
+#include "Maruyama/New/Component/InputerComponent.h"
 
 using namespace basecross;
 
@@ -10,7 +11,14 @@ InputMover::InputMover(const std::shared_ptr<GameObject>& owner):
 void 
 InputMover::OnCreate()
 {
+	mInput = GetGameObject()->GetComponent<InputerComponent>().get();
 	mTransform = GetGameObject()->GetComponent<Transform>().get();
+}
+
+void 
+InputMover::OnUpdate()
+{
+	MoveUpdate(mInput->GetMoveInput());
 }
 
 void 

@@ -15,6 +15,8 @@
 #include "Maruyama/New/Component/TargetingSystem.h"
 #include "Maruyama/New/AI/AIDirector/Strategy/StrategyMember.h"
 
+#include "Maruyama/New/Component/InputMover.h"
+
 using namespace basecross;
 using namespace basecross::bsm;
 
@@ -36,6 +38,8 @@ namespace AI
 			AddComponent<Targeted>();
 			AddComponent<TargetingSystem>();
 			AddComponent<StrategyMember>();
+
+			auto mover = GetComponent<InputMover>();
 		}
 
 		void Object::OnUpdate()

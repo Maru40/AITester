@@ -109,6 +109,8 @@ namespace basecross
 
 		//static bool IsDebugAstarDraw();
 
+		static Vector GetDebugCameraMoveVector();
+
 		static Vector GetDebugUpDownVector();
 		
 		//------------------------------------------------------------------------

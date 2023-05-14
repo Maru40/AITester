@@ -87,9 +87,6 @@ namespace basecross {
 	}
 
 	void MaruTestStage_DebugLog::OnUpdate() {
-		if (PlayerInputer::GetInstance()->IsBDown()) {
-			
-		}
 
 		if (m_debugGraph) {
 			//return;

@@ -59,6 +59,7 @@ PlayerObjectBase::CreateModel()
 void 
 PlayerObjectBase::CreateCollision()
 {
+	return;
 	auto collision = AddComponent<CollisionObb>();
 	constexpr float CollisionSize = 1.0f;
 	collision->SetMakedSize(CollisionSize);

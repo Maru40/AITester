@@ -27,7 +27,7 @@ void DebugCamera::OnUpdate()
 
 	//EyePositionÇêßå‰
 	auto position = camera->GetEye();
-	position += GetComponent<InputerComponent>()->GetMoveInput() * mSpeed * delta;
+	position += PlayerInputer::GetDebugCameraMoveVector() * mSpeed * delta;
 	position += PlayerInputer::GetDebugUpDownVector() * mSpeed * delta;
 
 	//AtPositonÇêßå‰
