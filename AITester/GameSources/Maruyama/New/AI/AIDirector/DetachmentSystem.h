@@ -1,37 +1,40 @@
 #pragma once
 
-class StrategyBase;
-class StrategyMember;
-
-class DetachmentSystem
+namespace AI
 {
-public:
-	using Member = StrategyMember;
+	class StrategyBase;
+	class StrategyMember;
 
-public:
-	DetachmentSystem();
+	class DetachmentSystem
+	{
+	public:
+		using Member = StrategyMember;
 
-	virtual ~DetachmentSystem() = default;
+	public:
+		DetachmentSystem();
 
-	/// <summary>
-	/// 戦略にメンバーを割り振り
-	/// </summary>
-	void AssignMembersToStrategies();
+		virtual ~DetachmentSystem() = default;
 
-	/// <summary>
-	/// メンバーの追加
-	/// </summary>
-	/// <param name="member"></param>
-	void AsigneMember(Member* const member);
+		/// <summary>
+		/// 戦略にメンバーを割り振り
+		/// </summary>
+		void AssignMembersToStrategies();
 
-	/// <summary>
-	/// 戦略の追加
-	/// </summary>
-	/// <param name="strategy">戦略</param>
-	void AddStrategy(StrategyBase* const strategy);
+		/// <summary>
+		/// メンバーの追加
+		/// </summary>
+		/// <param name="member"></param>
+		void AsigneMember(Member* const member);
 
-private:
-	std::vector<Member*> mMembers;			//メンバー一覧
+		/// <summary>
+		/// 戦略の追加
+		/// </summary>
+		/// <param name="strategy">戦略</param>
+		void AddStrategy(StrategyBase* const strategy);
 
-	std::vector<StrategyBase*> mStrategys;	//戦略一覧
-};
+	private:
+		std::vector<Member*> mMembers;			//メンバー一覧
+
+		std::vector<StrategyBase*> mStrategys;	//戦略一覧
+	};
+}

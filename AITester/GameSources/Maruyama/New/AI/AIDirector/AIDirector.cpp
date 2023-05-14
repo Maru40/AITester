@@ -3,6 +3,12 @@
 #include "Maruyama/Enemy/Astar/AstarNode.h"
 #include "Maruyama/Enemy/Astar/AstarEdge_Ex.h"
 
+#include "Maruyama/Utility/Utility.h"
+
+#include "Maruyama/New/AI/AIDirector/DetachmentSystem.h"
+#include "Maruyama/New/AI/AIDirector/Strategy/StrategyBase.h"
+#include "Maruyama/New/AI/AIDirector/Strategy/StrategyMember.h"
+
 namespace basecross
 {
 	namespace maru
@@ -11,14 +17,35 @@ namespace basecross
 	}
 }
 
+using namespace basecross;
+
 namespace AI
 {
 	AIDirector::AIDirector(const std::shared_ptr<basecross::GameObject>& owner):
 		SingletonComponent(owner)
 	{}
 
+	AIDirector::~AIDirector()
+	{
+		for (auto& strategy : mStrategys) {
+			delete(strategy);
+		}
+	}
+
 	void AIDirector::OnCreate()
 	{
+
+	}
+
+	void AIDirector::OnLateStart()
+	{
+		//メンバーを集める
+		mStrategyMembers = maru::Utility::FindWeakPtrComponents<StrategyMember>();
+	}
+
+	void AIDirector::OnUpdate()
+	{
+		//影響マップアップデート
 
 	}
 

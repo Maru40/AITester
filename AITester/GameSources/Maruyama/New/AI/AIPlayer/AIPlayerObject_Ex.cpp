@@ -19,6 +19,10 @@
 
 #include "Maruyama/Utility/Component/RotationController.h"
 
+#include "Maruyama/Enemy/Component/EyeSearchRange.h"
+
+#include "Maruyama/New/AI/AIDirector/InfluenceMap/InfluenceUpdater.h"
+
 using namespace basecross;
 using namespace basecross::bsm;
 
@@ -40,6 +44,8 @@ namespace AI
 			AddComponent<Targeted>();
 			AddComponent<TargetingSystem>();
 			AddComponent<StrategyMember>();
+			AddComponent<EyeSearchRange>();
+			AddComponent<InfluenceUpdater>();
 
 			auto mover = GetComponent<InputMover>();
 		}

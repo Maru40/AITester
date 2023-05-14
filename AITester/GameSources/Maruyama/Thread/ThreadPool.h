@@ -11,18 +11,11 @@
 #include <tuple>
 #include <utility>
 
+#include "Maruyama/New/Interface/I_ThreadRequester.h"
+
 namespace basecross {
 
 	//std::thread::hardware_concurrency() == 処理系でサポートされるスレッド並行数
-
-	//--------------------------------------------------------------------------------------
-	///	スレッドリクエスト者
-	//--------------------------------------------------------------------------------------
-	class I_ThreadRequester
-	{
-	public:
-		virtual ~I_ThreadRequester() = default;
-	};
 
 	//--------------------------------------------------------------------------------------
 	///	スレッド用タスクデータ

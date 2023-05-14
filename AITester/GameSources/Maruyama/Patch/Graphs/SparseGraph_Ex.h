@@ -55,6 +55,8 @@ namespace basecross {
 			SparseGraph() = default;
 			virtual ~SparseGraph() = default;
 
+			virtual void SetNodeMap(const NodeMap& nodeMap) { m_nodeMap = nodeMap; }
+
 			/// <summary>
 			/// w’è‚µ‚½ƒm[ƒh‚Ìæ“¾
 			/// </summary>
