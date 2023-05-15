@@ -9,6 +9,11 @@ void SelfAstarNodeManager::OnCreate()
 
 }
 
+void SelfAstarNodeManager::OnUpdate()
+{
+
+}
+
 void SelfAstarNodeManager::SetCurrentNode(AstarNode* const node) { mCurrentNode = node; }
 
 SelfAstarNodeManager::AstarNode* SelfAstarNodeManager::GetCurrentNode() const { return mCurrentNode; }

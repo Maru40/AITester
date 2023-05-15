@@ -10,6 +10,8 @@
 #include "Maruyama/Utility/Utility.h"
 #include "Maruyama/Utility/Mathf.h"
 
+#include "Maruyama/New/AI/AIDirector/InfluenceMap/InfluenceUpdater.h"
+
 using namespace basecross;
 
 namespace AI
@@ -51,10 +53,8 @@ namespace AI
 		auto nodeMap = mGraph->GetNodes();
 		std::unordered_map<int, std::shared_ptr<AstarNode>> resultMap;
 
-		for (auto& pair : nodeMap)
-		{
+		auto selfNode = updater->GetSelfNode();
 
-		}
 
 		EndInfluenceCalculate(resultMap);	//ŒvZ‚µ‚½Œ‹‰Ê‚ğ•Ô‚·B
 	}

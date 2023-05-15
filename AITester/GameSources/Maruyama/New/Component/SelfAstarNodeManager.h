@@ -21,6 +21,8 @@ public:
 
 	void OnCreate() override;
 
+	void OnUpdate() override;
+
 	void SetCurrentNode(AstarNode* const node);
 
 	AstarNode* GetCurrentNode() const;

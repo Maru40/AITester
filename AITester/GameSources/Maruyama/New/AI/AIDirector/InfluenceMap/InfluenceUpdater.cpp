@@ -4,6 +4,7 @@
 
 #include "Maruyama/Enemy/Component/SelfAstarNodeController.h"
 #include "Maruyama/Enemy/Component/SelfAstarNodeController_Ex.h"
+#include "Maruyama/New/Component/SelfAstarNodeManager.h"
 
 using namespace basecross;
 
@@ -18,9 +19,10 @@ namespace AI {
 		auto object = GetGameObject();
 
 		mEye = object->GetComponent<EyeSearchRange>().get();
+		mSelfAstarNodeManager = object->GetComponent<SelfAstarNodeManager>().get();
 	}
 
 	InfluenceUpdater::Eye* InfluenceUpdater::GetEye() const { return mEye; }
 
-	std::shared_ptr<InfluenceUpdater::AstarNode> InfluenceUpdater::GetSelfNode() const { return nullptr; }
+	InfluenceUpdater::AstarNode* InfluenceUpdater::GetSelfNode() const { return mSelfAstarNodeManager->GetCurrentNode(); }
 }

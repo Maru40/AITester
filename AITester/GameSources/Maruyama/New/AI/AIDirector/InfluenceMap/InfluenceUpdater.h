@@ -10,6 +10,8 @@ namespace basecross
 	}
 }
 
+class SelfAstarNodeManager;
+
 namespace AI
 {
 
@@ -30,11 +32,11 @@ namespace AI
 		Eye* GetEye() const;
 
 		//©•ª©g‚Ìƒm[ƒh‚Ìæ“¾
-		std::shared_ptr<AstarNode> GetSelfNode() const;
+		AstarNode* GetSelfNode() const;
 
 	private:
 		Eye* mEye = nullptr;
-		
+		SelfAstarNodeManager* mSelfAstarNodeManager = nullptr;
 	};
 
 }
