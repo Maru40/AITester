@@ -1,9 +1,14 @@
 #pragma once
 
-class StrategyMember : public basecross::Component
+namespace AI
 {
-public:
-	StrategyMember(const std::shared_ptr<basecross::GameObject>& owner);
 
-	~StrategyMember() = default;
-};
+	class StrategyMember : public basecross::Component
+	{
+	public:
+		StrategyMember(const std::shared_ptr<basecross::GameObject>& owner);
+
+		~StrategyMember() = default;
+	};
+
+}

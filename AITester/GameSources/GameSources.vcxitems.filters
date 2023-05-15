@@ -1669,6 +1669,12 @@
     <Filter Include="Maru2023\AI\AIDirector\InfluenceMap">
       <UniqueIdentifier>{aa97a56f-59f5-40de-b44f-9a2ba025e285}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maru2023\AI\AIDirector\InfluenceMap\Component">
+      <UniqueIdentifier>{62819428-3536-40a4-bcce-1e11980992f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\Utility">
+      <UniqueIdentifier>{03459b51-4d0d-4e98-8de0-e1c294d6c991}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
@@ -3171,6 +3177,21 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.h">
       <Filter>Maru2023\AI\AIDirector\InfluenceMap</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.h">
+      <Filter>Maru2023\AI\AIDirector\InfluenceMap</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_ThreadRequester.h">
+      <Filter>Maru2023\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.h">
+      <Filter>Maru2023\AI\AIDirector\InfluenceMap\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.h">
+      <Filter>Maru2023\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.h">
+      <Filter>Maru2023\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp">
@@ -4546,6 +4567,21 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.cpp">
       <Filter>Maru2023\AI\AIDirector\InfluenceMap</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.cpp">
+      <Filter>Maru2023\AI\AIDirector\InfluenceMap</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_ThreadRequester.cpp">
+      <Filter>Maru2023\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.cpp">
+      <Filter>Maru2023\AI\AIDirector\InfluenceMap\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.cpp">
+      <Filter>Maru2023\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.cpp">
+      <Filter>Maru2023\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

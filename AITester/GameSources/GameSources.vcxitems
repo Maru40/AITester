@@ -219,6 +219,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.h" />
@@ -230,10 +232,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Camera\DebugCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputerComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputMover.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\Targeted_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\TargetingSystem.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_Inputer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_ThreadRequester.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Object\PlayerObjectBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HidePlaceOpener.h" />
@@ -712,6 +717,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.cpp" />
@@ -723,10 +730,13 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Camera\DebugCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputerComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\InputMover.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\Targeted_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\TargetingSystem.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_Inputer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_ThreadRequester.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Object\PlayerObjectBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HidePlaceOpener.cpp" />
