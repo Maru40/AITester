@@ -19,7 +19,7 @@ namespace AI {
 		auto object = GetGameObject();
 
 		mEye = object->GetComponent<EyeSearchRange>().get();
-		mSelfAstarNodeManager = object->GetComponent<SelfAstarNodeManager>().get();
+		mSelfAstarNodeManager = object->GetComponent<SelfAstarNodeManager>(false).get();
 	}
 
 	InfluenceUpdater::Eye* InfluenceUpdater::GetEye() const { return mEye; }
