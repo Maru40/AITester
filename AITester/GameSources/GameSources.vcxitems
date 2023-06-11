@@ -221,7 +221,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\TacticBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\AIPlayerController.h" />
@@ -719,7 +719,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\TacticBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\AIPlayerController.cpp" />
