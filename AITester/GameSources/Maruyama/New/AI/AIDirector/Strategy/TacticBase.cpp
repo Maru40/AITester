@@ -20,11 +20,9 @@ namespace AI
 		numAssigne(numAssigne)
 	{}
 
-
-
 	TacticBase::TacticBase()
 	{
-
+		
 	}
 
 	void TacticBase::AssignMember(StrategyMember* const member) { mInfo.members.push_back(member); }
