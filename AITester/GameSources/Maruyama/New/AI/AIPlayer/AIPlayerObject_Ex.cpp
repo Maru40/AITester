@@ -13,7 +13,7 @@
 
 #include "Maruyama/New/Component/Targeted_Ex.h"
 #include "Maruyama/New/Component/TargetingSystem.h"
-#include "Maruyama/New/AI/AIDirector/Strategy/StrategyMember.h"
+#include "Maruyama/New/AI/AIDirector/Tactic/TacticMember.h"
 
 #include "Maruyama/New/Component/InputMover.h"
 
@@ -43,7 +43,7 @@ namespace AI
 			AddComponent<SinglePlayerAnimator>();
 			AddComponent<Targeted>();
 			AddComponent<TargetingSystem>();
-			AddComponent<StrategyMember>();
+			AddComponent<TacticMember>();
 			AddComponent<EyeSearchRange>();
 			AddComponent<InfluenceUpdater>();
 

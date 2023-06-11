@@ -1,6 +1,6 @@
 #include "TacticBase.h"
 
-#include "StrategyMember.h"
+#include "TacticMember.h"
 
 #include "Maruyama/New/Component/Targeted_Ex.h"
 #include "Maruyama/Utility/Utility.h"
@@ -25,8 +25,8 @@ namespace AI
 		
 	}
 
-	void TacticBase::AssignMember(StrategyMember* const member) { mInfo.members.push_back(member); }
+	void TacticBase::AssignMember(TacticMember* const member) { mInfo.members.push_back(member); }
 
-	void TacticBase::UnAssignMember(StrategyMember* const member) { maru::Utility::RemoveVec(mInfo.members, member); }
+	void TacticBase::UnAssignMember(TacticMember* const member) { maru::Utility::RemoveVec(mInfo.members, member); }
 
 }

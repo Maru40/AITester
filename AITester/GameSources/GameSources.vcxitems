@@ -221,8 +221,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\TacticBase.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticMember.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\AIPlayerController.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\AIPlayerStateMachine.h" />
@@ -719,8 +719,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceUpdater.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\TacticBase.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticMember.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\AIPlayerObject_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\AIPlayerController.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIPlayer\Component\AIPlayerStateMachine.cpp" />

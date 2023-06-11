@@ -14,7 +14,7 @@ namespace basecross {
 namespace AI
 {
 	class TacticBase;
-	class StrategyMember;
+	class TacticMember;
 
 	class AIDirector : public basecross::maru::SingletonComponent<AIDirector>
 	{
@@ -56,6 +56,6 @@ namespace AI
 			//デタッチメントシステム
 		std::vector<TacticBase*> mTactics;							//戦略一覧
 
-		std::vector<std::weak_ptr<StrategyMember>> mStrategyMembers;	//戦略メンバー
+		std::vector<std::weak_ptr<TacticMember>> mStrategyMembers;	//戦略メンバー
 	};
 }

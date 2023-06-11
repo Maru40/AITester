@@ -6,8 +6,8 @@
 #include "Maruyama/Utility/Utility.h"
 
 #include "Maruyama/New/AI/AIDirector/DetachmentSystem.h"
-#include "Maruyama/New/AI/AIDirector/Strategy/TacticBase.h"
-#include "Maruyama/New/AI/AIDirector/Strategy/StrategyMember.h"
+#include "Maruyama/New/AI/AIDirector/Tactic/TacticBase.h"
+#include "Maruyama/New/AI/AIDirector/Tactic/TacticMember.h"
 
 namespace basecross
 {
@@ -40,7 +40,7 @@ namespace AI
 	void AIDirector::OnLateStart()
 	{
 		//ƒƒ“ƒo[‚ğW‚ß‚é
-		mStrategyMembers = maru::Utility::FindWeakPtrComponents<StrategyMember>();
+		mStrategyMembers = maru::Utility::FindWeakPtrComponents<TacticMember>();
 	}
 
 	void AIDirector::OnUpdate()
