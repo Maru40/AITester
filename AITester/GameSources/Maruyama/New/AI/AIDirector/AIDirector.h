@@ -56,6 +56,6 @@ namespace AI
 			//デタッチメントシステム
 		std::vector<TacticBase*> mTactics;							//戦略一覧
 
-		std::vector<std::weak_ptr<TacticMember>> mStrategyMembers;	//戦略メンバー
+		std::vector<std::weak_ptr<TacticMember>> mTacticMembers;	//戦略メンバー
 	};
 }

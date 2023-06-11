@@ -40,7 +40,7 @@ namespace AI
 	void AIDirector::OnLateStart()
 	{
 		//ƒƒ“ƒo[‚ğW‚ß‚é
-		mStrategyMembers = maru::Utility::FindWeakPtrComponents<TacticMember>();
+		mTacticMembers = maru::Utility::FindWeakPtrComponents<TacticMember>();
 	}
 
 	void AIDirector::OnUpdate()
