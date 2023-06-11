@@ -238,7 +238,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_Inputer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_ThreadRequester.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Object\PlayerObjectBase.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\Graph\UtilityGraph.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HidePlaceOpener.h" />
@@ -736,7 +736,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_Inputer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Interface\I_ThreadRequester.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Object\PlayerObjectBase.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\Graph\UtilityGraph.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\CommonStructs\RectData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Patch\Graphs\SparseGraph_Ex.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Player\Component\HidePlaceOpener.cpp" />

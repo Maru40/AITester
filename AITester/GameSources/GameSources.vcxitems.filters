@@ -3189,7 +3189,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.h">
       <Filter>Maru2023\Component</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\Graph\UtilityGraph.h">
       <Filter>Maru2023\Utility</Filter>
     </ClInclude>
   </ItemGroup>
@@ -4580,7 +4580,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.cpp">
       <Filter>Maru2023\Component</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\Graph\UtilityGraph.cpp">
       <Filter>Maru2023\Utility</Filter>
     </ClCompile>
   </ItemGroup>
