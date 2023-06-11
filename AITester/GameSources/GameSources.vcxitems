@@ -217,6 +217,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\Load\StageMapCSV.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorMember.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.h" />
@@ -715,6 +717,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Load\LoadData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\Load\StageMapCSV.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorMember.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceData.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\InfluenceMap\InfluenceManager.cpp" />

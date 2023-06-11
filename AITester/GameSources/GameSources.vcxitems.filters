@@ -1675,6 +1675,9 @@
     <Filter Include="Maru2023\AI\AIDirector\Tactic">
       <UniqueIdentifier>{6dca3bdd-15d6-4574-a6b0-b342bc7c56d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maru2023\AI\AIDirector\Coordinator">
+      <UniqueIdentifier>{2c185401-9acd-4a0d-a1d0-42c88623b23d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Project.h">
@@ -3192,6 +3195,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticMember.h">
       <Filter>Maru2023\AI\AIDirector\Tactic</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorBase.h">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorMember.h">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectShader.cpp">
@@ -4582,6 +4591,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticMember.cpp">
       <Filter>Maru2023\AI\AIDirector\Tactic</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorBase.cpp">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorMember.cpp">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
