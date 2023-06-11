@@ -38,6 +38,12 @@ public:
 			parent(parent),
 			selfNode(selfNode)
 		{}
+
+		bool operator== (const OpenData& other) const
+		{
+			return parent == other.parent && 
+				selfNode  == other.selfNode;
+		}
 	};
 
 
@@ -47,7 +53,11 @@ public:
 
 private:
 	//ü‚è‚Ìƒm[ƒh‚ğ“ü‚ê‚é
-	void AddOpenData(std::queue<OpenData>& openDatas, std::queue<OpenData>& closeDatas, const OpenData& parentData, const AstarGraph* graph, Eye* const eye);
+	void AddOpenData(std::list<OpenData>& openDatas, std::list<OpenData>& closeDatas, const OpenData& parentData, const AstarGraph* graph, Eye* const eye);
 
-	bool IsAddOpenData(const std::queue<OpenData>& openDatas, const std::queue<OpenData>& closeDatas, AstarNode* const node);
+	bool IsAddOpenData(const std::list<OpenData>& openDatas, const std::list<OpenData>& closeDatas, const OpenData& parentData);
+
+	bool IsMathData(const std::list<OpenData>& openDatas, const std::list<OpenData>& closeDatas, const OpenData& parentData);
+
+	
 };
