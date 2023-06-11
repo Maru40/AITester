@@ -1,7 +1,6 @@
 #pragma once
 
 #include "stdafx.h"
-#include "StrategyBase.h"
 
 class Targeted;
 
@@ -10,32 +9,32 @@ namespace AI
 
 	class StrategyMember;
 
-	struct StrategyParameter
+	struct TacticInfo
 	{
 		Targeted* targeted = nullptr;			//戦術のターゲット
 		u32 index = 0;							//戦術番号インデックス
 		u32 numAssigne = 0;						//アサインする数
 		std::vector<StrategyMember*> members;	//アサインしているメンバー
 
-		StrategyParameter();
-		StrategyParameter(Targeted* const targeted, const u32 index, const u32 numAssigne);
+		TacticInfo();
+		TacticInfo(Targeted* const targeted, const u32 index, const u32 numAssigne);
 	};
 
-	class StrategyBase
+	class TacticBase
 	{
 	public:
-		using Parameter = StrategyParameter;
+		using Info = TacticInfo;
 
 	public:
-		StrategyBase();
+		TacticBase();
 
-		virtual ~StrategyBase() = default;
+		virtual ~TacticBase() = default;
 
 		void AssignMember(StrategyMember* const member);
 		void UnAssignMember(StrategyMember* const member);
 
 	private:
-		Parameter mParam;
+		Info mInfo;
 	};
 
 }
