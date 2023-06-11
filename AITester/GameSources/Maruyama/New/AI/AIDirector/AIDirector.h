@@ -13,9 +13,6 @@ namespace basecross {
 
 namespace AI
 {
-	class TacticBase;
-	class TacticMember;
-
 	class AIDirector : public basecross::maru::SingletonComponent<AIDirector>
 	{
 	public:
@@ -31,10 +28,6 @@ namespace AI
 		void OnLateStart() override;
 
 		void OnUpdate() override;
-
-		//戦略を生成する。
-		void CreateTactic();
-
 	public:
 
 	private:
@@ -53,9 +46,6 @@ namespace AI
 		void SearchRoute(const std::shared_ptr<AstarNode>& startNode, const std::shared_ptr<AstarNode>& targetNode);
 
 	private:
-			//デタッチメントシステム
-		std::vector<TacticBase*> mTactics;							//戦略一覧
 
-		std::vector<std::weak_ptr<TacticMember>> mTacticMembers;	//戦略メンバー
 	};
 }

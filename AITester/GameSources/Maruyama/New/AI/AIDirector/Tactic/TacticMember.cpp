@@ -2,9 +2,12 @@
 
 namespace AI
 {
+	namespace Tactic 
+	{
 
-	TacticMember::TacticMember(const std::shared_ptr<basecross::GameObject>& owner) :
-		Component(owner)
-	{}
+		Member::Member(const std::shared_ptr<basecross::GameObject>& owner) :
+			Component(owner)
+		{}
 
+	}
 }

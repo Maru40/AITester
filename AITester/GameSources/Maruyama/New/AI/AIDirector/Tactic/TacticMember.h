@@ -2,13 +2,19 @@
 
 namespace AI
 {
-
-	class TacticMember : public basecross::Component
+	namespace Tactic
 	{
-	public:
-		TacticMember(const std::shared_ptr<basecross::GameObject>& owner);
 
-		~TacticMember() = default;
-	};
+		class Member : public basecross::Component
+		{
+		public:
+			Member(const std::shared_ptr<basecross::GameObject>& owner);
 
+			~Member() = default;
+
+		private:
+			
+		};
+
+	}
 }

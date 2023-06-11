@@ -43,7 +43,7 @@ namespace AI
 			AddComponent<SinglePlayerAnimator>();
 			AddComponent<Targeted>();
 			AddComponent<TargetingSystem>();
-			AddComponent<TacticMember>();
+			AddComponent<Tactic::Member>();
 			AddComponent<EyeSearchRange>();
 			AddComponent<InfluenceUpdater>();
 

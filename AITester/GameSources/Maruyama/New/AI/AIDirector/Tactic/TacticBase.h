@@ -6,36 +6,38 @@ class Targeted;
 
 namespace AI
 {
-	class TacticMember;
-
-	struct TacticInfo
+	namespace Tactic
 	{
-		Targeted* targeted = nullptr;				//戦術のターゲット
-		u32 index = 0;								//戦術番号インデックス
-		u32 numAssigne = 0;							//アサインする数
-		std::unordered_set<TacticMember*> members;	//アサインしているメンバー
+		class Member;
 
-		TacticInfo();
-		TacticInfo(Targeted* const targeted, const u32 index, const u32 numAssigne);
-	};
+		struct TacticInfo
+		{
+			Targeted* targeted = nullptr;				//戦術のターゲット
+			u32 index = 0;								//戦術番号インデックス
+			u32 numAssigne = 0;							//アサインする数
+			std::unordered_set<Member*> members;	//アサインしているメンバー
 
-	class TacticBase
-	{
-	public:
-		using Info = TacticInfo;
+			TacticInfo();
+			TacticInfo(Targeted* const targeted, const u32 index, const u32 numAssigne);
+		};
 
-	public:
-		TacticBase(const TacticInfo& info);
-		virtual ~TacticBase() = default;
+		class TacticBase
+		{
+		public:
+			using Info = TacticInfo;
 
-		void AssignMember(TacticMember* const member);
-		void UnAssignMember(TacticMember* const member);
+		public:
+			TacticBase(const TacticInfo& info);
+			virtual ~TacticBase() = default;
 
-		bool HasMember(TacticMember* const member);
+			void AssignMember(Member* const member);
+			void UnAssignMember(Member* const member);
 
-	private:
-		Info mInfo;	
+			bool HasMember(Member* const member);
 
-	};
+		private:
+			Info mInfo;
 
+		};
+	}
 }

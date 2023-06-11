@@ -9,32 +9,33 @@ using namespace basecross;
 
 namespace AI
 {
+	namespace Tactic {
 
-	TacticInfo::TacticInfo() :
-		TacticInfo(nullptr, 0, 0)
-	{}
+		TacticInfo::TacticInfo() :
+			TacticInfo(nullptr, 0, 0)
+		{}
 
-	TacticInfo::TacticInfo(Targeted* const targeted, const u32 index, const u32 numAssigne) :
-		targeted(targeted),
-		index(index),
-		numAssigne(numAssigne)
-	{}
+		TacticInfo::TacticInfo(Targeted* const targeted, const u32 index, const u32 numAssigne) :
+			targeted(targeted),
+			index(index),
+			numAssigne(numAssigne)
+		{}
 
-	TacticBase::TacticBase(const TacticInfo& info):
-		mInfo(info)
-	{}
+		TacticBase::TacticBase(const TacticInfo& info) :
+			mInfo(info)
+		{}
 
-	void TacticBase::AssignMember(TacticMember* const member) { 
+		void TacticBase::AssignMember(Member* const member) {
+			mInfo.members.insert(member);
+		}
 
-		mInfo.members.insert(member); 
+		void TacticBase::UnAssignMember(Member* const member) {
+			mInfo.members.erase(member);
+		}
+
+		bool TacticBase::HasMember(Member* const member) {
+			return mInfo.members.find(member) != mInfo.members.end();
+		}
+
 	}
-
-	void TacticBase::UnAssignMember(TacticMember* const member) { 
-		mInfo.members.erase(member); 
-	}
-
-	bool TacticBase::HasMember(TacticMember* const member) {
-		return mInfo.members.find(member) != mInfo.members.end();
-	}
-
 }
