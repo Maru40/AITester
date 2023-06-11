@@ -55,6 +55,13 @@ namespace basecross {
 		///	デバッグ系
 		//--------------------------------------------------------------------------------------
 
+		void AstarNode::SetDebugDrawActive(const bool isActive)
+		{
+			if (m_debugDrawController) {
+				m_debugDrawController->SetDebugDrawActive(isActive);
+			}
+		}
+
 		void AstarNode::OnDebugDraw() {
 			//デバッグコンポーネントが存在するかどうかの確認
 			if (m_debugDrawController == nullptr) {

@@ -388,6 +388,12 @@ namespace basecross
 		return result;
 	}
 
+	bool PlayerInputer::IsChangeNodeDebugDraw()
+	{
+		return m_inputDevice->GetKeyBoard().IsInputDown(KeyCode::P);
+			//m_inputDevice->GetXInputGamePad().IsInputDown(XInputCode::A);
+	}
+
 	bool PlayerInputer::IsDesitionDown() const
 	{
 		return m_inputDevice->GetKeyBoard().IsInputDown(KeyCode::Enter) ||
