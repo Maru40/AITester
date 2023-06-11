@@ -20,13 +20,21 @@ namespace AI
 		numAssigne(numAssigne)
 	{}
 
-	TacticBase::TacticBase()
-	{
-		
+	TacticBase::TacticBase(const TacticInfo& info):
+		mInfo(info)
+	{}
+
+	void TacticBase::AssignMember(TacticMember* const member) { 
+
+		mInfo.members.insert(member); 
 	}
 
-	void TacticBase::AssignMember(TacticMember* const member) { mInfo.members.push_back(member); }
+	void TacticBase::UnAssignMember(TacticMember* const member) { 
+		mInfo.members.erase(member); 
+	}
 
-	void TacticBase::UnAssignMember(TacticMember* const member) { maru::Utility::RemoveVec(mInfo.members, member); }
+	bool TacticBase::HasMember(TacticMember* const member) {
+		return mInfo.members.find(member) != mInfo.members.end();
+	}
 
 }
