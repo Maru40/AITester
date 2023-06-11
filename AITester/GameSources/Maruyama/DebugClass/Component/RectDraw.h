@@ -35,6 +35,9 @@ namespace basecross {
 		void OnCreate();
 		void OnUpdate();
 
+		void OnEnable() override;
+		void OnDisable() override;
+
 	private:
 		void CreateRectObject();
 	};
