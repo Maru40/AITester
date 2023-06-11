@@ -44,6 +44,8 @@ namespace basecross {
 
 			std::shared_ptr<Debug_DrawController> m_debugDrawController;	//デバッグ表示
 
+			void SetDebugDrawActive(const bool isActive);
+
 			void OnDebugDraw();
 		};
 

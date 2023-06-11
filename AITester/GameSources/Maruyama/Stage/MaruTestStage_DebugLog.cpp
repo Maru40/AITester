@@ -37,6 +37,7 @@ namespace basecross {
 	//デバッグ変数
 	std::shared_ptr<maru::SparseGraph<maru::AstarNode, maru::AstarEdge>> m_debugGraph;
 	int test_debugCount = 0;
+	bool mIsDebugGraph = false;
 	
 	void MaruTestStage_DebugLog::CreateViewLight() {
 		//const Vec3 eye(0.0f, 30.0f, -0.000001f);
@@ -88,7 +89,7 @@ namespace basecross {
 
 	void MaruTestStage_DebugLog::OnUpdate() {
 
-		if (m_debugGraph) {
+		if (mIsDebugGraph && m_debugGraph) {
 			//return;
 			for (auto& node : m_debugGraph->GetNodes()) {
 				node.second->OnDebugDraw();
@@ -97,6 +98,20 @@ namespace basecross {
 			for (auto& pair : m_debugGraph->GetEdgesMap()) {
 				for (auto& edge : pair.second) {
 					edge->OnDebugDraw();
+				}
+			}
+		}
+
+		if (PlayerInputer::GetInstance()->IsChangeNodeDebugDraw()) {
+			mIsDebugGraph = !mIsDebugGraph;
+
+			for (auto& node : m_debugGraph->GetNodes()) {
+				node.second->SetDebugDrawActive(mIsDebugGraph);
+			}
+
+			for (auto& pair : m_debugGraph->GetEdgesMap()) {
+				for (auto& edge : pair.second) {
+					edge->SetDebugDrawActive(mIsDebugGraph);
 				}
 			}
 		}
@@ -121,6 +136,24 @@ namespace basecross {
 		//デバッグ生成
 		Debug::GetInstance()->Log((int)graph->GetNodes().size());
 		Debug::GetInstance()->Log((int)graph->GetNumAllEdges());
+
+		std::unordered_map<int, std::shared_ptr<maru::AstarNode>> copyNodes;
+		auto nodes = graph->GetNodes();
+
+		//auto size = (u32)nodes.size();
+		//copyNodes = nodes;
+		copyNodes.insert(nodes.begin(), nodes.end());
+		////std::copy(copyNodes.begin(), nodes.begin(), nodes.end());
+		//auto iter = copyNodes.begin();
+
+		auto selfNode = nodes[0];
+		auto p = selfNode.get();
+		auto copyNode = copyNodes[0];
+		auto p2 = copyNode.get();
+
+		if (p == p2) {
+			int i = true;
+		}
 
 		m_debugGraph = graph;
 	}

@@ -1657,9 +1657,6 @@
     <Filter Include="Maru2023\AI\AIDirector">
       <UniqueIdentifier>{1550033c-e0cb-4861-aa2a-b9547fa264a4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Maru2023\AI\AIDirector\Strategy">
-      <UniqueIdentifier>{6dca3bdd-15d6-4574-a6b0-b342bc7c56d0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Maru2023\AI\AIDirector\DetachmentSystem">
       <UniqueIdentifier>{c1bb60e8-c9f8-4a54-b464-a1f795f84a1f}</UniqueIdentifier>
     </Filter>
@@ -1674,6 +1671,12 @@
     </Filter>
     <Filter Include="Maru2023\Utility">
       <UniqueIdentifier>{03459b51-4d0d-4e98-8de0-e1c294d6c991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\AI\AIDirector\Tactic">
+      <UniqueIdentifier>{6dca3bdd-15d6-4574-a6b0-b342bc7c56d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maru2023\AI\AIDirector\Coordinator">
+      <UniqueIdentifier>{2c185401-9acd-4a0d-a1d0-42c88623b23d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -3156,17 +3159,11 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.h">
       <Filter>Maru2023\AI\AIDirector</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.h">
-      <Filter>Maru2023\AI\AIDirector\Strategy</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\TargetingSystem.h">
       <Filter>Maru2023\Component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\Targeted_Ex.h">
       <Filter>Maru2023\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.h">
-      <Filter>Maru2023\AI\AIDirector\Strategy</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.h">
       <Filter>Maru2023\AI\AIDirector\DetachmentSystem</Filter>
@@ -3189,8 +3186,20 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.h">
       <Filter>Maru2023\Component</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\Graph\UtilityGraph.h">
       <Filter>Maru2023\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticBase.h">
+      <Filter>Maru2023\AI\AIDirector\Tactic</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticMember.h">
+      <Filter>Maru2023\AI\AIDirector\Tactic</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorBase.h">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorMember.h">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -4547,17 +4556,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\AIDirector.cpp">
       <Filter>Maru2023\AI\AIDirector</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyBase.cpp">
-      <Filter>Maru2023\AI\AIDirector\Strategy</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\TargetingSystem.cpp">
       <Filter>Maru2023\Component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\Targeted_Ex.cpp">
       <Filter>Maru2023\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Strategy\StrategyMember.cpp">
-      <Filter>Maru2023\AI\AIDirector\Strategy</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\DetachmentSystem.cpp">
       <Filter>Maru2023\AI\AIDirector\DetachmentSystem</Filter>
@@ -4580,8 +4583,20 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Component\SelfAstarNodeManager.cpp">
       <Filter>Maru2023\Component</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\新しいフォルダー\UtilityGraph.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\Utility\Graph\UtilityGraph.cpp">
       <Filter>Maru2023\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticBase.cpp">
+      <Filter>Maru2023\AI\AIDirector\Tactic</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Tactic\TacticMember.cpp">
+      <Filter>Maru2023\AI\AIDirector\Tactic</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorBase.cpp">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Maruyama\New\AI\AIDirector\Coordinator\CoordinatorMember.cpp">
+      <Filter>Maru2023\AI\AIDirector\Coordinator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

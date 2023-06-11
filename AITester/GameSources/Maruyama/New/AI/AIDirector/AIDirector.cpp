@@ -6,8 +6,9 @@
 #include "Maruyama/Utility/Utility.h"
 
 #include "Maruyama/New/AI/AIDirector/DetachmentSystem.h"
-#include "Maruyama/New/AI/AIDirector/Strategy/StrategyBase.h"
-#include "Maruyama/New/AI/AIDirector/Strategy/StrategyMember.h"
+
+//#include "Maruyama/New/AI/AIDirector/Tactic/TacticBase.h"
+//#include "Maruyama/New/AI/AIDirector/Tactic/TacticMember.h"
 
 namespace basecross
 {
@@ -27,9 +28,7 @@ namespace AI
 
 	AIDirector::~AIDirector()
 	{
-		for (auto& strategy : mStrategys) {
-			delete(strategy);
-		}
+
 	}
 
 	void AIDirector::OnCreate()
@@ -39,20 +38,13 @@ namespace AI
 
 	void AIDirector::OnLateStart()
 	{
-		//メンバーを集める
-		mStrategyMembers = maru::Utility::FindWeakPtrComponents<StrategyMember>();
+
 	}
 
 	void AIDirector::OnUpdate()
 	{
 		//影響マップアップデート
 
-	}
-
-	//戦略を生成する。
-	void AIDirector::CreateStrategy()
-	{
-		
 	}
 
 	void AIDirector::SearchRoute(const Vector selfPosition, const Vector targetPosition)

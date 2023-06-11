@@ -40,6 +40,18 @@ namespace basecross {
 		}
 	}
 
+	void RectDraw::OnEnable() {
+		if (auto rectObject = m_rectObject.lock()) {
+			rectObject->SetDrawActive(true);
+		}
+	}
+
+	void RectDraw::OnDisable() {
+		if (auto rectObject = m_rectObject.lock()) {
+			rectObject->SetDrawActive(false);
+		}
+	}
+
 	void RectDraw::CreateRectObject() {
 		//オブジェクト生成
 		auto object = GetStage()->Instantiate<GameObject>(m_rect.centerPosition, Quat::Identity());

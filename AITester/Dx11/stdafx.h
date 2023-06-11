@@ -67,6 +67,7 @@
 #include <stdexcept>
 #include <type_traits>
 #include <typeindex>
+#include <unordered_set>
 
 using namespace std;
 

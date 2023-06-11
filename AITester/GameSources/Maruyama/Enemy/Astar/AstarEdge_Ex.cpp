@@ -40,6 +40,13 @@ namespace basecross {
 		/// デバッグ
 		//--------------------------------------------------------------------------------------
 
+		void AstarEdge::SetDebugDrawActive(const bool isActive)
+		{
+			if (m_debugDrawController) {
+				m_debugDrawController->SetDebugDrawActive(isActive);
+			}
+		}
+
 		void AstarEdge::OnDebugDraw() {
 			if (m_debugDrawController == nullptr) {
 				const std::wstring Texture = L"Arrow_Detph_TX";

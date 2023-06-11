@@ -53,10 +53,10 @@ namespace basecross {
 			void SetColor(const Col4& color) { m_data.color = color; };
 			Col4 GetColor() const { return m_data.color; }
 
+			void SetDebugDrawActive(const bool isDraw);
+
 		private:
 			void CreateDebugDrawObject(const Vec3& position);
-
-			void SetDebugDrawActive(const bool isDraw);
 
 		public:
 

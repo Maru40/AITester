@@ -79,7 +79,8 @@ namespace basecross {
 
 		void Debug_DrawController::SetDebugDrawActive(const bool isDraw) {
 			if (auto debugDraw = GetDrawObject()) {
-				debugDraw->SetDrawActive(isDraw);
+				//debugDraw->GetComponent<RectDraw>()->SetDrawActive(isDraw);
+				debugDraw->SetActive(isDraw);
 			}
 		}
 
