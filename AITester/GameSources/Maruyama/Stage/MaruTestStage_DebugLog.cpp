@@ -137,23 +137,23 @@ namespace basecross {
 		Debug::GetInstance()->Log((int)graph->GetNodes().size());
 		Debug::GetInstance()->Log((int)graph->GetNumAllEdges());
 
-		//std::unordered_map<int, std::shared_ptr<maru::AstarNode>> copyNodes;
-		//auto nodes = graph->GetNodes();
+		std::unordered_map<int, std::shared_ptr<maru::AstarNode>> copyNodes;
+		auto nodes = graph->GetNodes();
 
 		//auto size = (u32)nodes.size();
 		//copyNodes = nodes;
-		////copyNodes.insert(nodes.begin(), nodes.end());
+		copyNodes.insert(nodes.begin(), nodes.end());
 		////std::copy(copyNodes.begin(), nodes.begin(), nodes.end());
 		//auto iter = copyNodes.begin();
 
-		//auto selfNode = nodes[0];
-		//auto p = selfNode.get();
-		//auto copyNode = copyNodes[0];
-		//auto p2 = copyNode.get();
+		auto selfNode = nodes[0];
+		auto p = selfNode.get();
+		auto copyNode = copyNodes[0];
+		auto p2 = copyNode.get();
 
-		//if (p == p2) {
-		//	int i = true;
-		//}
+		if (p == p2) {
+			int i = true;
+		}
 
 		m_debugGraph = graph;
 	}
